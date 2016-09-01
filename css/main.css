@@ -3931,10 +3931,21 @@ form.ng-valid {
 	padding: 20px 40px;
 }
 /********************************************************************************************
-    PAGE HOME 6                                                                                                 
+    PAGE VENUE PROFILE                                                                                                 
 *********************************************************************************************/
 .home6-back-img {
 	background-image: url(../images/partial/home6.jpg);
+    background-repeat: repeat !important;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+/********************************************************************************************
+    PAGE TALENT PROFILE                                                                                                 
+*********************************************************************************************/
+.home8-back-img {
+	background-image: url(../images/partial/home8.jpg);
     background-repeat: repeat !important;
     width: 100%;
     height: 100%;
