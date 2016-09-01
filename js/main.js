@@ -19,8 +19,8 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/home3", { templateUrl: "partials/home3.html", controller: "HomeCtrl" })
     .when("/home4", { templateUrl: "partials/home4.html", controller: "HomeCtrl" })
     .when("/home5", { templateUrl: "partials/home5.html", controller: "HomeCtrl" })
-    .when("/venue", { templateUrl: "partials/home6.html", controller: "HomeCtrl" })
-    .when("/home7", { templateUrl: "partials/home7.html", controller: "HomeCtrl" })
+    .when("/venue_profile", { templateUrl: "partials/home6.html", controller: "HomeCtrl" })
+    .when("/event_details", { templateUrl: "partials/home7.html", controller: "HomeCtrl" })
 
     // About
     .when("/about", { templateUrl: "partials/about.html", controller: "PageCtrl" })

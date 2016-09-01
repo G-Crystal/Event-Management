@@ -38,24 +38,26 @@
         <ul id="event" class="nav-pills nav-stacked rectangle-list">
           <li class="col-xs-12" ng-repeat="event in pagedItems[currentPage]">
             <div class="shop-img home-box-black row">
-              <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 ">
-                <img ng-src="images/store/{{event.src}}" alt="{{event.name}}" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box-image img-responsive" />
-              </div>
-              <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
-                <p class="p-title">{{event.title}}</p>
-                <div class="home-content-div">
-                  <div class="profile-div">
-                    <p class="p-date">{{event.date}}</p>
-                    <p class="p-spec">{{event.spec}}</p>
-                    <p class="p-name">{{event.name}}</p>
-                  </div>  
-
-                  <div class="buy-btn-div">
-                    <a class="btn btn-block trans-buy-button inline-buy-button" href="#/event">BUY TICKETS</a>
-                  </div>   
-                  <div class="clearfix"></div>
+              <a href="#/event_details">
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 ">
+                  <img ng-src="images/store/{{event.src}}" alt="{{event.name}}" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box-image img-responsive" />
                 </div>
-              </div>
+                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                  <p class="p-title">{{event.title}}</p>
+                  <div class="home-content-div">
+                    <div class="profile-div">
+                      <p class="p-date">{{event.date}}</p>
+                      <p class="p-spec p-blue">{{event.spec}}</p>
+                      <p class="p-name">{{event.name}}</p>
+                    </div>  
+
+                    <div class="buy-btn-div">
+                      <a class="btn btn-block trans-buy-button inline-buy-button" href="#/event">BUY TICKETS</a>
+                    </div>   
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </a>
             </div>
           </li>
         </ul>

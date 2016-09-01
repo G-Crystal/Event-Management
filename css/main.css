@@ -4,26 +4,6 @@
 /*** MENU ***/
 /*** SLIDER ***/
 /*** HOME ***/
-.search-div {
-	margin-top: 25px;
-}
-.select-list {
-    border: 1px solid blue;
-    border-radius: 4px;
-    height: 46px;
-    width: 100%;
-    padding: 0 20px;
-    font-size: 21px;
-}
-.manual-glyphicon {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	left: 30px;
-}
-form.ng-valid {
-	margin: 5px 0;
-}
 
 /*** Animation monitor ***/
 /*** Percentage ***/
@@ -236,7 +216,7 @@ ul.scroll-menu {
 	color:#0bb7b7;
 }
 a {
-	color:#0bb7b7;
+	color:#0000FF;
 }
 a:hover, a:focus {
     color: #0bb7b7;
@@ -3871,7 +3851,6 @@ a.google:hover {
     padding-top: 3px;
 }
 .home-box-black .p-spec{
-	color: #0000FF;
     margin-top: 0px;
 }
 .home-box-black .p-name{
@@ -3885,9 +3864,8 @@ a.google:hover {
 .p-center {
 	text-align: center;
 }
-.p-center-blue {
-	text-align: center;
-	color: blue;
+.p-blue {
+	color: #0000FF;
 }
 .trans-buy-button {
 	line-height: 25px;
@@ -3916,7 +3894,42 @@ a.google:hover {
 .home-content-div {
 	position: relative;
 }
+.round-button {
+	border-radius: 20px;
+}
+.search-div {
+	margin-top: 25px;
+}
+.select-list {
+    border: 1px solid blue;
+    border-radius: 4px;
+    height: 46px;
+    width: 100%;
+    padding: 0 20px;
+    font-size: 21px;
+}
+.manual-glyphicon {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 30px;
+}
+form.ng-valid {
+	margin: 5px 0;
+}
+.aboutus {
+    padding:0 20px;
+}
+.social-link-div {
 
+}
+.large-btn-div {
+	margin: 30px 10px;
+}
+.large-btn {
+	font-size: 20px;
+	padding: 20px 40px;
+}
 /********************************************************************************************
     PAGE HOME 6                                                                                                 
 *********************************************************************************************/
@@ -3937,6 +3950,24 @@ a.google:hover {
     width: 100%;
     height: 100%;
     position: absolute;
+}
+.button-div {
+	margin: 20px 0;
+}
+.top-down-border {
+	border-top: 1px solid #C8C8C8;
+	border-bottom: 1px solid #C8C8C8;
+}
+.description-title-div {
+	margin: 50px 10px 30px;
+}
+.description-content-div {
+	margin: 10px 40px;
+}
+@media screen and (max-width: 768px) {
+	.p-resp-xs {
+		text-align: center;
+	}
 }
 
 /********************************************************************************************
@@ -4326,7 +4357,7 @@ a.google:hover {
 
 .shop-title-store {
 	margin-top: 30px;
-	padding-bottom: 30px;
+	margin-bottom: 30px;
 }
 
 .shop-top-img {
@@ -5946,15 +5977,15 @@ you can use the generic selector below, but it's slower:
 }
 
 #owl-demo .item{
-        /*background: #42bdc2;
-        padding: 30px 0px;
-        margin: 5px;*/
-        /*color: #FFF;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 3px;
-        text-align: center;*/
-    }
+    /*background: #42bdc2;
+    padding: 30px 0px;
+    margin: 5px;*/
+    /*color: #FFF;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;*/
+}
 #owl-demo .item img{
   display: block;
   width: 100%;
@@ -5962,12 +5993,12 @@ you can use the generic selector below, but it's slower:
 
 }
 .text-center .browse {
-	    border: solid blue;
-        background: white;
-        margin-bottom: 50px;
-        color: #0000FF;
-        font-weight: bolder;
-    	font-size: x-large;
+    border: solid blue;
+    background: white;
+    margin-bottom: 50px;
+    color: #0000FF;
+    font-weight: bolder;
+	font-size: x-large;
 }
 .scroll-menu .account{
 	color:blue;
@@ -5975,10 +6006,6 @@ you can use the generic selector below, but it's slower:
 }
 
 @media screen and (min-width: 320px) {
-	.aboutus {
-	    margin: 0 15px;
-	    padding:0 20px;
-	}
 	.rectangle-list {
 		padding:0 20px;
 	}
@@ -6001,9 +6028,6 @@ you can use the generic selector below, but it's slower:
 }
 
 @media screen and (min-width: 480px) {
-	.aboutus {
-	    margin: 0 20px;
-	}
 	.rectangle-list {
 		padding:0 20px;
 	}
@@ -6025,9 +6049,6 @@ you can use the generic selector below, but it's slower:
 	}
 }
 @media screen and (min-width: 768px) {
-	.aboutus {
-	    margin: 0 30px;
-	}
 	.rectangle-list {
 		padding:0 30px;
 	}
@@ -6039,9 +6060,6 @@ you can use the generic selector below, but it's slower:
 	}
 }
 @media (min-width: 768px) and (orientation: landscape) {
-	.aboutus {
-	    margin: 0 30px;
-	}
 	.rectangle-list {
 		padding:0 30px;
 	}
@@ -6053,9 +6071,6 @@ you can use the generic selector below, but it's slower:
 	}
 }
 @media (min-width: 992px) {
-	.aboutus {
-    	margin: 0 40px;
-	}
 	.rectangle-list {
 		padding:0 40px;
 	}
