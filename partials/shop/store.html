@@ -1,0 +1,102 @@
+<div id="demo" ng-controller="AdminController_Music">
+
+  <div id="owl-demo" class="owl-carousel container" owlcarousel>
+    <div class="item">
+      <a href="#/home7"><img class="img-responsive img-customer" src="images/store/product/swatch.jpg"></a>
+    </div>
+    <div class="item">
+      <a href="#/home7"><img class="img-responsive img-customer" src="images/store/product/sunglasses.jpg"></a>
+    </div>
+    <div class="item">
+      <a href="#/home7"><img class="img-responsive img-customer" src="images/team/user1.jpg"></a>
+    </div>
+    <div class="item">
+      <a href="#/home7"><img class="img-responsive img-customer" src="images/team/user2.jpg"></a>
+    </div>
+    <div class="item">
+      <a href="#/home7"><img class="img-responsive img-customer" src="images/team/user3.jpg"></a>
+    </div> 
+  </div>
+  <div class="container search-div" ng-controller="AdminController_Music">
+    <div class="row">
+      <div class="row">
+        <!--<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+
+        </div> -->
+        <div class="col-lg-4 col-md-10 col-sm-10 col-xs-10 col-xs-offset-1">
+          <form class="search">
+            <input type="text" ng-model="query" ng-change="search('name')" class="search-query" placeholder="Search" style="padding-left: 60px;">
+            <span class="glyphicon glyphicon-search manual-glyphicon"></span>
+          </form>
+        </div>
+        <div class="col-lg-3 col-lg-offset-0 col-md-5 col-sm-5 col-xs-10 col-xs-offset-1">
+          <form class="search search-category-bar">
+          <!-- <input type="text"  name="search" placeholder="Select Category" style="background: none;"> -->
+            <select ng-model="category" ng-options="t.label for t in categories" class="select-list">
+              <option value="" disabled selected>Select category</option>
+            </select>
+          </form>
+        </div>
+        <div class="col-lg-3 col-md-5 col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+          <form class="search search-category-bar">
+            <input type="text" name="location" placeholder="Location" style="background: none;">
+          </form>
+        </div>       
+        <!--<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+
+        </div> -->
+      </div>
+      <div class="col-lg-12 text-center shop-title-store">
+        <h1 class="section-title">EVENT'S NEAR YOU</h1>
+      </div>
+      <!--List Product-->
+      <div id="cbp-vm" class="col-md-12 col-sm-12 col-xs-12 shop-prod active">
+        <ul id="product" class="nav-pills nav-stacked rectangle-list">
+          <a href="#/home7">
+            <li class="col-lg-3 col-md-4 col-sm-4 col-xs-12" ng-repeat="product in pagedItems[currentPage]">
+              <div class="shop-img  services-box-black">
+                <div class="store-img-div">
+                  <img ng-src="images/store/{{product.src}}" alt="{{product.name}}" class="box-image img-responsive" />
+                  <span class="performance">
+                    <span>June<br>5</span>
+                  </span>
+                </div>
+                <div class="store-content-div">
+                  <p class="content">{{product.content}}</p>
+                  <p class="stadium">{{product.stadium}}</p>
+                  <p class="location">{{product.location}}</p>
+                </div>
+                <!-- <a class="btn btn-block buy-button" href="#/products/{{product.code}}"> -->
+                <a class="btn btn-block trans-buy-button" href="#/event">
+                BUY NOW</a>                      
+              </div>
+            </li>
+          </a>
+        </ul>  
+      </div>
+    </div>
+    <div class=" text-center">
+      <a href="#" class="btn btn-default btn-lg browse">
+      BROWSE MORE</a>
+    </div> 
+  </div>
+  <!-- /.container -->
+</div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function () {
+    jQuery('.skillbar').each(function () {
+      jQuery(this).find('.skillbar-bar').animate({
+        width: jQuery(this).attr('data-percent')
+      }, 1400);
+    });
+  });
+</script>
+
+<!-- Filter Images-->
+<script type="text/javascript">
+  $('.filter li').on('click', function () {
+    $('li').removeClass('active');
+    $(this).addClass('active');
+  });
+</script>

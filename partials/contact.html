@@ -1,0 +1,147 @@
+<!-- Page Content -->
+
+
+
+<!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
+<iframe class="mapgoogle" width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+        src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+
+ <div class="breadcrumb-color breadcrumb-contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li class="active">Contact</li>
+                </ol>
+            </div>
+        </div>
+      </div>
+</div>
+<div class="container">
+    <div class="row last-inf-dt">
+
+        <div class="col-sm-8">
+            <h4 class="contact-title">Let's Get In Touch!</h4>
+            
+            <p class="contact-sub-txt">Lid est laborum dolo rumes fugats untras. <br />Etharums ser quidem rerum facilis dolores nemis omnis fugats sadips amets.</p>
+
+            <form id="contact-form" role="form" method="POST" action="#">
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label for="input1">Name *</label>
+                        <input type="text" name="contact_name" placeholder="e.g. Jhon Smith" class="form-control" id="name">
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label for="input1">Company Name</label>
+                        <input type="text" name="contact_name" placeholder="e.g. Angu Studio" class="form-control" id="input5">
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group col-lg-6">
+                        <label for="input2">Email Address *</label>
+                        <input type="email" name="contact_email" placeholder="e.g. mail@example.com" class="form-control" id="email">
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label for="input3">Phone Number</label>
+                        <input type="phone" name="contact_phone" placeholder="+004 123 23 456" class="form-control" id="input3">
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group col-lg-12">
+                        <label for="input4">Message</label>
+                        <textarea name="contact_message" class="form-control" rows="6" id="message"></textarea>
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <input type="hidden" name="save" value="contact">
+                        <button type="submit" class="btn btn-primary bt-contact-submit">Submit</button>
+                        <p class="success">Your message has been sent successfully.</p>
+                        
+                        <p class="error">E-mail must be valid or message must be longer than 20 characters.</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-sm-4 contact-details">
+            <h4 class="contact-title">Modern Business</h4>
+            
+            <p>
+                5555 44th Street N.<br>
+                Bootstrapville, CA 32323<br>
+            </p>
+
+            <p><i class="fa fa-phone"></i> <abbr title="Phone">P</abbr>: (555) 984-3600</p>
+
+            <p><i class="fa fa-envelope-o"></i> <abbr title="Email">E</abbr>: <a
+                    href="mailto:feedback@angula.com">feedback@angula.com</a></p>
+
+            <p><i class="fa fa-clock-o"></i> <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM</p>
+            <ul class="list-unstyled list-inline list-social-icons">
+                <li class="tooltip-social facebook-link">
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook">
+                        <i class="fa fa-facebook"></i>
+                     </a>
+                </li>
+                <li class="tooltip-social linkedin-link">
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="LinkedIn">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="tooltip-social twitter-link">
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter">
+                             <i class="fa fa-twitter"></i>
+                     </a>
+                </li>
+                <li class="tooltip-social google-plus-link">
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="Google+">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+</div><!-- /.container -->
+
+<script type="text/javascript">
+    /********************************************
+    EMAIL CONTROL
+    ********************************************/
+
+    $(function () {
+        "use strict";
+        $('#contact-form').submit(function (e) {
+            e.preventDefault();
+            var form = $(this);
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var text = $("#message").val();
+            var dataString = 'name=' + name + '&email=' + email + '&message=' + text;
+
+            function isValidEmail(emailAddress) {
+                var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
+                return pattern.test(emailAddress);
+            };
+            
+             if (isValidEmail(email) && (text.length > 20) && (name.length > 1)) {
+                $.ajax({
+                    type: 'POST',
+                    url: "contact_form/contact_process.php",
+                    data: dataString,
+                    success: function () {
+                        $('.success').fadeIn(1000);
+                        $("#name").val("");
+                        $("#email").val("");
+                        $("#message").val("");
+                    }
+                });
+            } else {
+                $('.error').fadeIn(1000);
+            }
+
+        });
+    });
+</script>

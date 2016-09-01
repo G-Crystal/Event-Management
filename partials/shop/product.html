@@ -1,0 +1,123 @@
+﻿
+
+<div class="shop-banner-details">
+    <div class="container">
+      <div class="col-lg-12">
+       <h1 class="product-topsub-title">BIG SALE - THIS WEEK ONLY</h1>
+       <h1 class="product-top-title">Product<span class="color-txt"> Details</span></h1>
+      </div>
+    </div> 
+</div>
+<div class="breadcrumb-color meet-team">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="#/">Home</a>
+                    </li>
+                    <li>
+                        <a href="#/shop">Shop</a>
+                    </li>
+                    <li class="active">Product details</li>
+                </ol>
+            </div>
+        </div>
+      </div>
+</div>
+<div id="product_sound" class="container">
+      <div class="row">
+        <div id="single-prod-top" class="prod-top-img col-md-12">
+         <div class="col-md-4 pp-cont-det">
+              <div class="details-single-img">
+                <img ng-src="images/store/{{product.src}}" alt="{{product.name}}"/>
+              </div>
+              <span class="number-prodsingle-cart" ng-show="cart.getTotalCount(product.code) > 0">N&#176; {{cart.getTotalCount(product.code)}}</span>
+              <span class="onsale-prod" ng-show='product.discount != null'>
+                    <span>{{product.discount}}</span>
+                </span>
+          </div>
+          <div class="col-md-8 det-info-prod">
+             <div class="single-prod-info">
+                 <div class="det-sound">
+                     <span class="product-name-title">{{product.name}}</span>
+                     <a class="subtitle" href=""> ( {{product.category}} )  </a>
+                </div>
+                <p class="shop-price"> {{product.price | currency : "$"}} </p>
+             </div>
+             <div class="single-prod-description">
+               {{product.description}}
+             </div>
+             <div class="details-material">
+              <ul>
+                <li><i class="fa fa-check"></i>{{detail.material}}</li>
+                <li><i class="fa fa-check"></i>{{detail.power}}</li>
+                <li><i class="fa fa-check"></i>{{detail.size}}</li>
+                <li><i class="fa fa-check"></i>{{detail.weight}}</li>
+              </ul>
+             </div>
+             <div class="single-prod-button">
+                 <button 
+                    class="btn btn-lg btn-primary" 
+                    ng-click="cart.addItem(product.code, product.name, product.src, product.price, 1)">
+                    <i class="icon-shopping-cart icon-white" /> Add to cart
+                </button>
+                <button 
+                    class="btn btn-lg btn-primary" 
+                    ng-click="cart.addItem(product.code, product.name, product.src, product.price, -10000)"
+                    ng-disabled="cart.getTotalCount(product.code) < 1">
+                    <i class="icon-trash icon-white" /> Remove from cart
+                </button>
+                <button 
+                    class="btn btn-lg btn-primary bt-back" 
+                    onclick="window.location.href='#/shop'">
+                    <i class="icon-chevron-left" /> back to store
+                </button>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<div class="container">
+    <div class="row content-chose-dress">
+            <div class="col-md-12">
+                <h3>Chose for you</h3>
+                <div carouselprod id="owl-demo" class="owl-carousel">
+                    <div class="item">
+                        <img src="images/store/product/1.jpg" alt="" /> 
+                        <p>Sound PR</p>
+                        <a class="subtitle" href="">Speakers</a>
+                    </div>
+                    <div class="item">
+                        <img src="images/store/product/2.jpg" alt="" />
+                        <p>Rhon Doe</p>
+                        <a class="subtitle" href="">Blouses</a>
+                    </div>
+                    <div class="item">
+                        <img src="images/store/product/3.jpg" alt="" />
+                        <p>Serper Tos</p>
+                        <a class="subtitle" href="">Sweatshirt</a>
+                    </div>
+                    <div class="item">
+                        <img src="images/store/product/4.jpg" alt="" />
+                        <p>Peter Rol</p>
+                        <a class="subtitle" href="">Station</a>
+                    </div>
+                    <div class="item">
+                        <img src="images/store/product/5.jpg" alt="" />
+                        <p>Rigow</p>
+                        <a class="subtitle" href="">Watches</a>
+                    </div>
+                    <div class="item">
+                        <img src="images/store/product/6.jpg" alt="" />
+                        <p>Serper Tos</p>
+                        <a class="subtitle" href="">Phone</a>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>
+
+

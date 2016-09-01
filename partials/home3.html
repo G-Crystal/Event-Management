@@ -1,0 +1,374 @@
+﻿
+<!-- Slider -->
+<div class="container-slide">
+   
+</div>
+<div class="top-well">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8">
+                <h3>Want you need or find out more?</h3>
+                <p class="home2-sub-txt">For more templates and more page options that you can integrate into this website template, visit Start Bootstrap!</p>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <a class="btn btn-lg btn-primary pull-right" href="#">See More Templates!</a>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+</div>
+<div class="section wave">
+    <div class="container">
+        <div class="row banner-info">
+            <div class="col-lg-12 col-md-12"><h2>WHAT WE OFFER</h2></div>
+            <div class="col-lg-12 col-md-12 home3-percentage">
+				<div class="col-lg-3 col-md-3">
+					<div class="fact-icon"><span class="icon-layers"></span></div>
+						<h3 class="light uppercase">Parallax Sections</h3>
+                        <p>Parallax sections which will really attract the users attention.</p>
+				</div><!-- End Factor -->
+				<div class="col-lg-3 col-md-3">
+					<div class="fact-icon fact-icon-color2"><span class=" icon-tools-2"></span></div>
+						<h3 class="light uppercase">Quality Support</h3>
+                        <p>Parallax sections which will really attract the users attention.</p>
+				</div><!-- End Factor -->
+				<div class="col-lg-3 col-md-3">
+					<div class="fact-icon fact-icon-color3"><span class="icon-mobile"></span></div>
+						<h3 class="light uppercase">Responsive Layout</h3>
+                        <p>Parallax sections which will really attract the users attention.</p>
+				</div><!-- End Factor -->
+				<div class="col-lg-3 col-md-3">
+					<div class="fact-icon fact-icon-color4"><span class=" icon-linegraph"></span></div>
+						<h3 class="light uppercase">Modern Scripts</h3>
+                        <p>Parallax sections which will really attract the users attention.</p>
+				</div><!-- End Factor -->
+				<div class="clear"></div>
+			</div>
+
+        </div>
+
+        <!-- /.row -->
+        
+    </div>
+    <!-- /.container -->
+
+</div>
+<!-- /.section -->
+
+<div class="home3-city-bg">
+    <div class="home3-effect-cover"></div>
+      <div class="home3-well">
+        <div class="container">
+            <div class="row row-footer">
+                <div class="col-lg-8 col-md-8">
+                    <p class="home3-advert">For more templates and more page options that you can integrate into this website template, visit Start Bootstrap!</p>
+                    <img class="" src="http://placehold.it/935x744" alt="">
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="bt-serv"><a class="btn btn-lg btn-primary pull-right" href="#">See More Templates!</a></div>
+                    <div class="txt-circle-content first-ic">
+                        <div class="fact-icon"><span class="icon-lightbulb"></span></div>
+                        <div class="txt-circle"><h3>Multi-Purpose Layout</h3>
+                            <p>Quisque tellus risus, adipiscing in viverra et, bibendum eu urna.  </p>
+                        </div>
+                    </div>
+                    <div class="txt-circle-content">
+                        <div class="fact-icon"><span class=" icon-desktop"></span></div>
+                        <div class="txt-circle"><h3>Multi-Purpose Layout</h3>
+                            <p>Quisque tellus risus, adipiscing in viverra et, bibendum eu urna.  </p>
+                        </div>
+                    </div>
+                    <div class="txt-circle-content">
+                        <div class="fact-icon"><span class=" icon-gears"></span></div>
+                        <div class="txt-circle"><h3>Multi-Purpose Layout</h3>
+                            <p>Quisque tellus risus, adipiscing in viverra et, bibendum eu urna.  </p>
+                        </div>
+                    </div>
+                    <div class="txt-circle-content">
+                        <div class="fact-icon"><span class=" icon-linegraph"></span></div>
+                        <div class="txt-circle"><h3>Multi-Purpose Layout</h3>
+                            <p>Quisque tellus risus, adipiscing in viverra et, bibendum eu urna. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </div>
+</div>
+<!-- /.section-colored -->
+
+<div class="section">
+
+    <div class="container">
+
+        <div class="row img-shadow effect-5" >
+            <div class="col-lg-12 text-center">
+                <h1 class="section-title">Recent <span>Work</span></h1>
+                <p class="sub-title">Excepteur sint occaecat cupidatat non proident sunt<br>in culpa officia deserunt</p>
+            </div>
+                <div class="group filter-button-top">
+			            <ul class="filter group albumFilter"> 
+				            <li ng-click="myFilter = null" class="active">ALL</li> 
+				            <li ng-click="myFilter = {category: 'mac'}" >CREATIVE</li> 
+				            <li ng-click="myFilter = {category: 'ipad'}" >BUSINESS</li> 
+				            <li ng-click="myFilter = {category: 'phone'}" >LIFE STYLE</li> 
+				            <li ng-click="myFilter = {category: 'sound'}" >NATURE</li> 
+			            </ul> 
+	            </div>
+                
+                <div id="cbp-vm" class="activegrid">
+                        <ul id="product" class="nav-pills nav-stacked rectangle-list" ng-controller="dataImagesWork">
+                            <li class="col-md-4 my-gallery-animation-home3" ng-repeat="product in images_work | filter:myFilter" >
+                                <img ng-src="images/{{product.src}}" alt="{{product.name}}" /><br />
+
+                                <a class="title" href=""> {{product.name}}  </a>
+
+                                <p class="description"> {{product.description}} </p>
+
+                                <a class="btn btn-lg btn-primary" href="">Details</a>
+                                
+                                <div class="clear"></div>
+                          </li> 
+                      </ul>
+                      
+                </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+</div>
+<!-- /.section -->
+
+<div id="clients-home3" class="parallax-texture">
+    <div class="black-shadow"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 team">
+            <h1 class="section-title">Our <span>Team</span></h1>
+                <p class="sub-title">Excepteur sint occaecat cupidatat non proident sunt<br>in culpa officia deserunt</p>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                  <div class="team-img view view-second">
+	               <img src="http://placehold.it/300x291" alt="" />                   
+                    <div class="content">
+                        <p>A wonderful serenity has taken possession of my entire soul.</p>
+                        <ul class="list-unstyled list-inline list-social-icons">
+                            <li class="tooltip-social facebook-link">
+                                <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook">
+                                    <i class="fa fa-facebook"></i>
+                                 </a>
+                            </li>
+                            <li class="tooltip-social twitter-link">
+                                <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter">
+                                         <i class="fa fa-twitter"></i>
+                                 </a>
+                            </li>
+                        </ul>
+                    </div>
+                  </div>
+                  <p>Mike Cross</p>
+                </div> 
+
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                  <div class="team-img view view-second">
+	               <img src="http://placehold.it/300x291" alt="" />
+                    <div class="content">
+                        <p>A wonderful serenity has taken possession of my entire soul.</p>
+                        <ul class="list-unstyled list-inline list-social-icons">
+                            <li class="tooltip-social facebook-link">
+                                <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook">
+                                    <i class="fa fa-facebook"></i>
+                                 </a>
+                            </li>
+                            <li class="tooltip-social twitter-link">
+                                <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter">
+                                         <i class="fa fa-twitter"></i>
+                                 </a>
+                            </li>
+                        </ul>
+                    </div>
+                  </div>
+                  <p>Mike Cross</p>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                  <div class="team-img view view-second">
+	               <img src="http://placehold.it/300x291" alt="" />
+                    <div class="content">
+                        <p>A wonderful serenity has taken possession of my entire soul.</p>
+                        <ul class="list-unstyled list-inline list-social-icons">
+                            <li class="tooltip-social facebook-link">
+                                <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook">
+                                    <i class="fa fa-facebook"></i>
+                                 </a>
+                            </li>
+                            <li class="tooltip-social twitter-link">
+                                <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter">
+                                         <i class="fa fa-twitter"></i>
+                                 </a>
+                            </li>
+                        </ul>
+                    </div>
+                  </div>
+                  <p>Mike Cross</p>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                  <div class="team-img view view-second">
+	               <img src="http://placehold.it/300x291" alt="" />
+                    <div class="content">
+                        <p>A wonderful serenity has taken possession of my entire soul.</p>
+                        <ul class="list-unstyled list-inline list-social-icons">
+                            <li class="tooltip-social facebook-link">
+                                <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook">
+                                    <i class="fa fa-facebook"></i>
+                                 </a>
+                            </li>
+                            <li class="tooltip-social twitter-link">
+                                <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter">
+                                         <i class="fa fa-twitter"></i>
+                                 </a>
+                            </li>
+                        </ul>
+                    </div>
+                  </div>
+                  <p>Mike Cross</p>
+                </div>
+            </div>
+          </div>
+     </div>
+</div>
+
+<div class="section-images">
+   
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <img src="http://placehold.it/580x360" alt="" />
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <h2>Amazing & Powerfull Design</h2>
+                <p>
+                Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo facilis 
+                est et expedita distinctio minus id quod maxime placeat facere possimus, omnis voluptas assumenda est.
+                </p>
+                <p class="personal-phrase"><i class="fa fa-quote-left"></i>
+                  Harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque<i class="fa fa-quote-right"></i>
+                </p>
+               <p>
+                Harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo facilis 
+                est et expedit.</p>
+            </div>
+            </div>
+            <div class="row second-boxfriends">
+            <div class="col-lg-6 col-md-6">
+                <h2>Amazing & Powerfull Design</h2>
+                <p>
+                Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo facilis 
+                est et expedita distinctio minus id quod maxime placeat facere possimus, omnis voluptas assumenda est.
+                </p>
+                <p class="personal-phrase"><i class="fa fa-quote-left"></i>
+                  Harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque<i class="fa fa-quote-right"></i>
+                </p>
+               <p>
+                Harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo facilis 
+                est et expedita.</p>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <img src="http://placehold.it/580x360" alt="" />
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+   
+</div>
+
+<!-- /.section -->
+
+<div class="home3-bt-footer-bg">   
+      <div class="well">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="col-md-4 testimonial-title-right">
+                    <h1 class="section-title">Angula</h1>
+                    <h1 class="section-title">PARALLAX</h1>
+                    <p class="sub-title">Excepteur sint occaecat cupidatat non proident sunt officia deserunt</p>
+                  </div>
+                    <div id="testimonials" class="col-md-8">
+                        <div owlcarousel id="owl-demo" class="owl-carousel">
+                        <div class="item">
+                                <div class="testimon-desc">
+                                    <p>Fusce risus metus, placerat in <span>consectetur</span> eu, porttitor a est sed sed dolor lorem cras adipiscing</p>
+                                    <p>A small <span>creative</span> team, trying to enrich the lives of others</p>
+                                    <p class="nm-name">- Brian Rood</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                                <div class="testimon-desc">
+                                    <p>Fusce risus metus, placerat in <span>consectetur</span> eu, porttitor a est sed sed dolor lorem cras adipiscing</p>
+                                    <p>A small <span>creative</span> team, trying to enrich the lives of others</p>
+                                    <p class="nm-name">- Miki Rood</p>
+                                </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimon-desc">
+                                <p>Fusce risus metus, placerat in <span>consectetur</span> eu, porttitor a est sed sed dolor lorem cras adipiscing</p>
+                                    <p>A small <span>creative</span> team, trying to enrich the lives of others</p>
+                                    <p class="nm-name">- Robert Rood</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                 
+            </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </div>
+</div>
+
+
+<script>
+    jQuery(document).ready(function () {
+        jQuery('.skillbar').each(function () {
+            jQuery(this).find('.skillbar-bar').animate({
+                width: jQuery(this).attr('data-percent')
+            }, 6000);
+        });
+    });
+</script>
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+
+
+
+<!-- Script  SlideShow -->
+<script type="text/javascript">
+    new BoxesFx(document.getElementById('boxgallery3'));
+</script>
+
+<!-- Filter Images-->
+<script type="text/javascript">    
+$('.filter li').on('click', function () {
+        $('li').removeClass('active');
+        $(this).addClass('active');
+    });
+</script>
+
+
+
