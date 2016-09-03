@@ -4,26 +4,6 @@
 /*** MENU ***/
 /*** SLIDER ***/
 /*** HOME ***/
-.search-div {
-	margin-top: 25px;
-}
-.select-list {
-    border: 1px solid blue;
-    border-radius: 4px;
-    height: 46px;
-    width: 100%;
-    padding: 0 20px;
-    font-size: 21px;
-}
-.manual-glyphicon {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	left: 30px;
-}
-form.ng-valid {
-	margin: 5px 0;
-}
 
 /*** Animation monitor ***/
 /*** Percentage ***/
@@ -57,8 +37,50 @@ form.ng-valid {
 /*** Footer-4 ***/ 
 /*** PAGE 404 NOT FOUND ***/ 
 
-/* Global Styles */
+/* Font Styles */
+@font-face {
+    font-family: 'montserrat';
+	src:url('fonts/Montserrat-Regular.otf');
+	font-weight: 300;
+}
 
+@font-face {
+    font-family: 'montserrat';
+	src:url('fonts/Montserrat-UltraLight.otf');
+	font-weight: 100;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('fonts/Montserrat-Light.otf');
+	font-weight: 200;
+}
+
+@font-face {
+    font-family: 'montserrat';
+	src:url('fonts/Montserrat-Regular.otf');
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'montserrat';
+	src:url('fonts/Montserrat-SemiBold.otf');
+	font-weight: 500;
+}
+
+@font-face {
+    font-family: 'montserrat';
+	src:url('fonts/Montserrat-Bold.otf');
+	font-weight: 600;
+}
+
+@font-face {
+    font-family: 'montserrat';
+	src:url('fonts/Montserrat-ExtraBold.otf');
+	font-weight: 900;
+}
+
+/* Global Styles */
 html, body {
     height: 100%;
 }
@@ -68,7 +90,8 @@ html * {
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    font-family: 'Open sans',sans-serif;
+    /*font-family: 'Open sans',sans-serif;*/
+	font-family: "montserrat";
 	font-weight: 400;
 	font-size: 13px;
 	line-height:22px;
@@ -76,7 +99,7 @@ body {
 	letter-spacing: 0.04em;
 }
 h1 {
-	font-family: 'Open sans', sans-serif;
+	/*font-family: 'Open sans', sans-serif;*/
 	font-weight: 700;
 	font-size: 26px;
 	line-height:20px;
@@ -84,7 +107,7 @@ h1 {
 	margin-bottom: 20px;
 }
 h2 {
-	font-family: 'Open sans', sans-serif;
+	/*font-family: 'Open sans', sans-serif;*/
     font-weight: 400;
     margin-bottom: 20px;
     font-size: 20px;
@@ -101,14 +124,14 @@ img {
 	max-width: 100%;
 }
 h3 {
-	font-family: 'Open sans', sans-serif;
+	/*font-family: 'Open sans', sans-serif;*/
 	font-weight: 400;
 }
 h3, .h3 {
     font-size: 20px;
 }
 h4 {
-	font-family: 'Open sans', sans-serif;
+	/*font-family: 'Open sans', sans-serif;*/
 	font-weight: 700;
 }
 .btn {
@@ -236,7 +259,7 @@ ul.scroll-menu {
 	color:#0bb7b7;
 }
 a {
-	color:#0bb7b7;
+	color:#0000FF;
 }
 a:hover, a:focus {
     color: #0bb7b7;
@@ -969,7 +992,7 @@ a.close-overlay.hidden {
 }
 
 .slide-txt {
-	font-family: 'Open sans',sans-serif;
+	/*font-family: 'Open sans',sans-serif;*/
 	font-weight: 700;
 	font-size: 130px;
 	color: #ccc;
@@ -1144,7 +1167,7 @@ ul.clients li img{
     text-decoration: none;
     background-color: #212121;
     border-radius: 3px;
-    font-family: 'Open sans', sans-serif;
+    /*font-family: 'Open sans', sans-serif;*/
 	font-weight: 300;
 	font-size: 14px;
 }
@@ -1583,7 +1606,7 @@ figure.effect-hera:hover p i:empty {
 }
 md-tooltip{
     font-size: 13px;
-    font-family: 'Open sans', sans-serif;
+    /*font-family: 'Open sans', sans-serif;*/
 	font-weight: 300; 
 	letter-spacing:1px;
 	border-radius: 2px;
@@ -1755,7 +1778,7 @@ md-tooltip.md-show {
 }
 .about-top-title {
 	text-align: center;
-	font-family: 'Open sans',sans-serif;
+	/*font-family: 'Open sans',sans-serif;*/
     font-weight: 400;
     font-size: 32px;
     text-transform: uppercase;
@@ -3871,7 +3894,6 @@ a.google:hover {
     padding-top: 3px;
 }
 .home-box-black .p-spec{
-	color: #0000FF;
     margin-top: 0px;
 }
 .home-box-black .p-name{
@@ -3885,9 +3907,8 @@ a.google:hover {
 .p-center {
 	text-align: center;
 }
-.p-center-blue {
-	text-align: center;
-	color: blue;
+.p-blue {
+	color: #0000FF;
 }
 .trans-buy-button {
 	line-height: 25px;
@@ -3916,12 +3937,58 @@ a.google:hover {
 .home-content-div {
 	position: relative;
 }
+.round-button {
+	border-radius: 20px;
+}
+.search-div {
+	margin-top: 25px;
+}
+.select-list {
+    border: 1px solid blue;
+    border-radius: 4px;
+    height: 46px;
+    width: 100%;
+    padding: 0 20px;
+    font-size: 21px;
+}
+.manual-glyphicon {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 30px;
+}
+form.ng-valid {
+	margin: 5px 0;
+}
+.aboutus {
+    padding:0 20px;
+}
+.social-link-div {
 
+}
+.large-btn-div {
+	margin: 30px 10px;
+}
+.large-btn {
+	font-size: 20px;
+	padding: 20px 40px;
+}
 /********************************************************************************************
-    PAGE HOME 6                                                                                                 
+    PAGE VENUE PROFILE                                                                                                 
 *********************************************************************************************/
 .home6-back-img {
 	background-image: url(../images/partial/home6.jpg);
+    background-repeat: repeat !important;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+/********************************************************************************************
+    PAGE TALENT PROFILE                                                                                                 
+*********************************************************************************************/
+.home8-back-img {
+	background-image: url(../images/partial/home8.jpg);
     background-repeat: repeat !important;
     width: 100%;
     height: 100%;
@@ -3938,6 +4005,24 @@ a.google:hover {
     height: 100%;
     position: absolute;
 }
+.button-div {
+	margin: 20px 0;
+}
+.top-down-border {
+	border-top: 1px solid #C8C8C8;
+	border-bottom: 1px solid #C8C8C8;
+}
+.description-title-div {
+	margin: 50px 10px 30px;
+}
+.description-content-div {
+	margin: 10px 40px;
+}
+@media screen and (max-width: 768px) {
+	.p-resp-xs {
+		text-align: center;
+	}
+}
 
 /********************************************************************************************
     PAGE ABOUT 2                                                                                                 
@@ -3945,7 +4030,7 @@ a.google:hover {
 .about2-top-title .color-txt{
 	color: #0bb7b7;
 	text-align: center;
-    font-family: 'Open sans',sans-serif;
+    /*font-family: 'Open sans',sans-serif;*/
     font-weight: 700;
     font-size: 38px;
     text-transform: uppercase;
@@ -4013,7 +4098,7 @@ a.google:hover {
 }
 .about3-top-title {
     text-align: center;
-    font-family: 'Open sans',sans-serif;
+    /*font-family: 'Open sans',sans-serif;*/
     font-weight: 300;
     font-size: 38px;
     text-transform: uppercase;
@@ -4099,7 +4184,7 @@ a.google:hover {
 }
 .about4-top-title {
     text-align: center;
-    font-family: 'Open sans',sans-serif;
+    /*font-family: 'Open sans',sans-serif;*/
     font-weight: 300;
     font-size: 38px;
     text-transform: none;
@@ -4120,7 +4205,7 @@ a.google:hover {
 
 .about4-top-subtitle {
     text-align: center;
-    font-family: 'Open sans',sans-serif;
+    /*font-family: 'Open sans',sans-serif;*/
     font-weight: 700;
     font-size: 78px;
     text-transform: uppercase;
@@ -4307,7 +4392,7 @@ a.google:hover {
 }*/
 .shopping-top-title {
     text-align: center;
-    font-family: 'Open sans',sans-serif;
+    /*font-family: 'Open sans',sans-serif;*/
     font-weight: 700;
     font-size: 78px;
     text-transform: uppercase;
@@ -4316,7 +4401,7 @@ a.google:hover {
 }
 .shopping-topsub-title {
     text-align: center;
-    font-family: 'Open sans',sans-serif;
+    /*font-family: 'Open sans',sans-serif;*/
     font-weight: 300;
     font-size: 40px;
     text-transform: uppercase;
@@ -4326,7 +4411,7 @@ a.google:hover {
 
 .shop-title-store {
 	margin-top: 30px;
-	padding-bottom: 30px;
+	margin-bottom: 30px;
 }
 
 .shop-top-img {
@@ -4989,7 +5074,7 @@ figure.effect-layla:hover img {
 }
 .product-top-title {
 	text-align: left;
-    font-family: 'Open sans',sans-serif;
+    /*font-family: 'Open sans',sans-serif;*/
     font-weight: 700;
     font-size: 48px;
     text-transform: uppercase;
@@ -4998,7 +5083,7 @@ figure.effect-layla:hover img {
 }
 .product-topsub-title {
     text-align: left;
-    font-family: 'Open sans',sans-serif;
+    /*font-family: 'Open sans',sans-serif;*/
     font-weight: 300;
     font-size: 30px;
     text-transform: uppercase;
@@ -5393,7 +5478,7 @@ ul.footer-menu li a{
     margin-right: 7px;
     color: #0dc1c1;
     content: "\f105";
-    font-family: FontAwesome;
+    /*font-family: FontAwesome;*/
 }
 
 /******* footer tags *******/
@@ -5535,7 +5620,7 @@ footer .tags4 a:hover {
 	font-size: 220px;
     text-align: center;
     font-weight: 700;
-    font-family: Open sans;
+    /*font-family: Open sans;*/
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
@@ -5557,7 +5642,7 @@ footer .tags4 a:hover {
 
 
 @font-face {
-	font-family: 'et-line';
+	/*font-family: 'et-line';*/
 	src:url('fonts/et-line.eot');
 	src:url('fonts/et-line.eot?#iefix') format('embedded-opentype'),
 		url('fonts/et-line.woff') format('woff'),
@@ -5569,7 +5654,7 @@ footer .tags4 a:hover {
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 [data-icon]:before {
-	font-family: 'et-line';
+	/*font-family: 'et-line';*/
 	content: attr(data-icon);
 	speak: none;
 	font-weight: normal;
@@ -5588,7 +5673,7 @@ you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
 .icon-mobile, .icon-laptop, .icon-desktop, .icon-tablet, .icon-phone, .icon-document, .icon-documents, .icon-search, .icon-clipboard, .icon-newspaper, .icon-notebook, .icon-book-open, .icon-browser, .icon-calendar, .icon-presentation, .icon-picture, .icon-pictures, .icon-video, .icon-camera, .icon-printer, .icon-toolbox, .icon-briefcase, .icon-wallet, .icon-gift, .icon-bargraph, .icon-grid, .icon-expand, .icon-focus, .icon-edit, .icon-adjustments, .icon-ribbon, .icon-hourglass, .icon-lock, .icon-megaphone, .icon-shield, .icon-trophy, .icon-flag, .icon-map, .icon-puzzle, .icon-basket, .icon-envelope, .icon-streetsign, .icon-telescope, .icon-gears, .icon-key, .icon-paperclip, .icon-attachment, .icon-pricetags, .icon-lightbulb, .icon-layers, .icon-pencil, .icon-tools, .icon-tools-2, .icon-scissors, .icon-paintbrush, .icon-magnifying-glass, .icon-circle-compass, .icon-linegraph, .icon-mic, .icon-strategy, .icon-beaker, .icon-caution, .icon-recycle, .icon-anchor, .icon-profile-male, .icon-profile-female, .icon-bike, .icon-wine, .icon-hotairballoon, .icon-globe, .icon-genius, .icon-map-pin, .icon-dial, .icon-chat, .icon-heart, .icon-cloud, .icon-upload, .icon-download, .icon-target, .icon-hazardous, .icon-piechart, .icon-speedometer, .icon-global, .icon-compass, .icon-lifesaver, .icon-clock, .icon-aperture, .icon-quote, .icon-scope, .icon-alarmclock, .icon-refresh, .icon-happy, .icon-sad, .icon-facebook, .icon-twitter, .icon-googleplus, .icon-rss, .icon-tumblr, .icon-linkedin, .icon-dribbble {
-	font-family: 'et-line';
+	/*font-family: 'et-line';*/
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -5946,15 +6031,15 @@ you can use the generic selector below, but it's slower:
 }
 
 #owl-demo .item{
-        /*background: #42bdc2;
-        padding: 30px 0px;
-        margin: 5px;*/
-        /*color: #FFF;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 3px;
-        text-align: center;*/
-    }
+    /*background: #42bdc2;
+    padding: 30px 0px;
+    margin: 5px;*/
+    /*color: #FFF;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;*/
+}
 #owl-demo .item img{
   display: block;
   width: 100%;
@@ -5962,12 +6047,12 @@ you can use the generic selector below, but it's slower:
 
 }
 .text-center .browse {
-	    border: solid blue;
-        background: white;
-        margin-bottom: 50px;
-        color: #0000FF;
-        font-weight: bolder;
-    	font-size: x-large;
+    border: solid blue;
+    background: white;
+    margin-bottom: 50px;
+    color: #0000FF;
+    font-weight: bolder;
+	font-size: x-large;
 }
 .scroll-menu .account{
 	color:blue;
@@ -5975,10 +6060,6 @@ you can use the generic selector below, but it's slower:
 }
 
 @media screen and (min-width: 320px) {
-	.aboutus {
-	    margin: 0 15px;
-	    padding:0 20px;
-	}
 	.rectangle-list {
 		padding:0 20px;
 	}
@@ -6001,9 +6082,6 @@ you can use the generic selector below, but it's slower:
 }
 
 @media screen and (min-width: 480px) {
-	.aboutus {
-	    margin: 0 20px;
-	}
 	.rectangle-list {
 		padding:0 20px;
 	}
@@ -6025,9 +6103,6 @@ you can use the generic selector below, but it's slower:
 	}
 }
 @media screen and (min-width: 768px) {
-	.aboutus {
-	    margin: 0 30px;
-	}
 	.rectangle-list {
 		padding:0 30px;
 	}
@@ -6039,9 +6114,6 @@ you can use the generic selector below, but it's slower:
 	}
 }
 @media (min-width: 768px) and (orientation: landscape) {
-	.aboutus {
-	    margin: 0 30px;
-	}
 	.rectangle-list {
 		padding:0 30px;
 	}
@@ -6053,9 +6125,6 @@ you can use the generic selector below, but it's slower:
 	}
 }
 @media (min-width: 992px) {
-	.aboutus {
-    	margin: 0 40px;
-	}
 	.rectangle-list {
 		padding:0 40px;
 	}

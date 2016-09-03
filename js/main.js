@@ -13,14 +13,15 @@ var app = angular.module('angula', [
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
     // Home
-    .when("/", { templateUrl: "partials/shop/store.html", controller: "storeController_sound" })
+    .when("/", { templateUrl: "partials/home.html", controller: "storeController_sound" })
     .when("/event", { templateUrl: "partials/shop/event_details_page.html", controller: "PageCtrl" })
     .when("/home2", { templateUrl: "partials/home2.html", controller: "HomeCtrl" })
     .when("/home3", { templateUrl: "partials/home3.html", controller: "HomeCtrl" })
     .when("/home4", { templateUrl: "partials/home4.html", controller: "HomeCtrl" })
     .when("/home5", { templateUrl: "partials/home5.html", controller: "HomeCtrl" })
-    .when("/venue", { templateUrl: "partials/home6.html", controller: "HomeCtrl" })
-    .when("/home7", { templateUrl: "partials/home7.html", controller: "HomeCtrl" })
+    .when("/venue_profile", { templateUrl: "partials/venue_profile.html", controller: "HomeCtrl" })
+    .when("/event_details", { templateUrl: "partials/event_details.html", controller: "HomeCtrl" })
+    .when("/talent_profile", { templateUrl: "partials/talent_profile.html", controller: "HomeCtrl" })
 
     // About
     .when("/about", { templateUrl: "partials/about.html", controller: "PageCtrl" })

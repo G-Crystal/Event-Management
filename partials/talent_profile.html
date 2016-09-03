@@ -1,9 +1,9 @@
-<div id="demo" ng-controller="Home6Controller" class="home6">
+<div id="demo" ng-controller="Home6Controller" class="home8">
 
     <!--visible animated fadeInUp-->
   <div class="container">
     <div class="home-img-div">
-      <div class="home6-back-img "></div>
+      <div class="home8-back-img "></div>
         <div class="col-lg-12">
          <!-- <h1>Frequently <span class="color-txt">Asked</span> Questions</h1> -->
         </div>
@@ -16,9 +16,7 @@
         <div class="container">
           <div class="row aboutus">
             <div class="col-lg-10 col-md-10 col-sm-9 col-xs-9">
-              <h3>2621 Vine St.</h3>                   
-              <h3>Cincinnati, OH, USA</h3>                   
-              <h3>45014</h3>                   
+              
             </div>
             <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
               <a class="btn social-link facebook" href="#" target="_blank"></a>
@@ -38,24 +36,26 @@
         <ul id="event" class="nav-pills nav-stacked rectangle-list">
           <li class="col-xs-12" ng-repeat="event in pagedItems[currentPage]">
             <div class="shop-img home-box-black row">
-              <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 ">
-                <img ng-src="images/store/{{event.src}}" alt="{{event.name}}" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box-image img-responsive" />
-              </div>
-              <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
-                <p class="p-title">{{event.title}}</p>
-                <div class="home-content-div">
-                  <div class="profile-div">
-                    <p class="p-date">{{event.date}}</p>
-                    <p class="p-spec">{{event.spec}}</p>
-                    <p class="p-name">{{event.name}}</p>
-                  </div>  
-
-                  <div class="buy-btn-div">
-                    <a class="btn btn-block trans-buy-button inline-buy-button" href="#/event">BUY TICKETS</a>
-                  </div>   
-                  <div class="clearfix"></div>
+              <a href="#/event_details">
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 ">
+                  <img ng-src="images/store/{{event.src}}" alt="{{event.name}}" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box-image img-responsive" />
                 </div>
-              </div>
+                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                  <p class="p-title">{{event.title}}</p>
+                  <div class="home-content-div">
+                    <div class="profile-div">
+                      <p class="p-date">{{event.date}}</p>
+                      <p class="p-spec p-blue">{{event.spec}}</p>
+                      <p class="p-name">{{event.name}}</p>
+                    </div>  
+
+                    <div class="buy-btn-div">
+                      <a class="btn btn-block trans-buy-button inline-buy-button" href="#/event">BUY TICKETS</a>
+                    </div>   
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </a>
             </div>
           </li>
         </ul>
