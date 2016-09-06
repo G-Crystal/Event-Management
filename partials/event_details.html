@@ -1,11 +1,11 @@
 <div id="demo" ng-controller="Home6Controller" class="home7">
 
   <!--visible animated fadeInUp-->
-  <div class="container">
+  <div class="container-fluid header-image-div">
     <div class="home-img-div">
-      <div class="home7-back-img "></div>
+      <div class="home7-back-img "><span class="header-txt">LIFE OF PABLO TOUR</span></div>
         <div class="col-lg-12">
-         <!-- <h1>Frequently <span class="color-txt">Asked</span> Questions</h1> -->
+         <!-- <h1>Frequently <span class="color-txt">Asked</span> Questions</h1> -->          
         </div>
     </div>
   </div> 
@@ -59,19 +59,19 @@
         <h4>TALENTS</h4>
         <div class="row">
           <div class="col-xs-2">
-            <a href="#/venue_profile"><img src="images/store/event/3.png" /></a>
+            <a href="#/talent_profile"><img src="images/store/event/3.png" /></a>
           </div>
           <div class="col-xs-2">
-            <a href="#/venue_profile"><img src="images/store/event/3.png" /></a>
+            <a href="#/talent_profile"><img src="images/store/event/3.png" /></a>
           </div>
           <div class="col-xs-2">
-            <a href="#/venue_profile"><img src="images/store/event/3.png" /></a>
+            <a href="#/talent_profile"><img src="images/store/event/3.png" /></a>
           </div>
           <div class="col-xs-2">
-            <a href="#/venue_profile"><img src="images/store/event/3.png" /></a>
+            <a href="#/talent_profile"><img src="images/store/event/3.png" /></a>
           </div>
           <div class="col-xs-2">
-            <a href="#/venue_profile"><img src="images/store/event/3.png" /></a>
+            <a href="#/talent_profile"><img src="images/store/event/3.png" /></a>
           </div>
         </div>
         <div class="description-title-div">
@@ -100,7 +100,7 @@
       </div>
 
       <div class="col-lg-12 text-center shop-title-store">
-        <h1 class="section-title">UPCOMING EVENTS</h1>
+        <h1 class="section-title">UPCOMING VENUE EVENTS</h1>
       </div>
       <!--List Event-->
       <div id="cbp-vm" class="col-md-12 col-sm-12 col-xs-12 shop-prod active">
@@ -115,7 +115,7 @@
                 <div class="home-content-div">
                   <div class="profile-div">
                     <p class="p-date">{{event.date}}</p>
-                    <p class="p-spec p-blue">{{event.spec}}</p>
+                    <p class="p-spec p-blue"><a href="#/venue_profile">{{event.spec}}</a></p>
                     <p class="p-name">{{event.name}}</p>
                   </div>  
 
