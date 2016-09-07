@@ -3983,7 +3983,7 @@ form.ng-valid {
 }
 .header-txt {
 	color: #FFFFFF;
-	font-size: 50px;
+	font-size: 40px;
 	font-weight: 300;
 	text-transform: uppercase;
 	text-align: center;
@@ -3992,17 +3992,27 @@ form.ng-valid {
 	width: 80%;
 	line-height: 50px;
 }
-/********************************************************************************************
-    PAGE VENUE PROFILE                                                                                                 
-*********************************************************************************************/
-.home6-back-img {
-	background-image: url(../images/partial/home6.jpg);
+.home-back-img-common {
     background-repeat: no-repeat !important;
     background-position: center;
     background-color: transparent;
     width: 100%;
     height: 100%;
     position: absolute;
+}
+
+/********************************************************************************************
+    PAGE ORGANIZER PROFILE                                                                                                 
+*********************************************************************************************/
+.home1-back-img {
+	background-image: url(../images/partial/home1.jpg);
+}
+
+/********************************************************************************************
+    PAGE VENUE PROFILE                                                                                                 
+*********************************************************************************************/
+.home6-back-img {
+	background-image: url(../images/partial/home6.jpg);
 }
 
 /********************************************************************************************
@@ -4010,12 +4020,6 @@ form.ng-valid {
 *********************************************************************************************/
 .home8-back-img {
 	background-image: url(../images/partial/home8.jpg);
-    background-repeat: no-repeat !important;
-    background-position: center;
-    background-color: transparent;
-    width: 100%;
-    height: 100%;
-    position: absolute;
 }
 
 /********************************************************************************************
@@ -4023,12 +4027,6 @@ form.ng-valid {
 *********************************************************************************************/
 .home7-back-img {
 	background-image: url(../images/partial/home7.jpg);
-    background-repeat: no-repeat !important;
-    background-position: center;
-    background-color: transparent;
-    width: 100%;
-    height: 100%;
-    position: absolute;
 }
 .button-div {
 	margin: 20px 0;

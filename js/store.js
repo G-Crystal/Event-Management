@@ -191,7 +191,7 @@ app.controller('HomeController', function($scope, $filter){
     
 }); 
 
-/* CONTROLLER HOME6 */
+/* CONTROLLER SEARCH PAGINATION */
 
 app.controller('SearchController', function($scope, $filter){
 
@@ -226,6 +226,68 @@ app.controller('SearchController', function($scope, $filter){
     $scope.filteredItems = $filter('filter')(myStore.searchpage, function (searchpage) {
       for (var attr in searchpage) {
         if (searchMatch(searchpage[column], category))
+          return true;
+      }
+      return false;
+    });
+    
+    $scope.currentPage = 0;
+    $scope.groupToPages();
+  };
+  $scope.groupToPages = function () {
+    $scope.pagedItems = [];
+
+    
+    for (var i = 0; i < $scope.filteredItems.length; i++) {
+      if (i % $scope.pageSize === 0) {
+        $scope.pagedItems[Math.floor(i / $scope.pageSize)] = [$scope.filteredItems[i]];
+      } else {
+        $scope.pagedItems[Math.floor(i / $scope.pageSize)].push($scope.filteredItems[i]);
+      }
+    }
+      
+  };
+  // functions have been describe process the data for display
+  $scope.myFilter();
+  // $scope.search();
+    
+}); 
+
+/* CONTROLLER ORGANIZER PROFILE */
+
+app.controller('OrganizerController', function($scope, $filter){
+
+  var myStore = new store();
+  $scope.currentPage = 0;
+  $scope.pageSize = 9;
+  $scope.numberOfPages = Math.ceil(myStore.organizer.length / $scope.pageSize);
+
+  $scope.filteredItems = [];
+  $scope.groupedItems = [];
+  $scope.pagedItems = [];
+
+  var searchMatch = function (haystack, needle) {
+    if (!needle) {
+      return true;
+    }
+    return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1;
+  };
+  $scope.search = function (name) {
+    $scope.filteredItems = $filter('filter')(myStore.organizer, function (organizer) {
+      for (var attr in organizer) {
+        if (searchMatch(organizer[name], $scope.query))
+          return true;
+      }
+      return false;
+    });
+    
+    $scope.currentPage = 0;
+    $scope.groupToPages();
+  };
+  $scope.myFilter = function (column, category) {
+    $scope.filteredItems = $filter('filter')(myStore.organizer, function (organizer) {
+      for (var attr in organizer) {
+        if (searchMatch(organizer[column], category))
           return true;
       }
       return false;
@@ -290,7 +352,15 @@ function store() {
     { num: 4, code: '004', title: 'LIFE OF PABLO TOUR', date: 'June 11th', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/4.png"},
     { num: 5, code: '005', title: 'THIS IS AMERICA WITH U2 TOUR', date: 'July 21th', spec: "McDonald Park", name: "Davenport, 1A", src: "event/5.png"},
     { num: 6, code: '006', title: 'Olly Murs & Creepy Freaks', date: 'July 30th', spec: "Madison Theater", name: "Covington, KY", src: "event/6.png"},
-    { num: 7, code: '007', title: 'LIVE ON JIMMY KIMMEL SHOW', date: 'September 1th', spec: "Timer Warner Studio", name: "Los Angeles, CA", src: "event/7.png"},
+    { num: 7, code: '007', title: 'LIVE ON JIMMY KIMMEL SHOW', date: 'September 1th', spec: "Timer Warner Studio", name: "Los Angeles, CA", src: "event/7.png"}
+  ];
+
+  this.organizer = [
+    { num: 1, code: '001', title: 'THE INTRODUCTION TOUR', date: 'July 14th', spec: "Bogart's Colisium", name: "Cincinnati, OH", src: "event/6.png"},
+    { num: 2, code: '002', title: 'LIFE OF PABLO TOUR', date: 'June 11th', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/7.png"},
+    { num: 3, code: '003', title: 'THIS IS AMERICA WITH U2 TOUR', date: 'July 21th', spec: "McDonald Park", name: "Davenport, 1A", src: "event/8.png"},
+    { num: 4, code: '004', title: 'Olly Murs & Creepy Freaks', date: 'June 30th', spec: "Madison Theater", name: "Covington, KY", src: "event/9.png"},
+    { num: 5, code: '005', title: 'LIVE ON JIMMY KIMMEL SHOW', date: 'September 1th', spec: "Timer Warner Studio", name: "Los Angeles, CA", src: "event/10.png"}
   ];
 
 }

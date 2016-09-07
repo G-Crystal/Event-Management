@@ -23,6 +23,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/event_details", { templateUrl: "partials/event_details.html", controller: "HomeCtrl" })
     .when("/talent_profile", { templateUrl: "partials/talent_profile.html", controller: "HomeCtrl" })
     .when("/pagination", { templateUrl: "partials/pagination.html", controller: "HomeCtrl" })
+    .when("/organizer_profile", { templateUrl: "partials/organizer_profile.html", controller: "HomeCtrl" })
 
     // About
     .when("/about", { templateUrl: "partials/about.html", controller: "PageCtrl" })
