@@ -93,7 +93,7 @@ body {
     /*font-family: 'Open sans',sans-serif;*/
 	font-family: "montserrat";
 	font-weight: 400;
-	font-size: 13px;
+	font-size: 12px;
 	line-height:22px;
 	color: #232323;
 	letter-spacing: 0.04em;
@@ -306,7 +306,7 @@ p.personal-phrase i.fa-quote-left{
 /****************  MENU    ************/
 .navbar-brand {
 	font-weight: 700;
-	padding: 1px 15px;
+	padding: 1px 0px;
 }
 .navbar-inverse {
 	background-image:none;
@@ -623,7 +623,7 @@ ul.menu-items li.menu-item:last-child {
     padding: 5px;
     font-size: 16px;
     border-radius: 100px;
-    margin: 20px 12px 0 20px;
+    margin: 20px 12px 0 10px;
 }
 .content-count-cart-header a {
     color: #000;
@@ -4054,6 +4054,13 @@ form.ng-valid {
 	.p-resp-xs {
 		text-align: center;
 	}
+}
+
+/********************************************************************************************
+    PAGE SEARCH PAGINATION                                                                                                 
+*********************************************************************************************/
+.pagenum {
+	margin-bottom: 20px;
 }
 
 /********************************************************************************************
