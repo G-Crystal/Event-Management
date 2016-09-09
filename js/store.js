@@ -315,6 +315,128 @@ app.controller('OrganizerController', function($scope, $filter){
     
 }); 
 
+/* CONTROLLER BUYER DASHBOARD */
+
+app.controller('UEventController', function($scope, $filter){
+
+  var myStore = new store();
+  $scope.currentPage = 0;
+  $scope.pageSize = 9;
+  $scope.numberOfPages = Math.ceil(myStore.upcomingevent.length / $scope.pageSize);
+
+  $scope.filteredItems = [];
+  $scope.groupedItems = [];
+  $scope.pagedItems = [];
+
+  var searchMatch = function (haystack, needle) {
+    if (!needle) {
+      return true;
+    }
+    return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1;
+  };
+  $scope.search = function (name) {
+    $scope.filteredItems = $filter('filter')(myStore.upcomingevent, function (upcomingevent) {
+      for (var attr in upcomingevent) {
+        if (searchMatch(upcomingevent[name], $scope.query))
+          return true;
+      }
+      return false;
+    });
+    
+    $scope.currentPage = 0;
+    $scope.groupToPages();
+  };
+  $scope.myFilter = function (column, category) {
+    $scope.filteredItems = $filter('filter')(myStore.upcomingevent, function (upcomingevent) {
+      for (var attr in upcomingevent) {
+        if (searchMatch(upcomingevent[column], category))
+          return true;
+      }
+      return false;
+    });
+    
+    $scope.currentPage = 0;
+    $scope.groupToPages();
+  };
+  $scope.groupToPages = function () {
+    $scope.pagedItems = [];
+
+    
+    for (var i = 0; i < $scope.filteredItems.length; i++) {
+      if (i % $scope.pageSize === 0) {
+        $scope.pagedItems[Math.floor(i / $scope.pageSize)] = [$scope.filteredItems[i]];
+      } else {
+        $scope.pagedItems[Math.floor(i / $scope.pageSize)].push($scope.filteredItems[i]);
+      }
+    }
+      
+  };
+  // functions have been describe process the data for display
+  $scope.myFilter();
+  // $scope.search();
+    
+}); 
+
+app.controller('PEventController', function($scope, $filter){
+
+  var myStore = new store();
+  $scope.currentPage = 0;
+  $scope.pageSize = 9;
+  $scope.numberOfPages = Math.ceil(myStore.pastevent.length / $scope.pageSize);
+
+  $scope.filteredItems = [];
+  $scope.groupedItems = [];
+  $scope.pagedItems = [];
+
+  var searchMatch = function (haystack, needle) {
+    if (!needle) {
+      return true;
+    }
+    return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1;
+  };
+  $scope.search = function (name) {
+    $scope.filteredItems = $filter('filter')(myStore.pastevent, function (pastevent) {
+      for (var attr in pastevent) {
+        if (searchMatch(pastevent[name], $scope.query))
+          return true;
+      }
+      return false;
+    });
+    
+    $scope.currentPage = 0;
+    $scope.groupToPages();
+  };
+  $scope.myFilter = function (column, category) {
+    $scope.filteredItems = $filter('filter')(myStore.pastevent, function (pastevent) {
+      for (var attr in pastevent) {
+        if (searchMatch(pastevent[column], category))
+          return true;
+      }
+      return false;
+    });
+    
+    $scope.currentPage = 0;
+    $scope.groupToPages();
+  };
+  $scope.groupToPages = function () {
+    $scope.pagedItems = [];
+
+    
+    for (var i = 0; i < $scope.filteredItems.length; i++) {
+      if (i % $scope.pageSize === 0) {
+        $scope.pagedItems[Math.floor(i / $scope.pageSize)] = [$scope.filteredItems[i]];
+      } else {
+        $scope.pagedItems[Math.floor(i / $scope.pageSize)].push($scope.filteredItems[i]);
+      }
+    }
+      
+  };
+  // functions have been describe process the data for display
+  $scope.myFilter();
+  // $scope.search();
+    
+}); 
+
 
 function store() {
   this.products = [
@@ -361,6 +483,17 @@ function store() {
     { num: 3, code: '003', title: 'THIS IS AMERICA WITH U2 TOUR', date: 'July 21th', spec: "McDonald Park", name: "Davenport, 1A", src: "event/8.png"},
     { num: 4, code: '004', title: 'Olly Murs & Creepy Freaks', date: 'June 30th', spec: "Madison Theater", name: "Covington, KY", src: "event/9.png"},
     { num: 5, code: '005', title: 'LIVE ON JIMMY KIMMEL SHOW', date: 'September 1th', spec: "Timer Warner Studio", name: "Los Angeles, CA", src: "event/10.png"}
+  ];
+
+  this.upcomingevent = [
+    { num: 1, code: '001', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png"},
+    { num: 2, code: '002', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png"}
+  ];
+
+  this.pastevent = [
+    { num: 1, code: '001', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png"},
+    { num: 2, code: '002', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png"},
+    { num: 3, code: '002', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png"}
   ];
 
 }

@@ -82,21 +82,3 @@
   </div>
   <!-- /.container -->
 </div>
-
-<script type="text/javascript">
-  jQuery(document).ready(function () {
-    jQuery('.skillbar').each(function () {
-      jQuery(this).find('.skillbar-bar').animate({
-        width: jQuery(this).attr('data-percent')
-      }, 1400);
-    });
-  });
-</script>
-
-<!-- Filter Images-->
-<script type="text/javascript">
-  $('.filter li').on('click', function () {
-    $('li').removeClass('active');
-    $(this).addClass('active');
-  });
-</script>
