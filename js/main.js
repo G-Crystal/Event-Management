@@ -25,6 +25,17 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/pagination", { templateUrl: "partials/pagination.html", controller: "HomeCtrl" })
     .when("/organizer_profile", { templateUrl: "partials/organizer_profile.html", controller: "HomeCtrl" })
     .when("/event_order", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
+    .when("/messages", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
+    .when("/settings", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
+    .when("/payments", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
+    .when("/event_information", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
+    .when("/events", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
+    .when("/talents", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
+    .when("/report", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
+    .when("/digital_market", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
+    .when("/box_office", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
+    .when("/service", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
+    .when("/allyhub", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
 
     // About
     .when("/about", { templateUrl: "partials/about.html", controller: "PageCtrl" })
@@ -355,4 +366,10 @@ app.factory("DataService", function () {
     cart: myCart,
     detailsprod: storeDetails
   };
+});
+
+app.controller('LMenuController', function ( $scope, $location/*, $http */) {
+  $scope.getClass = function (path) {
+    return ($location.path().substr(0, path.length) === path) ? 'active' : '';
+  }
 });

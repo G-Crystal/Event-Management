@@ -1,8 +1,18 @@
-<div ng-include='"partials/admin_menu.html"'></div>
+<div id="demo" ng-controller="LMenuController" class="home1">
+  <div ng-include='"partials/account_menu.html"'></div>
 
-<ul class="sidenav">
-  <li><a class="active" href="#orders">Orders</a></li>
-  <li><a href="#messages">Messages</a></li>
-  <li><a href="#settings">Settings</a></li>
-  <li><a href="#payments">Payments</a></li>
-</ul>
+  <ul class="sidenav">
+    <li ng-class="getClass('/event_information')"><a href="#event_information">Dashboard</a></li>
+    <li ng-class="getClass('/events')"><a href="#events">Events</a></li>
+    <li ng-class="getClass('/event_order')"><a href="#event_order">Orders</a></li>
+    <li ng-class="getClass('/talents')"><a href="#talents">Talents</a></li>
+    <li ng-class="getClass('/report')"><a href="#report">Report</a></li>
+    <li ng-class="getClass('/digital_market')"><a href="#digital_market">Digital Market</a></li>
+    <li ng-class="getClass('/box_office')"><a href="#box_office">Box Office</a></li>
+    <li ng-class="getClass('/service')"><a href="#service">Service</a></li>
+    <li ng-class="getClass('/allyhub')"><a href="#allyhub">Allyhub</a></li>
+    <li ng-class="getClass('/messages')"><a href="#messages">Messages</a></li>
+    <li ng-class="getClass('/settings')"><a href="#settings">Settings</a></li>
+    <li ng-class="getClass('/payments')"><a href="#payments">Payments</a></li>
+  </ul>
+</div>
