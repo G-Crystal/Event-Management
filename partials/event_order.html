@@ -1,0 +1,84 @@
+<div ng-include='"partials/user_menu.html"'></div>
+
+<div id="demo" ng-controller="UEventController" class="home1">
+
+  <!--visible animated fadeInUp-->
+  <div class="container-fluid row">
+    <div class="content menubar-div row">
+      <div class="col-lg-12 text-center shop-title-store">
+        <h1 class="section-title">UPCOMING EVENT ORDER</h1>
+      </div>
+      <!--List Event-->
+      <div id="cbp-vm" class="col-md-12 col-sm-12 col-xs-12 shop-prod active">
+        <ul id="upcomingevent" class="nav-pills nav-stacked rectangle-list">
+          <li class="col-xs-12" ng-repeat="upcomingevent in pagedItems[currentPage]">
+            <div class="shop-img home-box-black row">
+              <a href="#/event_details">
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 ">
+                  <img ng-src="images/store/{{upcomingevent.src}}" alt="{{upcomingevent.name}}" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box-image img-responsive" />
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                  <p class="p-title">{{upcomingevent.title}}</p>
+                  <div class="home-content-div">
+                    <div class="profile-div">
+                      <p class="p-date">{{upcomingevent.date}}</p>
+                      <p class="p-spec p-blue"><a href="#/venue_profile">{{upcomingevent.spec}}</a></p>
+                      <p class="p-name">{{upcomingevent.name}}</p>
+                    </div>  
+
+                    <div class="buy-btn-div">
+                      <a class="btn btn-block trans-buy-button inline-buy-button" href="#/event">DOWNLOAD TICKETS</a>
+                    </div>   
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</div>
+
+<div id="demo" ng-controller="PEventController" class="home1">
+
+  <div class="content menubar-div row">
+    <div class="col-lg-12 text-center shop-title-store">
+      <h1 class="section-title">PAST EVENT ORDER</h1>
+    </div>
+    <!--List Event-->
+    <div id="cbp-vm" class="col-md-12 col-sm-12 col-xs-12 shop-prod active">
+      <ul id="pastevent" class="nav-pills nav-stacked rectangle-list">
+        <li class="col-xs-12" ng-repeat="pastevent in pagedItems[currentPage]">
+          <div class="shop-img home-box-black row">
+            <a href="#/event_details">
+              <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 ">
+                <img ng-src="images/store/{{pastevent.src}}" alt="{{pastevent.name}}" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box-image img-responsive" />
+              </div>
+              <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                <p class="p-title">{{pastevent.title}}</p>
+                <div class="home-content-div">
+                  <div class="profile-div">
+                    <p class="p-date">{{pastevent.date}}</p>
+                    <p class="p-spec p-blue"><a href="#/venue_profile">{{pastevent.spec}}</a></p>
+                    <p class="p-name">{{pastevent.name}}</p>
+                  </div>  
+
+                  <div class="buy-btn-div">
+                    <a class="btn btn-block trans-buy-button inline-buy-button" href="#/event">DOWNLOAD TICKETS</a>
+                  </div>   
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.demo -->

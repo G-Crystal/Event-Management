@@ -52,7 +52,7 @@
       <!--List Product-->
       <div id="cbp-vm" class="col-md-12 col-sm-12 col-xs-12 shop-prod active">
         <ul id="product" class="nav-pills nav-stacked rectangle-list">
-          <a href="#/event_details">
+          <a href="#/venue_profile">
             <li class="col-lg-3 col-md-4 col-sm-4 col-xs-12" ng-repeat="product in pagedItems[currentPage]">
               <div class="shop-img  services-box-black">
                 <div class="store-img-div">
@@ -82,21 +82,3 @@
   </div>
   <!-- /.container -->
 </div>
-
-<script type="text/javascript">
-  jQuery(document).ready(function () {
-    jQuery('.skillbar').each(function () {
-      jQuery(this).find('.skillbar-bar').animate({
-        width: jQuery(this).attr('data-percent')
-      }, 1400);
-    });
-  });
-</script>
-
-<!-- Filter Images-->
-<script type="text/javascript">
-  $('.filter li').on('click', function () {
-    $('li').removeClass('active');
-    $(this).addClass('active');
-  });
-</script>

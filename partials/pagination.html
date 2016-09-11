@@ -1,37 +1,14 @@
-<div id="demo" ng-controller="HomeController" class="home6">
+<div id="demo" ng-controller="SearchController" class="home9">
 
-    <!--visible animated fadeInUp-->
-  <div class="container-fluid header-image-div">
-    <div class="home-img-div">
-      <div class="home6-back-img home-back-img-common"><span class="header-txt">BOGART'S COLISIUM ARENA</span></div>
-        <div class="col-lg-12">
-         <!-- <h1>Frequently <span class="color-txt">Asked</span> Questions</h1> -->
-        </div>
-    </div>
-  </div> 
-
-  <div class="container" ng-controller="HomeController">
+  <div class="container" ng-controller="SearchController">
     <div class="row">
-      <div class="home-banner">
-        <div class="container">
-          <div class="row aboutus">
-            <div class="col-lg-10 col-md-10 col-sm-9 col-xs-9">
-              <h3>2621 Vine St.</h3>                   
-              <h3>Cincinnati, OH, USA</h3>                   
-              <h3>45014</h3>                   
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
-              <a class="btn social-link facebook" href="#" target="_blank"></a>
-              <a class="btn social-link twitter" href="#" target="_blank"></a>
-            </div>
-          </div>
-          <!-- /.row -->
-        </div>
-        <!-- /.container -->
-      </div>
-
-      <div class="col-lg-12 text-center shop-title-store">
-        <h1 class="section-title">UPCOMING EVENTS</h1>
+      <div class="col-xs-8 col-xs-push-2 text-center shop-title-store">
+        <form class="search search-category-bar">
+          <!-- <input type="text"  name="search" placeholder="Select Category" style="background: none;"> -->
+          <select ng-model="category" ng-options="t.label for t in categories" class="select-list">
+            <option value="" disabled selected>Select category</option>
+          </select>
+        </form>
       </div>
       <!--List Event-->
       <div id="cbp-vm" class="col-md-12 col-sm-12 col-xs-12 shop-prod active">
@@ -62,6 +39,7 @@
           </li>
         </ul>
       </div>
+      <div class="pagenum text-center"><span>1</span> of <span>10</span></div>
     </div>
     <!-- /.row -->
   </div>

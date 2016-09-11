@@ -1,0 +1,266 @@
+<div ng-include='"partials/admin_menu.html"'></div>
+
+<div id="demo" ng-controller="UEventController" class="home1">
+
+  <!--visible animated fadeInUp-->
+  <div class="container-fluid">
+    <div class="content menubar-div row">
+      <!--List Event-->
+      <div class="description-title-div col-lg-12">
+        <h4>Event Information</h4>
+        <div class="row">
+          <div class="col-md-2 col-sm-3 col-xs-12">
+            <label for="input1" class="label-name required">Event Name</label>
+          </div>
+          <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <input type="text" name="event_name" placeholder="Event Name" class="form-control" id="event_name">
+          </div>
+          <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <label for="input1" class="label-comment">0 of 100</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-sm-3 col-xs-12">
+            <label for="input2" class="label-name">Present's</label>
+          </div>
+          <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <input type="text" name="presents" placeholder="Example: &quot;John Doe Entertainment&quot; Present's" class="form-control" id="presents">
+          </div>
+          <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <label for="input2" class="label-comment">0 of 100</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-sm-3 col-xs-12">
+            <label for="input3" class="label-name required">Venue</label>
+          </div>
+          <div class="col-md-3 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <input type="text" name="search_venue" placeholder="Search Venue" class="form-control" id="search_venue">
+          </div>
+          <div class="clearfix visible-sm visible-xs"></div>
+          <div class="col-md-2 col-sm-3 col-xs-12">
+            <label for="input4" class="label-name">Venue</label>
+          </div>
+          <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <input type="text" name="venue_capacity" placeholder="Venue Capacity" class="form-control" id="venue_capacity">
+          </div>
+          <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <label for="input4" class="label-comment">0 of 6</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-sm-3 col-xs-12">
+            <label for="input5" class="label-name required">Category</label>
+          </div>
+          <div class="col-md-3 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <input type="text" name="select_category" placeholder="Select Category" class="form-control" id="select_category">
+          </div>
+          <div class="clearfix visible-sm visible-xs"></div>
+          <div class="col-md-2 col-sm-3">
+            <label for="input6" class="label-name">Age Limit</label>
+          </div>
+          <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <input type="text" name="age_limit" placeholder="Enter Age Limit" class="form-control" id="age_limit">
+          </div>
+          <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <label for="input6" class="label-comment">0 of 10</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-sm-3 col-xs-12">
+            <label for="input7" class="label-name required">Event Image</label>
+          </div>
+          <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <input type="text" name="event_image" placeholder="Upload Image" class="form-control" id="event_image">
+          </div>
+          <div class="col-md-1 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <label for="input8" class="label-comment">500x500</label>
+          </div>
+          <div class="clearfix visible-sm visible-xs"></div>
+          <div class="col-md-2 col-sm-3 col-xs-12">
+            <label for="input8" class="label-name required">Header Image</label>
+          </div>
+          <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <input type="text" name="header_image" placeholder="Upload Image" class="form-control" id="header_image">
+          </div>
+          <div class="col-md-1 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <label for="input8" class="label-comment">1500x500</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-sm-3 col-xs-12">
+            <label for="input9" class="label-name">Additional Text</label>
+          </div>
+          <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <input type="text" name="additional_text" placeholder="Additional Ticket Text. Example &quot;Bring Your ID&quot; or Wear White&quot;" class="form-control" id="additional_text">
+          </div>
+          <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <label for="input9" class="label-comment">0 of 20</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-sm-3 col-xs-12">
+            <label for="input10" class="label-name">Description</label>
+          </div>
+          <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <textarea name="description" class="form-control" rows="10" id="description"></textarea>
+          </div>
+          <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <label for="input10" class="label-comment">0 of 1000</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="description-title-div col-lg-12">
+        <h4>Dates</h4>
+        <div class="row">
+          <div class="col-md-2 col-sm-3 col-xs-4">
+            <label for="input12" class="label-name required">Start Date</label>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-8">
+            <input type="text" name="start_date" placeholder="Select Date and Time" class="form-control" id="start_date">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-sm-3 col-xs-4">
+            <label for="input12" class="label-name required">End Date</label>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-8">
+            <input type="text" name="end_date" placeholder="Select Date and Time" class="form-control" id="end_date">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-sm-3 col-xs-4">
+            <label for="input12" class="label-name">Doors Date</label>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-8">
+            <input type="text" name="start_date" placeholder="Select Date and Time" class="form-control" id="start_date">
+          </div>
+          <div class="col-md-6 col-sm-5 col-sm-offset-0 col-xs-8 col-xs-offset-4">
+            <label for="input12" class="label-comment">inherit from start date if not entered</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="description-title-div col-lg-12">
+        <h4>Ticket Type</h4>
+        <div class="row">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Ticket Name</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Delete/Edit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>General Admission</td>
+                <td>Free</td>
+                <td>$0</td>
+                <td>500</td>
+                <td>Delete/Edit</td>
+              </tr>
+              <tr>
+                <td>General Admission</td>
+                <td>Paid</td>
+                <td>$0</td>
+                <td>250</td>
+                <td>Delete/Edit</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row store-down-bottom">
+          <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" href="#/event">Add Ticket</a>
+        </div>
+      </div>
+
+      <div class="description-title-div col-lg-12 ticket-block-div">
+        <div class="row">
+          <div class="col-md-2 col-sm-3 col-xs-12">
+            <label for="input1" class="label-name required">Ticket Name</label>
+          </div>
+          <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <input type="text" name="ticket_name" placeholder="Enter Ticket Type Name. Ex. General Admission" class="form-control" id="ticket_name">
+          </div>
+          <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <label for="input1" class="label-comment">0 of 30</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-sm-3 col-xs-12">
+            <label for="input10" class="label-name">Ticket Description</label>
+          </div>
+          <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <textarea name="ticket_description" class="form-control" rows="10" id="ticket_description" placeholder="Enter Ticket Description"></textarea>
+          </div>
+          <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <label for="input10" class="label-comment">0 of 100</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-sm-3 col-xs-12">
+            <label for="input5" class="label-name required">Type</label>
+          </div>
+          <div class="col-md-3 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <input type="text" name="select_type" placeholder="Select Type" class="form-control" id="select_type">
+          </div>
+          <div class="clearfix visible-sm visible-xs"></div>
+          <div class="col-md-2 col-sm-3">
+            <label for="input6" class="label-name required">Price</label>
+          </div>
+          <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <input type="text" name="price" placeholder="0.00" class="form-control" id="price">
+          </div>
+          <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <label for="input6" class="label-comment">0 of 6</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-sm-3 col-xs-12">
+            <label for="input5" class="label-name required">Quantity</label>
+          </div>
+          <div class="col-md-3 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <input type="text" name="quantity" placeholder="Quantity Available" class="form-control" id="quantity">
+          </div>
+          <div class="col-md-7 col-sm-12 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <label for="input6" class="label-comment">0 of 9</label>
+          </div>
+        </div>
+        <div class="row store-down-bottom">
+          <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" href="#/event" style="right:15px;">Add</a>
+        </div>
+      </div>
+
+      <div class="description-title-div col-lg-12">
+        <h4>Schedule</h4>
+        <div class="row">
+          <div class="col-md-2 col-sm-3 col-xs-12">
+            <label for="input1" class="label-name">Publish Event On</label>
+          </div>
+          <div class="col-md-10 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <input type="text" name="publish_event" placeholder="Select Time and Date to Publish" class="form-control" id="publish_event">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-sm-3 col-xs-12">
+          </div>
+          <div class="col-md-10 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <input type="checkbox" name="make_private" class="checkbox-ctrl" id="make_private" value="make_private">
+            <label for="input1" class="label-comment">Check here to make event private event will not show public on our website and search pages.</label>
+          </div>
+        </div>
+        <div class="row store-down-bottom">
+          <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" href="#/event">DRAFT</a>
+          <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" href="#/event">PUBLISH</a>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</div>
+

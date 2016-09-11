@@ -1,0 +1,10 @@
+<div id="demo" ng-controller="LMenuController" class="home1">
+	<div ng-include='"partials/account_menu.html"'></div>
+
+	<ul class="sidenav">
+		<li ng-class="getClass('/event_order')"><a href="#event_order">Orders</a></li>
+	  <li ng-class="getClass('/messages')"><a href="#messages">Messages</a></li>
+	  <li ng-class="getClass('/settings')"><a href="#settings">Settings</a></li>
+	  <li ng-class="getClass('/payments')"><a href="#payments">Payments</a></li>
+	</ul>
+</div>

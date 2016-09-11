@@ -1,16 +1,16 @@
-<div id="demo" ng-controller="Home6Controller" class="home8">
+<div id="demo" ng-controller="HomeController" class="home8">
 
     <!--visible animated fadeInUp-->
-  <div class="container">
+  <div class="container-fluid header-image-div">
     <div class="home-img-div">
-      <div class="home8-back-img "></div>
+      <div class="home8-back-img home-back-img-common"><span class="header-txt">KANYE WEST</span></div>
         <div class="col-lg-12">
          <!-- <h1>Frequently <span class="color-txt">Asked</span> Questions</h1> -->
         </div>
     </div>
   </div> 
 
-  <div class="container" ng-controller="Home6Controller">
+  <div class="container" ng-controller="HomeController">
     <div class="row">
       <div class="home-banner">
         <div class="container">
@@ -45,7 +45,7 @@
                   <div class="home-content-div">
                     <div class="profile-div">
                       <p class="p-date">{{event.date}}</p>
-                      <p class="p-spec p-blue">{{event.spec}}</p>
+                      <p class="p-spec p-blue"><a href="#/venue_profile">{{event.spec}}</a></p>
                       <p class="p-name">{{event.name}}</p>
                     </div>  
 
@@ -66,21 +66,3 @@
   <!-- /.container -->
 </div>
 <!-- /.demo -->
-
-<script type="text/javascript">
-  jQuery(document).ready(function () {
-    jQuery('.skillbar').each(function () {
-      jQuery(this).find('.skillbar-bar').animate({
-        width: jQuery(this).attr('data-percent')
-      }, 1400);
-    });
-  });
-</script>
-
-<!-- Filter Images-->
-<script type="text/javascript">
-  $('.filter li').on('click', function () {
-    $('li').removeClass('active');
-    $(this).addClass('active');
-  });
-</script>

@@ -131,7 +131,7 @@ app.controller('AdminController', function ($scope, $filter) {
 
 /* CONTROLLER HOME6 */
 
-app.controller('Home6Controller', function($scope, $filter){
+app.controller('HomeController', function($scope, $filter){
 
   var myStore = new store();
   $scope.currentPage = 0;
@@ -189,7 +189,253 @@ app.controller('Home6Controller', function($scope, $filter){
   $scope.myFilter();
   // $scope.search();
     
- }); 
+}); 
+
+/* CONTROLLER SEARCH PAGINATION */
+
+app.controller('SearchController', function($scope, $filter){
+
+  var myStore = new store();
+  $scope.currentPage = 0;
+  $scope.pageSize = 9;
+  $scope.numberOfPages = Math.ceil(myStore.searchpage.length / $scope.pageSize);
+
+  $scope.filteredItems = [];
+  $scope.groupedItems = [];
+  $scope.pagedItems = [];
+
+  var searchMatch = function (haystack, needle) {
+    if (!needle) {
+      return true;
+    }
+    return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1;
+  };
+  $scope.search = function (name) {
+    $scope.filteredItems = $filter('filter')(myStore.searchpage, function (searchpage) {
+      for (var attr in searchpage) {
+        if (searchMatch(searchpage[name], $scope.query))
+          return true;
+      }
+      return false;
+    });
+    
+    $scope.currentPage = 0;
+    $scope.groupToPages();
+  };
+  $scope.myFilter = function (column, category) {
+    $scope.filteredItems = $filter('filter')(myStore.searchpage, function (searchpage) {
+      for (var attr in searchpage) {
+        if (searchMatch(searchpage[column], category))
+          return true;
+      }
+      return false;
+    });
+    
+    $scope.currentPage = 0;
+    $scope.groupToPages();
+  };
+  $scope.groupToPages = function () {
+    $scope.pagedItems = [];
+
+    
+    for (var i = 0; i < $scope.filteredItems.length; i++) {
+      if (i % $scope.pageSize === 0) {
+        $scope.pagedItems[Math.floor(i / $scope.pageSize)] = [$scope.filteredItems[i]];
+      } else {
+        $scope.pagedItems[Math.floor(i / $scope.pageSize)].push($scope.filteredItems[i]);
+      }
+    }
+      
+  };
+  // functions have been describe process the data for display
+  $scope.myFilter();
+  // $scope.search();
+    
+}); 
+
+/* CONTROLLER ORGANIZER PROFILE */
+
+app.controller('OrganizerController', function($scope, $filter){
+
+  var myStore = new store();
+  $scope.currentPage = 0;
+  $scope.pageSize = 9;
+  $scope.numberOfPages = Math.ceil(myStore.organizer.length / $scope.pageSize);
+
+  $scope.filteredItems = [];
+  $scope.groupedItems = [];
+  $scope.pagedItems = [];
+
+  var searchMatch = function (haystack, needle) {
+    if (!needle) {
+      return true;
+    }
+    return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1;
+  };
+  $scope.search = function (name) {
+    $scope.filteredItems = $filter('filter')(myStore.organizer, function (organizer) {
+      for (var attr in organizer) {
+        if (searchMatch(organizer[name], $scope.query))
+          return true;
+      }
+      return false;
+    });
+    
+    $scope.currentPage = 0;
+    $scope.groupToPages();
+  };
+  $scope.myFilter = function (column, category) {
+    $scope.filteredItems = $filter('filter')(myStore.organizer, function (organizer) {
+      for (var attr in organizer) {
+        if (searchMatch(organizer[column], category))
+          return true;
+      }
+      return false;
+    });
+    
+    $scope.currentPage = 0;
+    $scope.groupToPages();
+  };
+  $scope.groupToPages = function () {
+    $scope.pagedItems = [];
+
+    
+    for (var i = 0; i < $scope.filteredItems.length; i++) {
+      if (i % $scope.pageSize === 0) {
+        $scope.pagedItems[Math.floor(i / $scope.pageSize)] = [$scope.filteredItems[i]];
+      } else {
+        $scope.pagedItems[Math.floor(i / $scope.pageSize)].push($scope.filteredItems[i]);
+      }
+    }
+      
+  };
+  // functions have been describe process the data for display
+  $scope.myFilter();
+  // $scope.search();
+    
+}); 
+
+/* CONTROLLER BUYER DASHBOARD */
+
+app.controller('UEventController', function($scope, $filter){
+
+  var myStore = new store();
+  $scope.currentPage = 0;
+  $scope.pageSize = 9;
+  $scope.numberOfPages = Math.ceil(myStore.upcomingevent.length / $scope.pageSize);
+
+  $scope.filteredItems = [];
+  $scope.groupedItems = [];
+  $scope.pagedItems = [];
+
+  var searchMatch = function (haystack, needle) {
+    if (!needle) {
+      return true;
+    }
+    return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1;
+  };
+  $scope.search = function (name) {
+    $scope.filteredItems = $filter('filter')(myStore.upcomingevent, function (upcomingevent) {
+      for (var attr in upcomingevent) {
+        if (searchMatch(upcomingevent[name], $scope.query))
+          return true;
+      }
+      return false;
+    });
+    
+    $scope.currentPage = 0;
+    $scope.groupToPages();
+  };
+  $scope.myFilter = function (column, category) {
+    $scope.filteredItems = $filter('filter')(myStore.upcomingevent, function (upcomingevent) {
+      for (var attr in upcomingevent) {
+        if (searchMatch(upcomingevent[column], category))
+          return true;
+      }
+      return false;
+    });
+    
+    $scope.currentPage = 0;
+    $scope.groupToPages();
+  };
+  $scope.groupToPages = function () {
+    $scope.pagedItems = [];
+
+    
+    for (var i = 0; i < $scope.filteredItems.length; i++) {
+      if (i % $scope.pageSize === 0) {
+        $scope.pagedItems[Math.floor(i / $scope.pageSize)] = [$scope.filteredItems[i]];
+      } else {
+        $scope.pagedItems[Math.floor(i / $scope.pageSize)].push($scope.filteredItems[i]);
+      }
+    }
+      
+  };
+  // functions have been describe process the data for display
+  $scope.myFilter();
+  // $scope.search();
+    
+}); 
+
+app.controller('PEventController', function($scope, $filter){
+
+  var myStore = new store();
+  $scope.currentPage = 0;
+  $scope.pageSize = 9;
+  $scope.numberOfPages = Math.ceil(myStore.pastevent.length / $scope.pageSize);
+
+  $scope.filteredItems = [];
+  $scope.groupedItems = [];
+  $scope.pagedItems = [];
+
+  var searchMatch = function (haystack, needle) {
+    if (!needle) {
+      return true;
+    }
+    return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1;
+  };
+  $scope.search = function (name) {
+    $scope.filteredItems = $filter('filter')(myStore.pastevent, function (pastevent) {
+      for (var attr in pastevent) {
+        if (searchMatch(pastevent[name], $scope.query))
+          return true;
+      }
+      return false;
+    });
+    
+    $scope.currentPage = 0;
+    $scope.groupToPages();
+  };
+  $scope.myFilter = function (column, category) {
+    $scope.filteredItems = $filter('filter')(myStore.pastevent, function (pastevent) {
+      for (var attr in pastevent) {
+        if (searchMatch(pastevent[column], category))
+          return true;
+      }
+      return false;
+    });
+    
+    $scope.currentPage = 0;
+    $scope.groupToPages();
+  };
+  $scope.groupToPages = function () {
+    $scope.pagedItems = [];
+
+    
+    for (var i = 0; i < $scope.filteredItems.length; i++) {
+      if (i % $scope.pageSize === 0) {
+        $scope.pagedItems[Math.floor(i / $scope.pageSize)] = [$scope.filteredItems[i]];
+      } else {
+        $scope.pagedItems[Math.floor(i / $scope.pageSize)].push($scope.filteredItems[i]);
+      }
+    }
+      
+  };
+  // functions have been describe process the data for display
+  $scope.myFilter();
+  // $scope.search();
+    
+}); 
 
 
 function store() {
@@ -216,9 +462,38 @@ function store() {
     { num: 9, code: '009s', category: 'Speakers', name: 'Eliteme', src: "../9.jpg", src_retro: "product/9r.jpg", description: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. ', price: 234, discount: '30%', class: 'show-down' , content: 'BIG SEAN - ROCK YOUR COLORS TOUR',  stadium:'QUICKEN LOAN BALL PARK', location:'Columbus, OH'}];
 
   this.events = [
-    { num: 1, code: '001', title: 'SUMMER SIXTEN TOUR FT. FUTURE, DESIGNER, PUSHA T.', date: 'July 11th', spec: "Bogart's Collisium Arena", name: "Cincinnati, OH", src: "event/1.png"},
-    { num: 2, code: '002', title: 'THE INTRODUCTION TOUR', date: 'July 14th', spec: "Bogart's Collisium Arena", name: "Cincinnati, OH", src: "event/2.png"},
-    { num: 3, code: '003', title: 'LIFE OF PABLO TOUR', date: 'July 15th', spec: "Bogart's Collisium Arena", name: "Cincinnati, OH", src: "event/3.png"}
+    { num: 1, code: '001', title: 'SUMMER SIXTEN TOUR FT. FUTURE, DESIGNER, PUSHA T.', date: 'July 11th', spec: "Bogart's Colisium Arena", name: "Cincinnati, OH", src: "event/1.png"},
+    { num: 2, code: '002', title: 'THE INTRODUCTION TOUR', date: 'July 14th', spec: "Bogart's Colisium Arena", name: "Cincinnati, OH", src: "event/2.png"},
+    { num: 3, code: '003', title: 'LIFE OF PABLO TOUR', date: 'July 15th', spec: "Bogart's Colisium Arena", name: "Cincinnati, OH", src: "event/3.png"}
+  ];
+
+  this.searchpage = [
+    { num: 1, code: '001', title: 'THIS IS AMERICA WITH U2 TOUR', date: 'July 21th', spec: "McDonald Park", name: "Davenport, 1A", src: "event/1.png"},
+    { num: 2, code: '002', title: 'LIFE OF PABLO TOUR', date: 'June 11th', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/2.png"},
+    { num: 3, code: '003', title: 'THE INTRODUCTION TOUR', date: 'July 14th', spec: "Bogart's Colisium", name: "Cincinnati, OH", src: "event/3.png"},
+    { num: 4, code: '004', title: 'LIFE OF PABLO TOUR', date: 'June 11th', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/4.png"},
+    { num: 5, code: '005', title: 'THIS IS AMERICA WITH U2 TOUR', date: 'July 21th', spec: "McDonald Park", name: "Davenport, 1A", src: "event/5.png"},
+    { num: 6, code: '006', title: 'Olly Murs & Creepy Freaks', date: 'July 30th', spec: "Madison Theater", name: "Covington, KY", src: "event/6.png"},
+    { num: 7, code: '007', title: 'LIVE ON JIMMY KIMMEL SHOW', date: 'September 1th', spec: "Timer Warner Studio", name: "Los Angeles, CA", src: "event/7.png"}
+  ];
+
+  this.organizer = [
+    { num: 1, code: '001', title: 'THE INTRODUCTION TOUR', date: 'July 14th', spec: "Bogart's Colisium", name: "Cincinnati, OH", src: "event/6.png"},
+    { num: 2, code: '002', title: 'LIFE OF PABLO TOUR', date: 'June 11th', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/7.png"},
+    { num: 3, code: '003', title: 'THIS IS AMERICA WITH U2 TOUR', date: 'July 21th', spec: "McDonald Park", name: "Davenport, 1A", src: "event/8.png"},
+    { num: 4, code: '004', title: 'Olly Murs & Creepy Freaks', date: 'June 30th', spec: "Madison Theater", name: "Covington, KY", src: "event/9.png"},
+    { num: 5, code: '005', title: 'LIVE ON JIMMY KIMMEL SHOW', date: 'September 1th', spec: "Timer Warner Studio", name: "Los Angeles, CA", src: "event/10.png"}
+  ];
+
+  this.upcomingevent = [
+    { num: 1, code: '001', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png"},
+    { num: 2, code: '002', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png"}
+  ];
+
+  this.pastevent = [
+    { num: 1, code: '001', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png"},
+    { num: 2, code: '002', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png"},
+    { num: 3, code: '002', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png"}
   ];
 
 }
