@@ -4093,6 +4093,9 @@ div.content {
     vertical-align: middle;
     margin: 0;
 }
+.box-image-div {
+    padding: 0;
+}
 
 /********************************************************************************************
     PAGE ORGANIZER PROFILE                                                                                                 
