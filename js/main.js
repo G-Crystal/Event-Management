@@ -92,11 +92,11 @@ app.controller('PageCtrl', function ( /*$scope, $location, $http */) {
 app.controller('ExampleController', ['$scope', function($scope) {
   $scope.templates =
     [ 
-      { name: 'footer', url: 'templates/footer.html'},
+      { name: 'footer', url: 'templates/footer.html'}/*,
       { name: 'footer 2', url: 'templates/footer_2.html'},
       { name: 'footer 3', url: 'templates/footer_3.html'},
       { name: 'footer 4', url: 'templates/footer_4.html'},
-      { name: 'footer sponsor', url: 'templates/footer_sponsor.html'}
+      { name: 'footer sponsor', url: 'templates/footer_sponsor.html'}*/
     ];
   $scope.template = $scope.templates[3];
   

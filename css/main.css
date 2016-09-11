@@ -3957,7 +3957,10 @@ a.google:hover {
     height: 46px;
     width: 100%;
     padding: 0 20px;
-    font-size: 21px;
+    font-weight: 200;
+}
+.select-list option {
+    font-weight: 200;
 }
 .manual-glyphicon {
     position: absolute;
@@ -6132,7 +6135,7 @@ you can use the generic selector below, but it's slower:
 
 /*Pannel Preview*/
 .content-lateral-box {
-    
+    display: none;
 }
 .box-lateral {
     width: 200px;
@@ -6223,6 +6226,9 @@ you can use the generic selector below, but it's slower:
     .trans-buy-button {
         font-size: 13px;
     }
+    .select-list, .select-list option {
+        font-size: 13px;
+    }
 }
 
 @media screen and (min-width: 480px) {
@@ -6245,6 +6251,9 @@ you can use the generic selector below, but it's slower:
     .trans-buy-button {
         font-size: 14px;
     }
+    .select-list, .select-list option {
+        font-size: 14px;
+    }
 }
 @media screen and (min-width: 768px) {
     .rectangle-list {
@@ -6254,6 +6263,9 @@ you can use the generic selector below, but it's slower:
         font-size: 13px;
     }
     .home-box-black .p-title, .services-box-black .content {
+        font-size: 15px;
+    }
+    .select-list, .select-list option {
         font-size: 15px;
     }
 }
@@ -6267,6 +6279,9 @@ you can use the generic selector below, but it's slower:
     .home-box-black .p-title, .services-box-black .content {
         font-size: 15px;
     }
+    .select-list, .select-list option {
+        font-size: 15px;
+    }
 }
 @media (min-width: 992px) {
     .rectangle-list {
@@ -6276,6 +6291,9 @@ you can use the generic selector below, but it's slower:
         font-size: 14px;
     }
     .home-box-black .p-title, .services-box-black .content {
+        font-size: 16px;
+    }
+    .select-list, .select-list option {
         font-size: 16px;
     }
 }
