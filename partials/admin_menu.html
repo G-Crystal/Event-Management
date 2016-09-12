@@ -1,7 +1,7 @@
 <div id="demo" ng-controller="LMenuController" class="home1">
   <div ng-include='"partials/account_menu.html"'></div>
 
-  <ul class="sidenav">
+  <ul ng-class="{'sidenav':toggle_menu_flag, 'sidenav sidenav-toggle':!toggle_menu_flag}">
     <li ng-class="getClass('/event_information')"><a href="#event_information">Dashboard</a></li>
     <li ng-class="getClass('/events')"><a href="#events">Events</a></li>
     <li ng-class="getClass('/event_order')"><a href="#event_order">Orders</a></li>

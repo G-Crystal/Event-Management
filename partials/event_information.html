@@ -4,7 +4,7 @@
 
   <!--visible animated fadeInUp-->
   <div class="container-fluid">
-    <div class="content menubar-div row">
+    <div ng-class="{'menubar-div row content':toggle_menu_flag, 'menubar-div row':!toggle_menu_flag}">
       <!--List Event-->
       <div class="description-title-div col-lg-12">
         <h4>Event Information</h4>
@@ -279,3 +279,4 @@
   <!-- /.container -->
 </div>
 
+<div ng-include='"templates/footer2.html"'></div>

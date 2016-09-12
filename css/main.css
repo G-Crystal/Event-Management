@@ -4012,6 +4012,7 @@ form.ng-valid {
     position: fixed;
     z-index: 999;
     top: 50px;
+    border-bottom: 1px solid gray;
 }
 .buy-header-div span {
     padding-right: 20px;
@@ -4024,6 +4025,11 @@ form.ng-valid {
 .img-header {
     margin-top: 5px;
 }
+
+div.content {
+    margin-left: 20%;
+}
+
 ul.sidenav {
     list-style-type: none;
     margin: 65px 0 0;
@@ -4033,28 +4039,24 @@ ul.sidenav {
     position: fixed;
     height: 100%;
     overflow: auto;
+    z-index: 998;
 }
-
+ul.sidenav-toggle {
+    display: none;
+}
 ul.sidenav li a {
     display: block;
     color: #FFFFFF;
     padding: 8px 16px;
     text-decoration: none;
-}
- 
+} 
 ul.sidenav li.active a {
     background-color: #4CAF50;
     color: white;
 }
-
 ul.sidenav li:hover:not(.active) a {
     background-color: #555;
     color: white;
-}
-
-div.content {
-    margin-left: 20%;
-    padding: 1px 16px;
 }
 
 @media screen and (max-width: 1024px){
@@ -4098,6 +4100,10 @@ div.content {
 }
 .box-image-div {
     padding: 0;
+}
+#menu-toggle {
+    color: #FFFFFF;
+    margin-left: 15px;
 }
 
 /********************************************************************************************

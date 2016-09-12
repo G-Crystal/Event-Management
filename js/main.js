@@ -118,6 +118,11 @@ app.controller('ExampleController', ['$scope', function($scope) {
     ];
   // $scope.category = $scope.categories[13];
   
+  $scope.toggle_menu_flag = true;
+
+  $scope.toggleMenu = function() {
+    $scope.toggle_menu_flag = !$scope.toggle_menu_flag;
+  }
 }]);
 
 /***Only for Preview ***/
@@ -369,7 +374,9 @@ app.factory("DataService", function () {
 });
 
 app.controller('LMenuController', function ( $scope, $location/*, $http */) {
+
   $scope.getClass = function (path) {
     return ($location.path().substr(0, path.length) === path) ? 'active' : '';
   }
+
 });
