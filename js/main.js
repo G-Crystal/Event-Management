@@ -4,7 +4,7 @@
  * Main AngularJS Web Application
  */
 var app = angular.module('angula', [
-  'ngRoute', 'ui.bootstrap', 'ngAnimate', 'ngMaterial'
+  'ngRoute', 'ui.bootstrap', 'ngAnimate', 'ngMaterial', 'ngDialog'
 ]);
 
 /**
@@ -379,4 +379,17 @@ app.controller('LMenuController', function ( $scope, $location/*, $http */) {
     return ($location.path().substr(0, path.length) === path) ? 'active' : '';
   }
 
+});
+
+app.controller('EventInfoController', function ($scope, ngDialog, $document) {
+
+  $scope.AddTicket = function () {
+    var modalPromise = ngDialog.open({
+      template: 'partials/addTicketPopup.html', 
+      className: 'ngdialog-theme-default', 
+      preserveFocus: false, 
+      trapFocus: false,
+      width: '768px'
+    });
+  };
 });
