@@ -4726,7 +4726,6 @@ html.ngdialog-open, body.ngdialog-open {
 }
 .shop-img .performance{
     position: absolute;
-    z-index: 1000;
     text-transform: uppercase;
     top: auto;
     left: 5px;
