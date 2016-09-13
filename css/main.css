@@ -3954,10 +3954,13 @@ a.google:hover {
 .select-list {
     border: 1px solid blue;
     border-radius: 4px;
-    height: 46px;
+    height: 48px;
     width: 100%;
     padding: 0 20px;
-    font-weight: 200;
+    font-weight: 200;    
+}
+.select-sub-list {
+    margin-top: 5px;
 }
 .select-list option {
     font-weight: 200;

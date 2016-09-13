@@ -118,6 +118,36 @@ app.controller('ExampleController', ['$scope', function($scope) {
     ];
   // $scope.category = $scope.categories[13];
   
+  $scope.cat_music =
+    [ 
+      { value: '1', label: 'Concert'},
+      { value: '2', label: 'Festival'}
+    ];
+  
+  $scope.cat_food =
+    [ 
+      { value: '1', label: 'Tasting'},
+      { value: '2', label: 'Festival'}
+    ];
+  
+  $scope.cat_sports =
+    [ 
+      { value: '1', label: 'Fitness'},
+      { value: '2', label: 'Class'}
+    ];
+  
+  $scope.cat_community =
+    [ 
+      { value: '1', label: 'Meetups'},
+      { value: '2', label: 'Networking'}
+    ];
+  
+  $scope.cat_nonprofit =
+    [ 
+      { value: '1', label: 'Charity'},
+      { value: '2', label: 'Fund Raising'}
+    ];
+  
   $scope.toggle_menu_flag = true;
 
   $scope.toggleMenu = function() {

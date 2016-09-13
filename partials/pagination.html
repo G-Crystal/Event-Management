@@ -8,6 +8,33 @@
           <select ng-model="category" ng-options="t.label for t in categories" class="select-list">
             <option value="" disabled selected>Select category</option>
           </select>
+          <div ng-switch="category.value">
+            <div ng-switch-when="1">
+              <select ng-model="sub_category" ng-options="t.label for t in cat_music" class="select-list select-sub-list">
+                <option value="" disabled selected>Select sub-category</option>
+              </select>
+            </div>
+            <div ng-switch-when=3>
+              <select ng-model="sub_category" ng-options="t.label for t in cat_food" class="select-list select-sub-list">
+                <option value="" disabled selected>Select sub-category</option>
+              </select>
+            </div>
+            <div ng-switch-when=5>
+              <select ng-model="sub_category" ng-options="t.label for t in cat_sports" class="select-list select-sub-list">
+                <option value="" disabled selected>Select sub-category</option>
+              </select>
+            </div>
+            <div ng-switch-when=8>
+              <select ng-model="sub_category" ng-options="t.label for t in cat_community" class="select-list select-sub-list">
+                <option value="" disabled selected>Select sub-category</option>
+              </select>
+            </div>
+            <div ng-switch-when=10>
+              <select ng-model="sub_category" ng-options="t.label for t in cat_nonprofit" class="select-list select-sub-list">
+                <option value="" disabled selected>Select sub-category</option>
+              </select>
+            </div>
+          </div>
         </form>
       </div>
       <!--List Event-->
