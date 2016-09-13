@@ -5,35 +5,55 @@
       <div class="col-xs-8 col-xs-push-2 text-center shop-title-store">
         <form class="search search-category-bar">
           <!-- <input type="text"  name="search" placeholder="Select Category" style="background: none;"> -->
-          <select ng-model="category" ng-options="t.label for t in categories" class="select-list">
-            <option value="" disabled selected>Select category</option>
-          </select>
-          <div ng-switch="category.value">
-            <div ng-switch-when="1">
-              <select ng-model="sub_category" ng-options="t.label for t in cat_music" class="select-list select-sub-list">
-                <option value="" disabled selected>Select sub-category</option>
-              </select>
-            </div>
-            <div ng-switch-when=3>
-              <select ng-model="sub_category" ng-options="t.label for t in cat_food" class="select-list select-sub-list">
-                <option value="" disabled selected>Select sub-category</option>
-              </select>
-            </div>
-            <div ng-switch-when=5>
-              <select ng-model="sub_category" ng-options="t.label for t in cat_sports" class="select-list select-sub-list">
-                <option value="" disabled selected>Select sub-category</option>
-              </select>
-            </div>
-            <div ng-switch-when=8>
-              <select ng-model="sub_category" ng-options="t.label for t in cat_community" class="select-list select-sub-list">
-                <option value="" disabled selected>Select sub-category</option>
-              </select>
-            </div>
-            <div ng-switch-when=10>
-              <select ng-model="sub_category" ng-options="t.label for t in cat_nonprofit" class="select-list select-sub-list">
-                <option value="" disabled selected>Select sub-category</option>
-              </select>
-            </div>
+          <div class="dropdown" ng-controller="SearchCategoryController">
+            <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-category select-list">
+              {{selectedItem}} <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+              <li class="dropdown-submenu">
+                Music
+                <ul class="dropdown-menu">
+                  <li ng-click="changeCategory('Concert')">Concert</li>
+                  <li ng-click="changeCategory('Festival')">Festival</li>
+                </ul>
+              </li>
+              <li ng-click="changeCategory('Nightlife')">Nightlife</li>
+              <li class="dropdown-submenu">
+                Food
+                <ul class="dropdown-menu">
+                  <li ng-click="changeCategory('Tasting')">Tasting</li>
+                  <li ng-click="changeCategory('Festival')">Festival</li>
+                </ul>
+              </li>
+              <li ng-click="changeCategory('Entertainment')">Entertainment</li>
+              <li class="dropdown-submenu">
+                Sports
+                <ul class="dropdown-menu">
+                  <li ng-click="changeCategory('Fitness')">Fitness</li>
+                  <li ng-click="changeCategory('Class')">Class</li>
+                </ul>
+              </li>
+              <li ng-click="changeCategory('Outdoors')">Outdoors</li>
+              <li ng-click="changeCategory('Conferences')">Conferences</li>
+              <li class="dropdown-submenu">
+                Community
+                <ul class="dropdown-menu">
+                  <li ng-click="changeCategory('Meetups')">Meetups</li>
+                  <li ng-click="changeCategory('Networking')">Networking</li>
+                </ul>
+              </li>
+              <li ng-click="changeCategory('Start Ups')">Start Ups</li>
+              <li class="dropdown-submenu">
+                Non Profit
+                <ul class="dropdown-menu">
+                  <li ng-click="changeCategory('Charity')">Charity</li>
+                  <li ng-click="changeCategory('Fund Raising')">Fund Raising</li>
+                </ul>
+              </li>
+              <li ng-click="changeCategory('Arts')">Arts</li>
+              <li ng-click="changeCategory('Theater')">Theater</li>
+              <li ng-click="changeCategory('Other')">Other</li>
+            </ul>
           </div>
         </form>
       </div>

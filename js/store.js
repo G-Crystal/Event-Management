@@ -247,9 +247,21 @@ app.controller('SearchController', function($scope, $filter){
     }
       
   };
+
   // functions have been describe process the data for display
   $scope.myFilter();
   // $scope.search();
+}); 
+
+/* CONTROLLER SEARCH CATEGORY */
+
+app.controller('SearchCategoryController', function($scope, $filter){
+    
+  $scope.changeCategory = function(selectedItem) {
+    $scope.selectedItem = selectedItem;
+  }
+  
+  $scope.selectedItem = 'Select category';
     
 }); 
 
