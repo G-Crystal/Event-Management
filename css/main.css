@@ -6297,7 +6297,7 @@ you can use the generic selector below, but it's slower:
     .home-box-black p, .services-box-black p {
         font-size: 11px;
     }
-    .home-box-black .p-title, .services-box-black .content {
+    .home-box-black .p-title/*, .services-box-black .content*/ {
         font-size: 13px;
     }
     .profile-div {
@@ -6322,7 +6322,7 @@ you can use the generic selector below, but it's slower:
     .home-box-black p, .services-box-black p {
         font-size: 12px;
     }
-    .home-box-black .p-title, .services-box-black .content {
+    .home-box-black .p-title/*, .services-box-black .content*/ {
         font-size: 14px;
     }
     .profile-div {
@@ -6346,7 +6346,7 @@ you can use the generic selector below, but it's slower:
     .home-box-black p, .services-box-black p {
         font-size: 13px;
     }
-    .home-box-black .p-title, .services-box-black .content {
+    .home-box-black .p-title/*, .services-box-black .content*/ {
         font-size: 15px;
     }
     .select-list, .select-list option {
@@ -6360,7 +6360,7 @@ you can use the generic selector below, but it's slower:
     .home-box-black p, .services-box-black p {
         font-size: 13px;
     }
-    .home-box-black .p-title, .services-box-black .content {
+    .home-box-black .p-title/*, .services-box-black .content*/ {
         font-size: 15px;
     }
     .select-list, .select-list option {
@@ -6374,7 +6374,7 @@ you can use the generic selector below, but it's slower:
     .home-box-black p, .services-box-black p {
         font-size: 14px;
     }
-    .home-box-black .p-title, .services-box-black .content {
+    .home-box-black .p-title/*, .services-box-black .content*/ {
         font-size: 16px;
     }
     .select-list, .select-list option {
