@@ -5601,11 +5601,11 @@ figure.effect-layla:hover img {
 }
 .input-append input{
     float: left;
-    border: 0;
     margin: 0;
+    /*border: 0;
     padding: 0;
     height: 31px;
-    text-align: center;
+    text-align: center;*/
     vertical-align: middle;
 }
 .total-items {

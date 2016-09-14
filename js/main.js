@@ -4,7 +4,7 @@
  * Main AngularJS Web Application
  */
 var app = angular.module('angula', [
-  'ngRoute', 'ui.bootstrap', 'ngAnimate', 'ngMaterial', 'ngDialog'
+  'ngRoute', 'ui.bootstrap', 'ngAnimate', 'ngMaterial', 'ngDialog', 'ui.bootstrap.datetimepicker'
 ]);
 
 /**
@@ -422,4 +422,5 @@ app.controller('EventInfoController', function ($scope, ngDialog, $document) {
       width: '768px'
     });
   };
+
 });

@@ -166,10 +166,10 @@
           <div class="col-md-2 col-sm-3 col-xs-12">
             <label for="input11" class="label-name">Search Talent</label>
           </div>
-          <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+          <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
             <input type="text" name="search_talent" placeholder="Search Talent or Add Talent" class="form-control" id="search_talent">
           </div>
-          <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+          <div class="col-md-2 col-sm-3 col-xs-1">
             <span class="glyphicon glyphicon-plus-sign blue"></span>
           </div>
         </div>
@@ -182,7 +182,16 @@
             <label for="input12" class="label-name required">Start Date</label>
           </div>
           <div class="col-md-4 col-sm-6 col-xs-8">
-            <input type="text" name="start_date" placeholder="Select Date and Time" class="form-control" id="start_date">
+            <a class="dropdown-toggle start-toggle-calendar" id="dLabel" role="button" data-toggle="dropdown">
+              <div class="input-append">
+                <input type="text" name="start_date" placeholder="Select Date and Time" class="form-control" id="start_date" data-ng-model="start_data.date">
+                <!-- <span class="add-on"><i class="icon-calendar"></i></span> -->
+              </div>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <datetimepicker data-ng-model="start_data.date"
+                data-datetimepicker-config="{ dropdownSelector: '.start-toggle-calendar', modelType: 'YYYY-MM-DD HH:mm' }"></datetimepicker>
+            </ul>          
           </div>
         </div>
         <div class="row">
@@ -190,7 +199,16 @@
             <label for="input12" class="label-name required">End Date</label>
           </div>
           <div class="col-md-4 col-sm-6 col-xs-8">
-            <input type="text" name="end_date" placeholder="Select Date and Time" class="form-control" id="end_date">
+            <a class="dropdown-toggle end-toggle-calendar" id="dLabel" role="button" data-toggle="dropdown">
+              <div class="input-append">
+                <input type="text" name="end_date" placeholder="Select Date and Time" class="form-control" id="end_date" class="input-large" data-ng-model="end_data.date">
+                <!-- <span class="add-on"><i class="icon-calendar"></i></span> -->
+              </div>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <datetimepicker data-ng-model="end_data.date"
+                data-datetimepicker-config="{ dropdownSelector: '.end-toggle-calendar', modelType: 'YYYY-MM-DD HH:mm' }"></datetimepicker>
+            </ul>          
           </div>
         </div>
         <div class="row">
@@ -198,7 +216,16 @@
             <label for="input12" class="label-name">Doors Date</label>
           </div>
           <div class="col-md-4 col-sm-4 col-xs-8">
-            <input type="text" name="start_date" placeholder="Select Date and Time" class="form-control" id="start_date">
+            <a class="dropdown-toggle doors-toggle-calendar" id="dLabel" role="button" data-toggle="dropdown">
+              <div class="input-append">
+                <input type="text" name="doors_date" placeholder="Select Date and Time" class="form-control" id="doors_date" class="input-large" data-ng-model="doors_data.date">
+                <!-- <span class="add-on"><i class="icon-calendar"></i></span> -->
+              </div>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <datetimepicker data-ng-model="doors_data.date"
+                data-datetimepicker-config="{ dropdownSelector: '.doors-toggle-calendar', modelType: 'YYYY-MM-DD HH:mm' }"></datetimepicker>
+            </ul>          
           </div>
           <div class="col-md-6 col-sm-5 col-sm-offset-0 col-xs-8 col-xs-offset-4">
             <label for="input12" class="label-comment">inherit from start date if not entered</label>
@@ -248,8 +275,17 @@
           <div class="col-md-2 col-sm-3 col-xs-12">
             <label for="input1" class="label-name">Publish Event On</label>
           </div>
-          <div class="col-md-10 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-            <input type="text" name="publish_event" placeholder="Select Time and Date to Publish" class="form-control" id="publish_event">
+          <div class="col-md-4 col-sm-6">
+            <a class="dropdown-toggle publish-toggle-calendar" id="dLabel" role="button" data-toggle="dropdown">
+              <div class="input-append">
+                <input type="text" name="publish_event" placeholder="Select Time and Date to Publish" class="form-control" id="publish_event" class="input-large" data-ng-model="publish_data.date">
+                <!-- <span class="add-on"><i class="icon-calendar"></i></span> -->
+              </div>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <datetimepicker data-ng-model="publish_data.date"
+                data-datetimepicker-config="{ dropdownSelector: '.publish-toggle-calendar', modelType: 'YYYY-MM-DD HH:mm' }"></datetimepicker>
+            </ul>          
           </div>
         </div>
         <div class="row">
