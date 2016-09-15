@@ -152,7 +152,10 @@
             <label for="input10" class="label-name">Description</label>
           </div>
           <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-            <textarea name="description" class="form-control" rows="10" id="description" placeholder="Enter Event Description"></textarea>
+            <!-- <textarea name="description" class="form-control" rows="10" id="description" placeholder="Enter Event Description"></textarea> -->
+            <div class="wysiwig-editor">
+              <trix-editor angular-trix ng-model="foo" class="trix-content"></trix-editor>
+            </div>
           </div>
           <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
             <label for="input10" class="label-comment">0 of 1000</label>

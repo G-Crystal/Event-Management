@@ -4,7 +4,7 @@
  * Main AngularJS Web Application
  */
 var app = angular.module('angula', [
-  'ngRoute', 'ui.bootstrap', 'ngAnimate', 'ngMaterial', 'ngDialog', 'ui.bootstrap.datetimepicker'
+  'ngRoute', 'ui.bootstrap', 'ngAnimate', 'ngMaterial', 'ngDialog', 'ui.bootstrap.datetimepicker', 'angularTrix'
 ]);
 
 /**
