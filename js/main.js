@@ -24,10 +24,14 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/talent_profile", { templateUrl: "partials/talent_profile.html", controller: "HomeCtrl" })
     .when("/pagination", { templateUrl: "partials/pagination.html", controller: "HomeCtrl" })
     .when("/organizer_profile", { templateUrl: "partials/organizer_profile.html", controller: "HomeCtrl" })
+    .when("/buy_ticket", { templateUrl: "partials/buy_ticket.html", controller: "HomeCtrl" })
+    .when("/organizer_signup", { templateUrl: "partials/organizer_signup.html", controller: "HomeCtrl" })
+
     .when("/event_order", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
     .when("/messages", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
     .when("/settings", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
     .when("/payments", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
+
     .when("/event_information", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
     .when("/events", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
     .when("/talents", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
