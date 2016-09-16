@@ -4279,12 +4279,15 @@ html.ngdialog-open, body.ngdialog-open {
 .align-center {
     text-align: center;
 }
+.align-left {
+    text-align: left;
+}
 
 /********************************************************************************************
     PAGE LOG IN
 *********************************************************************************************/
 .login-container-div {
-    padding: 50px 0;
+    padding: 60px 0 30px;
     background: url("../images/parallax/parallax.jpg");
     text-align: center;
 }
@@ -4304,6 +4307,9 @@ html.ngdialog-open, body.ngdialog-open {
 }
 .login-link-label {
     color: #0000FF;
+}
+.error-div {
+    color: #FF0000;
 }
 
 /********************************************************************************************
