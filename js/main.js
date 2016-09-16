@@ -434,8 +434,22 @@ app.controller('EventInfoController', function ($scope, ngDialog, $document) {
 
 app.controller('LoginController', function ($scope, ngDialog, $document) {
 
-  $scope.email = {
-    // text: 'me@example.com'
-  };
+  $scope.login = function () {
+    if($scope.login_form.$valid) {
+
+    }
+  }
+
+  $scope.reset = function () {
+    if($scope.reset_form.$valid) {
+      
+    }
+  }
+
+  $scope.signup = function () {
+    if($scope.signup_form.$valid) {
+      
+    }
+  }
 
 })
