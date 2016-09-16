@@ -26,6 +26,8 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/organizer_profile", { templateUrl: "partials/organizer_profile.html", controller: "HomeCtrl" })
     .when("/buy_ticket", { templateUrl: "partials/buy_ticket.html", controller: "HomeCtrl" })
     .when("/organizer_signup", { templateUrl: "partials/organizer_signup.html", controller: "HomeCtrl" })
+    .when("/log_in", { templateUrl: "partials/log_in.html", controller: "HomeCtrl" })
+    .when("/sign_up", { templateUrl: "partials/sign_up.html", controller: "HomeCtrl" })
 
     .when("/event_order", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
     .when("/messages", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
@@ -428,3 +430,11 @@ app.controller('EventInfoController', function ($scope, ngDialog, $document) {
   };
 
 });
+
+app.controller('LoginController', function ($scope, ngDialog, $document) {
+  
+  $scope.email = {
+    // text: 'me@example.com'
+  };
+
+})

@@ -4276,8 +4276,34 @@ html.ngdialog-open, body.ngdialog-open {
 /********************************************************************************************
     PAGE EVENT INFORMATION
 *********************************************************************************************/
-.submit-button {
+.align-center {
     text-align: center;
+}
+
+/********************************************************************************************
+    PAGE LOG IN
+*********************************************************************************************/
+.login-container-div {
+    padding: 50px 0;
+    background: url("../images/parallax/parallax.jpg");
+    text-align: center;
+}
+.login-header-div {
+    padding: 20px 0;
+}
+.login-body-div {
+    padding: 20px 0;
+}
+.row-height {
+    line-height: 50px;
+}
+.login-back-div {
+    padding: 20px;
+    background-color: #9BD9EA;
+    opacity: 0.8;
+}
+.login-link-label {
+    color: #0000FF;
 }
 
 /********************************************************************************************
