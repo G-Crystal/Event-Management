@@ -155,7 +155,7 @@ app.controller('ExampleController', ['$scope', function($scope) {
       { value: '2', label: 'Fund Raising'}
     ];
   
-  $scope.toggle_menu_flag = true;
+  $scope.toggle_menu_flag = false;
 
   $scope.toggleMenu = function() {
     $scope.toggle_menu_flag = !$scope.toggle_menu_flag;

@@ -4,7 +4,8 @@
 
   <!--visible animated fadeInUp-->
   <div class="container-fluid">
-    <div ng-class="{'menubar-div row content':toggle_menu_flag, 'menubar-div row':!toggle_menu_flag}">
+    <!-- <div ng-class="{'menubar-div row content':toggle_menu_flag, 'menubar-div row':!toggle_menu_flag}"> -->
+    <div class="menubar-div row">
       <!--List Event-->
       <div class="description-title-div col-lg-12">
         <h4>Event Information</h4>
@@ -309,5 +310,6 @@
   </div>
   <!-- /.container -->
 </div>
+<div id="main-curtain" class="Curtain " ng-class="{'visible':toggle_menu_flag, '':!toggle_menu_flag}" ng-click="toggleMenu()"></div>
 
-<div ng-include='"templates/footer2.html"'></div>
+<div ng-include='"templates/footer.html"'></div>

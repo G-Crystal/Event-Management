@@ -4,7 +4,8 @@
 
   <!--visible animated fadeInUp-->
   <div class="container-fluid row">
-    <div ng-class="{'menubar-div row content':toggle_menu_flag, 'menubar-div row':!toggle_menu_flag}">
+    <!-- <div ng-class="{'menubar-div row content':toggle_menu_flag, 'menubar-div row':!toggle_menu_flag}"> -->
+    <div class="menubar-div row">
       <div class="col-lg-12 text-center shop-title-store">
         <h1 class="section-title">UPCOMING EVENT ORDER</h1>
       </div>
@@ -45,7 +46,8 @@
 
 <div id="demo" ng-controller="PEventController" class="home1">
 
-  <div ng-class="{'menubar-div row content':toggle_menu_flag, 'menubar-div row':!toggle_menu_flag}">
+  <!-- <div ng-class="{'menubar-div row content':toggle_menu_flag, 'menubar-div row':!toggle_menu_flag}"> -->
+  <div class="menubar-div row">
     <div class="col-lg-12 text-center shop-title-store">
       <h1 class="section-title">PAST EVENT ORDER</h1>
     </div>
@@ -82,5 +84,6 @@
   <!-- /.row -->
 </div>
 <!-- /.demo -->
+<div id="main-curtain" class="Curtain " ng-class="{'visible':toggle_menu_flag, '':!toggle_menu_flag}" ng-click="toggleMenu()"></div>
 
-<div ng-include='"templates/footer2.html"'></div>
+<div ng-include='"templates/footer.html"'></div>
