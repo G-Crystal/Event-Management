@@ -4687,6 +4687,8 @@ html.ngdialog-open, body.ngdialog-open {
     top: auto;
     left: 5px;
     bottom: 5px;
+    background:  #FFFFFF;
+    border: solid 1px #0000FF;
 }
 .store-img-div {
     position: relative;
@@ -4700,10 +4702,8 @@ html.ngdialog-open, body.ngdialog-open {
     z-index: 10;
     color:  #4C4C4C;
     font-size: 1.36rem;
-    background:  #FFFFFF;
     padding: 3px 5px;
     display: -webkit-inline-box;
-    border: solid 1px #0000FF;
     font-weight: 300;
 }
 
