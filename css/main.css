@@ -90,7 +90,6 @@ html * {
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    /*font-family: 'Open sans',sans-serif;*/
     font-family: "montserrat";
     font-weight: 400;
     font-size: 12px;
@@ -99,7 +98,6 @@ body {
     letter-spacing: 0.04em;
 }
 h1 {
-    /*font-family: 'Open sans', sans-serif;*/
     font-weight: 700;
     font-size: 26px;
     line-height:20px;
@@ -107,7 +105,6 @@ h1 {
     margin-bottom: 20px;
 }
 h2 {
-    /*font-family: 'Open sans', sans-serif;*/
     font-weight: 400;
     margin-bottom: 20px;
     font-size: 20px;
@@ -124,14 +121,12 @@ img {
     max-width: 100%;
 }
 h3 {
-    /*font-family: 'Open sans', sans-serif;*/
     font-weight: 400;
 }
 h3, .h3 {
     font-size: 20px;
 }
 h4 {
-    /*font-family: 'Open sans', sans-serif;*/
     font-weight: 700;
 }
 .btn {
@@ -233,7 +228,7 @@ ul.scroll-menu {
     height: 48%;
     top: 50%;
     left: 50%;
-    background:#16a7a7; /*#16a7a7;*/
+    background:#16a7a7;
     opacity: 0;
     -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
     -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
@@ -296,10 +291,6 @@ p.personal-phrase i.fa-quote-left{
     box-shadow: inset 0 1px 0 #0fc8c8;
     text-shadow: 0 1px 0 rgba(0,0,0,.1);
 }
-/*.btn-primary:hover {
-    background: #16a7a7;  
-    border: 1px solid #09b1b9; 
-}*/
 .btn-lg, .btn-group-lg>.btn {
     border-radius: 0px;
 }
@@ -369,7 +360,6 @@ ul.menu-items li.menu-item:last-child {
 }
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
     background-image: none;
-    /*background-color: #fff;*/
 }
 .megamenu {
     width: 100%;
@@ -720,7 +710,6 @@ ul.menu-items li.menu-item:last-child {
 .img-home-portfolio,
 .img-customer,
 .portfolio-item {
-    /*margin-bottom: 30px;*/
 }
 .overlay {
   display: block;
@@ -985,11 +974,6 @@ a.close-overlay.hidden {
 
 }
 
-/*img{
-  margin:auto;
-  width: 100%;
-}*/
-
 #slides_control {
   position:absolute;
   left:50%;
@@ -998,7 +982,6 @@ a.close-overlay.hidden {
 }
 
 .slide-txt {
-    /*font-family: 'Open sans',sans-serif;*/
     font-weight: 700;
     font-size: 130px;
     color: #ccc;
@@ -1173,7 +1156,6 @@ ul.clients li img{
     text-decoration: none;
     background-color: #212121;
     border-radius: 3px;
-    /*font-family: 'Open sans', sans-serif;*/
     font-weight: 300;
     font-size: 14px;
 }
@@ -1612,7 +1594,6 @@ figure.effect-hera:hover p i:empty {
 }
 md-tooltip{
     font-size: 13px;
-    /*font-family: 'Open sans', sans-serif;*/
     font-weight: 300; 
     letter-spacing:1px;
     border-radius: 2px;
@@ -1784,7 +1765,6 @@ md-tooltip.md-show {
 }
 .about-top-title {
     text-align: center;
-    /*font-family: 'Open sans',sans-serif;*/
     font-weight: 400;
     font-size: 32px;
     text-transform: uppercase;
@@ -2183,8 +2163,6 @@ h2.t-title-office {
     padding: 80px 0;
 }
 .blog-info-prod {
-    /*box-shadow: 0 1px 2px rgba(0,0,0,0.4);
-    background: #f4f4f4;*/
     padding: 30px 20px;
 }
 .blog-info-prod h3 {
@@ -4064,26 +4042,6 @@ ul.sidenav li:hover:not(.active) a {
     color: white;
 }
 
-/*@media screen and (max-width: 1024px){
-    ul.sidenav {
-        width:100%;
-        height:auto;
-        position:relative;
-    }
-    ul.sidenav li a {
-        float: left;
-        padding: 15px;
-    }
-    div.content {margin-left:0;}
-}
-
-@media screen and (max-width: 400px){
-    ul.sidenav li a {
-        text-align: center;
-        float: none;
-    }
-}*/
-
 .menubar-div {
     line-height: 45px;
 }
@@ -4337,7 +4295,6 @@ html.ngdialog-open, body.ngdialog-open {
 .about2-top-title .color-txt{
     color: #0bb7b7;
     text-align: center;
-    /*font-family: 'Open sans',sans-serif;*/
     font-weight: 700;
     font-size: 38px;
     text-transform: uppercase;
@@ -4405,7 +4362,6 @@ html.ngdialog-open, body.ngdialog-open {
 }
 .about3-top-title {
     text-align: center;
-    /*font-family: 'Open sans',sans-serif;*/
     font-weight: 300;
     font-size: 38px;
     text-transform: uppercase;
@@ -4491,7 +4447,6 @@ html.ngdialog-open, body.ngdialog-open {
 }
 .about4-top-title {
     text-align: center;
-    /*font-family: 'Open sans',sans-serif;*/
     font-weight: 300;
     font-size: 38px;
     text-transform: none;
@@ -4512,7 +4467,6 @@ html.ngdialog-open, body.ngdialog-open {
 
 .about4-top-subtitle {
     text-align: center;
-    /*font-family: 'Open sans',sans-serif;*/
     font-weight: 700;
     font-size: 78px;
     text-transform: uppercase;
@@ -4592,7 +4546,6 @@ html.ngdialog-open, body.ngdialog-open {
 *********************************************************************************************/
 .search-query {
     padding: 4px;
-    /*margin-bottom: 10px;*/
 }
 .search input[type=text]{
     width: 100%;
@@ -4602,7 +4555,6 @@ html.ngdialog-open, body.ngdialog-open {
     font-size: 21px;
     font-weight: 200;
     background-color: white;
-    /*background-image: url('../images/search_icon.png');*/
     background-position: 10px -1px;
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
@@ -4613,9 +4565,7 @@ html.ngdialog-open, body.ngdialog-open {
     width: 100%;
 }
 .search .glyphicon {
-    /*top: -45px;*/
     font-size: 26px;
-    /*left: 15px;*/
     color: #0000FF;
 }
 .description-title-div .glyphicon {
@@ -4635,77 +4585,8 @@ html.ngdialog-open, body.ngdialog-open {
     height: 450px;
     position: relative;
 }
-/*.shop-banner.box-purchase {
-    border-left: 1px solid #0bb7b7;
-    padding: 32px 28px 0px 0px;
-    background-color: #212121;
-    border-right: 1px solid #212121;
-    border-top: 1px solid #212121;
-    border-bottom: 1px solid #212121;
-    float: left;
-    width: 100%;
-    margin-top: 80px;   
-}
-.shop-banner .skillbar{
-    background: #212121;
-    height: 3px;
-    margin-bottom: 50px;
-    border-radius: 0px;
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 0px;
-}
-.shop-banner .skillbar p {
-    font-size: 20px;
-    font-family: 'Open sans', sans-serif;
-    text-transform: uppercase;
-    font-weight: 300;
-}
-.shop-banner .skillbar p span{
-    font-weight: 700;
-}
-.shop-banner .big-txt-purchase {
-    font-size: 230px;
-    font-weight: 700;
-    padding-left: 50px;
-}
-.ball-percent span.value-perc{
-    padding: 15px 10px;
-    font-size: 16px;
-    background: #0bb7b7;
-    border-radius:100%;
-    box-shadow: inset 0 0 0 3px #212121;
-    border: 1px #0bb7b7 solid;
-}
-.shop-discount1 {
-    margin-left: 640px;
-    margin-top:-12px;
-    position: absolute;
-    color: #fff;
-}
-.shop-discount2 {
-    margin-left: 770px;
-    margin-top:-12px;
-    position: absolute;
-    color: #fff;
-}
-
-.shop-banner.box-purchase p.big-txt-purchase {
-    color:#fff;
-    margin: 20px 0 -30px 0;
-}
-.shop-banner .sp-ski {
-    padding-left: 0;
-}
-.shop-banner .skillbar-bar {
-    height: 1px;
-    border-radius: 0px;
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 0px;
-    background: #0bb7b7;
-}*/
 .shopping-top-title {
     text-align: center;
-    /*font-family: 'Open sans',sans-serif;*/
     font-weight: 700;
     font-size: 78px;
     text-transform: uppercase;
@@ -4714,7 +4595,6 @@ html.ngdialog-open, body.ngdialog-open {
 }
 .shopping-topsub-title {
     text-align: center;
-    /*font-family: 'Open sans',sans-serif;*/
     font-weight: 300;
     font-size: 40px;
     text-transform: uppercase;
@@ -4788,9 +4668,7 @@ html.ngdialog-open, body.ngdialog-open {
 
 .shop-prod .shop-img{
     margin: 0 auto 10px auto;
-    /*width: 100%;*/
     text-align: center;
-    /*border-top:1px solid rgba(0,0,0,0.1);*/
     padding: 0px 0;
     background: #fff;
     position: relative;
@@ -4810,66 +4688,6 @@ html.ngdialog-open, body.ngdialog-open {
     left: 5px;
     bottom: 5px;
 }
-/*@media screen and (min-width: 319px) {
-.shop-img .performance {
-    top: 98px;
-    left: 5px;
-    }
-}
-@media screen and (min-width: 359px) {
-.shop-img .performance {
-    top: 123px;
-    left: 5px;
-    }
-}
-@media screen and (min-width: 370px) {
-.shop-img .performance {
-    top: 132px;
-    left: 5px;
-    }
-}
-@media screen and (min-width: 481px) {
-.shop-img .performance {
-    top: 158px;
-    left: 5px;
-    }
-}
-@media screen and (min-width: 771px) {
-.shop-img .performance {
-    top: 66px;
-    left: 5px;
-    }
-}
-@media (min-width: 992px) and (orientation: landscape) {
-.shop-img .performance {
-    top: 112px;
-    left: 5px;
-    }
-}
-@media (min-width: 1079px) {
-.shop-img .performance {
-    top: 112px;
-    left: 5px;
-    }
-}
-@media (min-width: 1200px){
-.shop-img .performance {
-    top: 95px;
-    left: 5px;
-    }
-}
-@media (min-width: 1919px) {
-.shop-img .performance {
-    top: 214px;
-    left: 5px;
-    }
-}
-@media (min-width: 2500px) {
-.shop-img .performance {
-    top: 200px;
-    left: 5px;
-    }
-}*/
 .store-img-div {
     position: relative;
 }
@@ -4895,7 +4713,6 @@ html.ngdialog-open, body.ngdialog-open {
       -ms-transform: scale(1.1);  
        -o-transform: scale(1.1);  
           transform: scale(1.1);  
-          /*box-shadow: 0 20px 22px #888;*/
           -webkit-transition: all 0.8s 
 }
 .shop-prod ul.nav-pills li {
@@ -4964,7 +4781,6 @@ html.ngdialog-open, body.ngdialog-open {
     margin-right: 10px;
 }
 .shop-prod ul.nav-pills li {
-    /*margin-bottom: 40px;*/
     border-right: 0px solid #ccc;
 }
 #product {
@@ -5080,16 +4896,7 @@ html.ngdialog-open, body.ngdialog-open {
     transform: scale(1);
     opacity: 1;
 }
-/*.shop-img p {
-    position:absolute;
-    padding: 10px;
-    background-color: #21252b;
-    color: #fff;
-    top: 0;
-}
-.shop-img p i {
-    margin-right: 5px;
-}*/
+
 /*-----------------------------------------*/
 /***** Effect hover images Layla *****/
 /*-----------------------------------------*/
@@ -5384,7 +5191,6 @@ figure.effect-layla:hover img {
 }
 .product-top-title {
     text-align: left;
-    /*font-family: 'Open sans',sans-serif;*/
     font-weight: 700;
     font-size: 48px;
     text-transform: uppercase;
@@ -5393,7 +5199,6 @@ figure.effect-layla:hover img {
 }
 .product-topsub-title {
     text-align: left;
-    /*font-family: 'Open sans',sans-serif;*/
     font-weight: 300;
     font-size: 30px;
     text-transform: uppercase;
@@ -5660,10 +5465,6 @@ figure.effect-layla:hover img {
 .input-append input{
     float: left;
     margin: 0;
-    /*border: 0;
-    padding: 0;
-    height: 31px;
-    text-align: center;*/
     vertical-align: middle;
 }
 .total-items {
@@ -5788,7 +5589,6 @@ ul.footer-menu li a{
     margin-right: 7px;
     color: #0dc1c1;
     content: "\f105";
-    /*font-family: FontAwesome;*/
 }
 
 /******* footer tags *******/
@@ -6341,20 +6141,12 @@ you can use the generic selector below, but it's slower:
 }
 
 #owl-demo .item{
-    /*background: #42bdc2;
-    padding: 30px 0px;
-    margin: 5px;*/
-    /*color: #FFF;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    text-align: center;*/
+
 }
 #owl-demo .item img{
   display: block;
   width: 100%;
-  height: 332px;`
-
+  height: 332px;
 }
 .text-center .browse {
     border: solid blue;
@@ -6376,7 +6168,7 @@ you can use the generic selector below, but it's slower:
     .home-box-black p, .services-box-black p {
         font-size: 11px;
     }
-    .home-box-black .p-title/*, .services-box-black .content*/ {
+    .home-box-black .p-title {
         font-size: 13px;
     }
     .profile-div {
@@ -6401,7 +6193,7 @@ you can use the generic selector below, but it's slower:
     .home-box-black p, .services-box-black p {
         font-size: 12px;
     }
-    .home-box-black .p-title/*, .services-box-black .content*/ {
+    .home-box-black .p-title {
         font-size: 14px;
     }
     .profile-div {
@@ -6425,7 +6217,7 @@ you can use the generic selector below, but it's slower:
     .home-box-black p, .services-box-black p {
         font-size: 13px;
     }
-    .home-box-black .p-title/*, .services-box-black .content*/ {
+    .home-box-black .p-title {
         font-size: 15px;
     }
     .select-list option {
@@ -6439,7 +6231,7 @@ you can use the generic selector below, but it's slower:
     .home-box-black p, .services-box-black p {
         font-size: 13px;
     }
-    .home-box-black .p-title/*, .services-box-black .content*/ {
+    .home-box-black .p-title {
         font-size: 15px;
     }
     .select-list option {
@@ -6453,7 +6245,7 @@ you can use the generic selector below, but it's slower:
     .home-box-black p, .services-box-black p {
         font-size: 14px;
     }
-    .home-box-black .p-title/*, .services-box-black .content*/ {
+    .home-box-black .p-title {
         font-size: 16px;
     }
     .select-list option {

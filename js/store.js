@@ -3,14 +3,6 @@
 
 app.controller('carouselController', function($scope){
   $scope.name = "hello world";
-  // $scope.pictures = [{full: "images/store/product/swatch.jpg"},
-  //                     {full: "images/icon/ipad.png"},
-  //                     {full: "images/icon/ipad.png"},
-  //                     {full: "images/icon/ipad.png"},
-  //                     {full: "images/icon/ipad.png"},
-  //                     {full: "images/icon/ipad.png"},
-  //                     {full: "images/icon/ipad.png"},
-  //                     {full: "images/icon/ipad.png"}];
     
 }); 
 app.controller('AdminController_Music', function ($scope, $filter) {
@@ -250,7 +242,6 @@ app.controller('SearchController', function($scope, $filter){
 
   // functions have been describe process the data for display
   $scope.myFilter();
-  // $scope.search();
 }); 
 
 /* CONTROLLER SEARCH CATEGORY */
@@ -323,7 +314,6 @@ app.controller('OrganizerController', function($scope, $filter){
   };
   // functions have been describe process the data for display
   $scope.myFilter();
-  // $scope.search();
     
 }); 
 
@@ -385,7 +375,6 @@ app.controller('UEventController', function($scope, $filter){
   };
   // functions have been describe process the data for display
   $scope.myFilter();
-  // $scope.search();
     
 }); 
 
@@ -445,7 +434,6 @@ app.controller('PEventController', function($scope, $filter){
   };
   // functions have been describe process the data for display
   $scope.myFilter();
-  // $scope.search();
     
 }); 
 

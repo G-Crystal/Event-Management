@@ -78,14 +78,14 @@ app.config(['$routeProvider', function ($routeProvider) {
 /**
  * Controls the Blog
  */
-app.controller('BlogCtrl', function (/* $scope, $location, $http */) {
+app.controller('BlogCtrl', function () {
   console.log("Blog Controller reporting for duty.");
 });
 
 /**
  * Controls all other Pages
  */
-app.controller('PageCtrl', function ( /*$scope, $location, $http */) {
+app.controller('PageCtrl', function () {
   console.log("Page Controller reporting for duty.");
 
   
@@ -123,7 +123,6 @@ app.controller('ExampleController', ['$scope', function($scope) {
       { value: '12', label: 'Theater'},
       { value: '13', label: 'Other'}
     ];
-  // $scope.category = $scope.categories[13];
   
   $scope.cat_music =
     [ 
@@ -208,26 +207,6 @@ app.controller("dataImagesWork2", function ($scope) {
     { num: 8,  category: 'sound', name: 'Dancing', src: "9.jpg", description: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. '}];
 
 });
-
-//app.controller('fbController', function ($scope) {
-
-//    $scope.fetchUser = function () {
-
-//        $scope.name = "Test";
-//    }
-//});
-
-//app.controller('tabController', function () {
-//    this.tab = 1;
-
-//    this.selectTab = function (setTab) {
-//        this.tab = setTab;
-//    };
-//    this.isSelected = function (checkTab) {
-//        return this.tab === checkTab;
-//    };
-//});
-
 
 //tabs management
 app.controller('TabsDemoCtrl', function ($scope, $window) {
@@ -335,10 +314,6 @@ app.directive('owlcarousel', function () {
   var linker = function (scope, element, attr) {
     link: (scope, element, attr)
     $(element).owlCarousel({
-      // navigation: false,
-      // slideSpeed: 300,
-      // paginationSpeed: 400,
-      // singleItem: true,
       autoPlay: false,
       // "singleItem:true" is a shortcut for:
       items : 3, 
@@ -370,10 +345,6 @@ app.directive('carouselprod', function () {
       paginationSpeed: 400,
       autoPlay: true,
       items : 4
-      // itemsDesktop : false,
-      // itemsDesktopSmall : false,
-      // itemsTablet: false,
-      // itemsMobile : false
     });
 
   }

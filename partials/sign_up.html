@@ -22,7 +22,7 @@
 		            <label for="input3" class="label-name">Last Name</label>
 		          </div>
 		          <div class="col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-		            <input type="text" name="last_name" placeholder="Last Name" class="form-control" id="last_name">
+		            <input type="text" name="last_name" placeholder="Last Name" class="form-control" id="last_name" ng-required="required">
 							  <span ng-show="signup_form.last_name.$invalid && !signup_form.last_name.$pristine">Last name is required.</span>
 		          </div>
 		        </div>
@@ -59,7 +59,7 @@
 		        </div>
 		        <div class="row row-height">
 		          <div class="col-sm-6 col-xs-6">
-		            <a class="btn btn-block login-link-label inline-buy-button" ng-click="login()">Log In</a>
+		            <a class="btn btn-block login-link-label inline-buy-button" href="#/log_in">Log In</a>
 		          </div>
 		          <div class="col-sm-6 col-xs-6">
 		            <a class="btn btn-block login-link-label inline-buy-button" ng-click="forgot()">Forgot Password?</a>

@@ -20,9 +20,6 @@
   <div class="container search-div" ng-controller="AdminController_Music">
     <div class="row">
       <div class="row">
-        <!--<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-
-        </div> -->
         <div class="col-lg-4 col-md-10 col-sm-10 col-xs-10 col-xs-offset-1">
           <form class="search">
             <input type="text" ng-model="query" ng-change="search('name')" class="search-query" placeholder="Search" style="padding-left: 60px;">
@@ -31,7 +28,6 @@
         </div>
         <div class="col-lg-3 col-lg-offset-0 col-md-5 col-sm-5 col-xs-10 col-xs-offset-1">
           <form class="search search-category-bar">
-          <!-- <input type="text"  name="search" placeholder="Select Category" style="background: none;"> -->
             <div class="dropdown" ng-controller="SearchCategoryController">
               <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-category select-list">
                 {{selectedItem}} <span class="caret"></span>
@@ -89,9 +85,6 @@
             <input type="text" name="location" placeholder="Location" style="background: none;">
           </form>
         </div>       
-        <!--<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-
-        </div> -->
       </div>
       <div class="col-lg-12 text-center shop-title-store">
         <h1 class="section-title">EVENT'S NEAR YOU</h1>
@@ -113,7 +106,6 @@
                   <p class="stadium">{{product.stadium}}</p>
                   <p class="location">{{product.location}}</p>
                 </div>
-                <!-- <a class="btn btn-block buy-button" href="#/products/{{product.code}}"> -->
                 <a class="btn btn-block trans-buy-button" href="#/event">
                 BUY NOW</a>                      
               </div>
@@ -130,4 +122,4 @@
   <!-- /.container -->
 </div>
 
-<div ng-include='"templates/footer.html"'></div>
+<div ng-include="templates/footer.html"></div>

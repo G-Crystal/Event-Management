@@ -4,14 +4,13 @@
 
   <!--visible animated fadeInUp-->
   <div class="container-fluid">
-    <!-- <div ng-class="{'menubar-div row content':toggle_menu_flag, 'menubar-div row':!toggle_menu_flag}"> -->
     <div class="menubar-div row">
       <!--List Event-->
       <div class="description-title-div col-lg-12">
         <h4>Event Information</h4>
         <div class="row">
           <div class="col-md-2 col-sm-3 col-xs-12">
-            <label for="input1" class="label-name required">Event Name</label>
+            <label for="input1" class="label-name ng-required="">Event Name</label>
           </div>
           <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
             <input type="text" name="event_name" placeholder="Event Name" class="form-control" id="event_name">
@@ -33,7 +32,7 @@
         </div>
         <div class="row">
           <div class="col-md-2 col-sm-3 col-xs-12">
-            <label for="input3" class="label-name required">Venue</label>
+            <label for="input3" class="label-name ng-required="">Venue</label>
           </div>
           <div class="col-md-3 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
             <input type="text" name="search_venue" placeholder="Search Venue" class="form-control" id="search_venue">
@@ -51,7 +50,7 @@
         </div>
         <div class="row">
           <div class="col-md-2 col-sm-3 col-xs-12">
-            <label for="input5" class="label-name required">Category</label>
+            <label for="input5" class="label-name ng-required="">Category</label>
           </div>
           <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
             <div class="dropdown" ng-controller="SearchCategoryController">
@@ -118,7 +117,7 @@
         </div>
         <div class="row">
           <div class="col-md-2 col-sm-3 col-xs-12">
-            <label for="input7" class="label-name required">Event Image</label>
+            <label for="input7" class="label-name ng-required="">Event Image</label>
           </div>
           <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
             <input type="text" name="event_image" placeholder="Upload Image" class="form-control" id="event_image">
@@ -128,7 +127,7 @@
           </div>
           <div class="clearfix visible-sm visible-xs"></div>
           <div class="col-md-2 col-sm-3 col-xs-12">
-            <label for="input8" class="label-name required">Header Image</label>
+            <label for="input8" class="label-name ng-required="">Header Image</label>
           </div>
           <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
             <input type="text" name="header_image" placeholder="Upload Image" class="form-control" id="header_image">
@@ -153,7 +152,6 @@
             <label for="input10" class="label-name">Description</label>
           </div>
           <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-            <!-- <textarea name="description" class="form-control" rows="10" id="description" placeholder="Enter Event Description"></textarea> -->
             <div class="wysiwig-editor">
               <trix-editor angular-trix ng-model="foo" class="trix-content"></trix-editor>
             </div>
@@ -183,13 +181,12 @@
         <h4>Dates</h4>
         <div class="row">
           <div class="col-md-2 col-sm-3 col-xs-4">
-            <label for="input12" class="label-name required">Start Date</label>
+            <label for="input12" class="label-name ng-required="">Start Date</label>
           </div>
           <div class="col-md-4 col-sm-6 col-xs-8">
             <a class="dropdown-toggle start-toggle-calendar" id="dLabel" role="button" data-toggle="dropdown">
               <div class="input-append">
                 <input type="text" name="start_date" placeholder="Select Date and Time" class="form-control" id="start_date" data-ng-model="start_data.date">
-                <!-- <span class="add-on"><i class="icon-calendar"></i></span> -->
               </div>
             </a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
@@ -200,13 +197,12 @@
         </div>
         <div class="row">
           <div class="col-md-2 col-sm-3 col-xs-4">
-            <label for="input12" class="label-name required">End Date</label>
+            <label for="input12" class="label-name ng-required="">End Date</label>
           </div>
           <div class="col-md-4 col-sm-6 col-xs-8">
             <a class="dropdown-toggle end-toggle-calendar" id="dLabel" role="button" data-toggle="dropdown">
               <div class="input-append">
                 <input type="text" name="end_date" placeholder="Select Date and Time" class="form-control" id="end_date" class="input-large" data-ng-model="end_data.date">
-                <!-- <span class="add-on"><i class="icon-calendar"></i></span> -->
               </div>
             </a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
@@ -223,7 +219,6 @@
             <a class="dropdown-toggle doors-toggle-calendar" id="dLabel" role="button" data-toggle="dropdown">
               <div class="input-append">
                 <input type="text" name="doors_date" placeholder="Select Date and Time" class="form-control" id="doors_date" class="input-large" data-ng-model="doors_data.date">
-                <!-- <span class="add-on"><i class="icon-calendar"></i></span> -->
               </div>
             </a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
@@ -283,7 +278,6 @@
             <a class="dropdown-toggle publish-toggle-calendar" id="dLabel" role="button" data-toggle="dropdown">
               <div class="input-append">
                 <input type="text" name="publish_event" placeholder="Select Time and Date to Publish" class="form-control" id="publish_event" class="input-large" data-ng-model="publish_data.date">
-                <!-- <span class="add-on"><i class="icon-calendar"></i></span> -->
               </div>
             </a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
