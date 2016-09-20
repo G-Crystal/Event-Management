@@ -29,6 +29,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/log_in", { templateUrl: "partials/log_in.html", controller: "HomeCtrl" })
     .when("/sign_up", { templateUrl: "partials/sign_up.html", controller: "HomeCtrl" })
     .when("/reset", { templateUrl: "partials/reset_password.html", controller: "HomeCtrl" })
+    .when("/buy_ticket", { templateUrl: "partials/buy_ticket.html", controller: "HomeCtrl" })
 
     .when("/event_order", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
     .when("/messages", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
@@ -96,14 +97,10 @@ app.controller('PageCtrl', function () {
 });
 
 /***Only for Preview ***/
-app.controller('ExampleController', ['$scope', function($scope) {
+app.controller('ExampleController', ['$scope', '$location', function($scope, $location) {
   $scope.templates =
     [ 
-      { name: 'footer', url: 'templates/footer.html'}/*,
-      { name: 'footer 2', url: 'templates/footer_2.html'},
-      { name: 'footer 3', url: 'templates/footer_3.html'},
-      { name: 'footer 4', url: 'templates/footer_4.html'},
-      { name: 'footer sponsor', url: 'templates/footer_sponsor.html'}*/
+      { name: 'footer', url: 'templates/footer.html'}
     ];
   $scope.template = $scope.templates[3];
   
@@ -158,6 +155,11 @@ app.controller('ExampleController', ['$scope', function($scope) {
 
   $scope.toggleMenu = function() {
     $scope.toggle_menu_flag = !$scope.toggle_menu_flag;
+  };
+
+  $scope.loadBuyTicket = function(event_id = 0) {
+    $scope.event_id = event_id;
+    $location.path('/buy_ticket/').search({param: $scope.event_id});
   }
 }]);
 

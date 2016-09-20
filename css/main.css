@@ -4290,6 +4290,13 @@ html.ngdialog-open, body.ngdialog-open {
 }
 
 /********************************************************************************************
+    PAGE BUY TICKET
+*********************************************************************************************/
+.spin-input {
+    width: 50px;
+}
+
+/********************************************************************************************
     PAGE ABOUT 2                                                                                                 
 *********************************************************************************************/
 .about2-top-title .color-txt{
@@ -5420,8 +5427,11 @@ figure.effect-layla:hover img {
     margin: 0;
     font-weight: 600;
 }
+.table {
+    border: 1px solid #C0C0C0;
+}
 .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
-    padding: 15px 0px 15px 0;
+    padding: 15px;
     line-height: 1.42857143;
     vertical-align: middle;
     border-top: 1px solid #ddd;

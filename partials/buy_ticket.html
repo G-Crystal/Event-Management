@@ -1,34 +1,9 @@
-<div id="demo" ng-controller="HomeController" class="home6">
-
-    <!--visible animated fadeInUp-->
-  <div class="container-fluid header-image-div">
-    <div class="home-img-div">
-      <div class="home6-back-img home-back-img-common"><span class="header-txt">BOGART'S COLISIUM ARENA</span></div>
-    </div>
-  </div> 
+<div id="demo" ng-controller="BuyTicketController" class="home6">
 
   <div class="container">
-    <div class="row">
-      <div class="home-banner">
-        <div class="container">
-          <div class="row aboutus">
-            <div class="col-lg-10 col-md-10 col-sm-9 col-xs-9">
-              <h3>2621 Vine St.</h3>                   
-              <h3>Cincinnati, OH, USA</h3>                   
-              <h3>45014</h3>                   
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
-              <a class="btn social-link facebook" href="#" target="_blank"></a>
-              <a class="btn social-link twitter" href="#" target="_blank"></a>
-            </div>
-          </div>
-          <!-- /.row -->
-        </div>
-        <!-- /.container -->
-      </div>
-
+    <div class="row description-title-div">
       <div class="col-lg-12 text-center shop-title-store">
-        <h1 class="section-title">UPCOMING EVENTS</h1>
+        <h1 class="section-title">BUY TICKET</h1>
       </div>
       <!--List Event-->
       <div id="cbp-vm" class="col-md-12 col-sm-12 col-xs-12 shop-prod active">
@@ -48,9 +23,6 @@
                       <p class="p-name">{{event.name}}</p>
                     </div>  
 
-                    <div class="buy-btn-div">
-                      <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="loadBuyTicket(event.num)">BUY TICKETS</a>
-                    </div>   
                     <div class="clearfix"></div>
                   </div>
                 </div>
@@ -58,6 +30,43 @@
             </div>
           </li>
         </ul>
+      </div>
+
+      <div class="description-title-div col-lg-12">
+        <div class="row">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Ticket Type</th>
+                <th>Price</th>
+                <th class="p-center">Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GENERAL ADMISSION</td>
+                <td>$52.50</td>
+                <td class="p-center">
+                  <input type="number" min="0" step="1" value="0" class="spin-input">
+                </td>
+              </tr>
+              <tr>
+                <td>MEET & GREET</td>
+                <td>$152.50</td>
+                <td class="p-center">
+                  <input type="number" min="0" step="1" value="0" class="spin-input">
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td class="p-center">
+                  <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="buyTicket()">BUY NOW</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
     <!-- /.row -->

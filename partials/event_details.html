@@ -7,7 +7,7 @@
     </div>
   </div> 
 
-  <div class="container" ng-controller="HomeController">
+  <div class="container">
     <div class="row">
       <div class="home-banner">
         <div class="container">
@@ -36,7 +36,7 @@
               <p class="p-center">OKLAHOMA CITY, OKLAHOMA</p>
               <p class="p-center">32011-4567</p>
               <p class="p-center large-btn-div">
-                <a class="btn btn-block trans-buy-button inline-buy-button round-button large-btn" href="#/event">BUY TICKETS</a>
+                <a class="btn btn-block trans-buy-button inline-buy-button round-button large-btn" ng-click="loadBuyTicket()">BUY TICKETS</a>
               </p>
               <div class="social-link-div p-center">
                 <a class="btn social-link facebook" href="#" target="_blank"></a>
@@ -117,7 +117,7 @@
                   </div>  
 
                   <div class="buy-btn-div">
-                    <a class="btn btn-block trans-buy-button inline-buy-button" href="#/event">BUY TICKETS</a>
+                    <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="loadBuyTicket(event.num)">BUY TICKETS</a>
                   </div>   
                   <div class="clearfix"></div>
                 </div>

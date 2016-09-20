@@ -437,6 +437,50 @@ app.controller('PEventController', function($scope, $filter){
     
 }); 
 
+/* CONTROLLER FOR BUY TICKET HOME */
+
+app.controller('BuyTicketController', function($scope, $filter, $routeParams){
+
+  var myStore = new store();
+  $scope.currentPage = 0;
+  $scope.pageSize = 9;
+  $scope.numberOfPages = Math.ceil(myStore.events.length / $scope.pageSize);
+
+  $scope.filteredItems = [];
+  $scope.groupedItems = [];
+  $scope.pagedItems = [];
+
+  $scope.myFilter = function (event_id) {
+    $scope.filteredItems = $filter('filter')(myStore.events, function (events) {
+      for (var attr in events) {
+        if (events["num"] == event_id)
+          return true;
+      }
+      return false;
+    });
+    
+    $scope.currentPage = 0;
+    $scope.groupToPages();
+  };
+  $scope.groupToPages = function () {
+    $scope.pagedItems = [];
+    
+    for (var i = 0; i < $scope.filteredItems.length; i++) {
+      if (i % $scope.pageSize === 0) {
+        $scope.pagedItems[Math.floor(i / $scope.pageSize)] = [$scope.filteredItems[i]];
+      } else {
+        $scope.pagedItems[Math.floor(i / $scope.pageSize)].push($scope.filteredItems[i]);
+      }
+    }
+      
+  };
+  // functions have been describe process the data for display
+  $scope.myFilter($routeParams.param);
+    
+  $scope.buyTicket = function() {
+  };
+  
+}); 
 
 function store() {
   this.products = [

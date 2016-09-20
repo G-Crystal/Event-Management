@@ -1,6 +1,6 @@
 <div id="demo" ng-controller="SearchController" class="home9">
 
-  <div class="container" ng-controller="SearchController">
+  <div class="container">
     <div class="row">
       <div class="col-xs-8 col-xs-push-2 text-center shop-title-store">
         <form class="search search-category-bar">
@@ -75,7 +75,7 @@
                     </div>  
 
                     <div class="buy-btn-div">
-                      <a class="btn btn-block trans-buy-button inline-buy-button" href="#/event">BUY TICKETS</a>
+                      <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="loadBuyTicket(event.num)">BUY TICKETS</a>
                     </div>   
                     <div class="clearfix"></div>
                   </div>
