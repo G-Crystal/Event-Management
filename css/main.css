@@ -4313,6 +4313,36 @@ html.ngdialog-open, body.ngdialog-open {
 }
 
 /********************************************************************************************
+    PAGE ORDER CONFIRMATION DETAILS
+*********************************************************************************************/
+.solid-border-div {
+    padding: 5px 20px;
+    border: 1px solid #C0C0C0;
+    line-height: 35px;
+    margin-bottom: 30px;
+}
+.order-title-div {
+    font-size: 16px;
+    font-weight: 500;
+}
+.order-detail-div {
+    font-weight: 200;
+}
+.order-header-div {
+    margin: 10px 20px;
+    font-weight: 200;
+}
+.order-block-div {
+    margin-top: 15px;
+}
+.order-info-table {
+    width: 100%;
+}
+.order-info-table tr td {
+    padding-right: 15px;
+}
+
+/********************************************************************************************
     PAGE ABOUT 2                                                                                                 
 *********************************************************************************************/
 .about2-top-title .color-txt{

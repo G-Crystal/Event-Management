@@ -45,6 +45,8 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/service", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
     .when("/allyhub", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
 
+    .when("/order_confirm_details", { templateUrl: "partials/orgarnizer/order_confirm_details.html", controller: "HomeCtrl" })
+
     // About
     .when("/about", { templateUrl: "partials/about.html", controller: "PageCtrl" })
     .when("/about2", { templateUrl: "partials/about2.html", controller: "PageCtrl" })
@@ -433,6 +435,19 @@ app.controller('LoginController', function ($scope, ngDialog, $document) {
     if($scope.signup_form.$valid) {
       
     }
+  }
+
+});
+
+app.controller('OrderController', function ($scope, ngDialog, $document) {
+
+  $scope.save = function () {
+  }
+
+  $scope.refundOrder = function () {
+  }
+
+  $scope.resendTicket = function () {
   }
 
 })
