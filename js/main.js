@@ -403,6 +403,16 @@ app.controller('EventInfoController', function ($scope, ngDialog, $document) {
     });
   };
 
+  $scope.AddTalent = function () {
+    var modalPromise = ngDialog.open({
+      template: 'partials/addTalentPopup.html', 
+      className: 'ngdialog-theme-default', 
+      preserveFocus: false, 
+      trapFocus: false,
+      width: '768px'
+    });
+  };
+
 });
 
 app.controller('LoginController', function ($scope, ngDialog, $document) {

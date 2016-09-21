@@ -4066,6 +4066,11 @@ ul.sidenav li:hover:not(.active) a {
     color: #FFFFFF;
     margin-left: 15px;
 }
+.file-uploader {
+    padding: 0;
+    margin: 9px 0;
+    height: 24px;
+}
 
 /********************************************************************************************
     SELECT CATEGORY

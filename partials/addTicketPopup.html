@@ -1,55 +1,49 @@
 <div class="description-title-div ticket-block-div menubar-div">
   <div class="row">
-    <div class="col-md-2 col-sm-3 col-xs-12">
+    <div class="col-md-2 col-sm-2 col-xs-12">
       <label for="input1" class="label-name required">Ticket Name</label>
     </div>
-    <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-      <input type="text" name="ticket_name" placeholder="Enter Ticket Type Name. Ex. General Admission" class="form-control" id="ticket_name">
+    <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+      <input type="text" name="ticket_name" placeholder="Enter Ticket Type Name. Ex. General Admission" class="form-control" id="ticket_name" maxlength="30">
     </div>
-    <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+    <div class="col-md-2 col-sm-2 col-sm-offset-0 col-xs-11 col-xs-offset-1">
       <label for="input1" class="label-comment">0 of 30</label>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-2 col-sm-3 col-xs-12">
+    <div class="col-md-2 col-sm-2 col-xs-12">
       <label for="input10" class="label-name">Ticket Description</label>
     </div>
-    <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+    <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
       <div class="wysiwig-editor">
         <trix-editor name="ticket_description" id="ticket_description" angular-trix ng-model="foo" class="trix-content"></trix-editor>
       </div>
     </div>
-    <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+    <div class="col-md-2 col-sm-2 col-sm-offset-0 col-xs-11 col-xs-offset-1">
       <label for="input10" class="label-comment">0 of 100</label>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-2 col-sm-3 col-xs-12">
+    <div class="col-md-2 col-sm-2 col-xs-12">
       <label for="input5" class="label-name required">Type</label>
     </div>
-    <div class="col-md-3 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+    <div class="col-md-3 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
       <input type="text" name="select_type" placeholder="Select Type" class="form-control" id="select_type">
     </div>
     <div class="clearfix visible-sm visible-xs"></div>
-    <div class="col-md-2 col-sm-3">
+    <div class="col-md-2 col-sm-2">
       <label for="input6" class="label-name required">Price</label>
     </div>
-    <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-      <input type="text" name="price" placeholder="0.00" class="form-control" id="price">
-    </div>
-    <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-      <label for="input6" class="label-comment">0 of 6</label>
+    <div class="col-md-3 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+      <input type="text" name="price" placeholder="0.00" class="form-control" id="price" maxlength="6">
     </div>
   </div>
   <div class="row">
-    <div class="col-md-2 col-sm-3 col-xs-12">
+    <div class="col-md-2 col-sm-2 col-xs-12">
       <label for="input5" class="label-name required">Quantity</label>
     </div>
-    <div class="col-md-3 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-      <input type="text" name="quantity" placeholder="Quantity Available" class="form-control" id="quantity">
-    </div>
-    <div class="col-md-7 col-sm-12 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-      <label for="input6" class="label-comment">0 of 9</label>
+    <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+      <input type="text" name="quantity" placeholder="Quantity Available" class="form-control" id="quantity" maxlength="9">
     </div>
   </div>
   <div class="row store-down-bottom">
