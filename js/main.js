@@ -29,7 +29,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/log_in", { templateUrl: "partials/log_in.html", controller: "HomeCtrl" })
     .when("/sign_up", { templateUrl: "partials/sign_up.html", controller: "HomeCtrl" })
     .when("/reset", { templateUrl: "partials/reset_password.html", controller: "HomeCtrl" })
-    .when("/buy_ticket", { templateUrl: "partials/buy_ticket.html", controller: "HomeCtrl" })
+    .when("/cart_edit", { templateUrl: "partials/cart_edit.html", controller: "HomeCtrl" })
 
     .when("/event_order", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
     .when("/messages", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })

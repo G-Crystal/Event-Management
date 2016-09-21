@@ -437,7 +437,7 @@ app.controller('PEventController', function($scope, $filter){
     
 }); 
 
-/* CONTROLLER FOR BUY TICKET HOME */
+/* CONTROLLER FOR BUY TICKET PAGE */
 
 app.controller('BuyTicketController', function($scope, $filter, $routeParams){
 
@@ -478,6 +478,48 @@ app.controller('BuyTicketController', function($scope, $filter, $routeParams){
   $scope.myFilter($routeParams.param);
     
   $scope.buyTicket = function() {
+  };
+
+}); 
+
+/* CONTROLLER FOR CART PAGE */
+
+app.controller('CartController', function($scope, $filter){
+
+  var myStore = new store();
+  $scope.currentPage = 0;
+  $scope.pageSize = 9;
+  $scope.numberOfPages = Math.ceil(myStore.cart_event.length / $scope.pageSize);
+
+  $scope.filteredItems = [];
+  $scope.groupedItems = [];
+  $scope.pagedItems = [];
+  $scope.cart_details = myStore.cart_detail;
+
+  $scope.myFilter = function () {
+    $scope.filteredItems = $filter('filter')(myStore.cart_event, function (cart_event) {
+      return true;
+    });
+    
+    $scope.currentPage = 0;
+    $scope.groupToPages();
+  };
+  $scope.groupToPages = function () {
+    $scope.pagedItems = [];
+    
+    for (var i = 0; i < $scope.filteredItems.length; i++) {
+      if (i % $scope.pageSize === 0) {
+        $scope.pagedItems[Math.floor(i / $scope.pageSize)] = [$scope.filteredItems[i]];
+      } else {
+        $scope.pagedItems[Math.floor(i / $scope.pageSize)].push($scope.filteredItems[i]);
+      }
+    }
+      
+  };
+  // functions have been describe process the data for display
+  $scope.myFilter();
+
+  $scope.makePayment = function() {
   };
   
 }); 
@@ -538,6 +580,15 @@ function store() {
     { num: 1, code: '001', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png"},
     { num: 2, code: '002', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png"},
     { num: 3, code: '002', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png"}
+  ];
+
+  this.cart_event = [
+    { num: 1, code: '003', title: 'LIFE OF PABLO TOUR', date: 'September 15th', spec: "Bogart's Colisium Arena", name: "Cincinnati, OH", src: "event/3.png"}
+  ];
+
+  this.cart_detail = [
+    { num:1, qty: '1', ticket_type: 'GENERAL ADMISSION', price: '$52.50', fees: '$7.20', subtotal: '$59.70'},
+    { num:2, qty: '2', ticket_type: 'VIP MEET & GREET', price: '$105', fees: '$14.40', subtotal: '$238.80'}
   ];
 
 }

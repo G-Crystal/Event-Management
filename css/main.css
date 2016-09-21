@@ -4004,6 +4004,7 @@ form.ng-valid {
 }
 .menubar-div {
     margin: 65px 0 0px;
+    line-height: 45px;
 }
 .img-header {
     margin-top: 5px;
@@ -4042,9 +4043,6 @@ ul.sidenav li:hover:not(.active) a {
     color: white;
 }
 
-.menubar-div {
-    line-height: 45px;
-}
 .label-name {
     color: #4C4C4C;
     font-weight: 300;
@@ -4294,6 +4292,19 @@ html.ngdialog-open, body.ngdialog-open {
 *********************************************************************************************/
 .spin-input {
     width: 50px;
+}
+.cart-info-div {
+    margin: 50px 5px;
+}
+
+/********************************************************************************************
+    PAGE CART EDIT
+*********************************************************************************************/
+.cart-report-div {
+    border: 1px solid #c0c0c0;
+    padding: 15px;
+    line-height: 45px;
+    margin: 0 0 20px;
 }
 
 /********************************************************************************************
@@ -5427,8 +5438,13 @@ figure.effect-layla:hover img {
     margin: 0;
     font-weight: 600;
 }
+.table-container {
+    overflow-x: auto;
+    padding: 0 1px;
+}
 .table {
     border: 1px solid #C0C0C0;
+    margin-bottom: 0px;
 }
 .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
     padding: 15px;
