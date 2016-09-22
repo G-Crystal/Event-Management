@@ -4300,8 +4300,8 @@ html.ngdialog-open, body.ngdialog-open {
 *********************************************************************************************/
 .login-container-div {
     padding: 60px 0 30px;
-    background: url("../images/parallax/parallax.jpg");
-    text-align: center;
+    background: url("../images/parallax/background_2.jpg");
+    background-position: center;
 }
 .login-header-div {
     padding: 20px 0;
@@ -4315,7 +4315,7 @@ html.ngdialog-open, body.ngdialog-open {
 .login-back-div {
     padding: 20px;
     background-color: #9BD9EA;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 .login-link-label {
     color: #0000FF;
