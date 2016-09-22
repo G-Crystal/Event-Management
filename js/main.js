@@ -42,8 +42,8 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/event_order", { templateUrl: "partials/admin/event_information.html", controller: "HomeCtrl" })
     .when("/messages", { templateUrl: "partials/admin/event_information.html", controller: "HomeCtrl" })
     .when("/profile_settings", { templateUrl: "partials/admin/event_information.html", controller: "HomeCtrl" })
-    .when("/password_settings", { templateUrl: "partials/admin/event_information.html", controller: "HomeCtrl" })
-    .when("/payments_settings", { templateUrl: "partials/admin/event_information.html", controller: "HomeCtrl" })
+    .when("/password_settings", { templateUrl: "partials/admin/update_password.html", controller: "HomeCtrl" })
+    .when("/payments_settings", { templateUrl: "partials/admin/payments.html", controller: "HomeCtrl" })
     .when("/event_information", { templateUrl: "partials/admin/event_information.html", controller: "HomeCtrl" })
     .when("/upcoming_events", { templateUrl: "partials/admin/event_information.html", controller: "HomeCtrl" })
     .when("/past_events", { templateUrl: "partials/admin/event_information.html", controller: "HomeCtrl" })
@@ -493,6 +493,13 @@ app.controller('OrderController', function ($scope, ngDialog, $document) {
   }
 
   $scope.resendTicket = function () {
+  }
+
+})
+
+app.controller('AdminController', function ($scope) {
+
+  $scope.add_talent = function () {
   }
 
 })
