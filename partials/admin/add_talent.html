@@ -5,22 +5,7 @@
   <!--visible animated fadeInUp-->
   <div class="container-fluid">
     <div class="menubar-div row">
-      <!--List Event-->
       <div class="description-title-div col-lg-12">
-        <h4>Event Information</h4>
-        <div class="row">
-          <div class="col-md-2 col-sm-3 col-xs-12">
-            <label for="input1" class="label-name ng-required="">Event Name</label>
-          </div>
-          <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-            <input type="text" name="event_name" placeholder="Event Name" class="form-control" id="event_name" maxlength="100">
-          </div>
-          <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-            <label for="input1" class="label-comment">0 of 100</label>
-          </div>
-        </div>
-      </div>
-      <div class="description-title-div ticket-block-div menubar-div">
         <div class="row">
           <div class="col-md-2 col-sm-2 col-xs-12">
             <label for="input1" class="label-name required">Name</label>
@@ -47,7 +32,7 @@
         </div>
         <div class="row">
           <div class="col-md-2 col-sm-2 col-xs-12">
-            <label for="input5" class="label-name required">Profile</label>
+            <label for="input5" class="label-name">Profile</label>
           </div>
           <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
             <input type="file" name="profile_img" class="form-control file-uploader" id="profile_img">
@@ -55,10 +40,26 @@
         </div>
         <div class="row">
           <div class="col-md-2 col-sm-2 col-xs-12">
-            <label for="input6" class="label-name required">Header</label>
+            <label for="input6" class="label-name">Header</label>
           </div>
           <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
             <input type="file" name="header_img" class="form-control file-uploader" id="header_img">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            <label for="input1" class="label-name">Twitter</label>
+          </div>
+          <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <input type="text" name="twitter_url" placeholder="Enter Twitter URL" class="form-control" id="twitter_url">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            <label for="input1" class="label-name">Facebook</label>
+          </div>
+          <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <input type="text" name="facebook_url" placeholder="Enter Facebook URL" class="form-control" id="facebook_url">
           </div>
         </div>
         <div class="row store-down-bottom">
@@ -70,6 +71,5 @@
   </div>
   <!-- /.container -->
 </div>
-<div id="main-curtain" class="Curtain " ng-class="{'visible':toggle_menu_flag, '':!toggle_menu_flag}" ng-click="toggleMenu()"></div>
 
 <div ng-include="'templates/footer.html'"></div>

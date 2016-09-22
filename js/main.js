@@ -169,6 +169,10 @@ app.controller('ExampleController', ['$scope', '$location', function($scope, $lo
     $scope.toggle_menu_flag = !$scope.toggle_menu_flag;
   };
 
+  $scope.menu_click = function () {
+    $scope.toggle_menu_flag = !$scope.toggle_menu_flag;
+  };
+
   $scope.loadBuyTicket = function(event_id = 0) {
     $scope.event_id = event_id;
     $location.path('/buy_ticket/').search({param: $scope.event_id});
