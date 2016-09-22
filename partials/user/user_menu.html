@@ -1,5 +1,5 @@
 <div id="demo" ng-controller="LMenuController" class="home1">
-  <div ng-include="partials/account_menu.html"></div>
+  <div ng-include="'partials/account_menu.html'"></div>
 
   <ul ng-class="{'sidenav':toggle_menu_flag, 'sidenav sidenav-toggle':!toggle_menu_flag}">
     <li ng-class="{'sidenav-collapse':toggle_order, 'sidenav-expand':!toggle_order}" ng-click="setToggle('toggle_order')">

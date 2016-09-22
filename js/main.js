@@ -47,7 +47,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/event_information", { templateUrl: "partials/admin/event_information.html", controller: "HomeCtrl" })
     .when("/upcoming_events", { templateUrl: "partials/admin/event_information.html", controller: "HomeCtrl" })
     .when("/past_events", { templateUrl: "partials/admin/event_information.html", controller: "HomeCtrl" })
-    .when("/add_talents", { templateUrl: "partials/admin/event_information.html", controller: "HomeCtrl" })
+    .when("/add_talents", { templateUrl: "partials/admin/add_talent.html", controller: "HomeCtrl" })
     .when("/order_report", { templateUrl: "partials/admin/event_information.html", controller: "HomeCtrl" })
     .when("/sale_report", { templateUrl: "partials/admin/event_information.html", controller: "HomeCtrl" })
     .when("/digital_market", { templateUrl: "partials/admin/event_information.html", controller: "HomeCtrl" })
