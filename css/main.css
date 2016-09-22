@@ -4023,6 +4023,7 @@ ul.sidenav {
     position: fixed;
     height: 100%;
     overflow: auto;
+    font-weight: 200;
     z-index: 998;
 }
 ul.sidenav-toggle {
@@ -4034,13 +4035,44 @@ ul.sidenav li a {
     padding: 8px 16px;
     text-decoration: none;
 } 
-ul.sidenav li.active a {
+ul.sidenav li.active > a, ul.sidenav li ul.sidenav-submenu li.active a {
     background-color: #4CAF50;
     color: white;
+} 
+ul.sidenav li ul.sidenav-submenu {
+    padding-left: 0;
+    list-style: none;
 }
-ul.sidenav li:hover:not(.active) a {
+ul.sidenav li.sidenav-collapse ul.sidenav-submenu li {
+    display: none;
+}
+ul.sidenav li ul.sidenav-submenu li.expand {
+    display: list-item;
+}
+ul.sidenav li ul.sidenav-submenu li a {
+    padding-left: 25px;
+}
+ul.sidenav li:hover:not(.active) > a, ul.sidenav li.active ul.sidenav-submenu li:hover:not(.active) > a {
     background-color: #555;
     color: white;
+}
+ul.sidenav li.sidenav-collapse > a:after {
+    content: '';
+    float: right;
+    margin-top: 6px;
+    margin-right: -10px;
+    border-left: 4px dashed;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+ul.sidenav li.sidenav-expand > a:after {
+    content: '';
+    float: right;
+    margin-top: 6px;
+    margin-right: -10px;
+    border-top: 4px dashed;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
 }
 
 .label-name {

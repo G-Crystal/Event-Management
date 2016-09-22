@@ -1,10 +1,21 @@
 <div id="demo" ng-controller="LMenuController" class="home1">
-	<div ng-include='"partials/account_menu.html"'></div>
+  <div ng-include='"partials/account_menu.html"'></div>
 
-	<ul ng-class="{'sidenav':toggle_menu_flag, 'sidenav sidenav-toggle':!toggle_menu_flag}">
-		<li ng-class="getClass('/event_order')"><a href="#event_order">Orders</a></li>
-	  <li ng-class="getClass('/messages')"><a href="#messages">Messages</a></li>
-	  <li ng-class="getClass('/settings')"><a href="#settings">Settings</a></li>
-	  <li ng-class="getClass('/payments')"><a href="#payments">Payments</a></li>
-	</ul>
+  <ul ng-class="{'sidenav':toggle_menu_flag, 'sidenav sidenav-toggle':!toggle_menu_flag}">
+    <li ng-class="{'sidenav-collapse':toggle_order, 'sidenav-expand':!toggle_order}" ng-click="setToggle('toggle_order')">
+      <a href="">Orders</a>
+      <ul class="sidenav-submenu">
+        <li ng-class="getClass('/user_event_order')"><a href="#user_event_order">Recent Orders</a></li>
+      </ul>
+    </li>
+    <li ng-class="getClass('/user_messages')"><a href="#user_messages">Messages</a></li>
+    <li ng-class="{'sidenav-collapse':toggle_settings, 'sidenav-expand':!toggle_settings}" ng-click="setToggle('toggle_settings')">
+      <a href="">Settings</a>
+      <ul class="sidenav-submenu">
+        <li ng-class="getClass('/user_profile_settings')"><a href="#user_profile_settings">Profile</a></li>
+        <li ng-class="getClass('/user_password_settings')"><a href="#user_password_settings">Password</a></li>
+        <li ng-class="getClass('/user_payments_settings')"><a href="#user_payments_settings">Payments</a></li>
+      </ul>
+    </li>
+  </ul>
 </div>

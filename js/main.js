@@ -31,15 +31,25 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/reset", { templateUrl: "partials/reset_password.html", controller: "HomeCtrl" })
     .when("/cart_edit", { templateUrl: "partials/cart_edit.html", controller: "HomeCtrl" })
 
-    .when("/event_order", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
-    .when("/messages", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
-    .when("/settings", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
-    .when("/payments", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
-
+    // User Menu
+    .when("/user_event_order", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
+    .when("/user_messages", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
+    .when("/user_profile_settings", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
+    .when("/user_password_settings", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
+    .when("/user_payments_settings", { templateUrl: "partials/event_order.html", controller: "HomeCtrl" })
+    
+    // Admin Menu
+    .when("/event_order", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
+    .when("/messages", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
+    .when("/profile_settings", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
+    .when("/password_settings", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
+    .when("/payments_settings", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
     .when("/event_information", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
-    .when("/events", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
-    .when("/talents", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
-    .when("/report", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
+    .when("/upcoming_events", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
+    .when("/past_events", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
+    .when("/add_talents", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
+    .when("/order_report", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
+    .when("/sale_report", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
     .when("/digital_market", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
     .when("/box_office", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
     .when("/service", { templateUrl: "partials/event_information.html", controller: "HomeCtrl" })
@@ -389,7 +399,38 @@ app.controller('LMenuController', function ( $scope, $location/*, $http */) {
 
   $scope.getClass = function (path) {
     return ($location.path().substr(0, path.length) === path) ? 'active' : '';
-  }
+  };
+
+  $scope.setToggle = function (status) {
+    switch (status) {
+      case 'toggle_events':
+        $scope.toggle_events = !$scope.toggle_events;
+        break;
+      case 'toggle_order':
+        $scope.toggle_order = !$scope.toggle_order;
+        break;
+      case 'toggle_talents':
+        $scope.toggle_talents = !$scope.toggle_talents;
+        break;
+      case 'toggle_report':
+        $scope.toggle_report = !$scope.toggle_report;
+        break;
+      case 'toggle_settings':
+        $scope.toggle_settings = !$scope.toggle_settings;
+        break;
+    }
+  };
+
+  $scope.init = function () {
+    var path = $location.$$path;
+    $scope.toggle_events = (path.search('_events') < 0);
+    $scope.toggle_order = (path.search('_order') < 0);
+    $scope.toggle_talents = (path.search('_talents') < 0);
+    $scope.toggle_report = (path.search('_report') < 0);
+    $scope.toggle_settings = (path.search('_settings') < 0);
+  };
+
+  $scope.init();
 
 });
 
