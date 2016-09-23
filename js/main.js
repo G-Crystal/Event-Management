@@ -34,14 +34,14 @@ app.config(['$routeProvider', function ($routeProvider) {
     // User Menu
     .when("/user_event_order", { templateUrl: "partials/user/event_order.html", controller: "HomeCtrl" })
     .when("/user_messages", { templateUrl: "partials/user/event_order.html", controller: "HomeCtrl" })
-    .when("/user_profile_settings", { templateUrl: "partials/user/event_order.html", controller: "HomeCtrl" })
-    .when("/user_password_settings", { templateUrl: "partials/user/event_order.html", controller: "HomeCtrl" })
-    .when("/user_payments_settings", { templateUrl: "partials/user/event_order.html", controller: "HomeCtrl" })
+    .when("/user_profile_settings", { templateUrl: "partials/user/profile.html", controller: "HomeCtrl" })
+    .when("/user_password_settings", { templateUrl: "partials/user/update_password.html", controller: "HomeCtrl" })
+    .when("/user_payments_settings", { templateUrl: "partials/user/payments.html", controller: "HomeCtrl" })
 
     // Admin Menu
     .when("/event_order", { templateUrl: "partials/admin/event_information.html", controller: "HomeCtrl" })
     .when("/messages", { templateUrl: "partials/admin/event_information.html", controller: "HomeCtrl" })
-    .when("/profile_settings", { templateUrl: "partials/admin/event_information.html", controller: "HomeCtrl" })
+    .when("/profile_settings", { templateUrl: "partials/admin/profile.html", controller: "HomeCtrl" })
     .when("/password_settings", { templateUrl: "partials/admin/update_password.html", controller: "HomeCtrl" })
     .when("/payments_settings", { templateUrl: "partials/admin/payments.html", controller: "HomeCtrl" })
     .when("/event_information", { templateUrl: "partials/admin/event_information.html", controller: "HomeCtrl" })
@@ -462,24 +462,19 @@ app.controller('EventInfoController', function ($scope, ngDialog, $document) {
 
 });
 
-app.controller('LoginController', function ($scope, ngDialog, $document) {
+app.controller('LoginController', function ($scope) {
 
   $scope.login = function () {
-    if($scope.login_form.$valid) {
-
-    }
+    console.log($scope.email);
+    console.log($scope.password);
   }
 
   $scope.reset = function () {
-    if($scope.reset_form.$valid) {
-      
-    }
+    
   }
 
   $scope.signup = function () {
-    if($scope.signup_form.$valid) {
-      
-    }
+    
   }
 
 });

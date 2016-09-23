@@ -8,13 +8,13 @@
       		<h3 class="panel-title">Log In</h3>
       	</div>
       	<div class="login-body-div">
-      		<form accept-charset="UTF-8" role="form" name="login_form" ng-submit="login()" novalidate>
+      		<form accept-charset="UTF-8" role="form" name="login_form" novalidate>
 		        <div class="row row-height" ng-class="{ 'has-error' : login_form.email.$invalid && !login_form.email.$pristine }">
 		          <div class="col-sm-3 col-xs-12 align-left">
 		            <label for="input3" class="label-name">Email</label>
 		          </div>
 		          <div class="col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-		            <input type="email" name="email" ng-model="email.text" ng-required="" placeholder="Enter Email" class="form-control" id="email">
+		            <input type="email" name="email" ng-model="email" ng-required="" placeholder="Enter Email" class="form-control" id="email">
 							  <span ng-show="login_form.email.$invalid && !login_form.email.$pristine">Invalid email address.</span>
 		          </div>
 		        </div>
@@ -23,7 +23,7 @@
 		            <label for="input3" class="label-name">Password</label>
 		          </div>
 		          <div class="col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-		            <input type="password" name="password" ng-model="password.new" ng-required="" ng-minlength="5" placeholder="Password" class="form-control" id="password">
+		            <input type="password" name="password" ng-model="password" ng-required="" ng-minlength="5" placeholder="Password" class="form-control" id="password">
 							  <span ng-show="login_form.password.$error.minlength">Password is too short.</span>
 		          </div>
 		        </div>
@@ -32,15 +32,16 @@
 			          <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="login()" ng-disabled="login_form.$invalid">Login</a>
 			        </div>
 		        </div>
-		        <div class="row row-height p-center">
-		          <div class="col-sm-6 col-xs-6">
-		            <a class="btn btn-block login-link-label inline-buy-button" href="#/sign_up">Sign Up</a>
-		          </div>
-		          <div class="col-sm-6 col-xs-6">
-		            <a class="btn btn-block login-link-label inline-buy-button" href="#/reset">Forgot Password?</a>
-		          </div>
-		        </div>
-      		</form>
+		    </form>
+
+	        <div class="row row-height p-center">
+	          <div class="col-sm-6 col-xs-6">
+	            <a class="btn btn-block login-link-label inline-buy-button" href="#/sign_up">Sign Up</a>
+	          </div>
+	          <div class="col-sm-6 col-xs-6">
+	            <a class="btn btn-block login-link-label inline-buy-button" href="#/reset">Forgot Password?</a>
+	          </div>
+	        </div>
       	</div>
       </div>
     </div>

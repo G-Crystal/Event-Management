@@ -328,7 +328,7 @@ p.personal-phrase i.fa-quote-left{
 }
 .navbar-collapse {
     position: relative;
-    margin-top: 10px;
+    margin-top: 13px;
 }
 
 ul.menu-items li.menu-item {
@@ -4069,7 +4069,7 @@ ul.sidenav li.sidenav-expand > a:after {
     content: '';
     float: right;
     margin-top: 6px;
-    margin-right: -10px;
+    margin-right: -4px;
     border-top: 4px dashed;
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
