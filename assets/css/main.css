@@ -438,7 +438,7 @@ ul.menu-items li.menu-item:last-child {
 .hero-imacretina-1 {   
     background-repeat:no-repeat;
     background-size: 200px 142px;
-    background-image:url("assets/images/monitor1.jpg");
+    background-image:url("../images/monitor1.jpg");
     -webkit-animation: hero-imacretina-1-anim 15s 0s ease-in-out forwards infinite;
     animation: hero-imacretina-1-anim 15s 0s ease-in-out forwards infinite;
     opacity: 1;
@@ -450,7 +450,7 @@ ul.menu-items li.menu-item:last-child {
 .hero-imacretina-2 {
     background-repeat: no-repeat;
     background-size: 200px 142px;
-    background-image: url("assets/images/monitor2.jpg");
+    background-image: url("../images/monitor2.jpg");
     -webkit-animation: hero-imacretina-2-anim 15s 0s ease-in-out forwards infinite;
     animation: hero-imacretina-2-anim 15s 0s ease-in-out forwards infinite;
     width: 200px;
@@ -462,7 +462,7 @@ ul.menu-items li.menu-item:last-child {
 .hero-imacretina-3 {
     background-repeat: no-repeat;
     background-size: 200px 142px;
-    background-image: url("assets/images/monitor3.jpg");
+    background-image: url("../images/monitor3.jpg");
     -webkit-animation: hero-imacretina-3-anim 15s 0s ease-in-out forwards infinite;
     animation: hero-imacretina-3-anim 15s 0s ease-in-out forwards infinite;
     width: 200px;
@@ -594,13 +594,13 @@ ul.menu-items li.menu-item:last-child {
     color: #11c1c1;
 }
 #menu2 .hero-imacretina-1 {
-    background-image: url("assets/images/monitor1.png");   
+    background-image: url("../images/monitor1.png");   
 }
 #menu2 .hero-imacretina-2 {
-    background-image: url("assets/images/monitor2.png");   
+    background-image: url("../images/monitor2.png");   
 }
 #menu2 .hero-imacretina-3 {
-    background-image: url("assets/images/monitor3.png");   
+    background-image: url("../images/monitor3.png");   
 }
 /*Cart*/
 .content-count-cart-header {
@@ -1015,32 +1015,32 @@ a.close-overlay.hidden {
 .arrow.prev {
     opacity: 0.2;
     left: 20px;
-    background-image: url(assets/images/paddle/paddle_prev_999.png);
+    background-image: url(../images/paddle/paddle_prev_999.png);
     transition: 0.2s linear all;
 }
 
 .arrow.next {
     opacity: 0.2;
     right: 20px;
-    background-image: url(assets/images/paddle/paddle_next_999.png);
+    background-image: url(../images/paddle/paddle_next_999.png);
     transition: 0.2s linear all;
 }
 
 .arrow.prev:hover {
     opacity: 1;
-    background-image: url(assets/images/paddle/paddle_prev_fff.png);
+    background-image: url(../images/paddle/paddle_prev_fff.png);
 }
 
 .arrow.next:hover {
     opacity: 1;
-    background-image: url(assets/images/paddle/paddle_next_fff.png);
+    background-image: url(../images/paddle/paddle_next_fff.png);
 }
 
 
 
 /************************* HOME *******************/
 .home {
-    background-image: url(assets/images/sos.png);
+    background-image: url(../images/sos.png);
     background-repeat: repeat !important;
     width: 100%;
 }
@@ -1076,7 +1076,7 @@ h2.home-middle-parallax {
     border-color: #0dc1c1;
 }
 .section-ground {
-    background-image: url(assets/images/hexagon.png);
+    background-image: url(../images/hexagon.png);
     background-repeat: repeat;
     position: absolute;
     top: 0;
@@ -1686,7 +1686,7 @@ md-tooltip.md-show {
     font-style: italic;
 }
 .top-well {
-    background-image:url(assets/images/pw_maze_black.png);
+    background-image:url(../images/pw_maze_black.png);
     background-repeat:repeat !important;
     width: 100%;
     margin-bottom: 0px;
@@ -1705,7 +1705,7 @@ md-tooltip.md-show {
     border-radius:1px;
 }
 .effect-cover {
-    background-image:url(assets/images/hoffman.png);
+    background-image:url(../images/hoffman.png);
     background-repeat:repeat !important;
     width: 100%;
     height: 100%;
@@ -2075,7 +2075,7 @@ h2.t-title-office {
     position: relative;
 }
 .effect-over-hand {
-    background-image: url(assets/images/texture/swirl_pattern.png);
+    background-image: url(../images/texture/swirl_pattern.png);
     background-repeat: repeat !important;
     width: 100%;
     height: 100%;
@@ -2504,7 +2504,7 @@ h2.t-title-office {
     font-size:70px;
 }
 .wave {
-    background-image: url(assets/images/wave.png);
+    background-image: url(../images/wave.png);
     background-repeat: repeat !important;
     width: 100%;
 }
@@ -2648,7 +2648,7 @@ padding: 80px 0 80px 0;
     margin-top: 0px;
 }
 .home3-effect-cover {
-    background-image:url(assets/images/texture/swirl_pattern.png);
+    background-image:url(../images/texture/swirl_pattern.png);
     background-repeat:repeat !important;
     width: 100%;
     height: 100%;
@@ -2715,7 +2715,7 @@ padding: 80px 0 80px 0;
 }
 #clients-home3.parallax-texture {
     height: 550px;
-    background-image: url(assets/images/texture/sativa.png);
+    background-image: url(../images/texture/sativa.png);
     background-repeat: repeat !important;
     background-attachment: fixed;
     width: 100%;
@@ -2980,7 +2980,7 @@ padding: 80px 0 80px 0;
     z-index: 10;
     opacity: 0;
     transition: all 0.3s ease-out 0s;
-    background: url(assets/images/transparent_bg.png) 0 0 repeat;
+    background: url(../images/transparent_bg.png) 0 0 repeat;
 }
 .home4-portfolio ul li:hover .overlay {
     opacity:1;
@@ -3417,7 +3417,7 @@ padding: 80px 0 80px 0;
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-image: url(assets/images/arrow/arrow-bg-1.png);
+    background-image: url(../images/arrow/arrow-bg-1.png);
     background-repeat: repeat-y;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -3636,7 +3636,7 @@ to {
 .hero-index-1 {   
     background-repeat:no-repeat;
     background-size: 100% 100%;
-    background-image:url("assets/images/monitor1.jpg");
+    background-image:url("../images/monitor1.jpg");
     -webkit-animation: hero-imacretina-1-anim 15s 0s ease-in-out forwards infinite;
     animation: hero-imacretina-1-anim 15s 0s ease-in-out forwards infinite;
     opacity: 1;
@@ -3648,7 +3648,7 @@ to {
 .hero-index-2 {
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-image: url("assets/images/monitor2.jpg");
+    background-image: url("../images/monitor2.jpg");
     -webkit-animation: hero-imacretina-2-anim 15s 0s ease-in-out forwards infinite;
     animation: hero-imacretina-2-anim 15s 0s ease-in-out forwards infinite;
     width: 450px;
@@ -3660,7 +3660,7 @@ to {
 .hero-index-3 {
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-image: url("assets/images/monitor3.jpg");
+    background-image: url("../images/monitor3.jpg");
     -webkit-animation: hero-imacretina-3-anim 15s 0s ease-in-out forwards infinite;
     animation: hero-imacretina-3-anim 15s 0s ease-in-out forwards infinite;
     width: 450px;
@@ -3741,7 +3741,7 @@ to {
     z-index: 10;
     opacity: 0;
     transition: all 0.3s ease-out 0s;
-    background: url(assets/images/transparent_bg.png) 0 0 repeat;
+    background: url(../images/transparent_bg.png) 0 0 repeat;
 }
 #latest-blog-index .latest-blog-content:hover .overlay {
     opacity:1;
@@ -3825,7 +3825,7 @@ to {
     margin-bottom: 0px;
 }
 .social-link {
-    background-image: url(assets/images/social_icons.png);
+    background-image: url(../images/social_icons.png);
     height: 32px;
     width: 32px;
     margin: 3px;
@@ -4191,28 +4191,28 @@ html.ngdialog-open, body.ngdialog-open {
     PAGE ORGANIZER PROFILE                                                                                                 
 *********************************************************************************************/
 .home1-back-img {
-    background-image: url(assets/images/partial/home1.jpg);
+    background-image: url(../images/partial/home1.jpg);
 }
 
 /********************************************************************************************
     PAGE VENUE PROFILE                                                                                                 
 *********************************************************************************************/
 .home6-back-img {
-    background-image: url(assets/images/partial/home6.jpg);
+    background-image: url(../images/partial/home6.jpg);
 }
 
 /********************************************************************************************
     PAGE TALENT PROFILE                                                                                                 
 *********************************************************************************************/
 .home8-back-img {
-    background-image: url(assets/images/partial/home8.jpg);
+    background-image: url(../images/partial/home8.jpg);
 }
 
 /********************************************************************************************
     PAGE HOME 7                                                                                                 
 *********************************************************************************************/
 .home7-back-img {
-    background-image: url(assets/images/partial/home7.jpg);
+    background-image: url(../images/partial/home7.jpg);
 }
 .button-div {
     margin: 20px 0;
@@ -4300,7 +4300,7 @@ html.ngdialog-open, body.ngdialog-open {
 *********************************************************************************************/
 .login-container-div {
     padding: 60px 0 30px;
-    background: url("assets/images/parallax/background_2.jpg");
+    background: url("../images/parallax/background_2.jpg");
     background-position: center;
 }
 .login-header-div {
@@ -4774,6 +4774,7 @@ html.ngdialog-open, body.ngdialog-open {
     bottom: 5px;
     background:  #FFFFFF;
     border: solid 1px #0000FF;
+    opacity: 0.8;
 }
 .store-img-div {
     position: relative;
@@ -5188,7 +5189,7 @@ figure.effect-layla:hover img {
     bottom: 10px;
     padding: 10px 0;
     text-indent: -1000px;
-    background-image: url("assets/images/store/eye_off_on.png");
+    background-image: url("../images/store/eye_off_on.png");
     background-repeat: no-repeat;
     background-position: 0 center;
     cursor: pointer;
@@ -5260,7 +5261,7 @@ figure.effect-layla:hover img {
     background: #111;   
 }
 .shop-banner-back {
-    background-image: url('assets/images/slider_old.jpg');
+    background-image: url('../images/slider_old.jpg');
     background-size: contain;
 }
 .effect-over-dresses {
@@ -5753,7 +5754,7 @@ footer#footer_sponsor .top-footer-in{
 *********************************************************************************************/
 
 .footer-bacground {
-    background-image: url(assets/images/texture/kindajean.png);
+    background-image: url(../images/texture/kindajean.png);
     background-repeat: repeat !important;
     width: 100%;
     height: 100%;
@@ -5762,7 +5763,7 @@ footer#footer_sponsor .top-footer-in{
 }
 
 .map-back {
-    background: url(assets/images/map.png) no-repeat 0 50px;
+    background: url(../images/map.png) no-repeat 0 50px;
 }
 footer .tags-img a {
     display: block;

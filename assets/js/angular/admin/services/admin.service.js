@@ -1,4 +1,4 @@
-angular.module('app.user')
+angular.module('app.admin')
   .factory('UserService', function($http) {
 
     var User = {

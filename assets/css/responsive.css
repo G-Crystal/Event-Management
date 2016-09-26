@@ -22,7 +22,7 @@
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-image: url(assets/images/arrow/arrow-bg-1.png);
+    background-image: url(../images/arrow/arrow-bg-1.png);
     background-repeat: repeat-y;
     -webkit-background-size: cover;
     -moz-background-size: cover;
