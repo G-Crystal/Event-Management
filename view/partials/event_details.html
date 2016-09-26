@@ -1,0 +1,136 @@
+<div id="demo" ng-controller="HomeController" class="home7">
+
+  <!--visible animated fadeInUp-->
+  <div class="container-fluid header-image-div">
+    <div class="home-img-div">
+      <div class="home7-back-img home-back-img-common"><span class="header-txt">LIFE OF PABLO TOUR</span></div>
+    </div>
+  </div> 
+
+  <div class="container">
+    <div class="row">
+      <div class="home-banner">
+        <div class="container">
+          <div class="row aboutus">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <p class="p-resp-xs">START:August 4th 4:00 pm</p>
+              <p class="p-resp-xs">END:August 4th 8:00 pm</p>
+              <p class="p-resp-xs">DOORS:August 4th 3:00 pm</p>
+              <p class="p-resp-xs">AGE LIMIT:All Ages</p>
+              <p class="p-resp-xs">
+                <a class="btn btn-primary" href="#/event">CONCERT<i class="fa"></i></a>
+                <a class="btn btn-primary" href="#/event">MUSIC<i class="fa"></i></a>
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 button-div">
+              <p class="p-center">
+              <a class="btn btn-block trans-buy-button inline-buy-button round-button" href="#/event">iCal</a>
+              <a class="btn btn-block trans-buy-button inline-buy-button round-button" href="#/event">google</a>
+              </p>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+              <p class="p-center p-blue">
+                <a href="#/venue_profile">BOGART'S ARENA COLISIEM & MUSIC HALL</a>
+              </p>
+              <p class="p-center">2621 BREADWAY CENTRAL AVE,</p>
+              <p class="p-center">OKLAHOMA CITY, OKLAHOMA</p>
+              <p class="p-center">32011-4567</p>
+              <p class="p-center large-btn-div">
+                <a class="btn btn-block trans-buy-button inline-buy-button round-button large-btn" ng-click="loadBuyTicket()">BUY TICKETS</a>
+              </p>
+              <div class="social-link-div p-center">
+                <a class="btn social-link facebook" href="#" target="_blank"></a>
+                <a class="btn social-link twitter" href="#" target="_blank"></a>
+                <a class="btn social-link instagram" href="#" target="_blank"></a>
+                <a class="btn social-link pinterest" href="#" target="_blank"></a>
+                <a class="btn social-link google" href="#" target="_blank"></a>
+              </div>
+            </div>
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </div>
+
+      <div class="col-lg-12">
+        <h4>TALENTS</h4>
+        <div class="row">
+          <div class="col-xs-2">
+            <a href="#/talent_profile"><img src="assets/images/store/event/3.png" /></a>
+          </div>
+          <div class="col-xs-2">
+            <a href="#/talent_profile"><img src="assets/images/store/event/3.png" /></a>
+          </div>
+          <div class="col-xs-2">
+            <a href="#/talent_profile"><img src="assets/images/store/event/3.png" /></a>
+          </div>
+          <div class="col-xs-2">
+            <a href="#/talent_profile"><img src="assets/images/store/event/3.png" /></a>
+          </div>
+          <div class="col-xs-2">
+            <a href="#/talent_profile"><img src="assets/images/store/event/3.png" /></a>
+          </div>
+        </div>
+        <div class="description-title-div">
+          <h4>DESCRIPTION</h4>
+        </div>
+        <div class="row description-content-div">
+          <p>
+            Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.
+          </p>
+          <p>
+            Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.<br>
+            Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.<br>
+            Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.<br>
+            Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-12 text-center shop-title-store top-down-border">
+        <h1 class="section-title">ORGANIZER INFORMATION</h1>
+        <h4 class="p-blue">
+          <a href="#/venue_profile">Crosstown Event Management Group</a>
+        </h4>
+        <h4>Info@crosstownmgmtgroup.com</h4>
+        <h4 class="p-resp-xs">1 800 543 9990</h4>
+      </div>
+
+      <div class="col-lg-12 text-center shop-title-store">
+        <h1 class="section-title">UPCOMING VENUE EVENTS</h1>
+      </div>
+      <!--List Event-->
+      <div id="cbp-vm" class="col-md-12 col-sm-12 col-xs-12 shop-prod active">
+        <ul id="event" class="nav-pills nav-stacked rectangle-list">
+          <li class="col-xs-12" ng-repeat="event in pagedItems[currentPage]">
+            <div class="shop-img home-box-black row">
+              <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 box-image-div">
+                <img ng-src="assets/images/store/{{event.src}}" alt="{{event.name}}" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box-image img-responsive" />
+              </div>
+              <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                <p class="p-title">{{event.title}}</p>
+                <div class="home-content-div">
+                  <div class="profile-div">
+                    <p class="p-date">{{event.date}}</p>
+                    <p class="p-spec p-blue"><a href="#/venue_profile">{{event.spec}}</a></p>
+                    <p class="p-name">{{event.name}}</p>
+                  </div>  
+
+                  <div class="buy-btn-div">
+                    <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="loadBuyTicket(event.num)">BUY TICKETS</a>
+                  </div>   
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</div>
+<!-- /.demo -->
+
+<div ng-include="'view/templates/footer.html'"></div>

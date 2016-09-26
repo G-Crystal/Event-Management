@@ -1,0 +1,104 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#/"><img src="assets/images/logo1.jpg" alt="logo" /></a>
+    </div>
+    <div class="content-count-cart-header dropdown" ng-controller="storeController">
+      <a href="" title="go to shopping cart" class="dropdown-toggle" data-toggle="dropdown" ng-disabled="cart.getTotalCount() < 1">
+        <i class="fa fa-shopping-cart"></i>
+        <p class="number-prod-cart">{{cart.getTotalCount()}}</p> 
+      </a>
+      <div class="dropdown-menu vertical-li dropdown-prod-cart">
+        <ul>
+          <li ng-repeat="item in cart.items | orderBy:'name'">
+            <div class="col-md-12 minitotal-prod">
+              <div class="col-md-6 minicart-img" ng-show='item.src != null'> 
+                <img src="assets/images/store/{{item.src}}" alt="{{item.name}}" />
+              </div>
+
+              <div class="col-md-6 minicart-data"><p class="mc-name">{{item.name}}</p>
+                <p>{{item.quantity}} X {{item.price | currency}}</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="separator"></div>
+        <div id="cartInfo"><p class="minucart-price">Subtotal {{cart.getTotalPrice() | currency}}</p></div>
+        <a href="#/cart" id="goToCheckOut">Proceed to purchase</a>
+      </div> 
+    </div>
+
+    <div class="collapse navbar-collapse navbar-ex1-collapse dropdown-prod-cart-scroll scroll-menu">
+    
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown menu-large"><a class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
+          <ul class="menu-items megamenu dropdown-menu">
+            <li class="menu-item col-sm-4">
+              <h3 class="angula-megamenu-title">General Pages</h3>
+              <ul class="mega-sub-menu">
+                <li><i class="fa fa-angle-right"></i><a href="/">Home</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/shop">Shop Page</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/event_details">Event Detail</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/venue_profile">Venue Profile</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/talent_profile">Talent Profile</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/organizer_profile">Organizer Profile</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/pagination">Search Pagination</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/cart_edit">Cart</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/organizer_signup">Organizer Signup</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/order_confirm_details">Order Confirmation Details</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/log_in">Log In</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/sign_up">Sign Up</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/reset">Reset</a></li>
+              </ul>
+            </li>
+            <li class="menu-item col-sm-4">
+              <h3 class="angula-megamenu-title">User Pages</h3>
+              <ul class="mega-sub-menu">
+                <li><i class="fa fa-angle-right"></i><a href="#/user_event_order">User Event Orders</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/user_messages">Messages</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/user_profile_settings">Profile</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/user_password_settings">Password</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/user_payments_settings">Payments</a></li>
+              </ul>
+            </li>
+            <li class="menu-item col-sm-4">
+              <h3 class="angula-megamenu-title">Admin Pages</h3>
+              <ul class="mega-sub-menu">
+                <li><i class="fa fa-angle-right"></i><a href="#/event_information">Admin Dashboard</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/upcoming_events">Upcoming Events</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/past_events">Past Events</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/event_order">Recent Orders</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/add_talents">Add Talent</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/order_report">Order Report</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/sale_report">Ticket Sales</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/profile_settings">Profile</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/password_settings">Password</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/payments_settings">Payments</a></li>
+              </ul>
+            </li>
+            <li class="menu-item col-sm-8 menu-adwertising">
+            </li>
+          </ul>
+        </li>
+        <li><a href="#/faq">FAQ</a>
+        </li>
+        <li><a href="#/contact">Contact</a>
+        </li>
+        <li><a href="#/sign_up">Sign Up</a>
+        </li>
+        <li><a href="#/log_in">Log In</a>
+        </li>
+          
+      </ul>
+        
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
