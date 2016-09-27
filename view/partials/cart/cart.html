@@ -1,4 +1,4 @@
-<div id="demo" ng-controller="CartController" class="home6">
+<div id="demo" class="home6">
 
   <div class="container">
     <div class="row cart-info-div">
@@ -8,9 +8,9 @@
       <!--List cart_event-->
       <div id="cbp-vm" class="col-md-12 col-sm-12 col-xs-12 shop-prod active">
         <ul id="cart_event" class="nav-pills nav-stacked rectangle-list">
-          <li class="col-xs-12" ng-repeat="cart_event in pagedItems[currentPage]">
+          <li class="col-xs-12" ng-repeat="cart_event in cart_events">
             <div class="shop-img home-box-black row">
-              <a href="#/cart_event_details">
+              <a href="#/event_details">
                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 box-image-div">
                   <img ng-src="assets/images/store/{{cart_event.src}}" alt="{{cart_event.name}}" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box-image img-responsive" />
                 </div>
@@ -45,16 +45,16 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="cart_detail in cart_details">
-              <td>{{cart_detail.qty}}</td>
-              <td>{{cart_detail.ticket_type}}</td>
-              <td>{{cart_detail.price}}</td>
-              <td>{{cart_detail.fees}}</td>
-              <td>{{cart_detail.subtotal}}</td>
-              <td><a href="">EDIT</a></td>
+            <tr ng-repeat="cart_ticket in cart_tickets">
+              <td>{{cart_ticket.qty}}</td>
+              <td>{{cart_ticket.ticket_type}}</td>
+              <td>{{cart_ticket.price}}</td>
+              <td>{{cart_ticket.fees}}</td>
+              <td>{{cart_ticket.subtotal}}</td>
+              <td><a href="" ng-click="edit()">EDIT</a></td>
             </tr>
           </tbody>
-        </table>        
+        </table>
       </div>
       <div class="col-sm-6 col-sm-offset-6 col-xs-8 col-xs-offset-4 table-container">
         <div class="cart-report-div">

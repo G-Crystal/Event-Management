@@ -17,7 +17,7 @@ angular.module('angula').config(['$routeProvider', function ($routeProvider) {
     .when("/organizer_profile", { templateUrl: "view/partials/organizer_profile.html", controller: "HomeCtrl" })
     .when("/organizer_signup", { templateUrl: "view/partials/organizer_signup.html", controller: "HomeCtrl" })
     .when("/buy_ticket", { templateUrl: "view/partials/buy_ticket.html", controller: "HomeCtrl" })
-    .when("/cart_edit", { templateUrl: "view/partials/cart_edit.html", controller: "HomeCtrl" })
+    // .when("/cart", { templateUrl: "view/partials/cart.html", controller: "HomeCtrl" })
     .when("/order_confirm_details", { templateUrl: "view/partials/orgarnizer/order_confirm_details.html", controller: "HomeCtrl" })
 
     // User Menu
@@ -54,7 +54,7 @@ angular.module('angula').config(['$routeProvider', function ($routeProvider) {
     //Shop Sound Obj
     .when("/shop", { templateUrl: "view/partials/shop/store.html", controller: "storeController_sound" })
     .when('/products/:productCode', { templateUrl: 'view/partials/shop/product.html', controller: "storeController_sound" })
-    .when('/cart', { templateUrl: 'view/partials/shop/shoppingCart.html', controller: "storeController_sound" })
+    // .when('/cart', { templateUrl: 'view/partials/shop/shoppingCart.html', controller: "storeController_sound" })
 
     //Shop Dresses
     .when("/shop_dresses", { templateUrl: "view/partials/shop/store_dresses.html", controller: "storeController" })

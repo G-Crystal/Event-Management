@@ -6,7 +6,11 @@ var app = angular.module('angula', [
   'ngDialog',
   'ui.bootstrap.datetimepicker',
   'angularTrix',
-  'app.user'
+  'app.user',
+  'app.admin',
+  'app.organizer',
+  'app.event',
+  'app.cart'
 ]);
 
 app.config(['$routeProvider', function ($routeProvider) {

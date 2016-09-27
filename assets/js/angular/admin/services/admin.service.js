@@ -1,26 +1,26 @@
 angular.module('app.admin')
-  .factory('UserService', function($http) {
+  .factory('AdminService', function($http) {
 
-    var User = {
+    var Admin = {
       login: function(data) {
         return $http.post('http://ticketvow.com/api/login', data).then(function (res) {
-          User = res.data;
+          Admin = res.data;
         })
       },
 
       signup: function(data) {
         return $http.post('http://ticketvow.com/api/register', data).then(function (res) {
-          User = res.data;
+          Admin = res.data;
         })
       },
 
       reset: function(data) {
         return $http.post('http://ticketvow.com/api/fogot', data).then(function (res) {
-          User = res.data;
+          Admin = res.data;
         })
       },
 
     };
 
-    return User;
+    return Admin;
   });

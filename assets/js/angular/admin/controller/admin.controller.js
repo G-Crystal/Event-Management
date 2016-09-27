@@ -1,5 +1,5 @@
 angular.module('app.admin')
-  .controller('UserController', function ($scope, UserService) {
+  .controller('AdminController', function ($scope, AdminService) {
 
     $scope.login = function () {
       var loginData = {
@@ -7,19 +7,11 @@ angular.module('app.admin')
         password: $scope.password
       };
 
-      UserService.login(loginData).then(function (data) {
+      AdminService.login(loginData).then(function (data) {
         console.log(data);
       }).catch(function(error) {
         console.log(error);
       });
-    };
-
-    $scope.reset = function () {
-      
-    };
-
-    $scope.signup = function () {
-      
     };
 
 });

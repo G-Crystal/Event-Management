@@ -15,7 +15,7 @@ angular.module('app.organizer')
       },
 
       reset: function(data) {
-        return $http.post('http://ticketvow.com/api/fogot', data).then(function (res) {
+        return $http.post('http://ticketvow.com/api/forgot', data).then(function (res) {
           User = res.data;
         })
       },
