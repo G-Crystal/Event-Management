@@ -7,13 +7,13 @@ angular.module('app.user')
         password: $scope.password
       };
 
-      UserService.login(loginData).then(function (data) {debugger;
+      UserService.login(loginData).then(function (data) {
         console.log(data);
         if( data.status_code == 200 ) {
           console.log(data.token);
           $location.path('/');
-        } else if( data.status_code == 2 ) {
-
+        } else {
+          console.log(data.message);
         }
       }).catch(function(error) {
         console.log(error);
@@ -28,13 +28,13 @@ angular.module('app.user')
         password: $scope.password
       };
 
-      UserService.signup(registerData).then(function (data) {debugger;
+      UserService.signup(registerData).then(function (data) {
         console.log(data);
         if( data.status_code == 200 ) {
           console.log(data.token);
           $location.path('/');
-        } else if( data.status_code == 2 ) {
-
+        } {
+          console.log(data.status);
         }
       }).catch(function(error) {
         console.log(error);
@@ -51,26 +51,8 @@ angular.module('app.user')
         if( data.status_code == 200 ) {
           console.log(data.token);
           $location.path('/');
-        } else if( data.status_code == 2 ) {
-
-        }
-      }).catch(function(error) {
-        console.log(error);
-      });
-    };
-
-    $scope.event_details = function () {
-      var resetData = {
-        id: 14
-      };
-
-      UserService.event_details(resetData).then(function (data) {debugger;
-        console.log(data);
-        if( data.status_code == 200 ) {
-          console.log(data.token);
-          $location.path('/');
-        } else if( data.status_code == 2 ) {
-
+        } else {
+          console.log(data.status);
         }
       }).catch(function(error) {
         console.log(error);

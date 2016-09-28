@@ -32,9 +32,8 @@ angular.module('app.cart')
         console.log(data);
         if( data.status_code == 200 ) {
           console.log(data.message);
-          $location.path('/');
-        } else if( data.status_code == 2 ) {
-
+        } else {
+          console.log(data.message);
         }
       }).catch(function(error) {
         console.log(error);

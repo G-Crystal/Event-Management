@@ -1,16 +1,12 @@
 angular.module('app.organizer', [])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
-      .when('/log_in', {
-        templateUrl: 'view/partials/log_in.html',
-        controller: 'UserController'
+      .when('/organizer_signup', {
+        templateUrl: 'view/partials/organizer/organizer_signup.html',
+        controller: 'OrganizerController'
       })
-      .when('/sign_up', {
-        templateUrl: 'view/partials/sign_up.html',
-        controller: 'UserController'
-      })
-      .when('/reset', {
-        templateUrl: 'view/partials/reset_password.html',
-        controller: 'UserController'
+      .when('/organizer_profile', {
+        templateUrl: 'view/partials/organizer/organizer_profile.html',
+        controller: 'OrganizerController'
       });
   }])

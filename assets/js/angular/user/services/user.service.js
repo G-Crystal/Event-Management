@@ -9,9 +9,8 @@ angular.module('app.user')
       },
 
       signup: function(data) {
-        debugger;
         if( data.password.new != data.password.confirm ) {
-          return User = false;
+          return false;
         }
 
         return $http.post('http://ticketvow.com/api/register', data).then(function (res) {
@@ -22,13 +21,6 @@ angular.module('app.user')
       reset: function(data) {
         debugger;
         return $http.post('http://ticketvow.com/api/forgot', data).then(function (res) {
-          return User = res.data;
-        })
-      },
-
-      event_details: function(data) {
-        debugger;
-        return $http.get('http://ticketvow.com/api/event/id', data).then(function (res) {
           return User = res.data;
         })
       },

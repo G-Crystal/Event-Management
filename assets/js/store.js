@@ -256,67 +256,6 @@ app.controller('SearchCategoryController', function($scope, $filter){
     
 }); 
 
-/* CONTROLLER ORGANIZER PROFILE */
-
-app.controller('OrganizerController', function($scope, $filter){
-
-  var myStore = new store();
-  $scope.currentPage = 0;
-  $scope.pageSize = 9;
-  $scope.numberOfPages = Math.ceil(myStore.organizer.length / $scope.pageSize);
-
-  $scope.filteredItems = [];
-  $scope.groupedItems = [];
-  $scope.pagedItems = [];
-
-  var searchMatch = function (haystack, needle) {
-    if (!needle) {
-      return true;
-    }
-    return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1;
-  };
-  $scope.search = function (name) {
-    $scope.filteredItems = $filter('filter')(myStore.organizer, function (organizer) {
-      for (var attr in organizer) {
-        if (searchMatch(organizer[name], $scope.query))
-          return true;
-      }
-      return false;
-    });
-    
-    $scope.currentPage = 0;
-    $scope.groupToPages();
-  };
-  $scope.myFilter = function (column, category) {
-    $scope.filteredItems = $filter('filter')(myStore.organizer, function (organizer) {
-      for (var attr in organizer) {
-        if (searchMatch(organizer[column], category))
-          return true;
-      }
-      return false;
-    });
-    
-    $scope.currentPage = 0;
-    $scope.groupToPages();
-  };
-  $scope.groupToPages = function () {
-    $scope.pagedItems = [];
-
-    
-    for (var i = 0; i < $scope.filteredItems.length; i++) {
-      if (i % $scope.pageSize === 0) {
-        $scope.pagedItems[Math.floor(i / $scope.pageSize)] = [$scope.filteredItems[i]];
-      } else {
-        $scope.pagedItems[Math.floor(i / $scope.pageSize)].push($scope.filteredItems[i]);
-      }
-    }
-      
-  };
-  // functions have been describe process the data for display
-  $scope.myFilter();
-    
-}); 
-
 /* CONTROLLER BUYER DASHBOARD */
 
 app.controller('UEventController', function($scope, $filter){

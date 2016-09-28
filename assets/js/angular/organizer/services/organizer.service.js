@@ -1,26 +1,14 @@
 angular.module('app.organizer')
-  .factory('UserService', function($http) {
+  .factory('OrganizerService', function($http) {
 
-    var User = {
-      login: function(data) {
-        return $http.post('http://ticketvow.com/api/login', data).then(function (res) {
-          User = res.data;
-        })
-      },
-
-      signup: function(data) {
-        return $http.post('http://ticketvow.com/api/register', data).then(function (res) {
-          User = res.data;
-        })
-      },
-
-      reset: function(data) {
-        return $http.post('http://ticketvow.com/api/forgot', data).then(function (res) {
-          User = res.data;
+    var Organizer = {
+      signup: function(data) {debugger;
+        return $http.post('http://ticketvow.com/api/registerOrganizer', data).then(function (res) {
+          Organizer = res.data;
         })
       },
 
     };
 
-    return User;
+    return Organizer;
   });

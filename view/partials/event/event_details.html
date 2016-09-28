@@ -1,4 +1,4 @@
-<div id="demo" ng-controller="HomeController" class="home7">
+<div id="demo" class="home7">
 
   <!--visible animated fadeInUp-->
   <div class="container-fluid header-image-div">
@@ -102,7 +102,7 @@
       <!--List Event-->
       <div id="cbp-vm" class="col-md-12 col-sm-12 col-xs-12 shop-prod active">
         <ul id="event" class="nav-pills nav-stacked rectangle-list">
-          <li class="col-xs-12" ng-repeat="event in pagedItems[currentPage]">
+          <li class="col-xs-12" ng-repeat="event in events">
             <div class="shop-img home-box-black row">
               <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 box-image-div">
                 <img ng-src="assets/images/store/{{event.src}}" alt="{{event.name}}" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box-image img-responsive" />
