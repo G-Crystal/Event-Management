@@ -12,5 +12,9 @@ angular.module('app.user', [])
       .when('/reset', {
         templateUrl: 'view/partials/user/reset_password.html',
         controller: 'UserController'
+      })
+      .when('/forgot', {
+        templateUrl: 'view/partials/user/forgot.html',
+        controller: 'UserController'
       });
   }])

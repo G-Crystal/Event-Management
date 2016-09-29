@@ -50,7 +50,23 @@ angular.module('app.user')
         console.log(data);
         if( data.status_code == 200 ) {
           console.log(data.token);
-          $location.path('/');
+        } else {
+          console.log(data.status);
+        }
+      }).catch(function(error) {
+        console.log(error);
+      });
+    };
+
+    $scope.forgot = function () {
+      var reqData = {
+        username: $scope.email
+      };
+
+      UserService.forgot(reqData).then(function (data) {
+        console.log(data);
+        if( data.status_code == 200 ) {
+          console.log(data.token);
         } else {
           console.log(data.status);
         }

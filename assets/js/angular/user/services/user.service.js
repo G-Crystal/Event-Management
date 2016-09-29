@@ -19,6 +19,12 @@ angular.module('app.user')
       },
 
       reset: function(data) {
+        return $http.post('http://ticketvow.com/api/reset', data).then(function (res) {
+          return User = res.data;
+        })
+      },
+
+      forgot: function(data) {
         debugger;
         return $http.post('http://ticketvow.com/api/forgot', data).then(function (res) {
           return User = res.data;
