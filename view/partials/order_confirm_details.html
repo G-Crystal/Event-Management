@@ -1,0 +1,147 @@
+<div id="demo" ng-controller="OrderController" class="home1">
+
+  <!--visible animated fadeInUp-->
+  <div class="container">
+    <div class="menubar-div solid-border-div order-title-div">
+      <span>ORDER CONFIRMATION DETAILS</span>
+    </div>
+
+    <div class="order-header-div">
+      <div class="row">
+        <div class="col-xs-3">BUYER NAME</div>
+        <div class="col-xs-9">JOHN DOE</div>
+      </div>
+    </div>
+
+      <!--List Event-->
+    <div class="solid-border-div order-detail-div">
+      <div class="row order-block-div">
+        <div class="col-xs-3">EMAIL</div>
+        <div class="col-xs-6">JOHNDOE@YAHOO.COM</div>
+        <div class="col-xs-3"><a href="">EDIT</a></div>
+      </div>
+
+      <div class="row order-block-div">
+        <div class="col-xs-3">PAYMENTS</div>
+        <div class="col-xs-3">XXXX4256 PAID</div>
+      </div>
+
+      <div class="row order-block-div">
+        <div class="col-xs-3">TICKET</div>
+        <div class="col-xs-9">
+          <div class="row">
+            <div class="col-xs-12">
+              <table class="order-info-table"><tr>
+                <td>KODAK BLACK TOUR W/LIL UVERTZX</td>
+                <td>10/2/2016 7PM</td>
+              </tr></table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <table class="order-info-table">
+                <tr>
+                  <td>1</td>
+                  <td>GENERAL ADMISSION</td>
+                  <td>$25.00</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>VIP PACKAGE</td>
+                  <td>$105.00</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row order-block-div">
+        <div class="col-xs-3">ORDER</div>
+        <div class="col-xs-9">
+          <div class="row">
+            <div class="col-xs-12">
+              <table class="order-info-table">
+                <thead>
+                  <tr>
+                    <td>FACE VALUE</td>
+                    <td>DISCOUNT</td>
+                    <td>FEES</td>
+                    <td>TOTAL</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>$235.00</td>
+                    <td>$0.00</td>
+                    <td>$15.72</td>
+                    <td>$250.72</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row order-block-div">
+        <div class="col-xs-3">NET PROCEES</div>
+        <div class="col-xs-9">
+          <div class="row">
+            <div class="col-xs-12">
+              <table class="order-info-table">
+                <thead>
+                  <tr>
+                    <td>BUYER PAID</td>
+                    <td>TICKETVOW FEES</td>
+                    <td>NET PROCEES</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>$250.72</td>
+                    <td>$15.72</td>
+                    <td>$235.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row order-block-div">
+        <div class="col-xs-3">BUYER ADDRESS</div>
+        <div class="col-xs-9">1616 GREENE ST UNIT A COLUMBIA, SC 29201 USA</div>
+      </div>
+
+      <div class="row order-block-div">
+        <div class="col-xs-12">NOTES</div>
+        <div class="col-xs-12">
+          <table class="order-info-table"><tr>
+            <td>
+              <div class="wysiwig-editor">
+                <trix-editor angular-trix ng-model="foo" class="trix-content"></trix-editor>
+              </div>
+            </td>
+            <td>
+              <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="save()">SAVE</a>
+            </td>
+          </tr></table>
+        </div>
+      </div>
+
+      <div class="row order-block-div">
+        <div class="col-xs-12 p-center">
+          <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="refundOrder()">REFUND ORDER</a>
+          <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="resendTicket()">RESEND TICKET</a>          
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</div>
+<div id="main-curtain" class="Curtain " ng-class="{'visible':toggle_menu_flag, '':!toggle_menu_flag}" ng-click="toggleMenu()"></div>
+
+<div ng-include="'view/templates/footer.html'"></div>

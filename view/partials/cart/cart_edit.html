@@ -1,0 +1,56 @@
+<div class="description-title-div ticket-block-div menubar-div" ng-controller="CartController">
+  <div class="row">
+    <div class="col-xs-12">
+      <!--List cart_event-->
+      <div id="cbp-vm" class="col-md-12 col-sm-12 col-xs-12 shop-prod active">
+        <ul id="cart_event" class="nav-pills nav-stacked rectangle-list">
+          <li class="col-xs-12" ng-repeat="cart_event in cart_events">
+            <div class="shop-img home-box-black row">
+              <a href="#/cart_event_details">
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 box-image-div">
+                  <img ng-src="assets/images/store/{{cart_event.src}}" alt="{{cart_event.name}}" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box-image img-responsive" />
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                  <p class="p-title">{{cart_event.title}}</p>
+                  <div class="home-content-div">
+                    <div class="profile-div">
+                      <p class="p-date">{{cart_event.date}}</p>
+                      <p class="p-spec p-blue"><a href="#/venue_profile">{{cart_event.spec}}</a></p>
+                      <p class="p-name">{{cart_event.name}}</p>
+                    </div>
+
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="table-container">
+        <table class="border-table">
+          <thead>
+            <tr>
+              <th>TICKET TYPE</th>
+              <th>PRICE</th>
+              <th>QTY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="cart_ticket in cart_tickets">
+              <td>{{cart_ticket.ticket_type}}</td>
+              <td>{{cart_ticket.price}}</td>
+              <td><input type="number" min="0" step="1" value={{cart_ticket.qty}} class="spin-input"></td>
+            </tr>
+          </tbody>
+        </table>        
+      </div>
+
+      <div class="col-sm-6 col-sm-offset-6 col-xs-8 col-xs-offset-4 p-center">
+        <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="update()">UPDATE</a>
+      </div>
+    </div>
+  </div>
+  <!-- /.row -->
+</div>
