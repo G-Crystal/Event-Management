@@ -10,7 +10,8 @@ var app = angular.module('angula', [
   'app.admin',
   'app.organizer',
   'app.event',
-  'app.cart'
+  'app.cart',
+  'app.venue'
 ]);
 
 app.config(['$routeProvider', function ($routeProvider) {

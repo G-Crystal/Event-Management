@@ -10,7 +10,7 @@ angular.module('angula').config(['$routeProvider', function ($routeProvider) {
     .when("/home3", { templateUrl: "view/partials/home3.html", controller: "HomeCtrl" })
     .when("/home4", { templateUrl: "view/partials/home4.html", controller: "HomeCtrl" })
     .when("/home5", { templateUrl: "view/partials/home5.html", controller: "HomeCtrl" })
-    .when("/venue_profile", { templateUrl: "view/partials/venue_profile.html", controller: "HomeCtrl" })
+    // .when("/venue_profile", { templateUrl: "view/partials/venue_profile.html", controller: "HomeCtrl" })
     // .when("/event_details", { templateUrl: "view/partials/event/event_details.html", controller: "HomeCtrl" })
     .when("/talent_profile", { templateUrl: "view/partials/talent_profile.html", controller: "HomeCtrl" })
     .when("/pagination", { templateUrl: "view/partials/pagination.html", controller: "HomeCtrl" })
