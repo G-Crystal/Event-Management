@@ -46,7 +46,7 @@ angular.module('app.user')
         username: $scope.email
       };
 
-      UserService.reset(resetData).then(function (data) {debugger;
+      UserService.reset(resetData).then(function (data) {
         console.log(data);
         if( data.status_code == 200 ) {
           console.log(data.token);
