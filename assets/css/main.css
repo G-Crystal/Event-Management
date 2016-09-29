@@ -5510,11 +5510,12 @@ figure.effect-layla:hover img {
     overflow-x: auto;
     padding: 0 1px;
 }
-.table {
+.border-table {
     border: 1px solid #C0C0C0;
     margin-bottom: 0px;
+    width: 100%;
 }
-.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+.border-table>thead>tr>th, .border-table>tbody>tr>th, .border-table>tfoot>tr>th, .border-table>thead>tr>td, .border-table>tbody>tr>td, .border-table>tfoot>tr>td {
     padding: 15px;
     line-height: 1.42857143;
     vertical-align: middle;

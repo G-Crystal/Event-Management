@@ -29,14 +29,32 @@ angular.module('app.organizer')
         organization_zipcode: $scope.ent_zipcode,
         organization_number: $scope.ent_phone_number
       };
-debugger;
-      OrganizerService.signup(organizerData).then(function (data) {debugger;
+
+      OrganizerService.signup(organizerData).then(function (data) {
         console.log(data);
       }).catch(function(error) {
         console.log(error);
       });
     };
 
+    $scope.get_profile = function () {debugger;
+      var organizerData = {
+        token: $scope.token
+      };
+
+      OrganizerService.get_profile(organizerData).then(function (data) {debugger;
+        console.log(data);
+        if( data.status_code == 200 ) {
+          console.log(data.message);
+        } else {
+          console.log(data.message);
+        }
+      }).catch(function(error) {
+        console.log(error);
+      });
+    };
+
     $scope.init();
+    $scope.get_profile();
 
 });

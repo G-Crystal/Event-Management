@@ -2,7 +2,7 @@
   <div ng-include="'view/partials/account_menu.html'"></div>
 
   <ul ng-class="{'sidenav':toggle_menu_flag, 'sidenav sidenav-toggle':!toggle_menu_flag}">
-    <li ng-class="getClass('/event_information')" ng-click="menu_click()"><a href="#event_information">Dashboard</a></li>
+    <li ng-class="getClass('/create_event')" ng-click="menu_click()"><a href="#create_event">Dashboard</a></li>
     <li ng-class="{'sidenav-collapse':toggle_events, 'sidenav-expand':!toggle_events}" ng-click="setToggle('toggle_events')">
       <a href="">Events</a>
       <ul class="sidenav-submenu">
