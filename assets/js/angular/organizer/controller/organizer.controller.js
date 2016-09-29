@@ -18,14 +18,14 @@ angular.module('app.organizer')
         address: $scope.per_address,
         city: $scope.per_city,
         state: $scope.per_state,
-        country: $scope.per_state,
+        country: $scope.per_country,
         zipcode: $scope.per_zipcode,
         number: $scope.per_phone_number,
         organization_name: $scope.ent_name,
         organization_address: $scope.ent_address,
         organization_city: $scope.ent_city,
         organization_state: $scope.ent_state,
-        organization_country: $scope.ent_state,
+        organization_country: $scope.ent_country,
         organization_zipcode: $scope.ent_zipcode,
         organization_number: $scope.ent_phone_number
       };
@@ -44,11 +44,11 @@ angular.module('app.organizer')
 
       OrganizerService.get_profile(organizerData).then(function (data) {debugger;
         console.log(data);
-        if( data.status_code == 200 ) {
-          console.log(data.message);
-        } else {
-          console.log(data.message);
-        }
+        // if( data.status_code == 200 ) {
+        //   console.log(data.message);
+        // } else {
+        //   console.log(data.message);
+        // }
       }).catch(function(error) {
         console.log(error);
       });
