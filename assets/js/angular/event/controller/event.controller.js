@@ -14,6 +14,7 @@ angular.module('app.event')
 
       EventService.event_details(eventData).then(function (data) {
         console.log(data);
+        alert(data.message);
         if( data.status_code == 200 ) {
           console.log(data.message);
         } else {
@@ -30,6 +31,7 @@ angular.module('app.event')
 
       EventService.event_category(eventData).then(function (data) {
         console.log(data);
+        alert(data.message);
         if( data.status_code == 200 ) {
           console.log(data.message);
         } else {

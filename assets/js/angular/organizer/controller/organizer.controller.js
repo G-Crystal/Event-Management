@@ -44,14 +44,14 @@ angular.module('app.organizer')
       };
 
       OrganizerService.get_profile(organizerData).then(function (data) {
-        console.log(data);
-        alert('Get organizer profile: ' + data.status);
+        console.log(data.data);
+        alert('Get organizer profile: ' + data.data.message);
       }).catch(function(error) {
         console.log(error);
       });
     };
 
     $scope.init();
-    // $scope.get_profile();
+    $scope.get_profile();
 
 });

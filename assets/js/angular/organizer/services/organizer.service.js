@@ -9,7 +9,7 @@ angular.module('app.organizer')
       },
 
       get_profile: function(data) {
-        return $http.get('http://ticketvow.com/api/getProfile', data).then(function (res) {
+        return $http.get('http://ticketvow.com/api/getProfile', data).success(function (res) {
           Organizer = res.data;
         })
       },

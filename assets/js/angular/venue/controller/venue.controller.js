@@ -13,6 +13,7 @@ angular.module('app.venue')
 
       VenueService.get_venue(venueData).then(function (data) {
         console.log(data);
+        alert(data.data.message);
       }).catch(function(error) {
         console.log(error);
       });

@@ -11,7 +11,8 @@ var app = angular.module('angula', [
   'app.organizer',
   'app.event',
   'app.cart',
-  'app.venue'
+  'app.venue',
+  'app.talent'
 ]);
 
 app.config(['$routeProvider', function ($routeProvider) {
