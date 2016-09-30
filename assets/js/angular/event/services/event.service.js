@@ -8,6 +8,12 @@ angular.module('app.event')
         })
       },
 
+      event_category: function(data) {
+        return $http.get('http://ticketvow.com/api/getEventCategory', data).then(function (res) {
+          return Event = res.data;
+        })
+      },
+
     };
 
     return Event;

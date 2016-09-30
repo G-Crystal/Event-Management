@@ -24,7 +24,23 @@ angular.module('app.event')
       });
     };
 
+    $scope.event_category = function () {
+      var eventData = {
+      };
+
+      EventService.event_category(eventData).then(function (data) {
+        console.log(data);
+        if( data.status_code == 200 ) {
+          console.log(data.message);
+        } else {
+          console.log(data.message);
+        }
+      }).catch(function(error) {
+        console.log(error);
+      });
+    };
+
     $scope.init();
-    $scope.event_details();
+    $scope.event_category();
 
 });

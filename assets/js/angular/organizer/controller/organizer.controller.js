@@ -40,23 +40,18 @@ angular.module('app.organizer')
 
     $scope.get_profile = function () {
       var organizerData = {
-        token: $scope.token
+        token: ''//$scope.token
       };
 
       OrganizerService.get_profile(organizerData).then(function (data) {
         console.log(data);
         alert('Get organizer profile: ' + data.status);
-        // if( data.status_code == 200 ) {
-        //   console.log(data.message);
-        // } else {
-        //   console.log(data.message);
-        // }
       }).catch(function(error) {
         console.log(error);
       });
     };
 
     $scope.init();
-    $scope.get_profile();
+    // $scope.get_profile();
 
 });
