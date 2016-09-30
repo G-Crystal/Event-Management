@@ -6,6 +6,7 @@ angular.module('app.event')
     $scope.init = function() {
       $scope.events = myStore.events;
       $scope.pastevent = myStore.pastevent;
+      $scope.upcomingevent = myStore.upcomingevent;
     };
 
     $scope.event_details = function () {

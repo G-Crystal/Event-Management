@@ -469,8 +469,11 @@ function store() {
   ];
 
   this.upcomingevent = [
-    { num: 1, code: '001', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png"},
-    { num: 2, code: '002', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png"}
+    { num: 1, code: '001', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png", event_name: "LIFE OF PABLO TOUR KANYE WEST AND MANY MORE", venue: "BBT ARENA", tix_sold: 500, tix_avail: 142, revenue: "$15000.67", display: "PUBLIC", view: "LINK"},
+    { num: 2, code: '002', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png", event_name: "LIFE OF PABLO TOUR KANYE WEST AND MANY MORE", venue: "BBT ARENA", tix_sold: 500, tix_avail: 142, revenue: "$15000.67", display: "PUBLIC", view: "LINK"},
+    { num: 3, code: '003', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png", event_name: "LIFE OF PABLO TOUR KANYE WEST AND MANY MORE", venue: "BBT ARENA", tix_sold: 500, tix_avail: 142, revenue: "$15000.67", display: "PUBLIC", view: "LINK"},
+    { num: 4, code: '004', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png", event_name: "LIFE OF PABLO TOUR KANYE WEST AND MANY MORE", venue: "BBT ARENA", tix_sold: 500, tix_avail: 142, revenue: "$15000.67", display: "PUBLIC", view: "LINK"},
+    { num: 5, code: '005', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png", event_name: "LIFE OF PABLO TOUR KANYE WEST AND MANY MORE", venue: "BBT ARENA", tix_sold: 500, tix_avail: 142, revenue: "$15000.67", display: "PUBLIC", view: "LINK"}
   ];
 
   this.pastevent = [

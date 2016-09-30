@@ -34,7 +34,7 @@ angular.module('angula').config(['$routeProvider', function ($routeProvider) {
     .when("/password_settings", { templateUrl: "view/partials/admin/update_password.html", controller: "HomeCtrl" })
     .when("/payments_settings", { templateUrl: "view/partials/admin/payments.html", controller: "HomeCtrl" })
     .when("/event_order", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
-    .when("/upcoming_events", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
+    // .when("/upcoming_events", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
     // .when("/past_events", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
     // .when("/add_talents", { templateUrl: "view/partials/admin/add_talent.html", controller: "HomeCtrl" })
     .when("/order_report", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
