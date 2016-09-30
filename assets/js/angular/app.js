@@ -8,12 +8,12 @@ var app = angular.module('angula', [
   'ui.bootstrap.datetimepicker',
   'angularTrix',
   'app.user',
-  'app.admin',
   'app.organizer',
   'app.event',
   'app.cart',
   'app.venue',
-  'app.talent'
+  'app.talent',
+  'app.report'
 ]);
 
 app.config(['$routeProvider', function ($routeProvider) {
