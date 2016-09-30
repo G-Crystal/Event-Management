@@ -38,12 +38,9 @@ angular.module('app.organizer')
       });
     };
 
-    $scope.get_profile = function () {
-      var organizerData = {
-        token: ''//$scope.token
-      };
+    $scope.get_profile = function () {  
 
-      OrganizerService.get_profile(organizerData).then(function (data) {
+      OrganizerService.get_profile().then(function (data) {
         console.log(data.data);
         alert('Get organizer profile: ' + data.data.message);
       }).catch(function(error) {

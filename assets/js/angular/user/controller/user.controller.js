@@ -1,5 +1,5 @@
 angular.module('app.user')
-  .controller('UserController', function ($scope, $location, UserService) {
+  .controller('UserController', function ($scope, $location, $cookies, UserService) {
 
     $scope.login = function () {
       var loginData = {
@@ -10,8 +10,7 @@ angular.module('app.user')
       UserService.login(loginData).then(function (data) {
         console.log(data);
         if( data.status_code == 200 ) {
-          console.log(data.token);
-          alert('Token String: \n' + data.token);
+          $cookies.token = data.token;
           $location.path('/');
         } else {
           console.log(data.message);
@@ -36,7 +35,7 @@ angular.module('app.user')
         alert('Sign up: ' + data.status);
         if( data.status_code == 200 ) {
           console.log(data.token);
-          $location.path('/');
+          $location.path('/log_in');
         } {
           console.log(data.status);
         }

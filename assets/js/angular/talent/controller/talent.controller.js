@@ -18,7 +18,7 @@ angular.module('app.talent')
         talent_facebook_url: ''
       };
 
-      TalentService.add_talent(talentData).then(function (data) {debugger;
+      TalentService.add_talent(talentData).then(function (data) {
         console.log(data);
         alert(data.message);
       }).catch(function(error) {

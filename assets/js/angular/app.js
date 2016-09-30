@@ -1,5 +1,6 @@
 var app = angular.module('angula', [
   'ngRoute',
+  'ngCookies',
   'ui.bootstrap',
   'ngAnimate',
   'ngMaterial',
