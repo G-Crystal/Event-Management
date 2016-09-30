@@ -3,7 +3,7 @@ angular.module('app.venue')
 
     var Venue = {
 
-      get_venue: function(data) {debugger;
+      get_venue: function(data) {
         return $http.get('http://ticketvow.com/api/getVenue', data).then(function (res) {
           Venue = res.data;
         })

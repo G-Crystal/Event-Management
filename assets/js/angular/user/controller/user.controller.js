@@ -11,9 +11,11 @@ angular.module('app.user')
         console.log(data);
         if( data.status_code == 200 ) {
           console.log(data.token);
+          alert('Token String: \n' + data.token);
           $location.path('/');
         } else {
           console.log(data.message);
+          alert('Login: ' + data.message);
         }
       }).catch(function(error) {
         console.log(error);
@@ -22,14 +24,16 @@ angular.module('app.user')
 
     $scope.signup = function () {
       var registerData = {
-        first_name: $scope.first_name, 
-        last_name: $scope.last_name, 
-        username: $scope.email, 
-        password: $scope.password
+        fname: $scope.first_name, 
+        lname: $scope.last_name, 
+        email: $scope.email, 
+        password: $scope.password,
+        repassword: $scope.cfm_password
       };
 
       UserService.signup(registerData).then(function (data) {
         console.log(data);
+        alert('Sign up: ' + data.status);
         if( data.status_code == 200 ) {
           console.log(data.token);
           $location.path('/');
@@ -43,11 +47,14 @@ angular.module('app.user')
 
     $scope.reset = function () {
       var resetData = {
-        username: $scope.email
+        code: $scope.email,
+        password: $scope.password,
+        newpassword: $scope.newpassword
       };
 
       UserService.reset(resetData).then(function (data) {
         console.log(data);
+        alert('Reset password: ' + data.status);
         if( data.status_code == 200 ) {
           console.log(data.token);
         } else {
@@ -65,6 +72,7 @@ angular.module('app.user')
 
       UserService.forgot(reqData).then(function (data) {
         console.log(data);
+        alert('Forgot password: ' + data.status);
         if( data.status_code == 200 ) {
           console.log(data.token);
         } else {

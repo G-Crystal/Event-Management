@@ -8,7 +8,7 @@ angular.module('app.organizer')
         })
       },
 
-      get_profile: function(data) {debugger;
+      get_profile: function(data) {
         return $http.get('http://ticketvow.com/api/getProfile', data).then(function (res) {
           Organizer = res.data;
         })

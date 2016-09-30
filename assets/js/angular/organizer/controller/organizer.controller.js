@@ -32,18 +32,20 @@ angular.module('app.organizer')
 
       OrganizerService.signup(organizerData).then(function (data) {
         console.log(data);
+        alert('Organizer sign up: ' + data.status);
       }).catch(function(error) {
         console.log(error);
       });
     };
 
-    $scope.get_profile = function () {debugger;
+    $scope.get_profile = function () {
       var organizerData = {
         token: $scope.token
       };
 
-      OrganizerService.get_profile(organizerData).then(function (data) {debugger;
+      OrganizerService.get_profile(organizerData).then(function (data) {
         console.log(data);
+        alert('Get organizer profile: ' + data.status);
         // if( data.status_code == 200 ) {
         //   console.log(data.message);
         // } else {

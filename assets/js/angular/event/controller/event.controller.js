@@ -3,16 +3,16 @@ angular.module('app.event')
 
     var myStore = new store();
     
-    $scope.init = function() {debugger;
+    $scope.init = function() {
       $scope.events = myStore.events;
     };
 
-    $scope.event_details = function () {debugger;
+    $scope.event_details = function () {
       var eventData = {
         id: $scope.event_id
       };
 
-      EventService.event_details(eventData).then(function (data) {debugger;
+      EventService.event_details(eventData).then(function (data) {
         console.log(data);
         if( data.status_code == 200 ) {
           console.log(data.message);

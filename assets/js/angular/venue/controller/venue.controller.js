@@ -11,7 +11,7 @@ angular.module('app.venue')
       var venueData = {
       };
 
-      VenueService.get_venue(venueData).then(function (data) {debugger;
+      VenueService.get_venue(venueData).then(function (data) {
         console.log(data);
       }).catch(function(error) {
         console.log(error);
