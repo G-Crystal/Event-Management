@@ -42,4 +42,4 @@ angular.module('app.talent')
     $scope.init();
     $scope.add_talent();
 
-});
+  });

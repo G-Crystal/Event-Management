@@ -422,31 +422,6 @@ angular.module('angula').controller('LMenuController', function ( $scope, $locat
   $scope.init();
 
 });
-/*
-angular.module('angula').controller('EventInfoController', function ($scope, ngDialog, $document) {
-
-  $scope.AddTicket = function () {
-    var modalPromise = ngDialog.open({
-      template: 'view/partials/ticket/addTicketPopup.html', 
-      className: 'ngdialog-theme-default', 
-      preserveFocus: false, 
-      trapFocus: false,
-      width: '768px'
-    });
-  };
-
-  $scope.AddTalent = function () {
-    var modalPromise = ngDialog.open({
-      template: 'view/partials/talent/addTalentPopup.html', 
-      className: 'ngdialog-theme-default', 
-      preserveFocus: false, 
-      trapFocus: false,
-      width: '768px'
-    });
-  };
-
-});
-*/
 
 angular.module('angula').controller('OrderController', function ($scope, ngDialog, $document) {
 
