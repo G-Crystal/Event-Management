@@ -6,6 +6,7 @@ angular.module('app.report')
     $scope.init = function() {
       $scope.events = myStore.events;
       $scope.cart_tickets = myStore.cart_tickets;
+      $scope.order_report = myStore.order_report;
     };
 
     $scope.event_details = function () {

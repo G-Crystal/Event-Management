@@ -491,6 +491,14 @@ function store() {
     { num:2, qty: '2', ticket_type: 'VIP MEET & GREET', price: '$105', fees: '$14.40', subtotal: '$238.80', sold: '4', value: '$55.72', revenue: '$222.88', net_revenue: '$208.00'}
   ];
 
+  this.order_report = [
+    { num:1, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
+    { num:1, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
+    { num:1, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
+    { num:1, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
+    { num:1, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'}
+  ];
+
 }
 
 function detailsprod() {

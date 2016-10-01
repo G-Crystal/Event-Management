@@ -4360,6 +4360,17 @@ html.ngdialog-open, body.ngdialog-open {
     font-weight: 200;
     font-size: 14px;
 }
+.event-live-div > span.caret {
+    top: -50%;
+}
+
+/********************************************************************************************
+    PAGE TICKET REPORT
+*********************************************************************************************/
+.event-label {
+    display: block;
+    overflow: hidden;
+}
 
 /********************************************************************************************
     PAGE ORDER CONFIRMATION DETAILS

@@ -6,7 +6,7 @@
   <div class="container">
     <div class="menubar-div row">
       <div class="description-title-div col-lg-12">
-        <h4>TICKET SALES</h4>
+        <h4>ORDER REPORT</h4>
         <div class="event-list-div">
           <div class="dropdown">
             <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-category event-select-list">
@@ -22,24 +22,26 @@
           <table class="border-table">
             <thead>
               <tr>
-                <th>Ticket Type</th>
-                <th>Sold</th>
-                <th>Price</th>
-                <th>Value</th>
-                <th>Revenue</th>
-                <th>Net Revenue</th>
-                <th>Fees</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Qty</th>
+                <th>Paid</th>
+                <th>Place Holder</th>
+                <th>Trnx ID</th>
+                <th>Order ID</th>
+                <th>Purchase Date</th>
               </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="ticket in cart_tickets">
-                <td>{{ticket.ticket_type}}</td>
-                <td>{{ticket.sold}}</td>
-                <td>{{ticket.price}}</td>
-                <td>{{ticket.value}}</td>
-                <td>{{ticket.revenue}}</td>
-                <td>{{ticket.net_revenue}}</td>
-                <td>{{ticket.fees}}</td>
+              <tr ng-repeat="order in order_report">
+                <td>{{order.fname}}</td>
+                <td>{{order.lname}}</td>
+                <td>{{order.qty}}</td>
+                <td>{{order.paid}}</td>
+                <td>{{order.place_holder}}</td>
+                <td>{{order.trnx_id}}</td>
+                <td>{{order.order_id}}</td>
+                <td>{{order.purchase_date}}</td>
               </tr>
             </tbody>
           </table>
