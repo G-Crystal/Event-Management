@@ -12,13 +12,13 @@ angular.module('angula').config(['$routeProvider', function ($routeProvider) {
     .when("/home5", { templateUrl: "view/partials/home5.html", controller: "HomeCtrl" })
     // .when("/venue_profile", { templateUrl: "view/partials/venue_profile.html", controller: "HomeCtrl" })
     // .when("/event_details", { templateUrl: "view/partials/event/event_details.html", controller: "HomeCtrl" })
-    .when("/talent_profile", { templateUrl: "view/partials/talent_profile.html", controller: "HomeCtrl" })
+    // .when("/talent_profile", { templateUrl: "view/partials/talent_profile.html", controller: "HomeCtrl" })
     .when("/pagination", { templateUrl: "view/partials/pagination.html", controller: "HomeCtrl" })
     // .when("/organizer_profile", { templateUrl: "view/partials/organizer_profile.html", controller: "HomeCtrl" })
     // .when("/organizer_signup", { templateUrl: "view/partials/organizer_signup.html", controller: "HomeCtrl" })
-    .when("/buy_ticket", { templateUrl: "view/partials/buy_ticket.html", controller: "HomeCtrl" })
+    .when("/buy_ticket", { templateUrl: "view/partials/ticket/buy_ticket.html", controller: "HomeCtrl" })
     // .when("/cart", { templateUrl: "view/partials/cart.html", controller: "HomeCtrl" })
-    .when("/order_confirm_details", { templateUrl: "view/partials/orgarnizer/order_confirm_details.html", controller: "HomeCtrl" })
+    .when("/order_confirm_details", { templateUrl: "view/partials/order_confirm_details.html", controller: "HomeCtrl" })
 
     // User Menu
     .when("/user_dashboard", { templateUrl: "view/partials/user/dashboard.html", controller: "HomeCtrl" })
@@ -28,21 +28,21 @@ angular.module('angula').config(['$routeProvider', function ($routeProvider) {
     .when("/user_payments_settings", { templateUrl: "view/partials/user/payments.html", controller: "HomeCtrl" })
 
     // Admin Menu
-    .when("/create_event", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
-    .when("/messages", { templateUrl: "view/partials/admin/create_event.html", controller: "HomeCtrl" })
+    // .when("/create_event", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
+    .when("/messages", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
     .when("/profile_settings", { templateUrl: "view/partials/admin/profile.html", controller: "HomeCtrl" })
     .when("/password_settings", { templateUrl: "view/partials/admin/update_password.html", controller: "HomeCtrl" })
     .when("/payments_settings", { templateUrl: "view/partials/admin/payments.html", controller: "HomeCtrl" })
-    .when("/event_order", { templateUrl: "view/partials/admin/create_event.html", controller: "HomeCtrl" })
-    .when("/upcoming_events", { templateUrl: "view/partials/admin/create_event.html", controller: "HomeCtrl" })
-    .when("/past_events", { templateUrl: "view/partials/admin/create_event.html", controller: "HomeCtrl" })
-    .when("/add_talents", { templateUrl: "view/partials/admin/add_talent.html", controller: "HomeCtrl" })
-    .when("/order_report", { templateUrl: "view/partials/admin/create_event.html", controller: "HomeCtrl" })
-    .when("/sale_report", { templateUrl: "view/partials/admin/create_event.html", controller: "HomeCtrl" })
-    .when("/digital_market", { templateUrl: "view/partials/admin/create_event.html", controller: "HomeCtrl" })
-    .when("/box_office", { templateUrl: "view/partials/admin/create_event.html", controller: "HomeCtrl" })
-    .when("/service", { templateUrl: "view/partials/admin/create_event.html", controller: "HomeCtrl" })
-    .when("/allyhub", { templateUrl: "view/partials/admin/create_event.html", controller: "HomeCtrl" })
+    .when("/event_order", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
+    // .when("/upcoming_events", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
+    // .when("/past_events", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
+    // .when("/add_talents", { templateUrl: "view/partials/admin/add_talent.html", controller: "HomeCtrl" })
+    // .when("/order_report", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
+    // .when("/ticket_report", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
+    .when("/digital_market", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
+    .when("/box_office", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
+    .when("/service", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
+    .when("/allyhub", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
 
     // About
     .when("/about", { templateUrl: "view/partials/about.html", controller: "PageCtrl" })
@@ -422,31 +422,6 @@ angular.module('angula').controller('LMenuController', function ( $scope, $locat
   $scope.init();
 
 });
-
-angular.module('angula').controller('EventInfoController', function ($scope, ngDialog, $document) {
-
-  $scope.AddTicket = function () {
-    var modalPromise = ngDialog.open({
-      template: 'view/partials/addTicketPopup.html', 
-      className: 'ngdialog-theme-default', 
-      preserveFocus: false, 
-      trapFocus: false,
-      width: '768px'
-    });
-  };
-
-  $scope.AddTalent = function () {
-    var modalPromise = ngDialog.open({
-      template: 'view/partials/addTalentPopup.html', 
-      className: 'ngdialog-theme-default', 
-      preserveFocus: false, 
-      trapFocus: false,
-      width: '768px'
-    });
-  };
-
-});
-
 
 angular.module('angula').controller('OrderController', function ($scope, ngDialog, $document) {
 

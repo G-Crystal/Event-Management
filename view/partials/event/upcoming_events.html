@@ -1,0 +1,45 @@
+<div ng-include="'view/partials/admin/admin_menu.html'"></div>
+
+<div id="demo" class="home1">
+
+  <!--visible animated fadeInUp-->
+  <div class="container">
+    <div class="menubar-div row">
+      <div class="description-title-div col-lg-12">
+        <h4>Upcoming Events</h4>
+        <div class="table-container">
+          <table class="border-table">
+            <thead>
+              <tr>
+                <th>Event Name</th>
+                <th>Venue</th>
+                <th>Tix Sold</th>
+                <th>Tix Avail</th>
+                <th>Revenue</th>
+                <th>Display</th>
+                <th>View</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="event in upcomingevent">
+                <td>{{event.event_name}}</td>
+                <td>{{event.venue}}</td>
+                <td>{{event.tix_sold}}</td>
+                <td>{{event.tix_avail}}</td>
+                <td>{{event.revenue}}</td>
+                <td>{{event.display}}</td>
+                <td>{{event.view}}</td>
+                <td><a style="cursor:pointer" ng-click="editURL(2, event.num)">Delete/Edit</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</div>
+
+<div ng-include="'view/templates/footer.html'"></div>

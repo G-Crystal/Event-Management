@@ -1,5 +1,5 @@
 angular.module('app.organizer')
-  .factory('OrganizerService', function($http) {
+  .factory('OrganizerService', function($http, $cookies) {
 
     var Organizer = {
       signup: function(data) {
@@ -8,8 +8,8 @@ angular.module('app.organizer')
         })
       },
 
-      get_profile: function(data) {debugger;
-        return $http.get('http://ticketvow.com/api/getProfile', data).then(function (res) {
+      get_profile: function() {
+        return $http.get('http://ticketvow.com/api/getProfile?token=' + $cookies.token).success(function (res) {
           Organizer = res.data;
         })
       },

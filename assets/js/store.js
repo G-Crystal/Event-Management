@@ -445,9 +445,9 @@ function store() {
     { num: 9, code: '009s', category: 'Speakers', name: 'Eliteme', src: "../9.jpg", src_retro: "product/9r.jpg", description: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. ', price: 234, discount: '30%', class: 'show-down' , content: 'BIG SEAN - ROCK YOUR COLORS TOUR',  stadium:'QUICKEN LOAN BALL PARK', location:'Columbus, OH'}];
 
   this.events = [
-    { num: 1, code: '001', title: 'SUMMER SIXTEN TOUR FT. FUTURE, DESIGNER, PUSHA T.', date: 'July 11th', spec: "Bogart's Colisium Arena", name: "Cincinnati, OH", src: "event/1.png"},
-    { num: 2, code: '002', title: 'THE INTRODUCTION TOUR', date: 'July 14th', spec: "Bogart's Colisium Arena", name: "Cincinnati, OH", src: "event/2.png"},
-    { num: 3, code: '003', title: 'LIFE OF PABLO TOUR', date: 'July 15th', spec: "Bogart's Colisium Arena", name: "Cincinnati, OH", src: "event/3.png"}
+    { num: 1, code: '001', title: 'SUMMER SIXTEN TOUR FT. FUTURE, DESIGNER, PUSHA T.', date: 'July 11th', date_time: '10/29/16 9:00 PM', spec: "Bogart's Colisium Arena", name: "Cincinnati, OH", src: "event/1.png"},
+    { num: 2, code: '002', title: 'THE INTRODUCTION TOUR', date: 'July 14th', date_time: '10/29/16 9:00 PM', spec: "Bogart's Colisium Arena", name: "Cincinnati, OH", src: "event/2.png"},
+    { num: 3, code: '003', title: 'LIFE OF PABLO TOUR', date: 'July 15th', date_time: '11/31/16 7:00 PM', spec: "Bogart's Colisium Arena", name: "Cincinnati, OH", src: "event/3.png"}
   ];
 
   this.searchpage = [
@@ -469,14 +469,17 @@ function store() {
   ];
 
   this.upcomingevent = [
-    { num: 1, code: '001', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png"},
-    { num: 2, code: '002', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png"}
+    { num: 1, code: '001', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png", event_name: "LIFE OF PABLO TOUR KANYE WEST AND MANY MORE", venue: "BBT ARENA", tix_sold: 500, tix_avail: 142, revenue: "$15000.67", display: "PUBLIC", view: "LINK", event_url: "https://www.ticketvow.com/event/3456ty78", short_url: "tk.vw/fkgkthe"},
+    { num: 2, code: '002', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png", event_name: "LIFE OF PABLO TOUR KANYE WEST AND MANY MORE", venue: "BBT ARENA", tix_sold: 500, tix_avail: 142, revenue: "$15000.67", display: "PUBLIC", view: "LINK", event_url: "https://www.ticketvow.com/event/3456ty78", short_url: "tk.vw/fkgkthe"},
+    { num: 3, code: '003', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png", event_name: "LIFE OF PABLO TOUR KANYE WEST AND MANY MORE", venue: "BBT ARENA", tix_sold: 500, tix_avail: 142, revenue: "$15000.67", display: "PUBLIC", view: "LINK", event_url: "https://www.ticketvow.com/event/3456ty78", short_url: "tk.vw/fkgkthe"},
+    { num: 4, code: '004', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png", event_name: "LIFE OF PABLO TOUR KANYE WEST AND MANY MORE", venue: "BBT ARENA", tix_sold: 500, tix_avail: 142, revenue: "$15000.67", display: "PUBLIC", view: "LINK", event_url: "https://www.ticketvow.com/event/3456ty78", short_url: "tk.vw/fkgkthe"},
+    { num: 5, code: '005', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png", event_name: "LIFE OF PABLO TOUR KANYE WEST AND MANY MORE", venue: "BBT ARENA", tix_sold: 500, tix_avail: 142, revenue: "$15000.67", display: "PUBLIC", view: "LINK", event_url: "https://www.ticketvow.com/event/3456ty78", short_url: "tk.vw/fkgkthe"}
   ];
 
   this.pastevent = [
-    { num: 1, code: '001', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png"},
-    { num: 2, code: '002', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png"},
-    { num: 3, code: '002', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png"}
+    { num: 1, code: '001', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png", event_name: "LIFE OF PABLO TOUR KANYE WEST AND MANY MORE", venue: "BBT ARENA", tix_sold: 500, tix_avail: 142, revenue: "$15000.67", display: "PUBLIC", view: "LINK", event_url: "https://www.ticketvow.com/event/3456ty78", short_url: "tk.vw/fkgkthe"},
+    { num: 2, code: '002', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png", event_name: "LIFE OF PABLO TOUR KANYE WEST AND MANY MORE", venue: "BBT ARENA", tix_sold: 500, tix_avail: 142, revenue: "$15000.67", display: "PUBLIC", view: "LINK", event_url: "https://www.ticketvow.com/event/3456ty78", short_url: "tk.vw/fkgkthe"},
+    { num: 3, code: '003', title: 'THIS IS AMERICA TOUR - U2', date: 'July 15th 2016', spec: "US Bank Arena", name: "Cincinnati, OH", src: "event/6.png", event_name: "LIFE OF PABLO TOUR KANYE WEST AND MANY MORE", venue: "BBT ARENA", tix_sold: 500, tix_avail: 142, revenue: "$15000.67", display: "PUBLIC", view: "LINK", event_url: "https://www.ticketvow.com/event/3456ty78", short_url: "tk.vw/fkgkthe"}
   ];
 
   this.cart_events = [
@@ -484,8 +487,16 @@ function store() {
   ];
 
   this.cart_tickets = [
-    { num:1, qty: '1', ticket_type: 'GENERAL ADMISSION', price: '$52.50', fees: '$7.20', subtotal: '$59.70'},
-    { num:2, qty: '2', ticket_type: 'VIP MEET & GREET', price: '$105', fees: '$14.40', subtotal: '$238.80'}
+    { num:1, qty: '1', ticket_type: 'GENERAL ADMISSION', price: '$52.50', fees: '$7.20', subtotal: '$59.70', sold: '456', value: '$25.60', revenue: '$12.84', net_revenue: '$11400.00'},
+    { num:2, qty: '2', ticket_type: 'VIP MEET & GREET', price: '$105', fees: '$14.40', subtotal: '$238.80', sold: '4', value: '$55.72', revenue: '$222.88', net_revenue: '$208.00'}
+  ];
+
+  this.order_report = [
+    { num:1, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
+    { num:1, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
+    { num:1, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
+    { num:1, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
+    { num:1, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'}
   ];
 
 }
