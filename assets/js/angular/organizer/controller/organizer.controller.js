@@ -30,9 +30,15 @@ angular.module('app.organizer')
         organization_number: $scope.ent_phone_number
       };
 
-      OrganizerService.signup(organizerData).then(function (data) {
-        console.log(data);
-        alert('Organizer sign up: ' + data.status);
+      OrganizerService.signup(organizerData).then(function (response) {
+        console.log(response.data);
+        alert('Organizer sign up: ' + response.data.message);
+        if(response.data.status_code == 200)
+        {
+
+        } else {
+          
+        }
       }).catch(function(error) {
         console.log(error);
       });
@@ -43,12 +49,18 @@ angular.module('app.organizer')
       OrganizerService.get_profile().then(function (data) {
         console.log(data.data);
         alert('Get organizer profile: ' + data.data.message);
+        if(response.data.status_code == 200)
+        {
+
+        } else {
+          
+        }
       }).catch(function(error) {
         console.log(error);
       });
     };
 
     $scope.init();
-    $scope.get_profile();
+    // $scope.get_profile();
 
 });

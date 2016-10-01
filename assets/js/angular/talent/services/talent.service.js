@@ -10,15 +10,11 @@ angular.module('app.talent')
       },
 
       add_talent: function(data) {
-        return $http.post('http://ticketvow.com/api/addTalent', data).then(function (res) {
-          Talent = res.data;
-        })
+        return $http.post('http://ticketvow.com/api/addTalent', data);
       },
 
       search_talent: function(data) {
-        return $http.post('http://ticketvow.com/api/getSearchTalents', data).then(function (res) {
-          Talent = res.data;
-        })
+        return $http.post('http://ticketvow.com/api/getSearchTalents', data);
       },
 
     };

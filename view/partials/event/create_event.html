@@ -42,7 +42,7 @@
             </div>
             <div class="clearfix visible-sm visible-xs"></div>
             <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input4" class="label-name">Venue</label>
+              <label for="input4" class="label-name">Venue Capacity</label>
             </div>
             <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
               <input type="text" name="venue_capacity" placeholder="Venue Capacity" class="form-control" id="venue_capacity" maxlength="6">
@@ -299,7 +299,7 @@
           </div>
           <div class="row store-down-bottom">
             <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" href="#/event">DRAFT</a>
-            <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" href="#/event">PUBLISH</a>
+            <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="publish()" ng-disabled="event_form.$invalid">PUBLISH</a>
           </div>
         </div>
       </div>
