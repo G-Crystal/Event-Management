@@ -3,9 +3,7 @@ angular.module('app.organizer')
 
     var Organizer = {
       signup: function(data) {
-        return $http.post('http://ticketvow.com/api/registerOrganizer', data).then(function (res) {
-          Organizer = res.data;
-        })
+        return $http.post('http://ticketvow.com/api/registerOrganizer', data);
       },
 
       get_profile: function() {

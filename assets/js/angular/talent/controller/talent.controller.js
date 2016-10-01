@@ -18,9 +18,15 @@ angular.module('app.talent')
         talent_facebook_url: ''
       };
 
-      TalentService.add_talent(talentData).then(function (data) {
-        console.log(data);
-        alert(data.message);
+      TalentService.add_talent(talentData).then(function (response) {
+        console.log(response.data);
+        alert(response.data.message);
+        if(response.data.status_code == 200)
+        {
+
+        } else {
+          
+        }
       }).catch(function(error) {
         console.log(error);
       });
@@ -31,15 +37,21 @@ angular.module('app.talent')
         talent: ''//$scope.talent_name
       };
 
-      TalentService.search_talent(talentData).then(function (data) {
-        console.log(data);
-        alert(data.message);
+      TalentService.search_talent(talentData).then(function (response) {
+        console.log(response.data);
+        alert(response.data.message);
+        if(response.data.status_code == 200)
+        {
+
+        } else {
+          
+        }
       }).catch(function(error) {
         console.log(error);
       });
     };
 
     $scope.init();
-    $scope.add_talent();
+    $scope.search_talent();
 
   });
