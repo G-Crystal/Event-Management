@@ -14,6 +14,14 @@ angular.module('app.event')
         return $http.post('http://ticketvow.com/api/addevent', data);
       },
 
+      search_event: function(data) {
+        return $http.get('http://ticketvow.com/api/getSearchEvent', data);
+      },
+
+      featured_event: function() {
+        return $http.get('http://ticketvow.com/api/getFeaturedEvent');
+      },
+
     };
 
     return Event;

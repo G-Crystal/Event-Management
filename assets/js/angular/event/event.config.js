@@ -16,5 +16,9 @@ angular.module('app.event', [])
       .when('/past_events', {
         templateUrl: 'view/partials/event/past_events.html',
         controller: 'EventController'
+      })
+      .when('/shop', {
+        templateUrl: 'view/partials/shop/store.html',
+        controller: 'EventController'
       });
   }])

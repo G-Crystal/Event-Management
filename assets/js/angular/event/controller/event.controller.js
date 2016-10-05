@@ -1,13 +1,25 @@
 angular.module('app.event')
-  .controller('EventController', function ($scope, $location, $cookies, ngDialog, EventService) {
+  .controller('EventController', function ($scope, $location, $cookies, $uibModal, $log, ngDialog, EventService) {
 
     var myStore = new store();
     
     $scope.init = function() {
+      if(typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+        $scope.logout();
+        return false;
+      }
+
       $scope.events = myStore.events;
       $scope.pastevent = myStore.pastevent;
       $scope.upcomingevent = myStore.upcomingevent;
+      $scope.selectedItem = 'Select category';
+
+      $scope.featured_event();
     };
+
+    $scope.logout = function() {
+      $location.path('/log_in');
+    }
 
     $scope.event_details = function () {
       var eventData = {
@@ -27,7 +39,7 @@ angular.module('app.event')
         console.log(error);
       });
     };
-
+        
     $scope.event_category = function () {
       var eventData = {
       };
@@ -81,14 +93,36 @@ angular.module('app.event')
       });
     };
 
-    $scope.addTicket = function () {
-      var modalPromise = ngDialog.open({
-        template: 'view/partials/ticket/addTicketPopup.html', 
-        className: 'ngdialog-theme-default', 
-        preserveFocus: false, 
-        trapFocus: false,
-        width: '768px'
+    // $scope.addTicket = function () {
+    //   var modalPromise = ngDialog.open({
+    //     template: 'view/partials/ticket/addTicketPopup.html', 
+    //     className: 'ngdialog-theme-default', 
+    //     preserveFocus: false, 
+    //     trapFocus: false,
+    //     width: '768px'
+    //   });
+    // };
+    $scope.addTicket = function (size) {debugger;
+      var modalInstance = $uibModal.open({
+        animation: true,
+        ariaLabelledBy: 'modal-title',
+        ariaDescribedBy: 'modal-body',
+        templateUrl: 'view/partials/ticket/addTicketPopup.html',
+        controller: 'TicketController',
+        controllerAs: '$scope',
+        size: size,
+        resolve: {
+          items: function () {
+            return $scope.items;
+          }
+        }
       });
+
+      // modalInstance.result.then(function (selectedItem) {
+      //   $scope.selected = selectedItem;
+      // }, function () {
+      //   $log.info('Modal dismissed at: ' + new Date());
+      // });
     };
 
     $scope.addTalent = function () {
@@ -114,7 +148,43 @@ angular.module('app.event')
       });
     };
 
+    $scope.changeCategory = function(selectedItem) {
+      $scope.selectedItem = selectedItem;
+      $scope.search_event();
+    }
+
+    $scope.search_event = function () {
+      var eventData = {
+        search: $scope.search_name,
+        event_category: (($scope.selectedItem == 'Select category') ? '' : $scope.selectedItem),
+        location: $scope.location
+      };
+
+      EventService.search_event(eventData).then(function (response) {
+        var data = response.data;
+        if( data.status_code == 200 ) {
+          $scope.search_events = data.data;
+        } else {
+          console.log(data.message);
+        }
+      }).catch(function(error) {
+        console.log(error);
+      });
+    };
+
+    $scope.featured_event = function () {
+      EventService.featured_event().then(function (response) {
+        var data = response.data;
+        if( data.status_code == 200 ) {
+          $scope.search_events = data.data;
+        } else {
+          console.log(data.message);
+        }
+      }).catch(function(error) {
+        console.log(error);
+      });
+    };
+
     $scope.init();
-    $scope.event_details();
 
 });
