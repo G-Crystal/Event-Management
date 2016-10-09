@@ -129,6 +129,9 @@ h3, .h3 {
 h4 {
     font-weight: 700;
 }
+select option {
+    font-weight: 200;
+}
 .btn {
     border-radius:1px;
 }

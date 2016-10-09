@@ -99,7 +99,7 @@ angular.module('angula').controller('ExampleController', ['$scope', '$location',
     [ 
       { name: 'footer', url: 'view/templates/footer.html'}
     ];
-  $scope.template = $scope.templates[3];
+  $scope.template = $scope.templates[0];
   
   $scope.categories =
     [ 

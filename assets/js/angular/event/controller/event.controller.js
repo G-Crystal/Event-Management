@@ -1,5 +1,5 @@
 angular.module('app.event')
-  .controller('EventController', function ($scope, $location, $cookies, $uibModal, $log, ngDialog, EventService) {
+  .controller('EventController', function ($scope, $location, $cookies, $modal, $log, ngDialog, EventService) {
 
     var myStore = new store();
     
@@ -102,14 +102,11 @@ angular.module('app.event')
     //     width: '768px'
     //   });
     // };
-    $scope.addTicket = function (size) {debugger;
-      var modalInstance = $uibModal.open({
+    $scope.addTicket = function (size) {
+      var modalInstance = $modal.open({
         animation: true,
-        ariaLabelledBy: 'modal-title',
-        ariaDescribedBy: 'modal-body',
         templateUrl: 'view/partials/ticket/addTicketPopup.html',
         controller: 'TicketController',
-        controllerAs: '$scope',
         size: size,
         resolve: {
           items: function () {

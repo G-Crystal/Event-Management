@@ -8,6 +8,11 @@ angular.module('app.ticket')
         $scope.logout();
         return false;
       }
+      
+      $scope.ticket_types = myStore.ticket_type;
+      $scope.delivery_types = myStore.delivery_type;
+      $scope.ticket_type = 0;
+      $scope.delivery_type = { name: 'Print at Home' };
     };
 
     $scope.logout = function() {
@@ -19,7 +24,7 @@ angular.module('app.ticket')
         ticket_name: $scope.ticket_name,
         quantity: $scope.quantity,
         ticket_description: $scope.description,
-        delivery_type: 0,//$scope.delivery_type,
+        delivery_type: $scope.delivery_type,
         ticket_type: $scope.ticket_type,
         additional_fees: $scope.price,
         ticket_cost: $scope.price
@@ -45,7 +50,7 @@ angular.module('app.ticket')
         ticket_name: $scope.ticket_name,
         quantity: $scope.quantity,
         ticket_description: $scope.description,
-        delivery_type: 1,//$scope.delivery_type,
+        delivery_type: $scope.delivery_type,
         ticket_type: $scope.ticket_type,
         additional_fees: $scope.price,
         ticket_cost: $scope.price

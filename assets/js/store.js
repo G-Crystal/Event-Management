@@ -504,12 +504,23 @@ function store() {
 
   this.order_report = [
     { num:1, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
-    { num:1, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
-    { num:1, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
-    { num:1, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
-    { num:1, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'}
+    { num:2, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
+    { num:3, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
+    { num:4, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
+    { num:5, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'}
   ];
 
+  this.ticket_type = [
+    { name: 'free' },
+    { name: 'paid' }
+  ];
+
+  this.delivery_type = [
+    { name: 'Print at Home' },
+    { name: 'Will Call' },
+    { name: 'UPS Shipping(Overnight)' },
+    { name: 'Standard Shipping (3-5days)' }
+  ];
 }
 
 function detailsprod() {

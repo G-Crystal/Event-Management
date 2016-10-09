@@ -26,24 +26,33 @@
     </div>
     <div class="row">
       <div class="col-md-2 col-sm-2 col-xs-12">
-        <label for="input5" class="label-name required">Type</label>
+        <label for="input5" class="label-name required">Ticket Type</label>
       </div>
       <div class="col-md-3 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-        <input type="text" name="ticket_type" placeholder="Select Type" class="form-control" id="ticket_type" ng-model="ticket_type">
+        <!-- <input type="text" name="ticket_type" placeholder="Select Type" class="form-control" id="ticket_type" ng-model="ticket_type"> -->
+        <select ng-model="ticket_type" ng-options="ticket.name for ticket in ticket_types" class="form-control" name="ticket_type" id="ticket_type"></select>
       </div>
       <div class="clearfix visible-sm visible-xs"></div>
+      <div class="col-md-2 col-sm-2 col-xs-12">
+        <label for="input5" class="label-name required">Delivery Type</label>
+      </div>
+      <div class="col-md-3 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+        <!-- <input type="text" name="delivery_type" placeholder="Select Type" class="form-control" id="delivery_type" ng-model="delivery_type"> -->
+        <select ng-model="delivery_type" ng-options="delivery.name for delivery in delivery_types" class="form-control" name="delivery_type" id="delivery_type"></select>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-md-2 col-sm-2">
         <label for="input6" class="label-name required">Price</label>
       </div>
       <div class="col-md-3 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
         <input type="text" name="price" placeholder="0.00" class="form-control" id="price" maxlength="6" ng-model="price">
       </div>
-    </div>
-    <div class="row">
+      <div class="clearfix visible-sm visible-xs"></div>
       <div class="col-md-2 col-sm-2 col-xs-12">
         <label for="input5" class="label-name required">Quantity</label>
       </div>
-      <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+      <div class="col-md-3 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
         <input type="text" name="quantity" placeholder="Quantity Available" class="form-control" id="quantity" maxlength="9" ng-model="quantity">
       </div>
     </div>
