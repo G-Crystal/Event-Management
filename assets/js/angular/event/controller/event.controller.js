@@ -1,5 +1,5 @@
 angular.module('app.event')
-  .controller('EventController', function ($scope, $location, $cookies, $modal, $log, ngDialog, EventService) {
+  .controller('EventController', function ($scope, $http, $location, $cookies, $modal, $log, ngDialog, EventService, VenueService) {
 
     var myStore = new store();
     
@@ -102,12 +102,12 @@ angular.module('app.event')
     //     width: '768px'
     //   });
     // };
-    $scope.addTicket = function (size) {
+    $scope.addTicket = function () {
       var modalInstance = $modal.open({
         animation: true,
         templateUrl: 'view/partials/ticket/addTicketPopup.html',
         controller: 'TicketController',
-        size: size,
+        size: 'md',
         resolve: {
           items: function () {
             return $scope.items;
@@ -180,6 +180,35 @@ angular.module('app.event')
       }).catch(function(error) {
         console.log(error);
       });
+    };
+
+    $scope.get_venues = function (val) {
+      return $http.get('http://ticketvow.com/api/getVenue', {
+        params: {
+          venue: val
+        }
+      }).then(function(response){
+        var data = response.data;
+        return data.data.map(function(item){
+          return item.value;
+        });
+      });
+      /*var venueData = {
+        venue: val
+      };
+
+      VenueService.get_venue(val).then(function (response) {
+        var data = response.data;debugger;
+        if( data.status_code == 200 ) {
+          return data.data.map(function(item){debugger;
+            return item.value;
+          });
+        } else {
+          console.log(data.message);
+        }
+      }).catch(function(error) {
+        console.log(error);
+      });*/
     };
 
     $scope.init();

@@ -350,6 +350,8 @@ ul.menu-items li.menu-item:last-child {
 }
 .dropdown-menu li a {
     font-size : 13px;
+    padding-left: 0;
+    padding-right: 0;
 }
 .navbar-nav .vertical-li {
     right: -40px;

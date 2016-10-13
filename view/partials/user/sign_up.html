@@ -45,7 +45,7 @@
                 <span ng-show="signup_form.password.$error.minlength">Password is too short.</span>
               </div>
             </div>
-            <div class="row row-height" ng-class="{ 'has-error' : signup_form.cfm_password.$error.minlength }">
+            <div class="row row-height" ng-class="{ 'has-error' : signup_form.$error.pwmatch || signup_form.cfm_password.$error.minlength }">
               <div class="col-sm-3 col-xs-12 align-left">
                 <label for="input3" class="label-name required">Confirm</label>
               </div>

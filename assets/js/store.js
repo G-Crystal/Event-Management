@@ -517,9 +517,7 @@ function store() {
 
   this.delivery_type = [
     { name: 'Print at Home' },
-    { name: 'Will Call' },
-    { name: 'UPS Shipping(Overnight)' },
-    { name: 'Standard Shipping (3-5days)' }
+    { name: 'Will Call' }
   ];
 }
 

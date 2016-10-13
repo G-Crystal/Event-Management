@@ -7,7 +7,7 @@ angular.module('app.ticket')
       },
 
       edit_ticket: function(data) {
-        return $http.post('http://ticketvow.com/api/editTicket=' + $cookies.token, data);
+        return $http.post('http://ticketvow.com/api/editTicket?token=' + $cookies.token, data);
       },
 
     };
