@@ -3,7 +3,7 @@ angular.module('app.cart')
 
     var Cart = {
       update: function(data) {
-        return $http.post('http://ticketvow.com/api/cart_update', data).then(function (res) {
+        return $http.post('http://staging.ticketvow.com/api/cart_update', data).then(function (res) {
           return Cart = res.data;
         })
       },

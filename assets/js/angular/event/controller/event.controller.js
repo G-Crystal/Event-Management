@@ -58,7 +58,7 @@ angular.module('app.event')
       });
     };
 
-    $scope.publish = function () {
+    $scope.publish = function () {debugger;
       var eventData = {
         token: $cookies.token,
         organization_name: '',
@@ -160,7 +160,7 @@ angular.module('app.event')
     };
 
     $scope.get_venues = function (val) {
-      return $http.get('http://ticketvow.com/api/getVenue', {
+      return $http.get('http://staging.ticketvow.com/api/getVenue', {
         params: {
           venue: val
         }
