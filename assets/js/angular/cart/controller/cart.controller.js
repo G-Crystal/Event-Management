@@ -1,24 +1,21 @@
 angular.module('app.cart')
-  .controller('CartController', function ($scope, ngDialog, CartService) {
+  .controller('CartController', function ($scope, $modal, CartService) {
 
     var myStore = new store();
     
     $scope.init = function() {
       $scope.cart_events = myStore.cart_events;
       $scope.cart_tickets = myStore.cart_tickets;
-    }
+    };
 
     $scope.edit = function(index) {
-      var modalPromise = ngDialog.open({
-        template: 'view/partials/cart/cart_edit.html', 
+      var modalInstance = $modal.open({
+        animation: true,
+        templateUrl: 'view/partials/cart/cart_edit.html', 
         controller: 'CartController',
-        className: 'ngdialog-theme-default', 
-        preserveFocus: false, 
-        trapFocus: false,
-        width: '768px',
-        scope: $scope
+        size: 'lg'
       });
-    }
+    };
 
     $scope.makePayment = function() {
     };

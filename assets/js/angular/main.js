@@ -423,7 +423,7 @@ angular.module('angula').controller('LMenuController', function ( $scope, $locat
 
 });
 
-angular.module('angula').controller('OrderController', function ($scope, ngDialog, $document) {
+angular.module('angula').controller('OrderController', function ($scope, $document) {
 
   $scope.save = function () {
   }

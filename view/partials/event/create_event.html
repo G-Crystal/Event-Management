@@ -48,11 +48,11 @@
               <label for="input4" class="label-name">Venue Capacity</label>
             </div>
             <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : event_form.venue_capacity.$invalid }">
-              <input type="text" pattern="[0-9]*" name="venue_capacity" placeholder="Venue Capacity" class="form-control" id="venue_capacity" maxlength="6" ng-model="venue_capacity">
+              <input type="text" pattern="[0-9]*" name="venue_capacity" placeholder="Venue Capacity" class="form-control" id="venue_capacity" maxlength="5" ng-model="venue_capacity">
               <span ng-show="event_form.venue_capacity.$invalid">Invalid venue capacity. Must be only number.</span>
             </div>
             <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <label for="input4" class="label-comment">0 of 6</label>
+              <label for="input4" class="label-comment">0 of 99999</label>
             </div>
           </div>
           <div class="row">

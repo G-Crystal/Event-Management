@@ -1,5 +1,5 @@
 angular.module('app.event')
-  .controller('EventController', function ($scope, $http, $location, $cookies, $modal, $log, ngDialog, EventService, VenueService) {
+  .controller('EventController', function ($scope, $http, $location, $cookies, $modal, $log, EventService, VenueService) {
 
     var myStore = new store();
     
@@ -93,55 +93,32 @@ angular.module('app.event')
       });
     };
 
-    // $scope.addTicket = function () {
-    //   var modalPromise = ngDialog.open({
-    //     template: 'view/partials/ticket/addTicketPopup.html', 
-    //     className: 'ngdialog-theme-default', 
-    //     preserveFocus: false, 
-    //     trapFocus: false,
-    //     width: '768px'
-    //   });
-    // };
     $scope.addTicket = function () {
       var modalInstance = $modal.open({
         animation: true,
         templateUrl: 'view/partials/ticket/addTicketPopup.html',
         controller: 'TicketController',
-        size: 'md',
-        resolve: {
-          items: function () {
-            return $scope.items;
-          }
-        }
+        size: 'lg'
       });
-
-      // modalInstance.result.then(function (selectedItem) {
-      //   $scope.selected = selectedItem;
-      // }, function () {
-      //   $log.info('Modal dismissed at: ' + new Date());
-      // });
     };
 
     $scope.addTalent = function () {
-      var modalPromise = ngDialog.open({
-        template: 'view/partials/talent/addTalentPopup.html', 
-        className: 'ngdialog-theme-default', 
-        preserveFocus: false, 
-        trapFocus: false,
-        width: '768px'
+      var modalInstance = $modal.open({
+        animation: true,
+        templateUrl: 'view/partials/talent/addTalentPopup.html',
+        controller: 'TalentController',
+        size: 'lg'
       });
     };
 
     $scope.editURL = function (type, index) {
       $scope.event = (type == 1) ? $scope.pastevent[index - 1] : $scope.upcomingevent[index - 1];
 
-      var modalPromise = ngDialog.open({
-        template: 'view/partials/event/editURLPopup.html', 
-        className: 'ngdialog-theme-default', 
-        preserveFocus: false, 
-        trapFocus: false,
-        width: '768px',
-        scope: $scope
+      var modalInstance = $modal.open({
+        animation: true,
+        templateUrl: 'view/partials/event/editURLPopup.html',
+        controller: 'EventController',
+        size: 'lg'
       });
     };
 
