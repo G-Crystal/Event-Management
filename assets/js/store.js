@@ -248,11 +248,11 @@ app.controller('SearchController', function($scope, $filter){
 
 app.controller('SearchCategoryController', function($scope, $filter){
     
-  $scope.changeCategory = function(selectedItem) {
-    $scope.selectedItem = selectedItem;
+  $scope.changeCategory = function(selectedCategory) {
+    $scope.selectedCategory = selectedCategory;
   }
   
-  $scope.selectedItem = 'Select category';
+  $scope.selectedCategory = 'Select category';
     
 }); 
 

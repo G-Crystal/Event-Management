@@ -12,7 +12,7 @@ angular.module('app.event')
       $scope.events = myStore.events;
       $scope.pastevent = myStore.pastevent;
       $scope.upcomingevent = myStore.upcomingevent;
-      $scope.selectedItem = 'Select category';
+      $scope.selectedCategory = 'Select category';
 
       $scope.featured_event();
     };
@@ -122,15 +122,15 @@ angular.module('app.event')
       });
     };
 
-    $scope.changeCategory = function(selectedItem) {
-      $scope.selectedItem = selectedItem;
+    $scope.changeCategory = function(selectedCategory) {
+      $scope.selectedCategory = selectedCategory;
       $scope.search_event();
     }
 
     $scope.search_event = function () {
       var eventData = {
         search: $scope.search_name,
-        event_category: (($scope.selectedItem == 'Select category') ? '' : $scope.selectedItem),
+        event_category: (($scope.selectedCategory == 'Select category') ? '' : $scope.selectedCategory),
         location: $scope.location
       };
 
