@@ -33,7 +33,7 @@ angular.module('app.ticket')
       TicketService.add_ticket(ticketData).then(function (response) {debugger;
         var data = response.data;
         console.log(data);
-        alert(data.message);
+        console.log(data.message);
         if( data.status_code == 200 ) {
           console.log(data.message);
         } else {
@@ -52,14 +52,13 @@ angular.module('app.ticket')
         ticket_description: $scope.description,
         delivery_type: $scope.delivery_type,
         ticket_type: $scope.ticket_type,
-        additional_fees: $scope.price,
         ticket_cost: $scope.price
       };
 
       TicketService.edit_ticket(ticketData).then(function (response) {
         var data = response.data;
         console.log(data);
-        alert(data.message);
+        console.log(data.message);
         if( data.status_code == 200 ) {
           console.log(data.message);
         } else {

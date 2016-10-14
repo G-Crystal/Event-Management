@@ -5,7 +5,7 @@
   <!--visible animated fadeInUp-->
   <div class="container">
     <div class="menubar-div row">
-      <form accept-charset="UTF-8" role="form" name="event_form" novalidate>
+      <form accept-charset="UTF-8" role="form" name="event_form" method="post" enctype="multipart/form-data" novalidate>
       <!--List Event-->
         <div class="description-title-div col-lg-12">
           <h4>Event Information</h4>
@@ -15,9 +15,9 @@
             </div>
             <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
               <input type="text" name="event_name" placeholder="Event Name" class="form-control" id="event_name" ng-minlength="2" ng-maxlength="100" ng-model="event_name" required>
-              <span ng-show="event_form.event_name.$invalid && !event_form.event_name.$pristine && event_form.event_name.$error.required">Entity name is required.</span>
-              <span ng-show="event_form.event_name.$error.minlength">Password is too short.</span>
-              <span ng-show="event_form.event_name.$error.maxlength">Password is too long.</span>
+              <span ng-show="event_form.event_name.$invalid && !event_form.event_name.$pristine && event_form.event_name.$error.required">Event name is required.</span>
+              <span ng-show="event_form.event_name.$error.minlength">Event name is too short.</span>
+              <span ng-show="event_form.event_name.$error.maxlength">Event name is too long.</span>
             </div>
             <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
               <label for="input1" class="label-comment">0 of 100</label>
@@ -49,7 +49,7 @@
             </div>
             <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : event_form.venue_capacity.$invalid }">
               <input type="text" pattern="[0-9]*" name="venue_capacity" placeholder="Venue Capacity" class="form-control" id="venue_capacity" maxlength="5" ng-model="venue_capacity">
-              <span ng-show="event_form.venue_capacity.$invalid">Invalid venue capacity. Must be only number.</span>
+              <span ng-show="event_form.venue_capacity.$invalid">Must be only number.</span>
             </div>
             <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
               <label for="input4" class="label-comment">0 of 99999</label>
@@ -115,8 +115,9 @@
             <div class="col-md-2 col-sm-3">
               <label for="input6" class="label-name">Age Limit</label>
             </div>
-            <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <input type="text" pattern="[0-9]*" name="age_limit" placeholder="Enter Age Limit" class="form-control" id="age_limit" maxlength="10" ng-model="age_limit">
+            <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : event_form.age_limit.$invalid }">
+              <input type="number" pattern="[0-9]*" name="age_limit" placeholder="Enter Age Limit" class="form-control" id="age_limit" maxlength="2" ng-model="age_limit" ng-min="0" ng-max="15">
+              <span ng-show="event_form.age_limit.$invalid">Must be 0 to 15.</span>
             </div>
             <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
               <label for="input6" class="label-comment">0 of 10</label>
@@ -127,7 +128,13 @@
               <label for="input7" class="label-name required">Event Image</label>
             </div>
             <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <input type="file" name="event_image" class="form-control file-uploader" id="event_image">
+              <input type="file" ngf-select ng-model="event_image" name="event_image" id="event_image"    
+                     accept="image/*" ngf-min-width="500" ngf-min-height="500" required
+                     ngf-model-invalid="errorFile" class="form-control file-uploader">
+              <span ng-show="event_form.event_image.$invalid && event_form.event_image.$pristine">Event image is required</span>
+              <span ng-show="event_form.event_image.$error.minWidth">Width must be greater than 500.</span>
+              <span ng-show="event_form.event_image.$error.minHeight">Height must be greater than 500.</span>
+              <img ng-show="event_form.event_image.$valid" ngf-thumbnail="event_image" class="thumb">
             </div>
             <div class="col-md-1 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
               <label for="input8" class="label-comment">500x500</label>

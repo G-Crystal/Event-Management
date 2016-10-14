@@ -4,6 +4,7 @@ var app = angular.module('angula', [
   'ngAnimate',
   'ui.bootstrap',
   'ngMaterial',
+  'ngFileUpload',
   'ui.bootstrap.datetimepicker',
   'angularTrix',
   'app.user',

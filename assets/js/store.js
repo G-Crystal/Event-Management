@@ -516,8 +516,7 @@ function store() {
   ];
 
   this.delivery_type = [
-    { name: 'Print at Home' },
-    { name: 'Will Call' }
+    { name: 'Print at Home' }
   ];
 }
 

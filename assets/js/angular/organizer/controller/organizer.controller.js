@@ -32,7 +32,7 @@ angular.module('app.organizer')
 
       OrganizerService.signup(organizerData).then(function (response) {
         console.log(response.data);
-        alert('Organizer sign up: ' + response.data.message);
+        console.log('Organizer sign up: ' + response.data.message);
         if(response.data.status_code == 200)
         {
 
@@ -48,7 +48,7 @@ angular.module('app.organizer')
 
       OrganizerService.get_profile().then(function (data) {
         console.log(data.data);
-        alert('Get organizer profile: ' + data.data.message);
+        console.log('Get organizer profile: ' + data.data.message);
         if(response.data.status_code == 200)
         {
 

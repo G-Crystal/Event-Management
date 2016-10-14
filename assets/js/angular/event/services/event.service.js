@@ -6,9 +6,9 @@ angular.module('app.event')
         return $http.get('http://staging.ticketvow.com/api/event/id', data);
       },
 
-      event_category: function(data) {
+      /*event_category: function(data) {
         return $http.get('http://staging.ticketvow.com/api/getEventCategory', data);
-      },
+      },*/
 
       publish: function(data) {
         return $http.post('http://staging.ticketvow.com/api/addevent', data);
@@ -21,6 +21,20 @@ angular.module('app.event')
       featured_event: function() {
         return $http.get('http://staging.ticketvow.com/api/getFeaturedEvent');
       },
+
+      /*uploadFileToUrl = function(file, uploadUrl) {
+        var fd = new FormData();
+        fd.append('file', file);
+
+        $http.post(uploadUrl, fd, {
+          transformRequest: angular.identity,
+          headers: {'Content-Type': undefined}
+        })
+        .success(function() {
+        })
+        .error(function() {
+        });
+      }*/
 
     };
 
