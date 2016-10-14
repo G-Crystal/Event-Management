@@ -131,7 +131,6 @@
               <input type="file" ngf-select ng-model="event_image" name="event_image" id="event_image"    
                      accept="image/*" ngf-min-width="500" ngf-min-height="500" required
                      ngf-model-invalid="errorFile" class="form-control file-uploader">
-              <span ng-show="event_form.event_image.$invalid && event_form.event_image.$pristine">Event image is required</span>
               <span ng-show="event_form.event_image.$error.minWidth">Width must be greater than 500.</span>
               <span ng-show="event_form.event_image.$error.minHeight">Height must be greater than 500.</span>
               <img ng-show="event_form.event_image.$valid" ngf-thumbnail="event_image" class="thumb">
@@ -144,7 +143,12 @@
               <label for="input8" class="label-name required">Header Image</label>
             </div>
             <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <input type="file" name="header_image" class="form-control file-uploader" id="header_image">
+              <input type="file" ngf-select ng-model="header_image" name="header_image" id="header_image"    
+                     accept="image/*" ngf-min-width="1500" ngf-min-height="500" required
+                     ngf-model-invalid="errorFile" class="form-control file-uploader">
+              <span ng-show="event_form.header_image.$error.minWidth">Width must be greater than 1500.</span>
+              <span ng-show="event_form.header_image.$error.minHeight">Height must be greater than 500.</span>
+              <img ng-show="event_form.header_image.$valid" ngf-thumbnail="header_image" class="thumb">
             </div>
             <div class="col-md-1 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
               <label for="input8" class="label-comment">1500x500</label>
