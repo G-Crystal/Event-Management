@@ -154,6 +154,19 @@ angular.module('app.event')
       });*/
     };
 
+    $scope.get_talents = function (val) {
+      return $http.post('http://staging.ticketvow.com/api/getSearchTalents', {
+        params: {
+          talent: val
+        }
+      }).then(function(response){
+        var data = response.data;
+        return data.data.map(function(item){
+          return item.value;
+        });
+      });
+    };
+
     $scope.addTicket = function () {
       var modalInstance = $modal.open({
         animation: true,

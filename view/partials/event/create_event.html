@@ -127,7 +127,7 @@
             <div class="col-md-2 col-sm-3 col-xs-12">
               <label for="input7" class="label-name required">Event Image</label>
             </div>
-            <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : event_form.event_image.$invalid && !event_form.event_image.$pristine }">
               <input type="file" ngf-select ng-model="event_image" name="event_image" id="event_image"    
                      accept="image/*" ngf-min-width="500" ngf-max-size="5MB" ngf-min-height="500" required
                      ngf-model-invalid="errorFile1" class="form-control file-uploader">
@@ -143,7 +143,7 @@
             <div class="col-md-2 col-sm-3 col-xs-12">
               <label for="input8" class="label-name required">Header Image</label>
             </div>
-            <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+            <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : event_form.header_image.$invalid && !event_form.header_image.$pristine }">
               <input type="file" ngf-select ng-model="header_image" name="header_image" id="header_image"    
                      accept="image/*" ngf-min-width="1500" ngf-max-size="5MB" ngf-min-height="500" required
                      ngf-model-invalid="errorFile2" class="form-control file-uploader">
@@ -173,7 +173,7 @@
             </div>
             <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
               <div class="wysiwig-editor">
-                <trix-editor angular-trix ng-model="foo" class="trix-content"></trix-editor>
+                <trix-editor name="description" id="description" angular-trix ng-model="description" class="trix-content"></trix-editor>
               </div>
             </div>
             <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
@@ -186,10 +186,12 @@
           <h4>Talents</h4>
           <div class="row">
             <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input11" class="label-name">Search Talent</label>
+              <label for="input11" class="label-name" required>Search Talent</label>
             </div>
-            <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-              <input type="text" name="search_talent" placeholder="Search Talent or Add Talent" class="form-control" id="search_talent">
+            <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1" ng-class="{ 'has-error' : event_form.search_talent.$invalid && !event_form.search_talent.$pristine }">
+              <input type="text" name="search_talent" placeholder="Search Talent or Add Talent" class="form-control" id="search_talent" ng-model="search_talent" required typeahead="talent for talent in get_talents($viewValue)" typeahead-loading="loadingTalents" maxlength="50">
+              <i ng-show="loadingTalents" class="glyphicon glyphicon-refresh"></i>
+              <span ng-show="event_form.search_talent.$invalid && !event_form.search_talent.$pristine">Talent is required.</span>
             </div>
             <div class="col-md-2 col-sm-3 col-xs-1">
               <a style="cursor:pointer" ng-click="addTalent()"><span class="glyphicon glyphicon-plus-sign blue"></span></a>
