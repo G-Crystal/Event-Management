@@ -27,7 +27,7 @@ angular.module('app.user')
         } else if( data.status_code == 101 ) {
           $scope.logout();
         } else {
-          
+          $scope.alerts = [{type: 'danger', msg: data.message}];
         }
       }).catch(function(error) {
         console.log(error);

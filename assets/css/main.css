@@ -4083,6 +4083,13 @@ img.thumb_preview {
     height: 200px;
     width: auto;
 }
+.alert_message {
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 30px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
 
 .label-name {
     color: #4C4C4C;

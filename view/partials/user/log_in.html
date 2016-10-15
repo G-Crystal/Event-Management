@@ -29,10 +29,15 @@
             </div>
             <div class="row align-center row-height">
               <div class="col-xs-12">
+                <alert ng-repeat="alert in alerts" type="{{alert.type}}" class="alert_message">{{alert.msg}}</alert>
+              </div>
+            </div>
+            <div class="row align-center row-height">
+              <div class="col-xs-12">
                 <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="login()" ng-disabled="login_form.$invalid">Login</a>
               </div>
             </div>
-        </form>
+          </form>
 
           <div class="row row-height p-center">
             <div class="col-sm-6 col-xs-6">
