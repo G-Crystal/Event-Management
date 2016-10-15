@@ -93,6 +93,9 @@ angular.module('app.event')
       });
     };
 
+    $scope.draft = function () {
+    };
+
     $scope.search_event = function () {
       var eventData = {
         search: $scope.search_name,

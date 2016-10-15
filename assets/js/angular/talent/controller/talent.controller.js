@@ -7,20 +7,19 @@ angular.module('app.talent')
       $scope.events = myStore.events;
     };
 
-    $scope.add_talent = function () {
+    $scope.add_talent = function () {debugger;
       var talentData = {
-        token: '',
-        talent_name: '',
-        talent_description: '',
-        talent_header_image: '',
-        talent_website: '',
-        talent_twitter_url: '',
-        talent_facebook_url: ''
+        talent_name: $scope.talent_name,
+        talent_description: $scope.talent_biography,
+        talent_header_image: $scope.header_img,
+        talent_website: $scope.website_url,
+        talent_twitter_url: $scope.twitter_url,
+        talent_facebook_url: $scope.facebook_url
       };
 
       TalentService.add_talent(talentData).then(function (response) {
         console.log(response.data);
-        console.log(response.data.message);
+        console.log(response.data.message);debugger;
         if(response.data.status_code == 200)
         {
 

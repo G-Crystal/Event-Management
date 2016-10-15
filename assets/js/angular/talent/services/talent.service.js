@@ -1,5 +1,5 @@
 angular.module('app.talent')
-  .factory('TalentService', function($http) {
+  .factory('TalentService', function($http, $cookies) {
 
     var Talent = {
 
@@ -10,7 +10,7 @@ angular.module('app.talent')
       },
 
       add_talent: function(data) {
-        return $http.post('http://staging.ticketvow.com/api/addTalent', data);
+        return $http.post('http://staging.ticketvow.com/api/addTalent?token=' + $cookies.token, data);
       },
 
       search_talent: function(data) {

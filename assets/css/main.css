@@ -4079,6 +4079,10 @@ ul.sidenav li.sidenav-expand > a:after {
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
 }
+img.thumb_preview {
+    height: 200px;
+    width: auto;
+}
 
 .label-name {
     color: #4C4C4C;

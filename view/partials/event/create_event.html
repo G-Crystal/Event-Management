@@ -134,7 +134,7 @@
               <span ng-show="event_form.event_image.$error.maxSize">File too large {{errorFile1.size / 1000000|number:1}}MB: max 5M.</span>
               <span ng-show="event_form.event_image.$error.minWidth">Width must be greater than 500.</span>
               <span ng-show="event_form.event_image.$error.minHeight">Height must be greater than 500.</span>
-              <img ng-show="event_form.event_image.$valid" ngf-thumbnail="event_image" class="thumb">
+              <img ng-show="event_form.event_image.$valid" ngf-thumbnail="event_image" class="thumb_preview">
             </div>
             <div class="col-md-1 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
               <label for="input8" class="label-comment">500x500</label>
@@ -150,7 +150,7 @@
               <span ng-show="event_form.header_image.$error.maxSize">File too large {{errorFile2.size / 1000000|number:1}}MB: max 5M.</span>
               <span ng-show="event_form.header_image.$error.minWidth">Width must be greater than 1500.</span>
               <span ng-show="event_form.header_image.$error.minHeight">Height must be greater than 500.</span>
-              <img ng-show="event_form.header_image.$valid" ngf-thumbnail="header_image" class="thumb">
+              <img ng-show="event_form.header_image.$valid" ngf-thumbnail="header_image" class="thumb_preview">
             </div>
             <div class="col-md-1 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
               <label for="input8" class="label-comment">1500x500</label>
@@ -214,7 +214,7 @@
               <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                 <datetimepicker data-ng-model="start_data.date"
                   data-datetimepicker-config="{ dropdownSelector: '.start-toggle-calendar', modelType: 'MM-DD-YYYY HH:mm' }"></datetimepicker>
-              </ul>          
+              </ul>
             </div>
           </div>
           <div class="row">
@@ -317,7 +317,7 @@
             </div>
           </div>
           <div class="row store-down-bottom">
-            <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" href="#/event">DRAFT</a>
+            <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="draft()">DRAFT</a>
             <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="publish()" ng-disabled="event_form.$invalid">PUBLISH</a>
           </div>
         </div>
