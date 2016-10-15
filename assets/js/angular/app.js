@@ -1,10 +1,10 @@
 var app = angular.module('angula', [
   'ngRoute',
   'ngCookies',
-  'ui.bootstrap',
   'ngAnimate',
+  'ui.bootstrap',
   'ngMaterial',
-  'ngDialog',
+  'ngFileUpload',
   'ui.bootstrap.datetimepicker',
   'angularTrix',
   'app.user',
@@ -13,7 +13,8 @@ var app = angular.module('angula', [
   'app.cart',
   'app.venue',
   'app.talent',
-  'app.report'
+  'app.report',
+  'app.ticket'
 ]);
 
 app.config(['$routeProvider', function ($routeProvider) {

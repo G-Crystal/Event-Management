@@ -3,11 +3,11 @@ angular.module('app.organizer')
 
     var Organizer = {
       signup: function(data) {
-        return $http.post('http://ticketvow.com/api/registerOrganizer', data);
+        return $http.post('http://staging.ticketvow.com/api/registerOrganizer', data);
       },
 
       get_profile: function() {
-        return $http.get('http://ticketvow.com/api/getProfile?token=' + $cookies.token).success(function (res) {
+        return $http.get('http://staging.ticketvow.com/api/getProfile?token=' + $cookies.token).success(function (res) {
           Organizer = res.data;
         })
       },

@@ -52,7 +52,7 @@ angular.module('angula').config(['$routeProvider', function ($routeProvider) {
     .when("/meet_team", { templateUrl: "view/partials/meet_team.html", controller: "PageCtrl" })
 
     //Shop Sound Obj
-    .when("/shop", { templateUrl: "view/partials/shop/store.html", controller: "storeController_sound" })
+    // .when("/shop", { templateUrl: "view/partials/shop/store.html", controller: "storeController_sound" })
     .when('/products/:productCode', { templateUrl: 'view/partials/shop/product.html', controller: "storeController_sound" })
     // .when('/cart', { templateUrl: 'view/partials/shop/shoppingCart.html', controller: "storeController_sound" })
 
@@ -99,7 +99,7 @@ angular.module('angula').controller('ExampleController', ['$scope', '$location',
     [ 
       { name: 'footer', url: 'view/templates/footer.html'}
     ];
-  $scope.template = $scope.templates[3];
+  $scope.template = $scope.templates[0];
   
   $scope.categories =
     [ 
@@ -423,7 +423,7 @@ angular.module('angula').controller('LMenuController', function ( $scope, $locat
 
 });
 
-angular.module('angula').controller('OrderController', function ($scope, ngDialog, $document) {
+angular.module('angula').controller('OrderController', function ($scope, $document) {
 
   $scope.save = function () {
   }

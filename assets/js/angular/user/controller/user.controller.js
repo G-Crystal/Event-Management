@@ -14,7 +14,7 @@ angular.module('app.user')
           $location.path('/');
         } else {
           console.log(data.message);
-          alert('Login: ' + data.message);
+          console.log('Login: ' + data.message);
         }
       }).catch(function(error) {
         console.log(error);
@@ -32,7 +32,7 @@ angular.module('app.user')
 
       UserService.signup(registerData).then(function (data) {
         console.log(data);
-        alert('Sign up: ' + data.status);
+        console.log('Sign up: ' + data.status);
         if( data.status_code == 200 ) {
           console.log(data.token);
           $location.path('/log_in');
@@ -53,7 +53,7 @@ angular.module('app.user')
 
       UserService.reset(resetData).then(function (data) {
         console.log(data);
-        alert('Reset password: ' + data.status);
+        console.log('Reset password: ' + data.status);
         if( data.status_code == 200 ) {
           console.log(data.token);
         } else {
@@ -71,7 +71,7 @@ angular.module('app.user')
 
       UserService.forgot(reqData).then(function (data) {
         console.log(data);
-        alert('Forgot password: ' + data.status);
+        console.log('Forgot password: ' + data.status);
         if( data.status_code == 200 ) {
           console.log(data.token);
         } else {

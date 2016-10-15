@@ -15,11 +15,11 @@ angular.module('app.report')
       };
     };
     
-    $scope.changeEvent = function(selectedItem) {
-      $scope.selectedItem = selectedItem;
+    $scope.changeEvent = function(selectedEvent) {
+      $scope.selectedEvent = selectedEvent;
     }
     
-    $scope.selectedItem = 'All Events';
+    $scope.selectedEvent = 'All Events';
 
     $scope.init();
 

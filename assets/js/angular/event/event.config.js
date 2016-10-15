@@ -1,4 +1,4 @@
-angular.module('app.event', [])
+angular.module('app.event', ['ngAnimate', 'ui.bootstrap'])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/create_event', {
@@ -15,6 +15,10 @@ angular.module('app.event', [])
       })
       .when('/past_events', {
         templateUrl: 'view/partials/event/past_events.html',
+        controller: 'EventController'
+      })
+      .when('/shop', {
+        templateUrl: 'view/partials/shop/store.html',
         controller: 'EventController'
       });
   }])

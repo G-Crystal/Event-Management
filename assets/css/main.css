@@ -129,6 +129,9 @@ h3, .h3 {
 h4 {
     font-weight: 700;
 }
+select option {
+    font-weight: 200;
+}
 .btn {
     border-radius:1px;
 }
@@ -347,6 +350,8 @@ ul.menu-items li.menu-item:last-child {
 }
 .dropdown-menu li a {
     font-size : 13px;
+    padding-left: 0;
+    padding-right: 0;
 }
 .navbar-nav .vertical-li {
     right: -40px;
@@ -4074,6 +4079,10 @@ ul.sidenav li.sidenav-expand > a:after {
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
 }
+img.thumb_preview {
+    height: 200px;
+    width: auto;
+}
 
 .label-name {
     color: #4C4C4C;
@@ -4177,14 +4186,6 @@ span.caret {
     float: right;
     top: 50%;
     position: relative;
-}
-
-/********************************************************************************************
-    PAGE NGDIALOG POPUP
-*********************************************************************************************/
-html.ngdialog-open, body.ngdialog-open {
-    overflow: initial !important;
-    width: 100%;
 }
 
 /********************************************************************************************

@@ -10,7 +10,7 @@
         <div class="event-list-div">
           <div class="dropdown">
             <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-category event-select-list">
-              <span class="event-label">{{selectedItem}}</span>
+              <span class="event-label">{{selectedEvent}}</span>
             </a>
             <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
               <li ng-repeat="event in events" ng-click="changeEvent(event.title + ' | ' + event.date_time)">{{event.title}} | {{event.date_time}}</li>
