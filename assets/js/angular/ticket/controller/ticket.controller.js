@@ -19,14 +19,13 @@ angular.module('app.ticket')
       $location.path('/log_in');
     }
 
-    $scope.add_ticket = function () {
+    $scope.add_ticket = function () {debugger;
       var ticketData = {
         ticket_name: $scope.ticket_name,
         quantity: $scope.quantity,
-        ticket_description: $scope.description,
+        ticket_description: $scope.ticket_description,
         delivery_type: $scope.delivery_type,
         ticket_type: $scope.ticket_type,
-        additional_fees: $scope.price,
         ticket_cost: $scope.price
       };
 
@@ -35,9 +34,9 @@ angular.module('app.ticket')
         console.log(data);
         console.log(data.message);
         if( data.status_code == 200 ) {
-          console.log(data.message);
+          
         } else {
-          console.log(data.message);
+          
         }
       }).catch(function(error) {
         console.log(error);
@@ -49,7 +48,7 @@ angular.module('app.ticket')
         editTicketId: $scope.ticket_id,
         ticket_name: $scope.ticket_name,
         quantity: $scope.quantity,
-        ticket_description: $scope.description,
+        ticket_description: $scope.ticket_description,
         delivery_type: $scope.delivery_type,
         ticket_type: $scope.ticket_type,
         ticket_cost: $scope.price

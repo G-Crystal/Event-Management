@@ -511,12 +511,12 @@ function store() {
   ];
 
   this.ticket_type = [
-    { name: 'free' },
-    { name: 'paid' }
+    { value: 0, name: 'free' },
+    { value: 1, name: 'paid' }
   ];
 
   this.delivery_type = [
-    { name: 'Print at Home' }
+    { value: 0, name: 'Print at Home' }
   ];
 }
 

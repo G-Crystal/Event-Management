@@ -7,7 +7,7 @@ angular.module('app.talent')
       $scope.events = myStore.events;
     };
 
-    $scope.add_talent = function () {debugger;
+    $scope.add_talent = function () {
       var talentData = {
         talent_name: $scope.talent_name,
         talent_description: $scope.talent_biography,
@@ -19,7 +19,7 @@ angular.module('app.talent')
 
       TalentService.add_talent(talentData).then(function (response) {
         console.log(response.data);
-        console.log(response.data.message);debugger;
+        console.log(response.data.message);
         if(response.data.status_code == 200)
         {
 
