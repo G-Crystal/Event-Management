@@ -184,7 +184,7 @@ app.controller('HomeController', function($scope, $filter){
 }); 
 
 /* CONTROLLER SEARCH PAGINATION */
-
+/*
 app.controller('SearchController', function($scope, $filter){
 
   var myStore = new store();
@@ -243,11 +243,11 @@ app.controller('SearchController', function($scope, $filter){
   // functions have been describe process the data for display
   $scope.myFilter();
 }); 
-
+*/
 /* CONTROLLER SEARCH CATEGORY */
 
 app.controller('SearchCategoryController', function($scope, $filter){
-    
+
   $scope.changeCategory = function(selectedCategory) {
     $scope.selectedCategory = selectedCategory;
   }
@@ -257,7 +257,7 @@ app.controller('SearchCategoryController', function($scope, $filter){
 }); 
 
 /* CONTROLLER BUYER DASHBOARD */
-
+/*
 app.controller('UEventController', function($scope, $filter){
 
   var myStore = new store();
@@ -375,9 +375,9 @@ app.controller('PEventController', function($scope, $filter){
   $scope.myFilter();
     
 }); 
-
+*/
 /* CONTROLLER FOR BUY TICKET PAGE */
-
+/*
 app.controller('BuyTicketController', function($scope, $filter, $routeParams){
 
   var myStore = new store();
@@ -420,7 +420,7 @@ app.controller('BuyTicketController', function($scope, $filter, $routeParams){
   };
 
 }); 
-
+*/
 function store() {
   this.products = [
     { num: 1, code: '001', category: 'Blouses', name: 'Berto G.', src: "product/dresses/1.jpg", src_retro: "product/dresses/1r.jpg", description: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. ', price: 200, discount: '20%', class: 'show-down' },

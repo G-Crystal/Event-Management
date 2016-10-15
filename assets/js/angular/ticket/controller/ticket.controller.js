@@ -11,6 +11,7 @@ angular.module('app.ticket')
       
       $scope.ticket_types = myStore.ticket_type;
       $scope.delivery_types = myStore.delivery_type;
+      $scope.events = myStore.events;
       $scope.ticket_type = 0;
       $scope.delivery_type = 0;
     };

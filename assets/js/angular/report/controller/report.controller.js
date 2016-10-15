@@ -1,5 +1,5 @@
 angular.module('app.report')
-  .controller('ReportController', function ($scope, $cookies, ReportService) {
+  .controller('ReportController', function ($scope, $location, $cookies, ReportService) {
 
     var myStore = new store();
     

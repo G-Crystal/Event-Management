@@ -1,5 +1,5 @@
 angular.module('app.venue')
-  .controller('VenueController', function ($scope, $cookies, VenueService) {
+  .controller('VenueController', function ($scope, $location, $cookies, VenueService) {
 
     var myStore = new store();
     

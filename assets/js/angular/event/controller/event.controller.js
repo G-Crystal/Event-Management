@@ -2,6 +2,7 @@ angular.module('app.event')
   .controller('EventController', function ($scope, $http, $location, $cookies, $modal, $log, Upload, EventService, VenueService) {
 
     var myStore = new store();
+    var selectedCategory;
     
     $scope.init = function() {
       if(typeof($cookies.token) == 'undefined' || $cookies.token == '') {
@@ -12,6 +13,7 @@ angular.module('app.event')
       $scope.events = myStore.events;
       $scope.pastevent = myStore.pastevent;
       $scope.upcomingevent = myStore.upcomingevent;
+      $scope.searchpage = myStore.searchpage;
       $scope.selectedCategory = 'Select category';
 
       // $scope.featured_event();

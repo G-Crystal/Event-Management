@@ -5,23 +5,23 @@ angular.module('angula').config(['$routeProvider', function ($routeProvider) {
   $routeProvider
     // Home
     .when("/", { templateUrl: "view/partials/home.html", controller: "storeController_sound" })
-    .when("/event", { templateUrl: "view/partials/shop/event_details_page.html", controller: "PageCtrl" })
-    .when("/home2", { templateUrl: "view/partials/home2.html", controller: "HomeCtrl" })
-    .when("/home3", { templateUrl: "view/partials/home3.html", controller: "HomeCtrl" })
-    .when("/home4", { templateUrl: "view/partials/home4.html", controller: "HomeCtrl" })
-    .when("/home5", { templateUrl: "view/partials/home5.html", controller: "HomeCtrl" })
+    // .when("/event", { templateUrl: "view/partials/shop/event_details_page.html", controller: "PageCtrl" })
+    // .when("/home2", { templateUrl: "view/partials/home2.html", controller: "HomeCtrl" })
+    // .when("/home3", { templateUrl: "view/partials/home3.html", controller: "HomeCtrl" })
+    // .when("/home4", { templateUrl: "view/partials/home4.html", controller: "HomeCtrl" })
+    // .when("/home5", { templateUrl: "view/partials/home5.html", controller: "HomeCtrl" })
     // .when("/venue_profile", { templateUrl: "view/partials/venue_profile.html", controller: "HomeCtrl" })
     // .when("/event_details", { templateUrl: "view/partials/event/event_details.html", controller: "HomeCtrl" })
     // .when("/talent_profile", { templateUrl: "view/partials/talent_profile.html", controller: "HomeCtrl" })
-    .when("/pagination", { templateUrl: "view/partials/pagination.html", controller: "HomeCtrl" })
+    // .when("/pagination", { templateUrl: "view/partials/pagination.html", controller: "HomeCtrl" })
     // .when("/organizer_profile", { templateUrl: "view/partials/organizer_profile.html", controller: "HomeCtrl" })
     // .when("/organizer_signup", { templateUrl: "view/partials/organizer_signup.html", controller: "HomeCtrl" })
-    .when("/buy_ticket", { templateUrl: "view/partials/ticket/buy_ticket.html", controller: "HomeCtrl" })
+    // .when("/buy_ticket", { templateUrl: "view/partials/ticket/buy_ticket.html", controller: "HomeCtrl" })
     // .when("/cart", { templateUrl: "view/partials/cart.html", controller: "HomeCtrl" })
-    .when("/order_confirm_details", { templateUrl: "view/partials/order_confirm_details.html", controller: "HomeCtrl" })
+    // .when("/order_confirm_details", { templateUrl: "view/partials/order_confirm_details.html", controller: "HomeCtrl" })
 
     // User Menu
-    .when("/user_dashboard", { templateUrl: "view/partials/user/dashboard.html", controller: "HomeCtrl" })
+    // .when("/user_dashboard", { templateUrl: "view/partials/user/dashboard.html", controller: "HomeCtrl" })
     .when("/user_messages", { templateUrl: "view/partials/user/dashboard.html", controller: "HomeCtrl" })
     .when("/user_profile_settings", { templateUrl: "view/partials/user/profile.html", controller: "HomeCtrl" })
     .when("/user_password_settings", { templateUrl: "view/partials/user/update_password.html", controller: "HomeCtrl" })
@@ -160,7 +160,7 @@ angular.module('angula').controller('ExampleController', ['$scope', '$location',
 
   $scope.loadBuyTicket = function(event_id = 0) {
     $scope.event_id = event_id;
-    $location.path('/buy_ticket/').search({param: $scope.event_id});
+    $location.path('/buy_ticket').search({param: $scope.event_id});
   }
 }]);
 
