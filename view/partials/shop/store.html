@@ -26,10 +26,9 @@
             <span class="glyphicon glyphicon-search manual-glyphicon"></span>
           </div>
           <div class="col-lg-3 col-lg-offset-0 col-md-5 col-sm-5 col-xs-10 col-xs-offset-1">
-            <div class="dropdown">
+            <div class="dropdown" ng-controller="SearchCategoryController">
               <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-category select-list">
                 {{selectedCategory}} <span class="caret"></span>
-                <input type="hidden" name="category" id="category" ng-model="category" ng-value={{selectedCategory}} ng-change="search_event()">
               </a>
               <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
                 <li class="dropdown-submenu">

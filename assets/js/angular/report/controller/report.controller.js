@@ -1,13 +1,23 @@
 angular.module('app.report')
-  .controller('ReportController', function ($scope, ReportService) {
+  .controller('ReportController', function ($scope, $cookies, ReportService) {
 
     var myStore = new store();
     
     $scope.init = function() {
+      if(typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+        $scope.logout();
+        return false;
+      }
+
       $scope.events = myStore.events;
       $scope.cart_tickets = myStore.cart_tickets;
       $scope.order_report = myStore.order_report;
     };
+
+    $scope.logout = function() {
+      $cookies.token = '';
+      $location.path('/log_in');
+    }
 
     $scope.event_details = function () {
       var eventData = {
