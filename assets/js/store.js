@@ -184,7 +184,7 @@ app.controller('HomeController', function($scope, $filter){
 }); 
 
 /* CONTROLLER SEARCH PAGINATION */
-
+/*
 app.controller('SearchController', function($scope, $filter){
 
   var myStore = new store();
@@ -243,11 +243,11 @@ app.controller('SearchController', function($scope, $filter){
   // functions have been describe process the data for display
   $scope.myFilter();
 }); 
-
+*/
 /* CONTROLLER SEARCH CATEGORY */
 
 app.controller('SearchCategoryController', function($scope, $filter){
-    
+
   $scope.changeCategory = function(selectedCategory) {
     $scope.selectedCategory = selectedCategory;
   }
@@ -257,7 +257,7 @@ app.controller('SearchCategoryController', function($scope, $filter){
 }); 
 
 /* CONTROLLER BUYER DASHBOARD */
-
+/*
 app.controller('UEventController', function($scope, $filter){
 
   var myStore = new store();
@@ -375,9 +375,9 @@ app.controller('PEventController', function($scope, $filter){
   $scope.myFilter();
     
 }); 
-
+*/
 /* CONTROLLER FOR BUY TICKET PAGE */
-
+/*
 app.controller('BuyTicketController', function($scope, $filter, $routeParams){
 
   var myStore = new store();
@@ -420,7 +420,7 @@ app.controller('BuyTicketController', function($scope, $filter, $routeParams){
   };
 
 }); 
-
+*/
 function store() {
   this.products = [
     { num: 1, code: '001', category: 'Blouses', name: 'Berto G.', src: "product/dresses/1.jpg", src_retro: "product/dresses/1r.jpg", description: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. ', price: 200, discount: '20%', class: 'show-down' },
@@ -498,16 +498,16 @@ function store() {
   ];
 
   this.cart_tickets = [
-    { num:1, qty: '1', ticket_type: 'GENERAL ADMISSION', price: '$52.50', fees: '$7.20', subtotal: '$59.70', sold: '456', value: '$25.60', revenue: '$12.84', net_revenue: '$11400.00'},
-    { num:2, qty: '2', ticket_type: 'VIP MEET & GREET', price: '$105', fees: '$14.40', subtotal: '$238.80', sold: '4', value: '$55.72', revenue: '$222.88', net_revenue: '$208.00'}
+    { num:1, qty: 1, ticket_type: 'GENERAL ADMISSION', price: '$52.50', fees: '$7.20', subtotal: '$59.70', sold: '456', value: '$25.60', revenue: '$12.84', net_revenue: '$11400.00'},
+    { num:2, qty: 2, ticket_type: 'VIP MEET & GREET', price: '$105', fees: '$14.40', subtotal: '$238.80', sold: '4', value: '$55.72', revenue: '$222.88', net_revenue: '$208.00'}
   ];
 
   this.order_report = [
-    { num:1, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
-    { num:2, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
-    { num:3, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
-    { num:4, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
-    { num:5, fname: 'JOHN', lname: 'DOE', qty: '3', paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'}
+    { num:1, fname: 'JOHN', lname: 'DOE', qty: 3, paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
+    { num:2, fname: 'JOHN', lname: 'DOE', qty: 3, paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
+    { num:3, fname: 'JOHN', lname: 'DOE', qty: 3, paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
+    { num:4, fname: 'JOHN', lname: 'DOE', qty: 3, paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'},
+    { num:5, fname: 'JOHN', lname: 'DOE', qty: 3, paid: '$106.66', place_holder: 'PLACE HOLDER', trnx_id: 'TKVB23097GG', order_id: 'CVT45DERYU', purchase_date: '4/12/16 18:00 PM'}
   ];
 
   this.ticket_type = [

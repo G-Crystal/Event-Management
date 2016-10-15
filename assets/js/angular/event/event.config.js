@@ -17,8 +17,16 @@ angular.module('app.event', ['ngAnimate', 'ui.bootstrap'])
         templateUrl: 'view/partials/event/past_events.html',
         controller: 'EventController'
       })
+      .when('/pagination', {
+        templateUrl: 'view/partials/event/pagination.html',
+        controller: 'EventController'
+      })
       .when('/shop', {
         templateUrl: 'view/partials/shop/store.html',
+        controller: 'EventController'
+      })
+      .when('/user_dashboard', {
+        templateUrl: 'view/partials/user/dashboard.html',
         controller: 'EventController'
       });
   }])

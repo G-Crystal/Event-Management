@@ -1,4 +1,4 @@
-<div class="description-title-div ticket-block-div menubar-div" ng-controller="CartController">
+<div class="description-title-div ticket-block-div menubar-div">
   <div class="row">
     <div class="col-xs-12">
       <!--List cart_event-->
@@ -6,7 +6,7 @@
         <ul id="cart_event" class="nav-pills nav-stacked rectangle-list">
           <li class="col-xs-12" ng-repeat="cart_event in cart_events">
             <div class="shop-img home-box-black row">
-              <a href="#/cart_event_details">
+              <a href="#/event_details">
                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 box-image-div">
                   <img ng-src="assets/images/store/{{cart_event.src}}" alt="{{cart_event.name}}" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box-image img-responsive" />
                 </div>
@@ -41,7 +41,7 @@
             <tr ng-repeat="cart_ticket in cart_tickets">
               <td>{{cart_ticket.ticket_type}}</td>
               <td>{{cart_ticket.price}}</td>
-              <td><input type="number" min="0" step="1" value={{cart_ticket.qty}} class="spin-input"></td>
+              <td><input type="number" min="0" step="1" name="quantity" value={{cart_ticket.qty}} class="spin-input"></td>
             </tr>
           </tbody>
         </table>        

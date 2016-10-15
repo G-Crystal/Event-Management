@@ -1,11 +1,21 @@
 angular.module('app.talent')
-  .controller('TalentController', function ($scope, TalentService) {
+  .controller('TalentController', function ($scope, $cookies, TalentService) {
 
     var myStore = new store();
     
     $scope.init = function() {
+      if(typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+        $scope.logout();
+        return false;
+      }
+
       $scope.events = myStore.events;
     };
+
+    $scope.logout = function() {
+      $cookies.token = '';
+      $location.path('/log_in');
+    }
 
     $scope.add_talent = function () {
       var talentData = {
@@ -18,11 +28,13 @@ angular.module('app.talent')
       };
 
       TalentService.add_talent(talentData).then(function (response) {
-        console.log(response.data);
-        console.log(response.data.message);
-        if(response.data.status_code == 200)
+        var data = response.data;
+        console.log(data.message);
+        if(data.status_code == 200)
         {
 
+        } else if( data.status_code == 101 ) {
+          $scope.logout();
         } else {
           
         }
@@ -37,11 +49,13 @@ angular.module('app.talent')
       };
 
       TalentService.search_talent(talentData).then(function (response) {
-        console.log(response.data);
-        console.log(response.data.message);
-        if(response.data.status_code == 200)
+        var data = response.data;
+        console.log(data.message);
+        if(data.status_code == 200)
         {
 
+        } else if( data.status_code == 101 ) {
+          $scope.logout();
         } else {
           
         }
@@ -51,6 +65,6 @@ angular.module('app.talent')
     };
 
     $scope.init();
-    $scope.search_talent();
+    // $scope.search_talent();
 
   });

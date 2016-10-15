@@ -2,6 +2,7 @@ angular.module('app.event')
   .controller('EventController', function ($scope, $http, $location, $cookies, $modal, $log, Upload, EventService, VenueService) {
 
     var myStore = new store();
+    var selectedCategory;
     
     $scope.init = function() {
       if(typeof($cookies.token) == 'undefined' || $cookies.token == '') {
@@ -12,12 +13,14 @@ angular.module('app.event')
       $scope.events = myStore.events;
       $scope.pastevent = myStore.pastevent;
       $scope.upcomingevent = myStore.upcomingevent;
+      $scope.searchpage = myStore.searchpage;
       $scope.selectedCategory = 'Select category';
 
       // $scope.featured_event();
     };
 
     $scope.logout = function() {
+      $cookies.token = '';
       $location.path('/log_in');
     }
 
@@ -28,12 +31,13 @@ angular.module('app.event')
 
       EventService.event_details(eventData).then(function (response) {
         var data = response.data;
-        console.log(data);
         console.log(data.message);
         if( data.status_code == 200 ) {
-          console.log(data.message);
+          
+        } else if( data.status_code == 101 ) {
+          $scope.logout();
         } else {
-          console.log(data.message);
+          
         }
       }).catch(function(error) {
         console.log(error);
@@ -81,12 +85,14 @@ angular.module('app.event')
       };
 
       EventService.publish(eventData).then(function (response) {
-        console.log(response.data);
+        var data = response.data;
         console.log(data.message);
         if( data.status_code == 200 ) {
-          console.log(data.message);
+          
+        } else if( data.status_code == 101 ) {
+          $scope.logout();
         } else {
-          console.log(data.message);
+          
         }
       }).catch(function(error) {
         console.log(error);
@@ -105,10 +111,13 @@ angular.module('app.event')
 
       EventService.search_event(eventData).then(function (response) {
         var data = response.data;
+        console.log(data.message);
         if( data.status_code == 200 ) {
           $scope.search_events = data.data;
+        } else if( data.status_code == 101 ) {
+          $scope.logout();
         } else {
-          console.log(data.message);
+          
         }
       }).catch(function(error) {
         console.log(error);
@@ -118,10 +127,13 @@ angular.module('app.event')
     $scope.featured_event = function () {
       EventService.featured_event().then(function (response) {
         var data = response.data;
+        console.log(data.message);
         if( data.status_code == 200 ) {
           $scope.search_events = data.data;
+        } else if( data.status_code == 101 ) {
+          $scope.logout();
         } else {
-          console.log(data.message);
+
         }
       }).catch(function(error) {
         console.log(error);

@@ -1,10 +1,10 @@
-<div id="demo" ng-controller="SearchController" class="home9">
+<div id="demo" class="home9">
 
   <div class="container">
     <div class="row">
       <div class="col-xs-8 col-xs-push-2 text-center shop-title-store">
         <form class="search search-category-bar">
-          <div class="dropdown" ng-controller="SearchCategoryController">
+          <div class="dropdown">
             <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-category select-list">
               {{selectedCategory}} <span class="caret"></span>
             </a>
@@ -59,7 +59,7 @@
       <!--List Event-->
       <div id="cbp-vm" class="col-md-12 col-sm-12 col-xs-12 shop-prod active">
         <ul id="event" class="nav-pills nav-stacked rectangle-list">
-          <li class="col-xs-12" ng-repeat="event in pagedItems[currentPage]">
+          <li class="col-xs-12" ng-repeat="event in searchpage">
             <div class="shop-img home-box-black row">
               <a href="#/event_details">
                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 box-image-div">

@@ -1,5 +1,17 @@
 angular.module('app.user')
   .controller('UserController', function ($scope, $location, $cookies, UserService) {
+    
+    $scope.init = function() {
+      if(typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+        $scope.logout();
+        return false;
+      }
+    };
+
+    $scope.logout = function() {
+      $cookies.token = '';
+      $location.path('/log_in');
+    }
 
     $scope.login = function () {
       var loginData = {
@@ -12,9 +24,10 @@ angular.module('app.user')
         if( data.status_code == 200 ) {
           $cookies.token = data.token;
           $location.path('/');
+        } else if( data.status_code == 101 ) {
+          $scope.logout();
         } else {
-          console.log(data.message);
-          console.log('Login: ' + data.message);
+          
         }
       }).catch(function(error) {
         console.log(error);
@@ -34,10 +47,11 @@ angular.module('app.user')
         console.log(data);
         console.log('Sign up: ' + data.status);
         if( data.status_code == 200 ) {
-          console.log(data.token);
           $location.path('/log_in');
-        } {
-          console.log(data.status);
+        } else if( data.status_code == 101 ) {
+          $scope.logout();
+        } else {
+          
         }
       }).catch(function(error) {
         console.log(error);
@@ -56,6 +70,8 @@ angular.module('app.user')
         console.log('Reset password: ' + data.status);
         if( data.status_code == 200 ) {
           console.log(data.token);
+        } else if( data.status_code == 101 ) {
+          $scope.logout();
         } else {
           console.log(data.status);
         }
@@ -73,9 +89,11 @@ angular.module('app.user')
         console.log(data);
         console.log('Forgot password: ' + data.status);
         if( data.status_code == 200 ) {
-          console.log(data.token);
+          
+        } else if( data.status_code == 101 ) {
+          $scope.logout();
         } else {
-          console.log(data.status);
+          
         }
       }).catch(function(error) {
         console.log(error);
