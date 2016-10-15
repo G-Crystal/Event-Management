@@ -4309,7 +4309,7 @@ span.caret {
 .login-container-div {
     padding: 60px 0 30px;
     background: url("../images/parallax/background_2.jpg");
-    background-position: center;
+    background-position: top center;
 }
 .login-header-div {
     padding: 20px 0;

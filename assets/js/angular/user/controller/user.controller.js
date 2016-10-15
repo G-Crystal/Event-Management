@@ -20,7 +20,6 @@ angular.module('app.user')
       };
 
       UserService.login(loginData).then(function (data) {
-        console.log(data);
         if( data.status_code == 200 ) {
           $cookies.token = data.token;
           $location.path('/');
@@ -30,7 +29,7 @@ angular.module('app.user')
           $scope.alerts = [{type: 'danger', msg: data.message}];
         }
       }).catch(function(error) {
-        console.log(error);
+        $scope.alerts = [{type: 'danger', msg: error}];
       });
     };
 
@@ -44,17 +43,15 @@ angular.module('app.user')
       };
 
       UserService.signup(registerData).then(function (data) {
-        console.log(data);
-        console.log('Sign up: ' + data.status);
         if( data.status_code == 200 ) {
           $location.path('/log_in');
         } else if( data.status_code == 101 ) {
           $scope.logout();
         } else {
-          
+          $scope.alerts = [{type: 'danger', msg: data.message}];
         }
       }).catch(function(error) {
-        console.log(error);
+        $scope.alerts = [{type: 'danger', msg: error}];
       });
     };
 
