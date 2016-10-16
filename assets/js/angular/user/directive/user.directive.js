@@ -1,4 +1,5 @@
 angular.module('app.user')
+
   .directive('pwCheck', [function() {
 
     return {
@@ -13,7 +14,7 @@ angular.module('app.user')
       }
     };
 
-  }]);
+  }])
 
   .directive('onEnter', [function() {
 
@@ -21,7 +22,7 @@ angular.module('app.user')
       element.bind("keydown keypress", function (event) {
         if(event.which === 13) {
           scope.$apply(function () {
-            scope.$eval(attrs.enEnter);
+            scope.$eval(attrs.onEnter);
           });
 
           event.preventDefault();

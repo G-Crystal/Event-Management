@@ -20,21 +20,20 @@ angular.module('app.user')
       };
 
       UserService.login(loginData).then(function (data) {
-        console.log(data);
         if( data.status_code == 200 ) {
           $cookies.token = data.token;
           $location.path('/');
         } else if( data.status_code == 101 ) {
           $scope.logout();
         } else {
-          
+          $scope.alerts = [{type: 'danger', msg: data.message}];
         }
       }).catch(function(error) {
-        console.log(error);
+        $scope.alerts = [{type: 'danger', msg: error}];
       });
     };
 
-    $scope.signup = function () {
+    $scope.signup = function () {debugger;
       var registerData = {
         fname: $scope.first_name, 
         lname: $scope.last_name, 
@@ -43,40 +42,36 @@ angular.module('app.user')
         repassword: $scope.cfm_password
       };
 
-      UserService.signup(registerData).then(function (data) {
-        console.log(data);
-        console.log('Sign up: ' + data.status);
+      UserService.signup(registerData).then(function (data) {debugger;
         if( data.status_code == 200 ) {
           $location.path('/log_in');
         } else if( data.status_code == 101 ) {
           $scope.logout();
         } else {
-          
+          $scope.alerts = [{type: 'danger', msg: data.message}];
         }
       }).catch(function(error) {
-        console.log(error);
+        $scope.alerts = [{type: 'danger', msg: error}];
       });
     };
 
-    $scope.reset = function () {
+    $scope.reset = function () {debugger;
       var resetData = {
         code: $scope.email,
         password: $scope.password,
         newpassword: $scope.newpassword
       };
 
-      UserService.reset(resetData).then(function (data) {
-        console.log(data);
-        console.log('Reset password: ' + data.status);
+      UserService.reset(resetData).then(function (data) {debugger;
         if( data.status_code == 200 ) {
-          console.log(data.token);
+          
         } else if( data.status_code == 101 ) {
           $scope.logout();
         } else {
-          console.log(data.status);
+          $scope.alerts = [{type: 'danger', msg: data.message}];
         }
       }).catch(function(error) {
-        console.log(error);
+        $scope.alerts = [{type: 'danger', msg: error}];
       });
     };
 
@@ -85,18 +80,16 @@ angular.module('app.user')
         username: $scope.email
       };
 
-      UserService.forgot(reqData).then(function (data) {
-        console.log(data);
-        console.log('Forgot password: ' + data.status);
+      UserService.forgot(reqData).then(function (data) {debugger;
         if( data.status_code == 200 ) {
           
         } else if( data.status_code == 101 ) {
           $scope.logout();
         } else {
-          
+          $scope.alerts = [{type: 'danger', msg: data.message}];
         }
       }).catch(function(error) {
-        console.log(error);
+        $scope.alerts = [{type: 'danger', msg: error}];
       });
     };
 

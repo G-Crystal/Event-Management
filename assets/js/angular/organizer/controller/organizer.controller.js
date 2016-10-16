@@ -17,7 +17,7 @@ angular.module('app.organizer')
     $location.path('/log_in');
   }
 
-  $scope.signup = function () {
+  $scope.signup = function () {debugger;
     var organizerData = {
     fname: $scope.first_name,
     lname: $scope.last_name,
@@ -40,7 +40,7 @@ angular.module('app.organizer')
     organization_number: $scope.ent_phone_number
     };
 
-    OrganizerService.signup(organizerData).then(function (response) {
+    OrganizerService.signup(organizerData).then(function (response) {debugger;
       var data = response.data;
       console.log('Organizer sign up: ' + data.message);
       if(data.status_code == 200)
@@ -49,7 +49,7 @@ angular.module('app.organizer')
       } else if( data.status_code == 101 ) {
         $scope.logout();
       } else {
-        
+        $scope.alerts = [{type: 'danger', msg: data}];
       }
     }).catch(function(error) {
     console.log(error);
