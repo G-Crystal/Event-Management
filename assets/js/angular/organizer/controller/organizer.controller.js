@@ -1,5 +1,5 @@
 angular.module('app.organizer')
-  .controller('OrganizerController', function ($scope, $cookies, OrganizerService) {
+  .controller('OrganizerController', function ($scope, $location, $cookies, OrganizerService) {
 
   var myStore = new store();
   
@@ -9,6 +9,7 @@ angular.module('app.organizer')
       return false;
     }
 
+    $scope.get_profile();
     $scope.events = myStore.events;
   };
 
@@ -17,7 +18,7 @@ angular.module('app.organizer')
     $location.path('/log_in');
   }
 
-  $scope.signup = function () {debugger;
+  $scope.signup = function () {
     var organizerData = {
     fname: $scope.first_name,
     lname: $scope.last_name,
@@ -40,7 +41,7 @@ angular.module('app.organizer')
     organization_number: $scope.ent_phone_number
     };
 
-    OrganizerService.signup(organizerData).then(function (response) {debugger;
+    OrganizerService.signup(organizerData).then(function (response) {
       var data = response.data;
       console.log('Organizer sign up: ' + data.message);
       if(data.status_code == 200)
@@ -49,7 +50,7 @@ angular.module('app.organizer')
       } else if( data.status_code == 101 ) {
         $scope.logout();
       } else {
-        $scope.alerts = [{type: 'danger', msg: data}];
+        $scope.alerts = [{type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!')}];
       }
     }).catch(function(error) {
     console.log(error);
@@ -67,7 +68,7 @@ angular.module('app.organizer')
       } else if( data.status_code == 101 ) {
         $scope.logout();
       } else {
-        
+        $scope.alerts = [{type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!')}];
       }
     }).catch(function(error) {
       console.log(error);
@@ -75,6 +76,5 @@ angular.module('app.organizer')
   };
 
   $scope.init();
-  // $scope.get_profile();
 
 });

@@ -14,8 +14,8 @@
                 <label for="input3" class="label-name required">First Name</label>
               </div>
               <div class="col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-                <input type="text" name="first_name" ng-model="first_name" placeholder="First Name" class="form-control" id="first_name" required>
-                <span ng-show="signup_form.first_name.$invalid && !signup_form.first_name.$pristine">First name is required.</span>
+                <input type="text" name="first_name" ng-model="first_name" placeholder="First Name" class="form-control" id="first_name" ng-minlength="2" required>
+                <span ng-show="signup_form.first_name.$error.minlength">First name must be at least 2 characters.</span>
               </div>
             </div>
             <div class="row row-height" ng-class="{ 'has-error' : signup_form.last_name.$invalid && !signup_form.last_name.$pristine }">
@@ -23,8 +23,8 @@
                 <label for="input3" class="label-name required">Last Name</label>
               </div>
               <div class="col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-                <input type="text" name="last_name" ng-model="last_name" placeholder="Last Name" class="form-control" id="last_name" required>
-                <span ng-show="signup_form.last_name.$invalid && !signup_form.last_name.$pristine">Last name is required.</span>
+                <input type="text" name="last_name" ng-model="last_name" placeholder="Last Name" class="form-control" id="last_name" ng-minlength="2" required>
+                <span ng-show="signup_form.last_name.$error.minlength">Last name must be at least 2 characters.</span>
               </div>
             </div>
             <div class="row row-height" ng-class="{ 'has-error' : signup_form.email.$invalid && !signup_form.email.$pristine }">
@@ -32,7 +32,7 @@
                 <label for="input3" class="label-name required">Email</label>
               </div>
               <div class="col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-                <input type="email" name="email" ng-model="email.text" placeholder="Enter Email" class="form-control" id="email">
+                <input type="email" name="email" ng-model="email" placeholder="Enter Email" class="form-control" id="email">
                 <span ng-show="signup_form.email.$invalid && !signup_form.email.$pristine">Invalid email address.</span>
               </div>
             </div>
@@ -55,7 +55,7 @@
                 <span ng-show="signup_form.cfm_password.$error.pwmatch">Passwords don't match.</span>
               </div>
             </div>
-            <div class="row align-center row-height">
+            <div class="row align-center row-height error-msg">
               <div class="col-xs-12">
                 <alert ng-repeat="alert in alerts" type="{{alert.type}}" class="alert_message">{{alert.msg}}</alert>
               </div>
