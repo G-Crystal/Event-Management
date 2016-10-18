@@ -24,10 +24,10 @@
               </div>
               <div class="col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
                 <input type="password" name="password" ng-model="password" ng-minlength="5" placeholder="Password" class="form-control" id="password" on-enter="login()">
-                <span ng-show="login_form.password.$error.minlength">Password is too short.</span>
+                <span ng-show="login_form.password.$error.minlength">Password must be at least 5 characters.</span>
               </div>
             </div>
-            <div class="row align-center row-height">
+            <div class="row align-center row-height error-msg">
               <div class="col-xs-12">
                 <alert ng-repeat="alert in alerts" type="{{alert.type}}" class="alert_message">{{alert.msg}}</alert>
               </div>

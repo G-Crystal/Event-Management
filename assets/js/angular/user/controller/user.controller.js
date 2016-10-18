@@ -26,49 +26,49 @@ angular.module('app.user')
         } else if( data.status_code == 101 ) {
           $scope.logout();
         } else {
-          $scope.alerts = [{type: 'danger', msg: data.message}];
+          $scope.alerts = [{type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!')}];
         }
       }).catch(function(error) {
         $scope.alerts = [{type: 'danger', msg: error}];
       });
     };
 
-    $scope.signup = function () {debugger;
+    $scope.signup = function () {
       var registerData = {
-        fname: $scope.first_name, 
-        lname: $scope.last_name, 
-        email: $scope.email, 
+        fname: $scope.first_name,
+        lname: $scope.last_name,
+        email: $scope.email,
         password: $scope.password,
         repassword: $scope.cfm_password
       };
 
-      UserService.signup(registerData).then(function (data) {debugger;
+      UserService.signup(registerData).then(function (data) {
         if( data.status_code == 200 ) {
           $location.path('/log_in');
         } else if( data.status_code == 101 ) {
           $scope.logout();
         } else {
-          $scope.alerts = [{type: 'danger', msg: data.message}];
+          $scope.alerts = [{type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!')}];
         }
       }).catch(function(error) {
         $scope.alerts = [{type: 'danger', msg: error}];
       });
     };
 
-    $scope.reset = function () {debugger;
+    $scope.reset = function () {
       var resetData = {
         code: $scope.email,
         password: $scope.password,
-        newpassword: $scope.newpassword
+        repassword: $scope.repassword
       };
 
-      UserService.reset(resetData).then(function (data) {debugger;
+      UserService.reset(resetData).then(function (data) {
         if( data.status_code == 200 ) {
           
         } else if( data.status_code == 101 ) {
           $scope.logout();
         } else {
-          $scope.alerts = [{type: 'danger', msg: data.message}];
+          $scope.alerts = [{type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!')}];
         }
       }).catch(function(error) {
         $scope.alerts = [{type: 'danger', msg: error}];
@@ -80,13 +80,13 @@ angular.module('app.user')
         username: $scope.email
       };
 
-      UserService.forgot(reqData).then(function (data) {debugger;
+      UserService.forgot(reqData).then(function (data) {
         if( data.status_code == 200 ) {
           
         } else if( data.status_code == 101 ) {
           $scope.logout();
         } else {
-          $scope.alerts = [{type: 'danger', msg: data.message}];
+          $scope.alerts = [{type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!')}];
         }
       }).catch(function(error) {
         $scope.alerts = [{type: 'danger', msg: error}];
