@@ -62,7 +62,7 @@ angular.module('app.event')
       });
     };*/
 
-    $scope.publish = function () {debugger;
+    $scope.publish = function () {
       var eventData = {
         token: $cookies.token,
         organization_name: '',
