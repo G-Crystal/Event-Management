@@ -18,12 +18,6 @@ angular.module('app.report')
       $cookies.token = '';
       $location.path('/log_in');
     }
-
-    $scope.event_details = function () {
-      var eventData = {
-        id: $scope.event_id
-      };
-    };
     
     $scope.changeEvent = function(selectedEvent) {
       $scope.selectedEvent = selectedEvent;

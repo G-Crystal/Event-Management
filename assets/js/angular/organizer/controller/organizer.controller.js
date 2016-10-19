@@ -57,7 +57,7 @@ angular.module('app.organizer')
     });
   };
 
-  $scope.get_profile = function () {  
+  $scope.get_profile = function () {
 
     OrganizerService.get_profile().then(function (response) {
       var data = response.data;

@@ -9,24 +9,22 @@
       <div id="cbp-vm" class="col-md-12 col-sm-12 col-xs-12 shop-prod active">
         <ul id="cart_event" class="nav-pills nav-stacked rectangle-list">
           <li class="col-xs-12" ng-repeat="cart_event in cart_events">
-            <div class="shop-img home-box-black row">
-              <a href="#/event_details">
-                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 box-image-div">
-                  <img ng-src="assets/images/store/{{cart_event.src}}" alt="{{cart_event.name}}" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box-image img-responsive" />
-                </div>
-                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
-                  <p class="p-title">{{cart_event.title}}</p>
-                  <div class="home-content-div">
-                    <div class="profile-div">
-                      <p class="p-date">{{cart_event.date}}</p>
-                      <p class="p-spec p-blue"><a href="#/venue_profile">{{cart_event.spec}}</a></p>
-                      <p class="p-name">{{cart_event.name}}</p>
-                    </div>  
+            <div class="shop-img home-box-black row hover-div" ng-click="event_details(cart_event.num)">
+              <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 box-image-div">
+                <img ng-src="assets/images/store/{{cart_event.src}}" alt="{{cart_event.name}}" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box-image img-responsive" />
+              </div>
+              <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                <p class="p-title">{{cart_event.title}}</p>
+                <div class="home-content-div">
+                  <div class="profile-div">
+                    <p class="p-date">{{cart_event.date}}</p>
+                    <p class="p-spec p-blue"><a href="#/venue_profile">{{cart_event.spec}}</a></p>
+                    <p class="p-name">{{cart_event.name}}</p>
+                  </div>  
 
-                    <div class="clearfix"></div>
-                  </div>
+                  <div class="clearfix"></div>
                 </div>
-              </a>
+              </div>
             </div>
           </li>
         </ul>
