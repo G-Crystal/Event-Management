@@ -4122,6 +4122,9 @@ img.thumb_preview {
 .error-msg {
     margin-top: 10px;
 }
+.hover-div {
+    cursor: pointer;
+}
 
 /********************************************************************************************
     SELECT CATEGORY
@@ -4822,6 +4825,7 @@ span.caret {
 .store-content-div {
     position: relative;
     height: 170px;
+    margin: 0 10px;
 }
 
 .performance span {

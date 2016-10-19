@@ -37,6 +37,27 @@ angular.module('app.venue')
       });
     };
 
+    $scope.get_venue_detail = function () {
+      var venueData = {
+        id: $scope.v_id
+      };
+
+      VenueService.get_venue_detail(venueData).then(function (response) {
+        var data = response.data;
+        console.log(data.message);
+        if(data.status_code == 200)
+        {
+
+        } else if( data.status_code == 101 ) {
+          $scope.logout();
+        } else {
+          
+        }
+      }).catch(function(error) {
+        console.log(error);
+      });
+    };
+
     $scope.init();
     // $scope.get_venue();
 

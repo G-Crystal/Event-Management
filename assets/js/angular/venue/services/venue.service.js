@@ -9,6 +9,12 @@ angular.module('app.venue')
         })
       },
 
+      get_venue_detail: function(data) {
+        return $http.get('http://staging.ticketvow.com/api/getVenueDetail', data).success(function (res) {
+          Venue = res.data;
+        })
+      },
+
     };
 
     return Venue;

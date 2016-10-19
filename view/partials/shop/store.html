@@ -89,18 +89,18 @@
       <div id="cbp-vm" class="col-md-12 col-sm-12 col-xs-12 shop-prod active">
         <ul id="product" class="nav-pills nav-stacked rectangle-list">
           <a href="#/venue_profile">
-            <li class="col-lg-3 col-md-4 col-sm-4 col-xs-12" ng-repeat="event in search_events">
+            <li class="col-lg-3 col-md-4 col-sm-4 col-xs-12" ng-repeat="event in datas.data">
               <div class="shop-img  services-box-black">
                 <div class="store-img-div box-image-div">
                   <img ng-src="{{event.event_image}}" class="box-image img-responsive" />
                   <span class="performance">
-                    <span>{{event.event_start_date | date:"mm:dd"}}<br>5</span>
+                    <span>{{convertDate(event.start_date) | date:'MMM'}}<br>{{convertDate(event.start_date) | date:'d'}}</span>
                   </span>
                 </div>
                 <div class="store-content-div">
                   <p class="content">{{event.event_name}}</p>
-                  <p class="stadium">{{event.event_start_date}}</p>
-                  <p class="location">{{event.venue_city}}</p>
+                  <p class="stadium">{{event.name}}</p>
+                  <p class="location">{{event.city}}, {{event.state}}</p>
                 </div>
                 <a class="btn btn-block trans-buy-button" href="#/event">
                 BUY NOW</a>                      

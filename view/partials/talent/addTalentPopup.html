@@ -80,6 +80,11 @@
         <span ng-show="talent_form.website_url.$invalid">Please enter valid URL.</span>
       </div>
     </div>
+    <div class="row align-center row-height error-msg">
+      <div class="col-xs-12">
+        <alert ng-repeat="alert in alerts" type="{{alert.type}}" class="alert_message">{{alert.msg}}</alert>
+      </div>
+    </div>
     <div class="row store-down-bottom">
       <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="add_talent()" ng-disabled="talent_form.$invalid" style="right:15px;">Add</a>
     </div>

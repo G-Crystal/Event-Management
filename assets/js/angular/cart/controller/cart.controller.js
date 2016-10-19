@@ -1,5 +1,5 @@
 angular.module('app.cart')
-  .controller('CartController', function ($scope, $location, $modal, $cookies, CartService) {
+  .controller('CartController', function ($rootScope, $scope, $location, $modal, $cookies, CartService) {
 
     var myStore = new store();
     
@@ -48,6 +48,11 @@ angular.module('app.cart')
         console.log(error);
       });
     };
+
+    $scope.event_details = function (event_id = '') {
+      $rootScope.event_id = event_id;
+      $location.path('/event_details');
+    }
 
     $scope.init();
 

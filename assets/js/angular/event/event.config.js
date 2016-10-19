@@ -23,7 +23,7 @@ angular.module('app.event', ['ngAnimate', 'ui.bootstrap'])
       })
       .when('/shop', {
         templateUrl: 'view/partials/shop/store.html',
-        controller: 'EventController'
+        controller: 'ShopController'
       })
       .when('/user_dashboard', {
         templateUrl: 'view/partials/user/dashboard.html',

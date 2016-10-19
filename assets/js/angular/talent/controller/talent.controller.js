@@ -36,7 +36,7 @@ angular.module('app.talent')
         } else if( data.status_code == 101 ) {
           $scope.logout();
         } else {
-          
+          $scope.alerts = [{type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!')}];
         }
       }).catch(function(error) {
         console.log(error);
@@ -57,7 +57,7 @@ angular.module('app.talent')
         } else if( data.status_code == 101 ) {
           $scope.logout();
         } else {
-          
+          $scope.alerts = [{type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!')}];
         }
       }).catch(function(error) {
         console.log(error);

@@ -3,7 +3,7 @@ angular.module('app.event')
 
     var Event = {
       event_details: function(data) {
-        return $http.get('http://staging.ticketvow.com/api/event/id', data);
+        return $http.get('http://staging.ticketvow.com/api/event/' + 14);
       },
 
       /*event_category: function(data) {

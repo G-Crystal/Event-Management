@@ -1,9 +1,99 @@
 angular.module('app.event')
-  .controller('EventController', function ($scope, $http, $location, $cookies, $modal, $log, Upload, EventService, VenueService) {
+  .controller('ShopController', function ($rootScope, $scope, $http, $location, $cookies, $modal, $log, Upload, EventService, VenueService) {
+
+    var selectedCategory;
+
+    // Initialize
+    $scope.init = function() {
+      if(typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+        $scope.logout();
+        return false;
+      }
+
+      $scope.selectedCategory = 'Select category';
+
+      $scope.load_datas();
+    };
+
+    // Log out
+    $scope.logout = function() {
+      $cookies.token = '';
+      $location.path('/log_in');
+    }
+
+    // Load Initial Datas
+    $scope.load_datas = function(eventData) {
+      // Call Event Detail function
+      var event_id = ($rootScope.event_id && $rootScope.event_id != '') ? $rootScope.event_id : '';
+      $rootScope.event_id = '';
+
+      $scope.load_event_detail(event_id);
+    }
+
+    $scope.convertDate = function(datestr) {
+      return new Date(datestr);
+    }
+
+    // Load Event Detail
+    $scope.load_event_detail = function(eventData) {
+      EventService.event_details(eventData).then(function (response) {
+        var data = response.data;
+        console.log(data.message);
+        if( data.status_code == 200 ) {
+          $scope.datas = data.data.venue_events;
+        } else if( data.status_code == 101 ) {
+          $scope.logout();
+        } else {
+          $scope.alerts = [{type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!')}];
+        }
+      }).catch(function(error) {
+        console.log(error);
+      });
+    }
+
+    // Event handler for Link of Event Detail
+    $scope.event_details = function (event_id = '') {
+      $rootScope.event_id = event_id;
+      $location.path('/event_details');
+    }
+
+    // Event handler for Search Event
+    $scope.search_event = function () {
+      var eventData = {
+        search: $scope.search_name,
+        event_category: (($scope.selectedCategory == 'Select category') ? '' : $scope.selectedCategory),
+        location: $scope.location
+      };
+
+      EventService.search_event(eventData).then(function (response) {
+        var data = response.data;
+        console.log(data.message);
+        if( data.status_code == 200 ) {
+          $scope.search_events = data.data;
+        } else if( data.status_code == 101 ) {
+          $scope.logout();
+        } else {
+          $scope.alerts = [{type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!')}];
+        }
+      }).catch(function(error) {
+        console.log(error);
+      });
+    };
+
+    $scope.changeCategory = function(selectedCategory) {
+      $scope.selectedCategory = selectedCategory;
+      $scope.search_event();
+    };
+
+    $scope.init();
+  })
+
+  .controller('EventController', function ($rootScope, $scope, $http, $location, $cookies, $modal, $log, Upload, EventService, VenueService) {
 
     var myStore = new store();
     var selectedCategory;
-    
+
+    // Initialize
     $scope.init = function() {
       if(typeof($cookies.token) == 'undefined' || $cookies.token == '') {
         $scope.logout();
@@ -17,33 +107,25 @@ angular.module('app.event')
       $scope.selectedCategory = 'Select category';
 
       // $scope.featured_event();
+      $scope.load_datas();
     };
 
+    // Log out
     $scope.logout = function() {
       $cookies.token = '';
       $location.path('/log_in');
     }
 
-    $scope.event_details = function () {
-      var eventData = {
-        id: ''//$scope.event_id
-      };
-
-      EventService.event_details(eventData).then(function (response) {
-        var data = response.data;
-        console.log(data.message);
-        if( data.status_code == 200 ) {
-          
-        } else if( data.status_code == 101 ) {
-          $scope.logout();
-        } else {
-          
-        }
-      }).catch(function(error) {
-        console.log(error);
-      });
-    };
-        
+    // Load Initial Datas
+    $scope.load_datas = function(eventData) {
+      // Call Event Detail function
+      if($rootScope.event_id && $rootScope.event_id != '')
+      {
+        var event_id = $rootScope.event_id;
+        $rootScope.event_id = '';
+      }
+    }
+    
     /*$scope.event_category = function () {
       var eventData = {
       };
@@ -62,6 +144,7 @@ angular.module('app.event')
       });
     };*/
 
+    // Event handler for Create Event
     $scope.publish = function () {
       var eventData = {
         token: $cookies.token,
@@ -92,16 +175,18 @@ angular.module('app.event')
         } else if( data.status_code == 101 ) {
           $scope.logout();
         } else {
-          
+          $scope.alerts = [{type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!')}];
         }
       }).catch(function(error) {
         console.log(error);
       });
     };
 
+    // Event handler for Save Event as Draft
     $scope.draft = function () {
     };
 
+    // Event handler for Search Event
     $scope.search_event = function () {
       var eventData = {
         search: $scope.search_name,
@@ -117,13 +202,14 @@ angular.module('app.event')
         } else if( data.status_code == 101 ) {
           $scope.logout();
         } else {
-          
+          $scope.alerts = [{type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!')}];
         }
       }).catch(function(error) {
         console.log(error);
       });
     };
 
+    // Load Search Event
     $scope.featured_event = function () {
       EventService.featured_event().then(function (response) {
         var data = response.data;
@@ -133,13 +219,14 @@ angular.module('app.event')
         } else if( data.status_code == 101 ) {
           $scope.logout();
         } else {
-
+          $scope.alerts = [{type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!')}];
         }
       }).catch(function(error) {
         console.log(error);
       });
     };
 
+    // Load Get Venue
     $scope.get_venues = function (val) {
       return $http.get('http://staging.ticketvow.com/api/getVenue', {
         params: {
@@ -218,4 +305,4 @@ angular.module('app.event')
 
     $scope.init();
 
-});
+  });
