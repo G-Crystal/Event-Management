@@ -1,5 +1,5 @@
 angular.module('app.user')
-  .controller('UserController', function ($scope, $location, $cookies, UserService) {
+  .controller('LoginController', function ($scope, $location, $cookies, UserService) {
     
     $scope.init = function() {
       if(typeof($cookies.token) == 'undefined' || $cookies.token == '') {
@@ -32,6 +32,22 @@ angular.module('app.user')
         $scope.alerts = [{type: 'danger', msg: error}];
       });
     };
+
+  })
+
+  .controller('UserController', function ($scope, $location, $cookies, UserService) {
+    
+    $scope.init = function() {
+      if(typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+        $scope.logout();
+        return false;
+      }
+    };
+
+    $scope.logout = function() {
+      $cookies.token = '';
+      $location.path('/log_in');
+    }
 
     $scope.signup = function () {
       var registerData = {
@@ -93,4 +109,4 @@ angular.module('app.user')
       });
     };
 
-});
+  });

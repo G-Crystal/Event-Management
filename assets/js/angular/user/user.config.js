@@ -3,7 +3,7 @@ angular.module('app.user', [])
     $routeProvider
       .when('/log_in', {
         templateUrl: 'view/partials/user/log_in.html',
-        controller: 'UserController'
+        controller: 'LoginController'
       })
       .when('/sign_up', {
         templateUrl: 'view/partials/user/sign_up.html',
