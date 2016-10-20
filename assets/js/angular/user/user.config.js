@@ -7,14 +7,14 @@ angular.module('app.user', [])
       })
       .when('/sign_up', {
         templateUrl: 'view/partials/user/sign_up.html',
-        controller: 'UserController'
+        controller: 'SignupController'
       })
       .when('/reset', {
         templateUrl: 'view/partials/user/reset_password.html',
-        controller: 'UserController'
+        controller: 'ResetController'
       })
       .when('/forgot', {
         templateUrl: 'view/partials/user/forgot.html',
-        controller: 'UserController'
+        controller: 'ForgotController'
       });
   }])
