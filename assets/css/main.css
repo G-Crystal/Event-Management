@@ -4119,8 +4119,11 @@ img.thumb_preview {
     margin: 9px 0;
     height: 24px;
 }
-.error-msg {
+.margin-top-10 {
     margin-top: 10px;
+}
+.margin-bottom-10 {
+    margin-bottom: 10px;
 }
 .hover-div {
     cursor: pointer;

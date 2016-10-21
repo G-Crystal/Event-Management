@@ -21,11 +21,11 @@
     <div class="row">
       <div class="row">
         <form class="search" accept-charset="UTF-8" role="form" name="event_form" novalidate>
-          <div class="col-lg-4 col-md-10 col-sm-10 col-xs-10 col-xs-offset-1">
+          <div class="col-lg-4 col-md-10 col-sm-10 col-xs-10 col-xs-offset-1 margin-bottom-10">
             <input type="text" name="search_name" id="search_name" ng-model="search_name" ng-change="search_event()" class="search-query" placeholder="Search" style="padding-left: 60px;">
             <span class="glyphicon glyphicon-search manual-glyphicon"></span>
           </div>
-          <div class="col-lg-3 col-lg-offset-0 col-md-5 col-sm-5 col-xs-10 col-xs-offset-1">
+          <div class="col-lg-3 col-lg-offset-0 col-md-5 col-sm-5 col-xs-10 col-xs-offset-1 margin-bottom-10">
             <div class="dropdown">
               <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-category select-list">
                 {{selectedCategory}} <span class="caret"></span>
@@ -77,7 +77,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-lg-3 col-md-5 col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+          <div class="col-lg-3 col-md-5 col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1 margin-bottom-10">
             <input type="text" name="location" id="location" ng-model="location" placeholder="Location" style="background: none;" ng-change="search_event()">
           </div>       
         </form>
@@ -89,18 +89,18 @@
       <div id="cbp-vm" class="col-md-12 col-sm-12 col-xs-12 shop-prod active">
         <ul id="product" class="nav-pills nav-stacked rectangle-list">
           <a href="#/venue_profile">
-            <li class="col-lg-3 col-md-4 col-sm-4 col-xs-12" ng-repeat="event in datas.data">
+            <li class="col-lg-3 col-md-4 col-sm-4 col-xs-12" ng-repeat="event in datas">
               <div class="shop-img  services-box-black">
                 <div class="store-img-div box-image-div">
                   <img ng-src="{{event.event_image}}" class="box-image img-responsive" />
                   <span class="performance">
-                    <span>{{convertDate(event.start_date) | date:'MMM'}}<br>{{convertDate(event.start_date) | date:'d'}}</span>
+                    <span>{{convertDate(event.event_start_date) | date:'MMM'}}<br>{{convertDate(event.event_start_date) | date:'d'}}</span>
                   </span>
                 </div>
                 <div class="store-content-div">
                   <p class="content">{{event.event_name}}</p>
                   <p class="stadium">{{event.name}}</p>
-                  <p class="location">{{event.city}}, {{event.state}}</p>
+                  <p class="location">{{event.venuecity}}, {{event.state}}</p>
                 </div>
                 <a class="btn btn-block trans-buy-button" href="#/event">
                 BUY NOW</a>                      
