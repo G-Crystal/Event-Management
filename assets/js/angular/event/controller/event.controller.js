@@ -42,7 +42,6 @@ angular.module('app.event')
         var eventData = $scope.event_id;
 
         EventService.event_details(eventData).then(function(response) {
-            debugger;
             var data = response.data;
             console.log(data.message);
             if (data.status_code == 200) {
@@ -160,6 +159,61 @@ angular.module('app.event')
     $scope.convertDate = function(datestr) {
         return new Date(datestr);
     }
+
+    $scope.init();
+
+})
+
+// Controller for Upcoming Event page
+.controller('UpcomingEventController', function($rootScope, $scope, $http, $location, $cookies, $debounce, $modal, $log, Upload, EventService) {
+
+    var selectedCategory;
+
+    // Initialize
+    $scope.init = function() {
+        if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+            $scope.logout();
+            return false;
+        }
+
+        $rootScope.page = (typeof($rootScope.page) == 'undefined') ? 1 : $rootScope.page;
+
+        $scope.load_datas();
+    };
+
+    // Log out
+    $scope.logout = function() {
+        $cookies.token = '';
+        $location.path('/log_in');
+    }
+
+    // Load Initial Datas
+    $scope.load_datas = function(eventData) {
+        // Load Search Event Result function
+        $scope.load_upcoming_event();
+    }
+
+    // Event handler for Search Event
+    $scope.load_upcoming_event = function() {
+        var eventData = {
+            page: $rootScope.page
+        };
+
+        EventService.upcoming_event(eventData).then(function(response) {
+            var data = response.data;
+            debugger;
+            console.log(data.message);
+            if (data.status_code == 200) {
+                $scope.search_events = data.data;
+            } else if (data.status_code == 101) {
+                $scope.logout();
+            } else {
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+            }
+        }).catch(function(error) {
+            console.log(error);
+        });
+    };
 
     $scope.init();
 
