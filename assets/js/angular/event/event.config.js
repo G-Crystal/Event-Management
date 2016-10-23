@@ -7,7 +7,7 @@ angular.module('app.event', ['ngAnimate', 'ui.bootstrap'])
       })
       .when('/event_details', {
         templateUrl: 'view/partials/event/event_details.html',
-        controller: 'EventController'
+        controller: 'EventDetailController'
       })
       .when('/upcoming_events', {
         templateUrl: 'view/partials/event/upcoming_events.html',

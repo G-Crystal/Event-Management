@@ -4827,7 +4827,7 @@ span.caret {
 }
 .store-content-div {
     position: relative;
-    height: 170px;
+    min-height: 170px;
     margin: 0 10px;
 }
 
