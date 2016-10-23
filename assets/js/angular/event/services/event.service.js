@@ -23,13 +23,13 @@ angular.module('app.event')
             },
 
             upcoming_event: function(data) {
-                return $http.post('http://staging.ticketvow.com/api/getUpcomingEvents?token=' + $cookies.token, data).success(function(res) {
+                return $http.get('http://staging.ticketvow.com/api/getUpcomingEvents?token=' + $cookies.token, data).success(function(res) {
                     Organizer = res.data;
                 })
             },
 
             past_event: function(data) {
-                return $http.post('http://staging.ticketvow.com/api/getPastEvents?token=' + $cookies.token, data).success(function(res) {
+                return $http.get('http://staging.ticketvow.com/api/getPastEvents?token=' + $cookies.token, data).success(function(res) {
                     Organizer = res.data;
                 })
             },

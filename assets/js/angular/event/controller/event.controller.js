@@ -203,7 +203,7 @@ angular.module('app.event')
             var data = response.data;
             console.log(data.message);
             if (data.status_code == 200) {
-                $scope.events = data;
+                $scope.events = data.data;
             } else if (data.status_code == 101) {
                 $scope.logout();
             } else {
@@ -257,7 +257,7 @@ angular.module('app.event')
             var data = response.data;
             console.log(data.message);
             if (data.status_code == 200) {
-                $scope.events = data;
+                $scope.events = data.data;
             } else if (data.status_code == 101) {
                 $scope.logout();
             } else {
