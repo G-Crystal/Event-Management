@@ -1,5 +1,5 @@
 angular.module('app.user')
-  .controller('UserController', function ($scope, $location, $cookies, UserService) {
+  .controller('LoginController', function ($scope, $location, $cookies, UserService) {
     
     $scope.init = function() {
       if(typeof($cookies.token) == 'undefined' || $cookies.token == '') {
@@ -33,6 +33,22 @@ angular.module('app.user')
       });
     };
 
+  })
+
+  .controller('SignupController', function ($scope, $location, $cookies, UserService) {
+    
+    $scope.init = function() {
+      if(typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+        $scope.logout();
+        return false;
+      }
+    };
+
+    $scope.logout = function() {
+      $cookies.token = '';
+      $location.path('/log_in');
+    }
+
     $scope.signup = function () {
       var registerData = {
         fname: $scope.first_name,
@@ -55,6 +71,24 @@ angular.module('app.user')
       });
     };
 
+    $scope.init();
+
+  })
+
+  .controller('ResetController', function ($scope, $location, $cookies, UserService) {
+    
+    $scope.init = function() {
+      if(typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+        $scope.logout();
+        return false;
+      }
+    };
+
+    $scope.logout = function() {
+      $cookies.token = '';
+      $location.path('/log_in');
+    }
+
     $scope.reset = function () {
       var resetData = {
         code: $scope.email,
@@ -75,6 +109,24 @@ angular.module('app.user')
       });
     };
 
+    $scope.init();
+
+  })
+
+  .controller('ForgotController', function ($scope, $location, $cookies, UserService) {
+    
+    $scope.init = function() {
+      if(typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+        $scope.logout();
+        return false;
+      }
+    };
+
+    $scope.logout = function() {
+      $cookies.token = '';
+      $location.path('/log_in');
+    }
+
     $scope.forgot = function () {
       var reqData = {
         username: $scope.email
@@ -93,4 +145,6 @@ angular.module('app.user')
       });
     };
 
-});
+    $scope.init();
+
+  });
