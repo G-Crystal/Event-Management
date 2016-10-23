@@ -1,7 +1,7 @@
 angular.module('app.event')
 
 // Controller for Event Detail page
-.controller('EventDetailController', function($rootScope, $scope, $http, $location, $cookies, $modal, $log, Upload, EventService) {
+.controller('EventDetailController', function($rootScope, $scope, $http, $location, $cookies, EventService) {
 
     var selectedCategory;
 
@@ -86,7 +86,7 @@ angular.module('app.event')
 })
 
 // Controller for Search Event page
-.controller('SearchEventController', function($rootScope, $scope, $http, $location, $cookies, $debounce, $modal, $log, Upload, EventService) {
+.controller('SearchEventController', function($rootScope, $scope, $http, $location, $cookies, $debounce, EventService) {
 
     var selectedCategory;
 
@@ -165,7 +165,7 @@ angular.module('app.event')
 })
 
 // Controller for Upcoming Event page
-.controller('UpcomingEventController', function($rootScope, $scope, $http, $location, $cookies, $debounce, $modal, $log, Upload, EventService) {
+.controller('UpcomingEventController', function($rootScope, $scope, $http, $location, $cookies, EventService) {
 
     var selectedCategory;
 
@@ -201,10 +201,63 @@ angular.module('app.event')
 
         EventService.upcoming_event(eventData).then(function(response) {
             var data = response.data;
-            debugger;
             console.log(data.message);
             if (data.status_code == 200) {
-                $scope.search_events = data.data;
+                $scope.events = data;
+            } else if (data.status_code == 101) {
+                $scope.logout();
+            } else {
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+            }
+        }).catch(function(error) {
+            console.log(error);
+        });
+    };
+
+    $scope.init();
+
+})
+
+// Controller for Past Event page
+.controller('PastEventController', function($rootScope, $scope, $http, $location, $cookies, EventService) {
+
+    var selectedCategory;
+
+    // Initialize
+    $scope.init = function() {
+        if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+            $scope.logout();
+            return false;
+        }
+
+        $rootScope.page = (typeof($rootScope.page) == 'undefined') ? 1 : $rootScope.page;
+
+        $scope.load_datas();
+    };
+
+    // Log out
+    $scope.logout = function() {
+        $cookies.token = '';
+        $location.path('/log_in');
+    }
+
+    // Load Initial Datas
+    $scope.load_datas = function(eventData) {
+        // Load Search Event Result function
+        $scope.load_past_event();
+    }
+
+    // Event handler for Search Event
+    $scope.load_past_event = function() {
+        var eventData = {
+            page: $rootScope.page
+        };
+
+        EventService.past_event(eventData).then(function(response) {
+            var data = response.data;
+            console.log(data.message);
+            if (data.status_code == 200) {
+                $scope.events = data;
             } else if (data.status_code == 101) {
                 $scope.logout();
             } else {
