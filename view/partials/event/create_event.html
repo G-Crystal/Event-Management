@@ -2,330 +2,322 @@
 
 <div id="demo" class="home1">
 
-  <!--visible animated fadeInUp-->
-  <div class="container">
-    <div class="menubar-div row">
-      <form accept-charset="UTF-8" role="form" name="event_form" method="post" enctype="multipart/form-data" novalidate>
-      <!--List Event-->
-        <div class="description-title-div col-lg-12">
-          <h4>Event Information</h4>
-          <div class="row" ng-class="{ 'has-error' : (event_form.event_name.$invalid && !event_form.event_name.$pristine) }">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input1" class="label-name required">Event Name</label>
-            </div>
-            <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <input type="text" name="event_name" placeholder="Event Name" class="form-control" id="event_name" ng-minlength="2" ng-maxlength="100" ng-model="event_name" required>
-              <span ng-show="event_form.event_name.$invalid && !event_form.event_name.$pristine && event_form.event_name.$error.required">Event name is required.</span>
-              <span ng-show="event_form.event_name.$error.minlength">Event name is too short.</span>
-              <span ng-show="event_form.event_name.$error.maxlength">Event name is too long.</span>
-            </div>
-            <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <label for="input1" class="label-comment">0 of 100</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input2" class="label-name">Present's</label>
-            </div>
-            <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <input type="text" name="presents" placeholder="Example: &quot;John Doe Entertainment&quot; Present's" class="form-control" id="presents" maxlength="100" ng-model="presents">
-            </div>
-            <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <label for="input2" class="label-comment">0 of 100</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input3" class="label-name required">Venue</label>
-            </div>
-            <div class="col-md-3 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : event_form.search_venue.$invalid && !event_form.search_venue.$pristine }">
-              <input type="text" name="search_venue" placeholder="Search Venue" class="form-control" id="search_venue" ng-model="search_venue" required typeahead="venue for venue in get_venues($viewValue)" typeahead-loading="loadingVenues" maxlength="50">
-              <i ng-show="loadingVenues" class="glyphicon glyphicon-refresh"></i>
-              <span ng-show="event_form.search_venue.$invalid && !event_form.search_venue.$pristine">Venue is required.</span>
-            </div>
-            <div class="clearfix visible-sm visible-xs"></div>
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input4" class="label-name">Venue Capacity</label>
-            </div>
-            <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : event_form.venue_capacity.$invalid }">
-              <input type="text" pattern="[0-9]*" name="venue_capacity" placeholder="Venue Capacity" class="form-control" id="venue_capacity" maxlength="5" ng-model="venue_capacity">
-              <span ng-show="event_form.venue_capacity.$invalid">Must be only number.</span>
-            </div>
-            <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <label for="input4" class="label-comment">0 of 99999</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input5" class="label-name required">Category</label>
-            </div>
-            <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <div class="dropdown">
-                <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-category form-select-list">
-                  {{selectedCategory}} <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                  <li class="dropdown-submenu">
-                    Music
-                    <ul class="dropdown-menu">
-                      <li ng-click="changeCategory('Concert')">Concert</li>
-                      <li ng-click="changeCategory('Festival')">Festival</li>
-                    </ul>
-                  </li>
-                  <li ng-click="changeCategory('Nightlife')">Nightlife</li>
-                  <li class="dropdown-submenu">
-                    Food
-                    <ul class="dropdown-menu">
-                      <li ng-click="changeCategory('Tasting')">Tasting</li>
-                      <li ng-click="changeCategory('Festival')">Festival</li>
-                    </ul>
-                  </li>
-                  <li ng-click="changeCategory('Entertainment')">Entertainment</li>
-                  <li class="dropdown-submenu">
-                    Sports
-                    <ul class="dropdown-menu">
-                      <li ng-click="changeCategory('Fitness')">Fitness</li>
-                      <li ng-click="changeCategory('Class')">Class</li>
-                    </ul>
-                  </li>
-                  <li ng-click="changeCategory('Outdoors')">Outdoors</li>
-                  <li ng-click="changeCategory('Conferences')">Conferences</li>
-                  <li class="dropdown-submenu">
-                    Community
-                    <ul class="dropdown-menu">
-                      <li ng-click="changeCategory('Meetups')">Meetups</li>
-                      <li ng-click="changeCategory('Networking')">Networking</li>
-                    </ul>
-                  </li>
-                  <li ng-click="changeCategory('Start Ups')">Start Ups</li>
-                  <li class="dropdown-submenu">
-                    Non Profit
-                    <ul class="dropdown-menu">
-                      <li ng-click="changeCategory('Charity')">Charity</li>
-                      <li ng-click="changeCategory('Fund Raising')">Fund Raising</li>
-                    </ul>
-                  </li>
-                  <li ng-click="changeCategory('Arts')">Arts</li>
-                  <li ng-click="changeCategory('Theater')">Theater</li>
-                  <li ng-click="changeCategory('Other')">Other</li>
-                </ul>
-              </div>
-            </div>
-            <div class="clearfix visible-sm visible-xs"></div>
-            <div class="col-md-2 col-sm-3">
-              <label for="input6" class="label-name">Age Limit</label>
-            </div>
-            <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : event_form.age_limit.$invalid }">
-              <input type="number" pattern="[0-9]*" name="age_limit" placeholder="Enter Age Limit" class="form-control" id="age_limit" maxlength="2" ng-model="age_limit" ng-min="0" ng-max="15">
-              <span ng-show="event_form.age_limit.$invalid">Must be 0 to 15.</span>
-            </div>
-            <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <label for="input6" class="label-comment">0 of 10</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input7" class="label-name required">Event Image</label>
-            </div>
-            <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : event_form.event_image.$invalid && !event_form.event_image.$pristine }">
-              <input type="file" ngf-select ng-model="event_image" name="event_image" id="event_image"    
-                     accept="image/*" ngf-min-width="500" ngf-max-size="5MB" ngf-min-height="500" required
-                     ngf-model-invalid="errorFile1" class="form-control file-uploader">
-              <span ng-show="event_form.event_image.$error.maxSize">File too large {{errorFile1.size / 1000000|number:1}}MB: max 5M.</span>
-              <span ng-show="event_form.event_image.$error.minWidth">Width must be greater than 500.</span>
-              <span ng-show="event_form.event_image.$error.minHeight">Height must be greater than 500.</span>
-              <img ng-show="event_form.event_image.$valid" ngf-thumbnail="event_image" class="thumb_preview">
-            </div>
-            <div class="col-md-1 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <label for="input8" class="label-comment">500x500</label>
-            </div>
-            <div class="clearfix visible-sm visible-xs"></div>
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input8" class="label-name required">Header Image</label>
-            </div>
-            <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : event_form.header_image.$invalid && !event_form.header_image.$pristine }">
-              <input type="file" ngf-select ng-model="header_image" name="header_image" id="header_image"    
-                     accept="image/*" ngf-min-width="1500" ngf-max-size="5MB" ngf-min-height="500" required
-                     ngf-model-invalid="errorFile2" class="form-control file-uploader">
-              <span ng-show="event_form.header_image.$error.maxSize">File too large {{errorFile2.size / 1000000|number:1}}MB: max 5M.</span>
-              <span ng-show="event_form.header_image.$error.minWidth">Width must be greater than 1500.</span>
-              <span ng-show="event_form.header_image.$error.minHeight">Height must be greater than 500.</span>
-              <img ng-show="event_form.header_image.$valid" ngf-thumbnail="header_image" class="thumb_preview">
-            </div>
-            <div class="col-md-1 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <label for="input8" class="label-comment">1500x500</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input9" class="label-name">Additional Text</label>
-            </div>
-            <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <input type="text" name="additional_text" placeholder="Additional Ticket Text. Example &quot;Bring Your ID&quot; or Wear White&quot;" class="form-control" id="additional_text" maxlength="20">
-            </div>
-            <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <label for="input9" class="label-comment">0 of 20</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input10" class="label-name">Description</label>
-            </div>
-            <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <div class="wysiwig-editor">
-                <trix-editor name="description" id="description" angular-trix ng-model="description" class="trix-content"></trix-editor>
-              </div>
-            </div>
-            <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <label for="input10" class="label-comment">0 of 1000</label>
-            </div>
-          </div>
-        </div>
-
-        <div class="description-title-div col-lg-12">
-          <h4>Talents</h4>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input11" class="label-name" required>Search Talent</label>
-            </div>
-            <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1" ng-class="{ 'has-error' : event_form.search_talent.$invalid && !event_form.search_talent.$pristine }">
-              <input type="text" name="search_talent" placeholder="Search Talent or Add Talent" class="form-control" id="search_talent" ng-model="search_talent" required typeahead="talent for talent in get_talents($viewValue)" typeahead-loading="loadingTalents" maxlength="50">
-              <i ng-show="loadingTalents" class="glyphicon glyphicon-refresh"></i>
-              <span ng-show="event_form.search_talent.$invalid && !event_form.search_talent.$pristine">Talent is required.</span>
-            </div>
-            <div class="col-md-2 col-sm-3 col-xs-1">
-              <a style="cursor:pointer" ng-click="addTalent()"><span class="glyphicon glyphicon-plus-sign blue"></span></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="description-title-div col-lg-12">
-          <h4>Dates</h4>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-4">
-              <label for="input12" class="label-name required">Start Date</label>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-8">
-              <a class="dropdown-toggle start-toggle-calendar" id="dLabel" role="button" data-toggle="dropdown">
-                <div class="input-append">
-                  <input type="text" name="start_date" placeholder="Select Date and Time" class="form-control" id="start_date" data-ng-model="start_data.date">
+    <!--visible animated fadeInUp-->
+    <div class="container">
+        <div class="menubar-div row">
+            <form accept-charset="UTF-8" role="form" name="event_form" method="post" enctype="multipart/form-data" novalidate>
+                <!--List Event-->
+                <div class="description-title-div col-lg-12">
+                    <h4>Event Information</h4>
+                    <div class="row" ng-class="{ 'has-error' : (event_form.event_name.$invalid && !event_form.event_name.$pristine) }">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input1" class="label-name required">Event Name</label>
+                        </div>
+                        <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <input type="text" name="event_name" placeholder="Event Name" class="form-control" id="event_name" ng-minlength="2" ng-maxlength="100" ng-model="event_name" required>
+                            <span ng-show="event_form.event_name.$invalid && !event_form.event_name.$pristine && event_form.event_name.$error.required">Event name is required.</span>
+                            <span ng-show="event_form.event_name.$error.minlength">Event name is too short.</span>
+                            <span ng-show="event_form.event_name.$error.maxlength">Event name is too long.</span>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <label for="input1" class="label-comment">0 of 100</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input2" class="label-name">Present's</label>
+                        </div>
+                        <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <input type="text" name="presents" placeholder="Example: &quot;John Doe Entertainment&quot; Present's" class="form-control" id="presents" maxlength="100" ng-model="presents">
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <label for="input2" class="label-comment">0 of 100</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input3" class="label-name required">Venue</label>
+                        </div>
+                        <div class="col-md-3 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : event_form.search_venue.$invalid && !event_form.search_venue.$pristine }">
+                            <input type="text" name="search_venue" placeholder="Search Venue" class="form-control" id="search_venue" ng-model="search_venue" required typeahead="venue for venue in get_venues($viewValue)" typeahead-loading="loadingVenues" maxlength="50">
+                            <i ng-show="loadingVenues" class="glyphicon glyphicon-refresh"></i>
+                            <span ng-show="event_form.search_venue.$invalid && !event_form.search_venue.$pristine">Venue is required.</span>
+                        </div>
+                        <div class="clearfix visible-sm visible-xs"></div>
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input4" class="label-name">Venue Capacity</label>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : event_form.venue_capacity.$invalid }">
+                            <input type="text" pattern="[0-9]*" name="venue_capacity" placeholder="Venue Capacity" class="form-control" id="venue_capacity" maxlength="5" ng-model="venue_capacity">
+                            <span ng-show="event_form.venue_capacity.$invalid">Must be only number.</span>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <label for="input4" class="label-comment">0 of 99999</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input5" class="label-name required">Category</label>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <div class="dropdown">
+                                <a role="button" data-toggle="dropdown" class="btn btn-category form-select-list">
+                                  {{selectedCategory}} <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                    <li class="dropdown-submenu">
+                                        Music
+                                        <ul class="dropdown-menu">
+                                            <li ng-click="changeCategory('Concert')">Concert</li>
+                                            <li ng-click="changeCategory('Festival')">Festival</li>
+                                        </ul>
+                                    </li>
+                                    <li ng-click="changeCategory('Nightlife')">Nightlife</li>
+                                    <li class="dropdown-submenu">
+                                        Food
+                                        <ul class="dropdown-menu">
+                                            <li ng-click="changeCategory('Tasting')">Tasting</li>
+                                            <li ng-click="changeCategory('Festival')">Festival</li>
+                                        </ul>
+                                    </li>
+                                    <li ng-click="changeCategory('Entertainment')">Entertainment</li>
+                                    <li class="dropdown-submenu">
+                                        Sports
+                                        <ul class="dropdown-menu">
+                                            <li ng-click="changeCategory('Fitness')">Fitness</li>
+                                            <li ng-click="changeCategory('Class')">Class</li>
+                                        </ul>
+                                    </li>
+                                    <li ng-click="changeCategory('Outdoors')">Outdoors</li>
+                                    <li ng-click="changeCategory('Conferences')">Conferences</li>
+                                    <li class="dropdown-submenu">
+                                        Community
+                                        <ul class="dropdown-menu">
+                                            <li ng-click="changeCategory('Meetups')">Meetups</li>
+                                            <li ng-click="changeCategory('Networking')">Networking</li>
+                                        </ul>
+                                    </li>
+                                    <li ng-click="changeCategory('Start Ups')">Start Ups</li>
+                                    <li class="dropdown-submenu">
+                                        Non Profit
+                                        <ul class="dropdown-menu">
+                                            <li ng-click="changeCategory('Charity')">Charity</li>
+                                            <li ng-click="changeCategory('Fund Raising')">Fund Raising</li>
+                                        </ul>
+                                    </li>
+                                    <li ng-click="changeCategory('Arts')">Arts</li>
+                                    <li ng-click="changeCategory('Theater')">Theater</li>
+                                    <li ng-click="changeCategory('Other')">Other</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clearfix visible-sm visible-xs"></div>
+                        <div class="col-md-2 col-sm-3">
+                            <label for="input6" class="label-name">Age Limit</label>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : event_form.age_limit.$invalid }">
+                            <input type="number" pattern="[0-9]*" name="age_limit" placeholder="Enter Age Limit" class="form-control" id="age_limit" maxlength="2" ng-model="age_limit" ng-min="0" ng-max="15">
+                            <span ng-show="event_form.age_limit.$invalid">Must be 0 to 15.</span>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <label for="input6" class="label-comment">0 of 10</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input7" class="label-name required">Event Image</label>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : event_form.event_image.$invalid && !event_form.event_image.$pristine }">
+                            <input type="file" ngf-select ng-model="event_image" name="event_image" id="event_image" accept="image/*" ngf-min-width="500" ngf-max-size="5MB" ngf-min-height="500" required ngf-model-invalid="errorFile1" class="form-control file-uploader">
+                            <span ng-show="event_form.event_image.$error.maxSize">File too large {{errorFile1.size / 1000000|number:1}}MB: max 5M.</span>
+                            <span ng-show="event_form.event_image.$error.minWidth">Width must be greater than 500.</span>
+                            <span ng-show="event_form.event_image.$error.minHeight">Height must be greater than 500.</span>
+                            <img ng-show="event_form.event_image.$valid" ngf-thumbnail="event_image" class="thumb_preview">
+                        </div>
+                        <div class="col-md-1 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <label for="input8" class="label-comment">500x500</label>
+                        </div>
+                        <div class="clearfix visible-sm visible-xs"></div>
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input8" class="label-name required">Header Image</label>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : event_form.header_image.$invalid && !event_form.header_image.$pristine }">
+                            <input type="file" ngf-select ng-model="header_image" name="header_image" id="header_image" accept="image/*" ngf-min-width="1500" ngf-max-size="5MB" ngf-min-height="500" required ngf-model-invalid="errorFile2" class="form-control file-uploader">
+                            <span ng-show="event_form.header_image.$error.maxSize">File too large {{errorFile2.size / 1000000|number:1}}MB: max 5M.</span>
+                            <span ng-show="event_form.header_image.$error.minWidth">Width must be greater than 1500.</span>
+                            <span ng-show="event_form.header_image.$error.minHeight">Height must be greater than 500.</span>
+                            <img ng-show="event_form.header_image.$valid" ngf-thumbnail="header_image" class="thumb_preview">
+                        </div>
+                        <div class="col-md-1 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <label for="input8" class="label-comment">1500x500</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input9" class="label-name">Additional Text</label>
+                        </div>
+                        <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <input type="text" name="additional_text" placeholder="Additional Ticket Text. Example &quot;Bring Your ID&quot; or Wear White&quot;" class="form-control" id="additional_text" maxlength="20">
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <label for="input9" class="label-comment">0 of 20</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input10" class="label-name">Description</label>
+                        </div>
+                        <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <div class="wysiwig-editor">
+                                <trix-editor name="description" id="description" angular-trix ng-model="description" class="trix-content"></trix-editor>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <label for="input10" class="label-comment">0 of 1000</label>
+                        </div>
+                    </div>
                 </div>
-              </a>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <datetimepicker data-ng-model="start_data.date"
-                  data-datetimepicker-config="{ dropdownSelector: '.start-toggle-calendar', modelType: 'MM-DD-YYYY HH:mm' }"></datetimepicker>
-              </ul>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-4">
-              <label for="input12" class="label-name required">End Date</label>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-8">
-              <a class="dropdown-toggle end-toggle-calendar" id="dLabel" role="button" data-toggle="dropdown">
-                <div class="input-append">
-                  <input type="text" name="end_date" placeholder="Select Date and Time" class="form-control" id="end_date" class="input-large" data-ng-model="end_data.date">
-                </div>
-              </a>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <datetimepicker data-ng-model="end_data.date"
-                  data-datetimepicker-config="{ dropdownSelector: '.end-toggle-calendar', modelType: 'MM-DD-YYYY HH:mm' }"></datetimepicker>
-              </ul>          
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-4">
-              <label for="input12" class="label-name">Doors Date</label>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-8">
-              <a class="dropdown-toggle doors-toggle-calendar" id="dLabel" role="button" data-toggle="dropdown">
-                <div class="input-append">
-                  <input type="text" name="doors_date" placeholder="Select Date and Time" class="form-control" id="doors_date" class="input-large" data-ng-model="doors_data.date">
-                </div>
-              </a>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <datetimepicker data-ng-model="doors_data.date"
-                  data-datetimepicker-config="{ dropdownSelector: '.doors-toggle-calendar', modelType: 'MM-DD-YYYY HH:mm' }"></datetimepicker>
-              </ul>          
-            </div>
-            <div class="col-md-6 col-sm-5 col-sm-offset-0 col-xs-8 col-xs-offset-4">
-              <label for="input12" class="label-comment">inherit from start date if not entered</label>
-            </div>
-          </div>
-        </div>
 
-        <div class="description-title-div col-lg-12">
-          <h4>Ticket Type</h4>
-          <div class="table-container">
-            <table class="border-table">
-              <thead>
-                <tr>
-                  <th>Ticket Name</th>
-                  <th>Type</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Delete/Edit</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>General Admission</td>
-                  <td>Free</td>
-                  <td>$0</td>
-                  <td>500</td>
-                  <td>Delete/Edit</td>
-                </tr>
-                <tr>
-                  <td>General Admission</td>
-                  <td>Paid</td>
-                  <td>$0</td>
-                  <td>250</td>
-                  <td>Delete/Edit</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="store-down-bottom">
-            <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="addTicket()">Add Ticket</a>
-          </div>
-        </div>
-
-        <div class="description-title-div col-lg-12">
-          <h4>Schedule</h4>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input1" class="label-name">Publish Event On</label>
-            </div>
-            <div class="col-md-4 col-sm-6">
-              <a class="dropdown-toggle publish-toggle-calendar" id="dLabel" role="button" data-toggle="dropdown">
-                <div class="input-append">
-                  <input type="text" name="publish_event" placeholder="Select Time and Date to Publish" class="form-control" id="publish_event" class="input-large" data-ng-model="publish_data.date">
+                <div class="description-title-div col-lg-12">
+                    <h4>Talents</h4>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input11" class="label-name" required>Search Talent</label>
+                        </div>
+                        <div class="col-md-8 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1" ng-class="{ 'has-error' : event_form.search_talent.$invalid && !event_form.search_talent.$pristine }">
+                            <input type="text" name="search_talent" placeholder="Search Talent or Add Talent" class="form-control" id="search_talent" ng-model="search_talent" required typeahead="talent for talent in get_talents($viewValue)" typeahead-loading="loadingTalents" maxlength="50">
+                            <i ng-show="loadingTalents" class="glyphicon glyphicon-refresh"></i>
+                            <span ng-show="event_form.search_talent.$invalid && !event_form.search_talent.$pristine">Talent is required.</span>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-xs-1">
+                            <a style="cursor:pointer" ng-click="addTalent()"><span class="glyphicon glyphicon-plus-sign blue"></span></a>
+                        </div>
+                    </div>
                 </div>
-              </a>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <datetimepicker data-ng-model="publish_data.date"
-                  data-datetimepicker-config="{ dropdownSelector: '.publish-toggle-calendar', modelType: 'MM-DD-YYYY HH:mm' }"></datetimepicker>
-              </ul>          
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-            </div>
-            <div class="col-md-10 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <input type="checkbox" name="make_private" class="checkbox-ctrl" id="make_private" value="make_private">
-              <label for="input1" class="label-comment">Check here to make event private event will not show public on our website and search pages.</label>
-            </div>
-          </div>
-          <div class="row store-down-bottom">
-            <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="draft()">DRAFT</a>
-            <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="publish()" ng-disabled="event_form.$invalid">PUBLISH</a>
-          </div>
+
+                <div class="description-title-div col-lg-12">
+                    <h4>Dates</h4>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-4">
+                            <label for="input12" class="label-name required">Start Date</label>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-8">
+                            <a class="dropdown-toggle start-toggle-calendar" role="button" data-toggle="dropdown">
+                                <div class="input-append">
+                                    <input type="text" name="start_date" placeholder="Select Date and Time" class="form-control" id="start_date" data-ng-model="start_data.date">
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                <datetimepicker data-ng-model="start_data.date" data-datetimepicker-config="{ dropdownSelector: '.start-toggle-calendar', modelType: 'MM-DD-YYYY HH:mm' }"></datetimepicker>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-4">
+                            <label for="input12" class="label-name required">End Date</label>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-8">
+                            <a class="dropdown-toggle end-toggle-calendar" role="button" data-toggle="dropdown">
+                                <div class="input-append">
+                                    <input type="text" name="end_date" placeholder="Select Date and Time" class="form-control input-large" id="end_date" data-ng-model="end_data.date">
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                <datetimepicker data-ng-model="end_data.date" data-datetimepicker-config="{ dropdownSelector: '.end-toggle-calendar', modelType: 'MM-DD-YYYY HH:mm' }"></datetimepicker>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-4">
+                            <label for="input12" class="label-name">Doors Date</label>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-8">
+                            <a class="dropdown-toggle doors-toggle-calendar" role="button" data-toggle="dropdown">
+                                <div class="input-append">
+                                    <input type="text" name="doors_date" placeholder="Select Date and Time" class="form-control input-large" id="doors_date" data-ng-model="doors_data.date">
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                <datetimepicker data-ng-model="doors_data.date" data-datetimepicker-config="{ dropdownSelector: '.doors-toggle-calendar', modelType: 'MM-DD-YYYY HH:mm' }"></datetimepicker>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-sm-5 col-sm-offset-0 col-xs-8 col-xs-offset-4">
+                            <label for="input12" class="label-comment">inherit from start date if not entered</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="description-title-div col-lg-12">
+                    <h4>Ticket Type</h4>
+                    <div class="table-container">
+                        <table class="border-table">
+                            <thead>
+                                <tr>
+                                    <th>Ticket Name</th>
+                                    <th>Type</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Delete/Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>General Admission</td>
+                                    <td>Free</td>
+                                    <td>$0</td>
+                                    <td>500</td>
+                                    <td>Delete/Edit</td>
+                                </tr>
+                                <tr>
+                                    <td>General Admission</td>
+                                    <td>Paid</td>
+                                    <td>$0</td>
+                                    <td>250</td>
+                                    <td>Delete/Edit</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="store-down-bottom">
+                        <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="addTicket()">Add Ticket</a>
+                    </div>
+                </div>
+
+                <div class="description-title-div col-lg-12">
+                    <h4>Schedule</h4>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input1" class="label-name">Publish Event On</label>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <a class="dropdown-toggle publish-toggle-calendar" role="button" data-toggle="dropdown">
+                                <div class="input-append">
+                                    <input type="text" name="publish_event" placeholder="Select Time and Date to Publish" class="form-control input-large" id="publish_event" data-ng-model="publish_data.date">
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                <datetimepicker data-ng-model="publish_data.date" data-datetimepicker-config="{ dropdownSelector: '.publish-toggle-calendar', modelType: 'MM-DD-YYYY HH:mm' }"></datetimepicker>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                        </div>
+                        <div class="col-md-10 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <input type="checkbox" name="make_private" class="checkbox-ctrl" id="make_private" value="make_private">
+                            <label for="input1" class="label-comment">Check here to make event private event will not show public on our website and search pages.</label>
+                        </div>
+                    </div>
+                    <div class="row store-down-bottom">
+                        <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="draft()">DRAFT</a>
+                        <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="publish()" ng-disabled="event_form.$invalid">PUBLISH</a>
+                    </div>
+                </div>
+            </form>
         </div>
-      </div>
-      <!-- /.row -->
-    </form>
-  </div>
-  <!-- /.container -->
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
 </div>
 
 <div ng-include="'view/templates/footer.html'"></div>

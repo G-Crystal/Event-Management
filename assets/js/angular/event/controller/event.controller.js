@@ -78,7 +78,12 @@ angular.module('app.event')
     $scope.changeCategory = function(selectedCategory) {
         $scope.selectedCategory = selectedCategory;
         $scope.search_event();
-    };
+    }
+
+    $scope.loadBuyTicket = function(event_id = 0) {
+        $rootScope.event_id = event_id;
+        $location.path('/buy_ticket');
+    }
 
     // Initialize
     $scope.init();
@@ -211,6 +216,17 @@ angular.module('app.event')
             }
         }).catch(function(error) {
             console.log(error);
+        });
+    };
+
+    $scope.editURL = function(type, index) {
+        $scope.event = (type == 1) ? $scope.pastevent[index - 1] : $scope.upcomingevent[index - 1];
+
+        var modalInstance = $modal.open({
+            animation: true,
+            templateUrl: 'view/partials/event/editURLPopup.html',
+            controller: 'EventController',
+            size: 'lg'
         });
     };
 
@@ -466,17 +482,6 @@ angular.module('app.event')
             animation: true,
             templateUrl: 'view/partials/talent/addTalentPopup.html',
             controller: 'TalentController',
-            size: 'lg'
-        });
-    };
-
-    $scope.editURL = function(type, index) {
-        $scope.event = (type == 1) ? $scope.pastevent[index - 1] : $scope.upcomingevent[index - 1];
-
-        var modalInstance = $modal.open({
-            animation: true,
-            templateUrl: 'view/partials/event/editURLPopup.html',
-            controller: 'EventController',
             size: 'lg'
         });
     };
