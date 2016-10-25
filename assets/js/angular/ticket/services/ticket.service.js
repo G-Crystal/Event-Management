@@ -14,6 +14,9 @@ angular.module('app.ticket')
                 return $http.get('http://staging.ticketvow.com/api/buyticket/' + data);
             },
 
+            buy_ticket: function(data) {
+                return $http.post('http://staging.ticketvow.com/api/buyticket', data);
+            },
         };
 
         return Ticket;

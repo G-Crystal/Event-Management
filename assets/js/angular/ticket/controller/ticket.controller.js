@@ -22,7 +22,7 @@ angular.module('app.ticket')
         }
 
         // Load Initial Datas
-        $scope.load_datas = function(eventData) {
+        $scope.load_datas = function() {
             // Call Event Detail function
             $scope.event_id = ($rootScope.event_id && $rootScope.event_id != '') ? $rootScope.event_id : '';
             $rootScope.event_id = '';
@@ -32,9 +32,9 @@ angular.module('app.ticket')
 
         // Load Buy Ticket Detail
         $scope.load_buy_ticket_detail = function() {
-            var eventData = 14; //$scope.event_id;
+            var ticketData = 14; //$scope.event_id;
 
-            TicketService.buy_ticket_details(eventData).then(function(response) {
+            TicketService.buy_ticket_details(ticketData).then(function(response) {
                 var data = response.data;
                 console.log(data.message);
                 if (data.status_code == 200) {
@@ -57,11 +57,33 @@ angular.module('app.ticket')
 
         // Event handler for Link of Event Detail
         $scope.buyTicket = function() {
-            var ticketarray = [];
+            var quantityarray = [];
             angular.forEach($scope.tickets, function(ticket) {
-                ticketarray.push(ticket.quantity);
+                quantityarray.push(ticket.quantity);
             });
-            console.log(ticketarray);
+            console.log(quantityarray);
+
+            var ticketData = {
+                token: $cookies.token,
+                event_id: 14,
+                tickets: quantityarray,
+                quantity: quantityarray,
+                delivery: quantityarray
+            };
+
+            TicketService.buy_ticket(ticketData).then(function(response) {
+                var data = response.data;
+                console.log(data.message);
+                if (data.status_code == 200) {
+                    $scope.datas = data.data;
+                } else if (data.status_code == 101) {
+                    $scope.logout();
+                } else {
+                    $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+                }
+            }).catch(function(error) {
+                console.log(error);
+            });
         }
 
         $scope.init();
