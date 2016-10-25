@@ -3,6 +3,11 @@ angular.module('app.ticket')
 
         var myStore = new store();
 
+        $scope.tickets = [
+            { ticket_name: 'GENERAL_ADMISSION', created_at: '$152.50', quantity: '' },
+            { ticket_name: 'MEET & GREAT', created_at: '$53.50', quantity: '' }
+        ];
+
         $scope.init = function() {
             if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
                 $scope.logout();
@@ -48,6 +53,15 @@ angular.module('app.ticket')
         $scope.event_details = function(event_id = '') {
             $rootScope.event_id = event_id;
             $location.path('/event_details');
+        }
+
+        // Event handler for Link of Event Detail
+        $scope.buyTicket = function() {
+            var ticketarray = [];
+            angular.forEach($scope.tickets, function(ticket) {
+                ticketarray.push(ticket.quantity);
+            });
+            console.log(ticketarray);
         }
 
         $scope.init();

@@ -40,31 +40,33 @@
 
             <div class="description-title-div col-lg-12">
                 <div class="row">
-                    <table class="border-table">
-                        <thead>
-                            <tr>
-                                <th>Ticket Type</th>
-                                <th>Price</th>
-                                <th class="p-center">Quantity</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="ticket in datas.tickets">
-                                <td>{{ticket.ticket_name}}</td>
-                                <td>{{ticket.created_at}}</td>
-                                <td class="p-center">
-                                    <input type="number" min="0" step="1" class="spin-input" value="{{ticket.quantity}}">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td class="p-center">
-                                    <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="buyTicket()">BUY NOW</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <form accept-charset="UTF-8" role="form" name="ticket_form" method="post" novalidate>
+                        <table class="border-table">
+                            <thead>
+                                <tr>
+                                    <th>Ticket Type</th>
+                                    <th>Price</th>
+                                    <th class="p-center">Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="ticket in datas.tickets">
+                                    <td>{{ticket.ticket_name}}</td>
+                                    <td>{{ticket.created_at}}</td>
+                                    <td class="p-center">
+                                        <input type="number" min="0" step="1" class="spin-input" ng-model="ticket.quantity">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="p-center">
+                                        <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="buyTicket()">BUY NOW</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
                 </div>
             </div>
         </div>
