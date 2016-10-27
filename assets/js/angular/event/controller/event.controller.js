@@ -39,7 +39,7 @@ angular.module('app.event')
 
     // Load Event Detail
     $scope.load_event_detail = function() {
-        var eventData = $scope.event_id;
+        var eventData = 14; //$scope.event_id;
 
         EventService.event_details(eventData).then(function(response) {
             var data = response.data;

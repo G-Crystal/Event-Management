@@ -82,7 +82,6 @@ angular.module('app.organizer')
             };
 
             OrganizerService.get_public_profile(organizerData).then(function(response) {
-                debugger;
                 var data = response.data;
                 console.log('Get organizer public profile: ' + data.message);
                 if (data.status_code == 200) {
