@@ -257,23 +257,18 @@
                                     <th>Type</th>
                                     <th>Price</th>
                                     <th>Quantity</th>
-                                    <th>Delete/Edit</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>General Admission</td>
-                                    <td>Free</td>
-                                    <td>$0</td>
-                                    <td>500</td>
-                                    <td>Delete/Edit</td>
-                                </tr>
-                                <tr>
-                                    <td>General Admission</td>
-                                    <td>Paid</td>
-                                    <td>$0</td>
-                                    <td>250</td>
-                                    <td>Delete/Edit</td>
+                                <tr ng-repeat="ticket in event_tickets.data">
+                                    <td>{{ticket.ticket_name}}{{aa}}</td>
+                                    <td>{{ticket.ticket_type}}</td>
+                                    <td>{{ticket.ticket_cost}}</td>
+                                    <td>{{ticket.quantity}}</td>
+                                    <td><a style="cursor:pointer" ng-click="editTicket(ticket.id)">Edit</a></td>
+                                    <td><a style="cursor:pointer" ng-click="deleteTicket(ticket.id)">Delete</a></td>
                                 </tr>
                             </tbody>
                         </table>

@@ -104,8 +104,6 @@ angular.module('app.ticket')
         $scope.events = myStore.events;
         $scope.ticket_type = 0;
         $scope.delivery_type = 0;
-
-        // $scope.load_datas();
     };
 
     $scope.logout = function() {
@@ -136,6 +134,49 @@ angular.module('app.ticket')
             console.log(error);
         });
     };
+})
+
+.controller('EditTicketController', function($rootScope, $scope, $location, $cookies, $modalInstance, TicketService) {
+
+    var myStore = new store();
+
+    $scope.init = function() {
+        if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+            $scope.logout();
+            return false;
+        }
+
+        $scope.ticket_id = ($rootScope.ticket_id && $rootScope.ticket_id != '') ? $rootScope.ticket_id : '';
+        $rootScope.ticket_id = '';
+        $scope.ticket_types = myStore.ticket_type;
+        $scope.delivery_types = myStore.delivery_type;
+
+        $scope.get_ticket_detail();
+    };
+
+    $scope.logout = function() {
+        $location.path('/log_in');
+    }
+
+    $scope.get_ticket_detail = function() {
+        ticketData = {
+            id: $scope.ticket_id
+        };
+
+        TicketService.get_ticket_detail(ticketData).then(function(response) {
+            var data = response.data;
+            console.log(data.message);
+            if (data.status_code == 200) {
+                $scope = data.data;
+            } else if (data.status_code == 101) {
+                $scope.logout();
+            } else {
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+            }
+        }).catch(function(error) {
+            console.log(error);
+        });
+    }
 
     $scope.edit_ticket = function() {
         var ticketData = {
@@ -155,8 +196,9 @@ angular.module('app.ticket')
 
             } else if (data.status_code == 101) {
                 $scope.logout();
+                $modalInstance.close();
             } else {
-
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
             }
         }).catch(function(error) {
             console.log(error);
@@ -164,5 +206,4 @@ angular.module('app.ticket')
     };
 
     $scope.init();
-
 });
