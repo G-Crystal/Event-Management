@@ -403,6 +403,27 @@ angular.module('app.event')
         });
     };
 
+    // Event handler for Delete Ticket
+    $scope.deleteEvent = function(ticket_id) {
+        var eventData = {
+            ids: $rootScope.event_ids
+        };
+
+        EventService.delete_event(eventData).then(function(response) {
+            var data = response.data;
+            console.log(data.message);
+            if (data.status_code == 200) {
+                $scope.event_tickets = data.data;
+            } else if (data.status_code == 101) {
+                $scope.logout();
+            } else {
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+            }
+        }).catch(function(error) {
+            console.log(error);
+        });
+    };
+
     // Load Get Venue
     $scope.get_venues = function(val) {
         return $http.get('http://staging.ticketvow.com/api/getVenue', {
