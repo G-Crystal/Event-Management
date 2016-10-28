@@ -170,7 +170,7 @@ angular.module('app.event')
 })
 
 // Controller for Upcoming Event page
-.controller('UpcomingEventController', function($rootScope, $scope, $http, $location, $cookies, EventService) {
+.controller('UpcomingEventController', function($rootScope, $scope, $http, $location, $cookies, $modal, EventService) {
 
     var selectedCategory;
 
@@ -219,8 +219,8 @@ angular.module('app.event')
         });
     };
 
-    $scope.editURL = function(type, index) {
-        $scope.event = (type == 1) ? $scope.pastevent[index - 1] : $scope.upcomingevent[index - 1];
+    $scope.editURL = function(index) {
+        $scope.event = $scope.events[index - 1];
 
         var modalInstance = $modal.open({
             animation: true,
@@ -289,7 +289,7 @@ angular.module('app.event')
 })
 
 // Controller for Event page
-.controller('EventController', function($rootScope, $scope, $http, $location, $cookies, $modal, $log, Upload, EventService, VenueService) {
+.controller('EventController', function($rootScope, $scope, $http, $location, $cookies, $modal, Upload, EventService, VenueService, TicketService) {
 
     var myStore = new store();
     var selectedCategory;
@@ -319,11 +319,12 @@ angular.module('app.event')
 
     // Load Initial Datas
     $scope.load_datas = function(eventData) {
-        // Call Event Detail function
+        // Call Ticket Detail function
         if ($rootScope.event_id && $rootScope.event_id != '') {
             var event_id = $rootScope.event_id;
             $rootScope.event_id = '';
         }
+        $scope.get_ticket_by_event();
     }
 
     /*$scope.event_category = function () {
@@ -385,15 +386,9 @@ angular.module('app.event')
     // Event handler for Save Event as Draft
     $scope.draft = function() {};
 
-    // Event handler for Search Event
-    $scope.search_event = function() {
-        var eventData = {
-            search: $scope.search_name,
-            event_category: (($scope.selectedCategory == 'Select category') ? '' : $scope.selectedCategory),
-            location: $scope.location
-        };
-
-        EventService.search_event(eventData).then(function(response) {
+    // Load Search Event
+    $scope.featured_event = function() {
+        EventService.featured_event().then(function(response) {
             var data = response.data;
             console.log(data.message);
             if (data.status_code == 200) {
@@ -408,13 +403,17 @@ angular.module('app.event')
         });
     };
 
-    // Load Search Event
-    $scope.featured_event = function() {
-        EventService.featured_event().then(function(response) {
+    // Event handler for Delete Ticket
+    $scope.deleteEvent = function(ticket_id) {
+        var eventData = {
+            ids: $rootScope.event_ids
+        };
+
+        EventService.delete_event(eventData).then(function(response) {
             var data = response.data;
             console.log(data.message);
             if (data.status_code == 200) {
-                $scope.search_events = data.data;
+                $scope.event_tickets = data.data;
             } else if (data.status_code == 101) {
                 $scope.logout();
             } else {
@@ -468,6 +467,38 @@ angular.module('app.event')
         });
     };
 
+    // Event handler for Search Event
+    $scope.get_ticket_by_event = function() {
+        var eventData = {
+            event_id: $rootScope.event_id
+        };
+
+        TicketService.get_ticket_user(eventData).then(function(response) {
+            var data = response.data;
+            console.log(data.message);
+            if (data.status_code == 200) {
+                $scope.event_tickets = data.data;
+            } else if (data.status_code == 101) {
+                $scope.logout();
+            } else {
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+            }
+        }).catch(function(error) {
+            console.log(error);
+        });
+    };
+
+    // Event handler for Add Talent
+    $scope.addTalent = function() {
+        var modalInstance = $modal.open({
+            animation: true,
+            templateUrl: 'view/partials/talent/addTalentPopup.html',
+            controller: 'TalentController',
+            size: 'lg'
+        });
+    };
+
+    // Event handler for Add Ticket
     $scope.addTicket = function() {
         var modalInstance = $modal.open({
             animation: true,
@@ -477,12 +508,36 @@ angular.module('app.event')
         });
     };
 
-    $scope.addTalent = function() {
+    // Event handler for Edit Ticket
+    $scope.editTicket = function(ticket_id) {
+        $rootScope.ticket_id = ticket_id;
+
         var modalInstance = $modal.open({
             animation: true,
-            templateUrl: 'view/partials/talent/addTalentPopup.html',
-            controller: 'TalentController',
+            templateUrl: 'view/partials/ticket/editTicketPopup.html',
+            controller: 'EditTicketController',
             size: 'lg'
+        });
+    };
+
+    // Event handler for Delete Ticket
+    $scope.deleteTicket = function(ticket_id) {
+        var eventData = {
+            event_id: $rootScope.event_id
+        };
+
+        TicketService.delete_ticket(eventData).then(function(response) {
+            var data = response.data;
+            console.log(data.message);
+            if (data.status_code == 200) {
+                $scope.event_tickets = data.data;
+            } else if (data.status_code == 101) {
+                $scope.logout();
+            } else {
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+            }
+        }).catch(function(error) {
+            console.log(error);
         });
     };
 

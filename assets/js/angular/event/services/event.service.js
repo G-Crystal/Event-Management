@@ -34,6 +34,12 @@ angular.module('app.event')
                 })
             },
 
+            delete_event: function(data) {
+                return $http.get('http://staging.ticketvow.com/api/deleteEvents?token=' + $cookies.token, data).success(function(res) {
+                    Organizer = res.data;
+                })
+            },
+
             /*uploadFileToUrl = function(file, uploadUrl) {
               var fd = new FormData();
               fd.append('file', file);
