@@ -403,7 +403,7 @@ angular.module('app.event')
         });
     };
 
-    // Event handler for Delete Ticket
+    // Event handler for Delete Event
     $scope.deleteEvent = function(ticket_id) {
         var eventData = {
             ids: $rootScope.event_ids
