@@ -39,7 +39,7 @@ angular.module('app.event')
 
     // Load Event Detail
     $scope.load_event_detail = function() {
-        var eventData = 14; //$scope.event_id;
+        var eventData = $scope.event_id;
 
         EventService.event_details(eventData).then(function(response) {
             var data = response.data;
@@ -156,11 +156,19 @@ angular.module('app.event')
         $scope.load_search_event();
     }
 
+    // Buy Ticket event handler
+    $scope.loadBuyTicket = function(event_id = 0) {
+        $rootScope.event_id = event_id;
+        $location.path('/buy_ticket');
+    }
+
+    // change Category event handler
     $scope.changeCategory = function(selectedCategory) {
         $scope.selectedCategory = selectedCategory;
         $scope.search_event();
     };
 
+    // Convert Datetime format function
     $scope.convertDate = function(datestr) {
         return new Date(datestr);
     }

@@ -71,7 +71,7 @@ angular.module('app.organizer')
         $location.path('/log_in');
     }
 
-    $scope.get_profile = function(organizer_id = 14) {
+    $scope.get_profile = function(organizer_id = 0) {
         var organizerData = {
             id: organizer_id
         };
@@ -91,7 +91,7 @@ angular.module('app.organizer')
         });
     };
 
-    $scope.get_public_profile = function(organizer_id = 14) {
+    $scope.get_public_profile = function(organizer_id = 0) {
         var organizerData = {
             id: organizer_id
         };

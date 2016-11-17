@@ -32,7 +32,7 @@ angular.module('app.ticket')
 
         // Load Buy Ticket Detail
         $scope.load_buy_ticket_detail = function() {
-            var ticketData = 14; //$scope.event_id;
+            var ticketData = $scope.event_id;
 
             TicketService.buy_ticket_details(ticketData).then(function(response) {
                 var data = response.data;
