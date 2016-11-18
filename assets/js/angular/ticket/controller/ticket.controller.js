@@ -56,7 +56,7 @@ angular.module('app.ticket')
         }
 
         // Event handler for Link of Event Detail
-        $scope.buyTicket = function() {
+        $scope.buyTicket = function(event_id = '') {
             var quantityarray = [];
             angular.forEach($scope.tickets, function(ticket) {
                 quantityarray.push(ticket.quantity);
@@ -65,7 +65,7 @@ angular.module('app.ticket')
 
             var ticketData = {
                 token: $cookies.token,
-                event_id: 14,
+                event_id: event_id,
                 tickets: quantityarray,
                 quantity: quantityarray,
                 delivery: quantityarray
@@ -128,7 +128,7 @@ angular.module('app.ticket')
             } else if (data.status_code == 101) {
                 $scope.logout();
             } else {
-
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
             }
         }).catch(function(error) {
             console.log(error);
