@@ -16,7 +16,7 @@
                 <ul id="event" class="nav-pills nav-stacked rectangle-list">
                     <li class="col-xs-12">
                         <div class="shop-img home-box-black row">
-                            <a ng-click="event_details(datas.event_id)">
+                            <a ng-click="event_details(datas.id)">
                                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 box-image-div">
                                     <img ng-src="{{datas.event_image}}" alt="{{datas.event_name}}" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box-image img-responsive" />
                                 </div>
@@ -24,9 +24,9 @@
                                     <p class="p-title">{{datas.event_name}}</p>
                                     <div class="home-content-div">
                                         <div class="profile-div">
+                                            <p class="p-spec p-blue">{{datas.ticket_text}}</p>
                                             <p class="p-date">{{datas.start_date}}</p>
-                                            <p class="p-spec p-blue"><a href="#/venue_profile">{{datas.name}}</a></p>
-                                            <p class="p-name">{{datas.address}}</p>
+                                            <p class="p-name">{{datas.organization_name}}</p>
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -37,6 +37,7 @@
                     </li>
                 </ul>
             </div>
+            <div class="clearfix"></div>
 
             <div class="description-title-div col-lg-12">
                 <div class="row">
@@ -51,8 +52,8 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="ticket in datas.tickets">
-                                    <td>{{ticket.ticket_name}}</td>
-                                    <td>{{ticket.created_at}}</td>
+                                    <td>{{(ticket.ticket_type == 0) ? 'Free' : 'Paid'}}</td>
+                                    <td>{{ticket.ticket_cost}}</td>
                                     <td class="p-center">
                                         <input type="number" min="0" step="1" class="spin-input" ng-model="ticket.quantity">
                                     </td>
@@ -61,7 +62,7 @@
                                     <td></td>
                                     <td></td>
                                     <td class="p-center">
-                                        <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="buyTicket()">BUY NOW</a>
+                                        <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="buyTicket(datas.id)">BUY NOW</a>
                                     </td>
                                 </tr>
                             </tbody>

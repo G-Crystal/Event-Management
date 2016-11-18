@@ -1,16 +1,11 @@
 angular.module('app.organizer')
-    .controller('OrganizerController', function($scope, $location, $cookies, OrganizerService) {
-
-        var myStore = new store();
+    .controller('CreateOrganizerController', function($scope, $location, $cookies, OrganizerService) {
 
         $scope.init = function() {
             if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
                 $scope.logout();
                 return false;
             }
-
-            $scope.get_public_profile();
-            $scope.events = myStore.events;
         };
 
         $scope.logout = function() {
@@ -55,47 +50,67 @@ angular.module('app.organizer')
                 console.log(error);
             });
         };
+    })
 
-        $scope.get_profile = function(organizer_id = 14) {
-            var organizerData = {
-                id: organizer_id
-            };
+.controller('OrganizerController', function($scope, $location, $cookies, OrganizerService) {
 
-            OrganizerService.get_profile(organizerData).then(function(response) {
-                var data = response.data;
-                console.log('Get organizer profile: ' + data.message);
-                if (data.status_code == 200) {
+    var myStore = new store();
 
-                } else if (data.status_code == 101) {
-                    $scope.logout();
-                } else {
-                    $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
-                }
-            }).catch(function(error) {
-                console.log(error);
-            });
+    $scope.init = function() {
+        if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+            $scope.logout();
+            return false;
+        }
+
+        $scope.get_public_profile();
+        $scope.events = myStore.events;
+    };
+
+    $scope.logout = function() {
+        $cookies.token = '';
+        $location.path('/log_in');
+    }
+
+    $scope.get_profile = function(organizer_id = 0) {
+        var organizerData = {
+            id: organizer_id
         };
 
-        $scope.get_public_profile = function(organizer_id = 14) {
-            var organizerData = {
-                id: organizer_id
-            };
+        OrganizerService.get_profile(organizerData).then(function(response) {
+            var data = response.data;
+            console.log('Get organizer profile: ' + data.message);
+            if (data.status_code == 200) {
 
-            OrganizerService.get_public_profile(organizerData).then(function(response) {
-                var data = response.data;
-                console.log('Get organizer public profile: ' + data.message);
-                if (data.status_code == 200) {
+            } else if (data.status_code == 101) {
+                $scope.logout();
+            } else {
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+            }
+        }).catch(function(error) {
+            console.log(error);
+        });
+    };
 
-                } else if (data.status_code == 101) {
-                    $scope.logout();
-                } else {
-                    $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
-                }
-            }).catch(function(error) {
-                console.log(error);
-            });
+    $scope.get_public_profile = function(organizer_id = 0) {
+        var organizerData = {
+            id: organizer_id
         };
 
-        $scope.init();
+        OrganizerService.get_public_profile(organizerData).then(function(response) {
+            var data = response.data;
+            console.log('Get organizer public profile: ' + data.message);
+            if (data.status_code == 200) {
 
-    });
+            } else if (data.status_code == 101) {
+                $scope.logout();
+            } else {
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+            }
+        }).catch(function(error) {
+            console.log(error);
+        });
+    };
+
+    $scope.init();
+
+});

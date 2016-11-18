@@ -1,121 +1,120 @@
 <div id="demo">
 
-  <div id="owl-demo" class="owl-carousel container" owlcarousel>
-    <div class="item">
-      <a href="#/event_details"><img class="img-responsive img-customer" src="assets/images/store/product/swatch.jpg"></a>
+    <div id="owl-demo" class="owl-carousel container" owlcarousel>
+        <div class="item">
+            <a href="#/event_details"><img class="img-responsive img-customer" src="assets/images/store/product/swatch.jpg"></a>
+        </div>
+        <div class="item">
+            <a href="#/event_details"><img class="img-responsive img-customer" src="assets/images/store/product/sunglasses.jpg"></a>
+        </div>
+        <div class="item">
+            <a href="#/event_details"><img class="img-responsive img-customer" src="assets/images/team/user1.jpg"></a>
+        </div>
+        <div class="item">
+            <a href="#/event_details"><img class="img-responsive img-customer" src="assets/images/team/user2.jpg"></a>
+        </div>
+        <div class="item">
+            <a href="#/event_details"><img class="img-responsive img-customer" src="assets/images/team/user3.jpg"></a>
+        </div>
     </div>
-    <div class="item">
-      <a href="#/event_details"><img class="img-responsive img-customer" src="assets/images/store/product/sunglasses.jpg"></a>
-    </div>
-    <div class="item">
-      <a href="#/event_details"><img class="img-responsive img-customer" src="assets/images/team/user1.jpg"></a>
-    </div>
-    <div class="item">
-      <a href="#/event_details"><img class="img-responsive img-customer" src="assets/images/team/user2.jpg"></a>
-    </div>
-    <div class="item">
-      <a href="#/event_details"><img class="img-responsive img-customer" src="assets/images/team/user3.jpg"></a>
-    </div> 
-  </div>
-  <div class="container search-div">
-    <div class="row">
-      <div class="row">
-        <form class="search" accept-charset="UTF-8" role="form" name="event_form" novalidate>
-          <div class="col-lg-4 col-md-10 col-sm-10 col-xs-10 col-xs-offset-1 margin-bottom-10">
-            <input type="text" name="search_name" id="search_name" ng-model="search_name" ng-change="search_event()" class="search-query" placeholder="Search" style="padding-left: 60px;">
-            <span class="glyphicon glyphicon-search manual-glyphicon"></span>
-          </div>
-          <div class="col-lg-3 col-lg-offset-0 col-md-5 col-sm-5 col-xs-10 col-xs-offset-1 margin-bottom-10">
-            <div class="dropdown">
-              <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-category select-list">
+    <div class="container search-div">
+        <div class="row">
+            <div class="row">
+                <form class="search" accept-charset="UTF-8" role="form" name="event_form" novalidate>
+                    <div class="col-lg-4 col-md-10 col-sm-10 col-xs-10 col-xs-offset-1 margin-bottom-10">
+                        <input type="text" name="search_name" id="search_name" ng-model="search_name" ng-change="search_event()" class="search-query" placeholder="Search" style="padding-left: 60px;">
+                        <span class="glyphicon glyphicon-search manual-glyphicon"></span>
+                    </div>
+                    <div class="col-lg-3 col-lg-offset-0 col-md-5 col-sm-5 col-xs-10 col-xs-offset-1 margin-bottom-10">
+                        <div class="dropdown">
+                            <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-category select-list">
                 {{selectedCategory}} <span class="caret"></span>
               </a>
-              <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                <li class="dropdown-submenu">
-                  Music
-                  <ul class="dropdown-menu">
-                    <li ng-click="changeCategory('Concert')">Concert</li>
-                    <li ng-click="changeCategory('Festival')">Festival</li>
-                  </ul>
-                </li>
-                <li ng-click="changeCategory('Nightlife')">Nightlife</li>
-                <li class="dropdown-submenu">
-                  Food
-                  <ul class="dropdown-menu">
-                    <li ng-click="changeCategory('Tasting')">Tasting</li>
-                    <li ng-click="changeCategory('Festival')">Festival</li>
-                  </ul>
-                </li>
-                <li ng-click="changeCategory('Entertainment')">Entertainment</li>
-                <li class="dropdown-submenu">
-                  Sports
-                  <ul class="dropdown-menu">
-                    <li ng-click="changeCategory('Fitness')">Fitness</li>
-                    <li ng-click="changeCategory('Class')">Class</li>
-                  </ul>
-                </li>
-                <li ng-click="changeCategory('Outdoors')">Outdoors</li>
-                <li ng-click="changeCategory('Conferences')">Conferences</li>
-                <li class="dropdown-submenu">
-                  Community
-                  <ul class="dropdown-menu">
-                    <li ng-click="changeCategory('Meetups')">Meetups</li>
-                    <li ng-click="changeCategory('Networking')">Networking</li>
-                  </ul>
-                </li>
-                <li ng-click="changeCategory('Start Ups')">Start Ups</li>
-                <li class="dropdown-submenu">
-                  Non Profit
-                  <ul class="dropdown-menu">
-                    <li ng-click="changeCategory('Charity')">Charity</li>
-                    <li ng-click="changeCategory('Fund Raising')">Fund Raising</li>
-                  </ul>
-                </li>
-                <li ng-click="changeCategory('Arts')">Arts</li>
-                <li ng-click="changeCategory('Theater')">Theater</li>
-                <li ng-click="changeCategory('Other')">Other</li>
-              </ul>
+                            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                <li class="dropdown-submenu">
+                                    Music
+                                    <ul class="dropdown-menu">
+                                        <li ng-click="changeCategory('Concert')">Concert</li>
+                                        <li ng-click="changeCategory('Festival')">Festival</li>
+                                    </ul>
+                                </li>
+                                <li ng-click="changeCategory('Nightlife')">Nightlife</li>
+                                <li class="dropdown-submenu">
+                                    Food
+                                    <ul class="dropdown-menu">
+                                        <li ng-click="changeCategory('Tasting')">Tasting</li>
+                                        <li ng-click="changeCategory('Festival')">Festival</li>
+                                    </ul>
+                                </li>
+                                <li ng-click="changeCategory('Entertainment')">Entertainment</li>
+                                <li class="dropdown-submenu">
+                                    Sports
+                                    <ul class="dropdown-menu">
+                                        <li ng-click="changeCategory('Fitness')">Fitness</li>
+                                        <li ng-click="changeCategory('Class')">Class</li>
+                                    </ul>
+                                </li>
+                                <li ng-click="changeCategory('Outdoors')">Outdoors</li>
+                                <li ng-click="changeCategory('Conferences')">Conferences</li>
+                                <li class="dropdown-submenu">
+                                    Community
+                                    <ul class="dropdown-menu">
+                                        <li ng-click="changeCategory('Meetups')">Meetups</li>
+                                        <li ng-click="changeCategory('Networking')">Networking</li>
+                                    </ul>
+                                </li>
+                                <li ng-click="changeCategory('Start Ups')">Start Ups</li>
+                                <li class="dropdown-submenu">
+                                    Non Profit
+                                    <ul class="dropdown-menu">
+                                        <li ng-click="changeCategory('Charity')">Charity</li>
+                                        <li ng-click="changeCategory('Fund Raising')">Fund Raising</li>
+                                    </ul>
+                                </li>
+                                <li ng-click="changeCategory('Arts')">Arts</li>
+                                <li ng-click="changeCategory('Theater')">Theater</li>
+                                <li ng-click="changeCategory('Other')">Other</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-5 col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1 margin-bottom-10">
+                        <input type="text" name="location" id="location" ng-model="location" placeholder="Location" style="background: none;" ng-change="search_event()">
+                    </div>
+                </form>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-5 col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1 margin-bottom-10">
-            <input type="text" name="location" id="location" ng-model="location" placeholder="Location" style="background: none;" ng-change="search_event()">
-          </div>       
-        </form>
-      </div>
-      <div class="col-lg-12 text-center shop-title-store">
-        <h1 class="section-title">EVENT'S NEAR YOU</h1>
-      </div>
-      <!--List Product-->
-      <div id="cbp-vm" class="col-md-12 col-sm-12 col-xs-12 shop-prod active">
-        <ul id="product" class="nav-pills nav-stacked rectangle-list">
-          <a href="#/venue_profile">
-            <li class="col-lg-3 col-md-4 col-sm-4 col-xs-12" ng-repeat="event in search_events">
-              <div class="shop-img  services-box-black">
-                <div class="store-img-div box-image-div">
-                  <img ng-src="{{event.event_image}}" class="box-image img-responsive" />
-                  <span class="performance">
+            <div class="col-lg-12 text-center shop-title-store">
+                <h1 class="section-title">EVENT'S NEAR YOU</h1>
+            </div>
+            <!--List Product-->
+            <div id="cbp-vm" class="col-md-12 col-sm-12 col-xs-12 shop-prod active">
+                <ul id="product" class="nav-pills nav-stacked rectangle-list">
+                    <a href="#/venue_profile">
+                        <li class="col-lg-3 col-md-4 col-sm-4 col-xs-12" ng-repeat="event in search_events">
+                            <div class="shop-img  services-box-black">
+                                <div class="store-img-div box-image-div">
+                                    <img ng-src="{{event.event_image}}" class="box-image img-responsive" />
+                                    <span class="performance">
                     <span>{{convertDate(event.event_start_date) | date:'MMM'}}<br>{{convertDate(event.event_start_date) | date:'d'}}</span>
-                  </span>
-                </div>
-                <div class="store-content-div">
-                  <p class="content">{{event.event_name}}</p>
-                  <p class="stadium">{{event.event_name}}</p>
-                  <p class="location">{{event.venue_city}}, {{event.state}}</p>
-                </div>
-                <a class="btn btn-block trans-buy-button" href="#/event">
-                BUY NOW</a>                      
-              </div>
-            </li>
-          </a>
-        </ul>  
-      </div>
-    </div>
-    <div class=" text-center">
-      <a href="#" class="btn btn-default btn-lg browse">
+                                    </span>
+                                </div>
+                                <div class="store-content-div">
+                                    <p class="content">{{event.event_name}}</p>
+                                    <p class="stadium">{{event.event_name}}</p>
+                                    <p class="location">{{event.venue_city}}, {{event.state}}</p>
+                                </div>
+                                <a class="btn btn-block trans-buy-button" ng-click="loadBuyTicket(event.id)">BUY NOW</a>
+                            </div>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <div class=" text-center">
+            <a href="#" class="btn btn-default btn-lg browse">
       BROWSE MORE</a>
-    </div> 
-  </div>
-  <!-- /.container -->
+        </div>
+    </div>
+    <!-- /.container -->
 </div>
 
 <div ng-include="'view/templates/footer.html'"></div>
