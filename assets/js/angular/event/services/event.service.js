@@ -3,7 +3,9 @@ angular.module('app.event')
 
         var Event = {
             event_details: function(data) {
-                return $http.get('http://staging.ticketvow.com/api/event/' + data);
+                return $http.get('http://staging.ticketvow.com/api/event/' + data).success(function(res) {
+                    Organizer = res.data;
+                })
             },
 
             /*event_category: function(data) {

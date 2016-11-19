@@ -1,5 +1,5 @@
 angular.module('app.venue')
-    .controller('VenueController', function($scope, $location, $cookies, VenueService) {
+    .controller('VenueController', function($rootScope, $scope, $location, $cookies, VenueService) {
 
         var myStore = new store();
 
@@ -19,8 +19,11 @@ angular.module('app.venue')
         }
 
         $scope.get_venue_detail = function() {
+            $scope.venue_id = ($rootScope.venue_id && $rootScope.venue_id != '') ? $rootScope.venue_id : '';
+            $rootScope.venue_id = '';
+
             var venueData = {
-                id: 0 //$scope.v_id
+                id: $scope.venue_id
             };
 
             VenueService.get_venue_detail(venueData).then(function(response) {
