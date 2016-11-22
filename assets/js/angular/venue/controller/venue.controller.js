@@ -50,6 +50,12 @@ angular.module('app.venue')
             $location.path('/event_details');
         }
 
+        // Event handler for Load Buy Ticket
+        $scope.loadBuyTicket = function(event_id = 0) {
+            $rootScope.event_id = event_id;
+            $location.path('/buy_ticket');
+        }
+
         $scope.init();
 
     });

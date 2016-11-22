@@ -80,6 +80,7 @@ angular.module('app.event')
         $scope.search_event();
     }
 
+    // Event handler for Load Buy Ticket
     $scope.loadBuyTicket = function(event_id = 0) {
         $rootScope.event_id = event_id;
         $location.path('/buy_ticket');

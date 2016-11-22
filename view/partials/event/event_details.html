@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <p class="p-center p-blue">
-                                <a class="btn" ng-click="venue_profile(venue.id)">{{datas.venue.name}}</a>
+                                <a class="btn" ng-click="venue_profile(datas.venue.id)">{{datas.venue.name}}</a>
                             </p>
                             <p class="p-center">{{datas.venue.address}}</p>
                             <p class="p-center">{{datas.venue.city}}, {{datas.venue.state}}</p>
@@ -118,12 +118,12 @@
                                 <div class="home-content-div">
                                     <div class="profile-div">
                                         <p class="p-date">{{event.start_date}}</p>
-                                        <p class="p-spec p-blue"><a href="#/venue_profile">{{event.name}}</a></p>
+                                        <p class="p-spec p-blue"><a ng-click="venue_profile(datas.venue.id)">{{event.name}}</a></p>
                                         <p class="p-name">{{event.address}}</p>
                                     </div>
 
                                     <div class="buy-btn-div">
-                                        <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="loadBuyTicket(event.num)">BUY TICKETS</a>
+                                        <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="loadBuyTicket(event.id)">BUY TICKETS</a>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
