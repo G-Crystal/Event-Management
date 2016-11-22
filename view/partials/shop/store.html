@@ -88,24 +88,22 @@
             <!--List Product-->
             <div id="cbp-vm" class="col-md-12 col-sm-12 col-xs-12 shop-prod active">
                 <ul id="product" class="nav-pills nav-stacked rectangle-list">
-                    <a href="#/venue_profile">
-                        <li class="col-lg-3 col-md-4 col-sm-4 col-xs-12" ng-repeat="event in search_events">
-                            <div class="shop-img  services-box-black">
-                                <div class="store-img-div box-image-div">
-                                    <img ng-src="{{event.event_image}}" class="box-image img-responsive" />
-                                    <span class="performance">
-                    <span>{{convertDate(event.event_start_date) | date:'MMM'}}<br>{{convertDate(event.event_start_date) | date:'d'}}</span>
-                                    </span>
-                                </div>
-                                <div class="store-content-div">
-                                    <p class="content">{{event.event_name}}</p>
-                                    <p class="stadium">{{event.event_name}}</p>
-                                    <p class="location">{{event.venue_city}}, {{event.state}}</p>
-                                </div>
-                                <a class="btn btn-block trans-buy-button" ng-click="loadBuyTicket(event.id)">BUY NOW</a>
+                    <li class="col-lg-3 col-md-4 col-sm-4 col-xs-12" ng-repeat="event in search_events">
+                        <div class="shop-img services-box-black hover-div" ng-click="venue_profile(event.venue_id)">
+                            <div class="store-img-div box-image-div">
+                                <img ng-src="{{event.event_image}}" class="box-image img-responsive" />
+                                <span class="performance">
+                                    <span>{{convertDate(event.event_start_date) | date:'MMM'}}<br>{{convertDate(event.event_start_date) | date:'d'}}</span>
+                                </span>
                             </div>
-                        </li>
-                    </a>
+                            <div class="store-content-div">
+                                <p class="content">{{event.event_name}}</p>
+                                <p class="stadium">{{event.event_name}}</p>
+                                <p class="location">{{event.venue_city}}, {{event.state}}</p>
+                            </div>
+                            <span class="btn btn-block trans-buy-button" ng-click="loadBuyTicket(event.id)">BUY NOW</span>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -162,6 +162,12 @@ angular.module('app.event')
         $location.path('/buy_ticket');
     }
 
+    // Event handler for Link of Venue Deail
+    $scope.venue_profile = function(venue_id = '') {
+        $rootScope.venue_id = venue_id;
+        $location.path('/venue_profile');
+    }
+
     // change Category event handler
     $scope.changeCategory = function(selectedCategory) {
         $scope.selectedCategory = selectedCategory;
