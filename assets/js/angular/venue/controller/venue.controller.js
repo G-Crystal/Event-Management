@@ -3,6 +3,7 @@ angular.module('app.venue')
 
         var myStore = new store();
 
+        // Initialize
         $scope.init = function() {
             if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
                 $scope.logout();
@@ -13,11 +14,13 @@ angular.module('app.venue')
             $scope.events = myStore.events;
         };
 
+        // Log out
         $scope.logout = function() {
             $cookies.token = '';
             $location.path('/log_in');
         }
 
+        // Get Venue Details
         $scope.get_venue_detail = function() {
             $scope.venue_id = ($rootScope.venue_id && $rootScope.venue_id != '') ? $rootScope.venue_id : '';
             $rootScope.venue_id = '';
@@ -30,16 +33,22 @@ angular.module('app.venue')
                 var data = response.data;
                 console.log(data.message);
                 if (data.status_code == 200) {
-
+                    $scope.datas = data.data;
                 } else if (data.status_code == 101) {
                     $scope.logout();
                 } else {
-
+                    $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
                 }
             }).catch(function(error) {
                 console.log(error);
             });
         };
+
+        // Event handler for Link of Event Deail
+        $scope.event_details = function(event_id = '') {
+            $rootScope.event_id = event_id;
+            $location.path('/event_details');
+        }
 
         $scope.init();
 

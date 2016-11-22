@@ -3,7 +3,7 @@
     <!--visible animated fadeInUp-->
     <div class="container-fluid header-image-div">
         <div class="home-img-div">
-            <div class="home6-back-img home-back-img-common"><span class="header-txt">BOGART'S COLISIUM ARENA</span></div>
+            <div class="home6-back-img home-back-img-common"><span class="header-txt">{{datas.name}}</span></div>
         </div>
     </div>
 
@@ -18,9 +18,9 @@
                 <div class="container">
                     <div class="row aboutus">
                         <div class="col-lg-10 col-md-10 col-sm-9 col-xs-9">
-                            <h3>2621 Vine St.</h3>
-                            <h3>Cincinnati, OH, USA</h3>
-                            <h3>45014</h3>
+                            <h3>{{datas.address}}</h3>
+                            <h3>{{datas.city}}, {{datas.state}}, {{datas.country}}</h3>
+                            <h3>{{datas.zipcode}}</h3>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
                             <a class="btn social-link facebook" href="#" target="_blank"></a>
@@ -38,28 +38,26 @@
             <!--List Event-->
             <div id="cbp-vm" class="col-md-12 col-sm-12 col-xs-12 shop-prod active">
                 <ul id="event" class="nav-pills nav-stacked rectangle-list">
-                    <li class="col-xs-12" ng-repeat="event in events">
-                        <div class="shop-img home-box-black row">
-                            <a href="#/event_details">
-                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 box-image-div">
-                                    <img ng-src="assets/images/store/{{event.src}}" alt="{{event.name}}" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box-image img-responsive" />
-                                </div>
-                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
-                                    <p class="p-title">{{event.title}}</p>
-                                    <div class="home-content-div">
-                                        <div class="profile-div">
-                                            <p class="p-date">{{event.date}}</p>
-                                            <p class="p-spec p-blue"><a href="#/venue_profile">{{event.spec}}</a></p>
-                                            <p class="p-name">{{event.name}}</p>
-                                        </div>
-
-                                        <div class="buy-btn-div">
-                                            <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="loadBuyTicket(event.num)">BUY TICKETS</a>
-                                        </div>
-                                        <div class="clearfix"></div>
+                    <li class="col-xs-12" ng-repeat="event in datas.upcoming_events">
+                        <div class="shop-img home-box-black row hover-div" ng-click="event_details(event.id)">
+                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 box-image-div">
+                                <img ng-src="{{event.event_image}}" alt="{{event.event_name}}" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box-image img-responsive" />
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                                <p class="p-title">{{event.event_name}}</p>
+                                <div class="home-content-div">
+                                    <div class="profile-div">
+                                        <p class="p-date">{{event.start_date}}</p>
+                                        <p class="p-name">{{event.end_date}}</p>
+                                        <p class="p-spec p-blue">{{event.event_name}}</p>
                                     </div>
+
+                                    <div class="buy-btn-div">
+                                        <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="loadBuyTicket(event.num)">BUY TICKETS</a>
+                                    </div>
+                                    <div class="clearfix"></div>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                     </li>
                 </ul>

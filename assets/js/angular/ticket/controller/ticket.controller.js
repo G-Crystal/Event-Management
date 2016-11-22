@@ -193,7 +193,7 @@ angular.module('app.ticket')
             var data = response.data;
             console.log(data);
             if (data.status_code == 200) {
-
+                $scope = data.data;
             } else if (data.status_code == 101) {
                 $scope.logout();
                 $modalInstance.close();
