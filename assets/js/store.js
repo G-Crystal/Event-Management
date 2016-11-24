@@ -511,8 +511,8 @@ function store() {
   ];
 
   this.ticket_type = [
-    { value: 0, name: 'free' },
-    { value: 1, name: 'paid' }
+    { value: 0, name: 'Free' },
+    { value: 1, name: 'Paid' }
   ];
 
   this.delivery_type = [

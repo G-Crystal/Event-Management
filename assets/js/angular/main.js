@@ -415,16 +415,6 @@ angular.module('angula').controller('LMenuController', function($scope, $locatio
 
 });
 
-angular.module('angula').controller('OrderController', function($scope, $document) {
-
-    $scope.save = function() {}
-
-    $scope.refundOrder = function() {}
-
-    $scope.resendTicket = function() {}
-
-})
-
 angular.module('angula').controller('AdminController', function($scope) {
 
     $scope.add_talent = function() {}

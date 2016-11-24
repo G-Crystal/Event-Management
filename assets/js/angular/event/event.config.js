@@ -1,4 +1,4 @@
-angular.module('app.event', ['ngAnimate', 'ui.bootstrap'])
+angular.module('app.event', ['ngAnimate', 'ui.bootstrap', 'angularTrix'])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider
             .when('/create_event', {

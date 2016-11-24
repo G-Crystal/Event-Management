@@ -1,4 +1,4 @@
-angular.module('app.ticket', [])
+angular.module('app.ticket', ['angularTrix'])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider
             .when('/buy_ticket', {

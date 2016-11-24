@@ -1,18 +1,25 @@
 angular.module('app.order')
-  .controller('OrderController', function ($scope, $http, $location, $cookies, OrderService) {
-    
-    $scope.init = function() {
-      if(typeof($cookies.token) == 'undefined' || $cookies.token == '') {
-        $scope.logout();
-        return false;
-      }
-    };
+    .controller('OrderController', function($scope, $http, $location, $cookies, OrderService) {
 
-    $scope.logout = function() {
-      $cookies.token = '';
-      $location.path('/log_in');
-    }
+        $scope.init = function() {
+            if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+                $scope.logout();
+                return false;
+            }
+        };
 
-    $scope.init();
+        $scope.logout = function() {
+            $cookies.token = '';
+            $location.path('/log_in');
+        }
 
-});
+        $scope.save = function() {}
+
+        $scope.refundOrder = function() {}
+
+        $scope.resendTicket = function() {}
+
+        $scope.init();
+
+        $scope.trix = "<div>asd</div>";
+    });
