@@ -342,6 +342,20 @@ angular.module('app.event')
         $scope.get_ticket_by_event();
     }
 
+    $scope.editorConfig = {
+        btns: [
+            ['viewHTML'],
+            ['undo', 'redo'],
+            ['formatting'],
+            'btnGrp-design', ['link'],
+            ['image'],
+            'btnGrp-justify',
+            'btnGrp-lists', ['foreColor', 'backColor'],
+            ['preformatted'],
+            ['horizontalRule']
+        ]
+    };
+
     /*$scope.event_category = function () {
       var eventData = {
       };
@@ -562,5 +576,4 @@ angular.module('app.event')
     };
 
     $scope.init();
-
 });

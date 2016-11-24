@@ -152,6 +152,20 @@ angular.module('app.ticket')
         $scope.delivery_types = myStore.delivery_type;
 
         $scope.get_ticket_detail();
+    }
+
+    $scope.editorConfig = {
+        btns: [
+            ['viewHTML'],
+            ['undo', 'redo'],
+            ['formatting'],
+            'btnGrp-design', ['link'],
+            ['image'],
+            'btnGrp-justify',
+            'btnGrp-lists', ['foreColor', 'backColor'],
+            ['preformatted'],
+            ['horizontalRule']
+        ]
     };
 
     $scope.logout = function() {
@@ -167,7 +181,16 @@ angular.module('app.ticket')
             var data = response.data;
             console.log(data.message);
             if (data.status_code == 200) {
-                $scope = data.data;
+                $scope.formData = data.data;
+
+                angular.forEach($scope.ticket_types, function(ticket_type) {
+                    if (ticket_type.name == $scope.formData.ticket_type)
+                        $scope.formData.ticket_type = ticket_type;
+                });
+                angular.forEach($scope.delivery_types, function(delivery_type) {
+                    if (delivery_type.name == $scope.formData.deliver_type)
+                        $scope.formData.delivery_type = delivery_type;
+                });
             } else if (data.status_code == 101) {
                 $scope.logout();
             } else {
@@ -180,13 +203,13 @@ angular.module('app.ticket')
 
     $scope.edit_ticket = function() {
         var ticketData = {
-            editTicketId: $scope.ticket_id,
-            ticket_name: $scope.ticket_name,
-            quantity: $scope.quantity,
-            ticket_description: $scope.description,
-            delivery_type: $scope.delivery_type,
-            ticket_type: $scope.ticket_type,
-            ticket_cost: $scope.price
+            editTicketId: $scope.formData.id,
+            ticket_name: $scope.formData.ticket_name,
+            quantity: $scope.formData.quantity,
+            ticket_description: $scope.formData.ticket_description,
+            delivery_type: $scope.formData.delivery_type.name,
+            ticket_type: $scope.formData.ticket_type.name,
+            ticket_cost: $scope.formData.ticket_cost
         };
 
         TicketService.edit_ticket(ticketData).then(function(response) {
@@ -196,13 +219,14 @@ angular.module('app.ticket')
                 $scope = data.data;
             } else if (data.status_code == 101) {
                 $scope.logout();
-                $modalInstance.close();
             } else {
                 $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
             }
         }).catch(function(error) {
             console.log(error);
         });
+
+        $modalInstance.close();
     };
 
     $scope.init();
