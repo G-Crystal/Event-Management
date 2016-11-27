@@ -3,16 +3,12 @@ angular.module('app.event')
 // Controller for Event Detail page
 .controller('EventDetailController', function($rootScope, $scope, $http, $location, $cookies, EventService) {
 
-    var selectedCategory;
-
     // Initialize
     $scope.init = function() {
         if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
             $scope.logout();
             return false;
         }
-
-        $scope.selectedCategory = 'Select category';
 
         $scope.load_datas();
     };
@@ -30,11 +26,6 @@ angular.module('app.event')
         $rootScope.event_id = '';
 
         $scope.load_event_detail();
-    }
-
-    // Convert Date format from Date string
-    $scope.convertDate = function(datestr) {
-        return new Date(datestr);
     }
 
     // Load Event Detail
@@ -56,12 +47,6 @@ angular.module('app.event')
         });
     }
 
-    // Event handler for Link of Event Detail
-    $scope.event_details = function(event_id = '') {
-        $rootScope.event_id = event_id;
-        $location.path('/event_details');
-    }
-
     // Event handler for Link of Venue Deail
     $scope.venue_profile = function(venue_id = '') {
         $rootScope.venue_id = venue_id;
@@ -72,12 +57,6 @@ angular.module('app.event')
     $scope.talent_profile = function(talent_id = '') {
         $rootScope.talent_id = talent_id;
         $location.path('/talent_profile');
-    }
-
-    // Event handler for Change Event Category
-    $scope.changeCategory = function(selectedCategory) {
-        $scope.selectedCategory = selectedCategory;
-        $scope.search_event();
     }
 
     // Event handler for Load Buy Ticket
@@ -187,8 +166,6 @@ angular.module('app.event')
 // Controller for Upcoming Event page
 .controller('UpcomingEventController', function($rootScope, $scope, $http, $location, $cookies, $modal, EventService) {
 
-    var selectedCategory;
-
     // Initialize
     $scope.init = function() {
         if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
@@ -251,8 +228,6 @@ angular.module('app.event')
 
 // Controller for Past Event page
 .controller('PastEventController', function($rootScope, $scope, $http, $location, $cookies, EventService) {
-
-    var selectedCategory;
 
     // Initialize
     $scope.init = function() {
@@ -531,7 +506,6 @@ angular.module('app.event')
 
     $scope.changeCategory = function(selectedCategory) {
         $scope.selectedCategory = selectedCategory;
-        $scope.search_event();
     };
 
     $scope.init();
@@ -573,7 +547,6 @@ angular.module('app.event')
             var event_id = $rootScope.event_id;
             $rootScope.event_id = '';
         }
-        $scope.get_ticket_by_event();
     }
 
     // Load Search Event
