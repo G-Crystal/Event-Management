@@ -1,5 +1,5 @@
 angular.module('app.talent')
-    .controller('TalentController', function($scope, $cookies, TalentService) {
+    .controller('AddTalentController', function($scope, $cookies, TalentService) {
 
         var myStore = new store();
 
@@ -8,8 +8,6 @@ angular.module('app.talent')
                 $scope.logout();
                 return false;
             }
-
-            $scope.events = myStore.events;
         };
 
         $scope.logout = function() {
@@ -63,6 +61,49 @@ angular.module('app.talent')
         };
 
         $scope.init();
-        // $scope.search_talent();
+    })
 
-    });
+    .controller('TalentProfileController', function($rootScope, $scope, $cookies, TalentService) {
+
+        var myStore = new store();
+
+        $scope.init = function() {
+            if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+                $scope.logout();
+                return false;
+            }
+
+            $scope.events = myStore.events;
+            $scope.talent_profile();
+        };
+
+        $scope.logout = function() {
+            $cookies.token = '';
+            $location.path('/log_in');
+        }
+
+        $scope.talent_profile = function() {
+            $scope.talent_id = ($rootScope.talent_id && $rootScope.talent_id != '') ? $rootScope.talent_id : '';
+            $rootScope.venue_id = '';
+
+            var talentData = {
+                id: $scope.talent_id
+            };
+
+            TalentService.get_talent_detail(talentData).then(function(response) {
+                var data = response.data;
+                console.log(data.message);
+                if (data.status_code == 200) {
+                    $scope.datas = data.data;
+                } else if (data.status_code == 101) {
+                    $scope.logout();
+                } else {
+                    $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+                }
+            }).catch(function(error) {
+                console.log(error);
+            });
+        };
+
+        $scope.init();
+    });    

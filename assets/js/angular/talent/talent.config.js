@@ -3,10 +3,10 @@ angular.module('app.talent', [])
     $routeProvider
       .when('/add_talents', {
         templateUrl: 'view/partials/talent/add_talent.html',
-        controller: 'TalentController'
+        controller: 'AddTalentController'
       })
       .when('/talent_profile', {
         templateUrl: 'view/partials/talent/talent_profile.html',
-        controller: 'TalentController'
+        controller: 'TalentProfileController'
       });
   }])
