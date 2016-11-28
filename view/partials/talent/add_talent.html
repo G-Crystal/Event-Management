@@ -2,74 +2,99 @@
 
 <div id="demo" class="home1">
 
-  <!--visible animated fadeInUp-->
-  <div class="container">
-    <div class="menubar-div row">
-      <div class="description-title-div col-lg-12">
-        <div class="row">
-          <div class="col-md-2 col-sm-2 col-xs-12">
-            <label for="input1" class="label-name required">Name</label>
-          </div>
-          <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-            <input type="text" name="talent_name" placeholder="Enter Talent Name" class="form-control" id="talent_name" maxlength="30">
-          </div>
-          <div class="col-md-2 col-sm-2 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-            <label for="input1" class="label-comment">0 of 30</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2 col-sm-2 col-xs-12">
-            <label for="input10" class="label-name">Bio</label>
-          </div>
-          <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-            <div class="wysiwig-editor">
-              <trix-editor name="talent_biography" id="talent_biography" angular-trix ng-model="foo" class="trix-content"></trix-editor>
+    <!--visible animated fadeInUp-->
+    <div class="container">
+        <div class="menubar-div row">
+            <div class="description-title-div col-lg-12">
+                <form accept-charset="UTF-8" role="form" name="talent_form" method="post" enctype="multipart/form-data" novalidate>
+                    <div class="row" ng-class="{ 'has-error' : talent_form.talent_name.$invalid && !talent_form.talent_name.$pristine }">
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <label for="input1" class="label-name required">Name</label>
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <input type="text" name="talent_name" placeholder="Enter Talent Name" class="form-control" id="talent_name" maxlength="50" ng-model="talent_name" required>
+                            <span ng-show="talent_form.talent_name.$invalid && !talent_form.talent_name.$pristine">Event name is required.</span>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <label for="input1" class="label-comment">0 of 50</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <label for="input10" class="label-name">Bio</label>
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <div trumbowyg-ng ng-model="talent_biography" editor-config="editorConfig"></div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <label for="input10" class="label-comment">0 of 1000</label>
+                        </div>
+                    </div>
+                    <div class="row" ng-class="{ 'has-error' : talent_form.profile_img.$invalid && !talent_form.profile_img.$pristine }">
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <label for="input5" class="label-name">Profile</label>
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <input type="file" ngf-select ng-model="profile_img" name="profile_img" id="profile_img" accept="image/*" ngf-min-width="500" ngf-max-size="5MB" ngf-min-height="500" required ngf-model-invalid="errorFile1" class="form-control file-uploader">
+                            <span ng-show="talent_form.profile_img.$error.maxSize">File too large {{errorFile1.size / 1000000|number:1}}MB: max 5M.</span>
+                            <span ng-show="talent_form.profile_img.$error.minWidth">Width must be greater than 500.</span>
+                            <span ng-show="talent_form.profile_img.$error.minHeight">Height must be greater than 500.</span>
+                            <img ng-show="talent_form.profile_img.$valid" ngf-thumbnail="profile_img" class="thumb_preview">
+                        </div>
+                    </div>
+                    <div class="row" ng-class="{ 'has-error' : talent_form.header_img.$invalid && !talent_form.header_img.$pristine }">
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <label for="input6" class="label-name">Header</label>
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <input type="file" ngf-select ng-model="header_img" name="header_img" id="header_img" accept="image/*" ngf-min-width="1500" ngf-max-size="5MB" ngf-min-height="500" required ngf-model-invalid="errorFile1" class="form-control file-uploader">
+                            <span ng-show="talent_form.header_img.$error.maxSize">File too large {{errorFile1.size / 1000000|number:1}}MB: max 5M.</span>
+                            <span ng-show="talent_form.header_img.$error.minWidth">Width must be greater than 1500.</span>
+                            <span ng-show="talent_form.header_img.$error.minHeight">Height must be greater than 500.</span>
+                            <img ng-show="talent_form.header_img.$valid" ngf-thumbnail="header_img" class="thumb_preview">
+                        </div>
+                    </div>
+                    <div class="row" ng-class="{ 'has-error' : talent_form.facebook_url.$invalid && !talent_form.facebook_url.$pristine }">
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <label for="input1" class="label-name">Facebook URL</label>
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <input type="url" name="facebook_url" placeholder="Enter Facebook URL" class="form-control" id="facebook_url" maxlength="50" ng-model="facebook_url">
+                            <span ng-show="talent_form.facebook_url.$invalid">Please enter valid URL.</span>
+                        </div>
+                    </div>
+                    <div class="row" ng-class="{ 'has-error' : talent_form.twitter_url.$invalid && !talent_form.twitter_url.$pristine }">
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <label for="input1" class="label-name">Twitter URL</label>
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <input type="url" name="twitter_url" placeholder="Enter Twitter URL" class="form-control" id="twitter_url" maxlength="50" ng-model="twitter_url">
+                            <span ng-show="talent_form.twitter_url.$invalid">Please enter valid URL.</span>
+                        </div>
+                    </div>
+                    <div class="row" ng-class="{ 'has-error' : talent_form.website_url.$invalid && !talent_form.website_url.$pristine }">
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <label for="input1" class="label-name">Website URL</label>
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <input type="url" name="website_url" placeholder="Enter Website URL" class="form-control" id="website_url" maxlength="50" ng-model="website_url">
+                            <span ng-show="talent_form.website_url.$invalid">Please enter valid URL.</span>
+                        </div>
+                    </div>
+                    <div class="row align-center row-height margin-top-10">
+                        <div class="col-xs-12">
+                            <alert ng-repeat="alert in alerts" type="{{alert.type}}" class="alert_message">{{alert.msg}}</alert>
+                        </div>
+                    </div>
+                    <div class="row store-down-bottom">
+                        <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="add_talent()" ng-disabled="talent_form.$invalid" style="right:15px;">Add</a>
+                    </div>
+                </form>
             </div>
-          </div>
-          <div class="col-md-2 col-sm-2 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-            <label for="input10" class="label-comment">0 of 1000</label>
-          </div>
         </div>
-        <div class="row">
-          <div class="col-md-2 col-sm-2 col-xs-12">
-            <label for="input5" class="label-name">Profile</label>
-          </div>
-          <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-            <input type="file" name="profile_img" class="form-control file-uploader" id="profile_img">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2 col-sm-2 col-xs-12">
-            <label for="input6" class="label-name">Header</label>
-          </div>
-          <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-            <input type="file" name="header_img" class="form-control file-uploader" id="header_img">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2 col-sm-2 col-xs-12">
-            <label for="input1" class="label-name">Twitter</label>
-          </div>
-          <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-            <input type="text" name="twitter_url" placeholder="Enter Twitter URL" class="form-control" id="twitter_url">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2 col-sm-2 col-xs-12">
-            <label for="input1" class="label-name">Facebook</label>
-          </div>
-          <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-            <input type="text" name="facebook_url" placeholder="Enter Facebook URL" class="form-control" id="facebook_url">
-          </div>
-        </div>
-        <div class="row store-down-bottom">
-          <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="add_talent()" style="right:15px;">Add</a>
-        </div>
-      </div>
+        <!-- /.row -->
     </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.container -->
+    <!-- /.container -->
 </div>
 
 <div ng-include="'view/templates/footer.html'"></div>

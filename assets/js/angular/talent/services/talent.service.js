@@ -4,7 +4,7 @@ angular.module('app.talent')
     var Talent = {
 
       talent_profile: function(data) {
-        return $http.get('http://staging.ticketvow.com/api/getTalentProfile', data).then(function (res) {
+        return $http.get('http://staging.ticketvow.com/api/getTalent/' + data.id).then(function (res) {
           Talent = res.data;
         })
       },

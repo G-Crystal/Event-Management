@@ -3,11 +3,6 @@ angular.module('app.ticket')
 
         var myStore = new store();
 
-        $scope.tickets = [
-            { ticket_name: 'GENERAL_ADMISSION', created_at: '$152.50', quantity: '' },
-            { ticket_name: 'MEET & GREAT', created_at: '$53.50', quantity: '' }
-        ];
-
         $scope.init = function() {
             if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
                 $scope.logout();
@@ -57,18 +52,22 @@ angular.module('app.ticket')
 
         // Event handler for Link of Event Detail
         $scope.buyTicket = function(event_id = '') {
+            var ticketarray = [];
             var quantityarray = [];
-            angular.forEach($scope.tickets, function(ticket) {
+            var deliveryarray = [];
+
+            angular.forEach($scope.datas.tickets, function(ticket) {
+                ticketarray.push(ticket.id);
                 quantityarray.push(ticket.quantity);
+                deliveryarray.push(ticket.deliver_type);
             });
-            console.log(quantityarray);
 
             var ticketData = {
                 token: $cookies.token,
                 event_id: event_id,
-                tickets: quantityarray,
+                tickets: ticketarray,
                 quantity: quantityarray,
-                delivery: quantityarray
+                delivery: deliveryarray
             };
 
             TicketService.buy_ticket(ticketData).then(function(response) {
@@ -140,20 +139,6 @@ angular.module('app.ticket')
 
     var myStore = new store();
 
-    $scope.init = function() {
-        if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
-            $scope.logout();
-            return false;
-        }
-
-        $scope.ticket_id = ($rootScope.ticket_id && $rootScope.ticket_id != '') ? $rootScope.ticket_id : '';
-        $rootScope.ticket_id = '';
-        $scope.ticket_types = myStore.ticket_type;
-        $scope.delivery_types = myStore.delivery_type;
-
-        $scope.get_ticket_detail();
-    }
-
     $scope.editorConfig = {
         btns: [
             ['viewHTML'],
@@ -167,6 +152,20 @@ angular.module('app.ticket')
             ['horizontalRule']
         ]
     };
+
+    $scope.init = function() {
+        if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+            $scope.logout();
+            return false;
+        }
+
+        $scope.ticket_id = ($rootScope.ticket_id && $rootScope.ticket_id != '') ? $rootScope.ticket_id : '';
+        $rootScope.ticket_id = '';
+        $scope.ticket_types = myStore.ticket_type;
+        $scope.delivery_types = myStore.delivery_type;
+
+        $scope.get_ticket_detail();
+    }
 
     $scope.logout = function() {
         $location.path('/log_in');

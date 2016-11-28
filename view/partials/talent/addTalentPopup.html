@@ -17,9 +17,7 @@
         <label for="input10" class="label-name">Bio</label>
       </div>
       <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-        <div class="wysiwig-editor">
-          <trix-editor name="talent_biography" id="talent_biography" angular-trix ng-model="talent_biography" class="trix-content"></trix-editor>
-        </div>
+        <div trumbowyg-ng ng-model="talent_biography" editor-config="editorConfig"></div>
       </div>
       <div class="col-md-2 col-sm-2 col-sm-offset-0 col-xs-11 col-xs-offset-1">
         <label for="input10" class="label-comment">0 of 1000</label>
