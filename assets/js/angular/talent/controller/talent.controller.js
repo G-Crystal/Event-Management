@@ -77,7 +77,7 @@ angular.module('app.talent')
         $scope.init();
     })
 
-.controller('TalentProfileController', function($rootScope, $scope, $cookies, TalentService) {
+.controller('TalentProfileController', function($rootScope, $scope, $location, $cookies, TalentService) {
 
     var myStore = new store();
 
@@ -104,7 +104,7 @@ angular.module('app.talent')
             id: $scope.talent_id
         };
 
-        TalentService.get_talent_detail(talentData).then(function(response) {
+        TalentService.talent_profile(talentData).then(function(response) {
             var data = response.data;
             console.log(data.message);
             if (data.status_code == 200) {
@@ -118,6 +118,18 @@ angular.module('app.talent')
             console.log(error);
         });
     };
+
+    // Buy Ticket event handler
+    $scope.loadBuyTicket = function(event_id = 0) {
+        $rootScope.event_id = event_id;
+        $location.path('/buy_ticket');
+    }
+
+    // Event handler for Link of Event Detail
+    $scope.event_details = function(event_id = '') {
+        $rootScope.event_id = event_id;
+        $location.path('/event_details');
+    }
 
     $scope.init();
 });
