@@ -139,20 +139,6 @@ angular.module('app.ticket')
 
     var myStore = new store();
 
-    $scope.init = function() {
-        if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
-            $scope.logout();
-            return false;
-        }
-
-        $scope.ticket_id = ($rootScope.ticket_id && $rootScope.ticket_id != '') ? $rootScope.ticket_id : '';
-        $rootScope.ticket_id = '';
-        $scope.ticket_types = myStore.ticket_type;
-        $scope.delivery_types = myStore.delivery_type;
-
-        $scope.get_ticket_detail();
-    }
-
     $scope.editorConfig = {
         btns: [
             ['viewHTML'],
@@ -166,6 +152,20 @@ angular.module('app.ticket')
             ['horizontalRule']
         ]
     };
+
+    $scope.init = function() {
+        if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+            $scope.logout();
+            return false;
+        }
+
+        $scope.ticket_id = ($rootScope.ticket_id && $rootScope.ticket_id != '') ? $rootScope.ticket_id : '';
+        $rootScope.ticket_id = '';
+        $scope.ticket_types = myStore.ticket_type;
+        $scope.delivery_types = myStore.delivery_type;
+
+        $scope.get_ticket_detail();
+    }
 
     $scope.logout = function() {
         $location.path('/log_in');

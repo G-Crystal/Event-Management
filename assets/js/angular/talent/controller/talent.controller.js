@@ -3,6 +3,20 @@ angular.module('app.talent')
 
         var myStore = new store();
 
+        $scope.editorConfig = {
+            btns: [
+                ['viewHTML'],
+                ['undo', 'redo'],
+                ['formatting'],
+                'btnGrp-design', ['link'],
+                ['image'],
+                'btnGrp-justify',
+                'btnGrp-lists', ['foreColor', 'backColor'],
+                ['preformatted'],
+                ['horizontalRule']
+            ]
+        };
+
         $scope.init = function() {
             if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
                 $scope.logout();
@@ -63,47 +77,47 @@ angular.module('app.talent')
         $scope.init();
     })
 
-    .controller('TalentProfileController', function($rootScope, $scope, $cookies, TalentService) {
+.controller('TalentProfileController', function($rootScope, $scope, $cookies, TalentService) {
 
-        var myStore = new store();
+    var myStore = new store();
 
-        $scope.init = function() {
-            if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
-                $scope.logout();
-                return false;
-            }
-
-            $scope.events = myStore.events;
-            $scope.talent_profile();
-        };
-
-        $scope.logout = function() {
-            $cookies.token = '';
-            $location.path('/log_in');
+    $scope.init = function() {
+        if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+            $scope.logout();
+            return false;
         }
 
-        $scope.talent_profile = function() {
-            $scope.talent_id = ($rootScope.talent_id && $rootScope.talent_id != '') ? $rootScope.talent_id : '';
-            $rootScope.venue_id = '';
+        $scope.events = myStore.events;
+        $scope.talent_profile();
+    };
 
-            var talentData = {
-                id: $scope.talent_id
-            };
+    $scope.logout = function() {
+        $cookies.token = '';
+        $location.path('/log_in');
+    }
 
-            TalentService.get_talent_detail(talentData).then(function(response) {
-                var data = response.data;
-                console.log(data.message);
-                if (data.status_code == 200) {
-                    $scope.datas = data.data;
-                } else if (data.status_code == 101) {
-                    $scope.logout();
-                } else {
-                    $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
-                }
-            }).catch(function(error) {
-                console.log(error);
-            });
+    $scope.talent_profile = function() {
+        $scope.talent_id = ($rootScope.talent_id && $rootScope.talent_id != '') ? $rootScope.talent_id : '';
+        $rootScope.venue_id = '';
+
+        var talentData = {
+            id: $scope.talent_id
         };
 
-        $scope.init();
-    });    
+        TalentService.get_talent_detail(talentData).then(function(response) {
+            var data = response.data;
+            console.log(data.message);
+            if (data.status_code == 200) {
+                $scope.datas = data.data;
+            } else if (data.status_code == 101) {
+                $scope.logout();
+            } else {
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+            }
+        }).catch(function(error) {
+            console.log(error);
+        });
+    };
+
+    $scope.init();
+});
