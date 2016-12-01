@@ -309,7 +309,7 @@ angular.module('angula').directive('owlcarousel', function() {
     var linker = function(scope, element, attr) {
         link: (scope, element, attr)
         $(element).owlCarousel({
-            autoPlay: false,
+            autoPlay: true,
             // "singleItem:true" is a shortcut for:
             items: 3,
             itemsCustom: false,

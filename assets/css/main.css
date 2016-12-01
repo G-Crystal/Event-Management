@@ -4698,10 +4698,10 @@ a.google:hover {
 .select-list {
     border: 1px solid #0000FF;
     border-radius: 4px;
-    height: 48px;
+    height: 36px;
     width: 100%;
     padding: 0 20px;
-    font-size: 21px;
+    font-size: 16px;
     font-weight: 200;
 }
 
@@ -4930,7 +4930,7 @@ img.thumb_preview {
 
 .btn-category {
     text-align: left;
-    line-height: 48px;
+    line-height: 36px;
 }
 
 .dropdown-submenu {
@@ -5583,12 +5583,12 @@ span.caret {
     box-sizing: border-box;
     border: 1px solid #0000FF;
     border-radius: 4px;
-    font-size: 21px;
+    font-size: 15px;
     font-weight: 200;
     background-color: white;
     background-position: 10px -1px;
     background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
+    padding: 6px 20px 6px 20px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
@@ -5598,7 +5598,7 @@ span.caret {
 }
 
 .search .glyphicon {
-    font-size: 26px;
+    font-size: 18px;
     color: #0000FF;
 }
 
