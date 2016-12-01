@@ -1,58 +1,58 @@
 <div id="demo" class="home1">
 
-  <!--visible animated fadeInUp-->
-  <div class="container-fluid login-container-div">
-    <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-      <div class="panel panel-default login-back-div">
-        <div class="login-header-div p-center">
-          <h3 class="panel-title">Log In</h3>
-        </div>
-        <div class="login-body-div">
-          <form accept-charset="UTF-8" role="form" name="login_form" novalidate>
-            <div class="row row-height" ng-class="{ 'has-error' : login_form.email.$invalid && !login_form.email.$pristine }">
-              <div class="col-sm-3 col-xs-12 align-left">
-                <label for="input3" class="label-name">Email</label>
-              </div>
-              <div class="col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-                <input type="email" name="email" ng-model="email" required placeholder="Enter Email" class="form-control" id="email">
-                <span ng-show="login_form.email.$invalid && !login_form.email.$pristine">Invalid email address.</span>
-              </div>
-            </div>
-            <div class="row row-height" ng-class="{ 'has-error' : login_form.password.$error.minlength }">
-              <div class="col-sm-3 col-xs-12 align-left">
-                <label for="input3" class="label-name">Password</label>
-              </div>
-              <div class="col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-                <input type="password" name="password" ng-model="password" ng-minlength="5" placeholder="Password" class="form-control" id="password" on-enter="login()">
-                <span ng-show="login_form.password.$error.minlength">Password must be at least 5 characters.</span>
-              </div>
-            </div>
-            <div class="row align-center row-height margin-top-10">
-              <div class="col-xs-12">
-                <alert ng-repeat="alert in alerts" type="{{alert.type}}" class="alert_message">{{alert.msg}}</alert>
-              </div>
-            </div>
-            <div class="row align-center row-height">
-              <div class="col-xs-12">
-                <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="login()" ng-disabled="login_form.$invalid">Login</a>
-              </div>
-            </div>
-          </form>
+    <!--visible animated fadeInUp-->
+    <div class="container-fluid login-container-div">
+        <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+            <div class="panel panel-default login-back-div">
+                <div class="login-header-div text-center">
+                    <h3 class="panel-title">Log In</h3>
+                </div>
+                <div class="login-body-div">
+                    <form accept-charset="UTF-8" role="form" name="login_form" novalidate>
+                        <div class="row row-height" ng-class="{ 'has-error' : login_form.email.$invalid && !login_form.email.$pristine }">
+                            <div class="col-sm-3 col-xs-12 align-left">
+                                <label for="input3" class="label-name">Email</label>
+                            </div>
+                            <div class="col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                                <input type="email" name="email" ng-model="email" required placeholder="Enter Email" class="form-control" id="email">
+                                <span ng-show="login_form.email.$invalid && !login_form.email.$pristine">Invalid email address.</span>
+                            </div>
+                        </div>
+                        <div class="row row-height" ng-class="{ 'has-error' : login_form.password.$error.minlength }">
+                            <div class="col-sm-3 col-xs-12 align-left">
+                                <label for="input3" class="label-name">Password</label>
+                            </div>
+                            <div class="col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                                <input type="password" name="password" ng-model="password" ng-minlength="5" placeholder="Password" class="form-control" id="password" on-enter="login()">
+                                <span ng-show="login_form.password.$error.minlength">Password must be at least 5 characters.</span>
+                            </div>
+                        </div>
+                        <div class="row align-center row-height margin-top-10">
+                            <div class="col-xs-12">
+                                <alert ng-repeat="alert in alerts" type="{{alert.type}}" class="alert_message">{{alert.msg}}</alert>
+                            </div>
+                        </div>
+                        <div class="row align-center row-height">
+                            <div class="col-xs-12">
+                                <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="login()" ng-disabled="login_form.$invalid">Login</a>
+                            </div>
+                        </div>
+                    </form>
 
-          <div class="row row-height p-center">
-            <div class="col-sm-6 col-xs-6">
-              <a class="btn btn-block login-link-label inline-buy-button" href="#/sign_up">Sign Up</a>
+                    <div class="row row-height text-center">
+                        <div class="col-sm-6 col-xs-6">
+                            <a class="btn btn-block login-link-label inline-buy-button" href="#/sign_up">Sign Up</a>
+                        </div>
+                        <div class="col-sm-6 col-xs-6">
+                            <a class="btn btn-block login-link-label inline-buy-button" href="#/reset">Forgot Password?</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-6 col-xs-6">
-              <a class="btn btn-block login-link-label inline-buy-button" href="#/reset">Forgot Password?</a>
-            </div>
-          </div>
         </div>
-      </div>
+        <!-- /.row -->
     </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.container -->
+    <!-- /.container -->
 </div>
 
 <div ng-include="'view/templates/footer.html'"></div>

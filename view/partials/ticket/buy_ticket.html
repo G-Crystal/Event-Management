@@ -47,21 +47,21 @@
                                 <tr>
                                     <th>Ticket Type</th>
                                     <th>Price</th>
-                                    <th class="p-center">Quantity</th>
+                                    <th class="text-center">Quantity</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="ticket in datas.tickets">
                                     <td>{{(ticket.ticket_type == 0) ? 'Free' : 'Paid'}}</td>
                                     <td>{{ticket.ticket_cost}}</td>
-                                    <td class="p-center">
+                                    <td class="text-center">
                                         <input type="number" min="0" step="1" class="spin-input" ng-model="ticket.quantity">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td></td>
                                     <td></td>
-                                    <td class="p-center">
+                                    <td class="text-center">
                                         <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="buyTicket(datas.id)">BUY NOW</a>
                                     </td>
                                 </tr>
