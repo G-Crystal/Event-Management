@@ -7608,12 +7608,11 @@ you can use the generic selector below, but it's slower:
 }
 
 .text-center .browse {
-    border: solid blue;
+    border: solid 1px blue;
     background: white;
     margin-bottom: 50px;
     color: #0000FF;
     font-weight: 200;
-    font-size: x-large;
 }
 
 .scroll-menu .account {
