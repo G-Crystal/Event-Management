@@ -119,4 +119,68 @@ angular.module('app.user')
 
     $scope.init();
 
+})
+
+.controller('ProfileController', function($scope, $location, $cookies, UserService) {
+
+    $scope.init = function() {
+        if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+            $scope.logout();
+            return false;
+        }
+
+        $scope.get_profile();
+    };
+
+    $scope.logout = function() {
+        $cookies.token = '';
+        $location.path('/log_in');
+    };
+
+    $scope.get_profile = function() {
+        var UserData = {};
+
+        UserService.get_profile(UserData).then(function(response) {
+            var data = response.data;
+            console.log('Get user profile: ' + data.message);
+            if (data.status_code == 200) {
+                $scope.formData = data.user;
+            } else if (data.status_code == 101) {
+                $scope.logout();
+            } else {
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+            }
+        }).catch(function(error) {
+            console.log(error);
+        });
+    };
+
+    $scope.update = function() {
+        var reqData = {
+            fname: $scope.formData.fname,
+            lname: $scope.formData.lname,
+            address: $scope.formData.address,
+            city: $scope.formData.city,
+            state: $scope.formData.state,
+            country: $scope.formData.country,
+            zipcode: $scope.formData.zipcode,
+            profile: $scope.formData.profile,
+            subscribe: 1
+        };
+
+        UserService.update_profile(reqData).then(function(data) {
+            if (data.status_code == 200) {
+
+            } else if (data.status_code == 101) {
+                $scope.logout();
+            } else {
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+            }
+        }).catch(function(error) {
+            $scope.alerts = [{ type: 'danger', msg: error }];
+        });
+    };
+
+    $scope.init();
+
 });
