@@ -23,14 +23,14 @@ angular.module('angula').config(['$routeProvider', function($routeProvider) {
     // User Menu
     // .when("/user_dashboard", { templateUrl: "view/partials/user/dashboard.html", controller: "HomeCtrl" })
     .when("/user_messages", { templateUrl: "view/partials/user/dashboard.html", controller: "HomeCtrl" })
-        .when("/user_profile_settings", { templateUrl: "view/partials/user/profile.html", controller: "HomeCtrl" })
+        // .when("/user_profile_settings", { templateUrl: "view/partials/user/profile.html", controller: "HomeCtrl" })
         .when("/user_password_settings", { templateUrl: "view/partials/user/update_password.html", controller: "HomeCtrl" })
         .when("/user_payments_settings", { templateUrl: "view/partials/user/payments.html", controller: "HomeCtrl" })
 
     // Admin Menu
     // .when("/create_event", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
     .when("/messages", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
-        .when("/profile_settings", { templateUrl: "view/partials/admin/profile.html", controller: "HomeCtrl" })
+        // .when("/profile_settings", { templateUrl: "view/partials/admin/profile.html", controller: "HomeCtrl" })
         .when("/password_settings", { templateUrl: "view/partials/admin/update_password.html", controller: "HomeCtrl" })
         .when("/payments_settings", { templateUrl: "view/partials/admin/payments.html", controller: "HomeCtrl" })
         .when("/event_order", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
@@ -94,7 +94,7 @@ angular.module('angula').controller('PageCtrl', function() {
 });
 
 /***Only for Preview ***/
-angular.module('angula').controller('ExampleController', ['$scope', '$location', function($scope, $location) {
+angular.module('angula').controller('MainController', ['$scope', '$location', '$cookies', function($scope, $location, $cookies) {
     $scope.templates = [
         { name: 'footer', url: 'view/templates/footer.html' }
     ];
@@ -150,6 +150,21 @@ angular.module('angula').controller('ExampleController', ['$scope', '$location',
     $scope.menu_click = function() {
         $scope.toggle_menu_flag = !$scope.toggle_menu_flag;
     };
+
+    $scope.is_login = function() {
+        return (typeof($cookies.token) == 'undefined' || $cookies.token == '') ? false : true;
+    }
+
+    $scope.myaccount_click = function() {
+        if ($scope.is_login())
+            $location.path('/profile_settings');
+        else
+            $location.path('/log_in');
+    }
+
+    $scope.browse_click = function() {
+        $location.path('/');
+    }
 }]);
 
 /***Only for Preview ***/

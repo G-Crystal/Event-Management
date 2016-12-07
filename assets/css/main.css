@@ -4646,10 +4646,6 @@ a.google:hover {
     letter-spacing: 1px;
 }
 
-.p-center {
-    text-align: center;
-}
-
 .p-blue {
     color: #0000FF;
 }
@@ -6791,7 +6787,7 @@ footer {
 }
 
 footer .top-footer-in {
-    padding: 80px 0;
+    padding: 20px 0;
 }
 
 ul.footer-menu li {
@@ -7612,12 +7608,11 @@ you can use the generic selector below, but it's slower:
 }
 
 .text-center .browse {
-    border: solid blue;
+    border: solid 1px blue;
     background: white;
     margin-bottom: 50px;
     color: #0000FF;
     font-weight: 200;
-    font-size: x-large;
 }
 
 .scroll-menu .account {
