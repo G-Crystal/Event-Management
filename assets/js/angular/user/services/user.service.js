@@ -33,7 +33,7 @@ angular.module('app.user')
             },
 
             update_profile: function() {
-                return $http.get('http://staging.ticketvow.com/api/updateProfile?token=' + $cookies.token).success(function(res) {
+                return $http.post('http://staging.ticketvow.com/api/updateProfile?token=' + $cookies.token).success(function(res) {
                     User = res.data;
                 })
             },

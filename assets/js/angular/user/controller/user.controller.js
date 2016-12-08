@@ -22,6 +22,8 @@ angular.module('app.user')
             UserService.login(loginData).then(function(data) {
                 if (data.status_code == 200) {
                     $cookies.token = data.token;
+                    $cookies.username = data.username;
+                    $cookies.profile = data.profile;
                     $location.path('/');
                 } else if (data.status_code == 101) {
                     $scope.logout();
@@ -121,7 +123,7 @@ angular.module('app.user')
 
 })
 
-.controller('ProfileController', function($scope, $location, $cookies, UserService) {
+.controller('ProfileController', function($scope, $location, $cookies, $modal, UserService) {
 
     $scope.init = function() {
         if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
@@ -178,6 +180,27 @@ angular.module('app.user')
             }
         }).catch(function(error) {
             $scope.alerts = [{ type: 'danger', msg: error }];
+        });
+    };
+
+    $scope.browse = function() {
+        var dimensions = { width: 500, height: 500 };
+        var modalInstance = $modal.open({
+            animation: true,
+            templateUrl: 'view/partials/browsePopup.html',
+            controller: 'LoadImageController',
+            size: 'lg',
+            resolve: {
+                dimensions: function() {
+                    return dimensions;
+                }
+            }
+        });
+
+        modalInstance.result.then(function(crop_image) {
+            $scope.formData.crop_image = crop_image;
+        }, function() {
+            console.log('Modal dismissed at: ' + new Date());
         });
     };
 

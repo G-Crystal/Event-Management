@@ -4769,7 +4769,7 @@ form.ng-valid {
 }
 
 .buy-header-div span {
-    padding-right: 20px;
+    padding: 0 10px;
     float: right;
     line-height: 45px;
 }
@@ -4781,6 +4781,8 @@ form.ng-valid {
 
 .img-header {
     margin-top: 5px;
+    width: 35px;
+    height: 35px;
 }
 
 div.content {
@@ -4898,7 +4900,6 @@ img.thumb_preview {
 
 #menu-toggle {
     color: #FFFFFF;
-    margin-left: 15px;
 }
 
 .file-uploader {

@@ -391,7 +391,7 @@ angular.module('angula').factory("DataService", function() {
     };
 });
 
-angular.module('angula').controller('LMenuController', function($scope, $location /*, $http */ ) {
+angular.module('angula').controller('LMenuController', function($scope, $location, $cookies) {
 
     $scope.getClass = function(path) {
         return ($location.path().substr(0, path.length) === path) ? 'active' : '';
@@ -418,12 +418,33 @@ angular.module('angula').controller('LMenuController', function($scope, $locatio
     };
 
     $scope.init = function() {
+        if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+            $scope.logout();
+            return false;
+        }
+
         var path = $location.$$path;
         $scope.toggle_events = (path.search('_events') < 0);
         $scope.toggle_order = (path.search('_order') < 0);
         $scope.toggle_talents = (path.search('_talents') < 0);
         $scope.toggle_report = (path.search('_report') < 0);
         $scope.toggle_settings = (path.search('_settings') < 0);
+
+        $scope.userinfo = [];
+        $scope.userinfo.username = $cookies.username;
+        $scope.userinfo.profile = $cookies.profile;
+    };
+
+    $scope.logout = function() {
+        $cookies.token = '';
+        $location.path('/log_in');
+    };
+
+    $scope.myaccount_click = function() {
+        if ($scope.is_login())
+            $location.path('/profile_settings');
+        else
+            $location.path('/log_in');
     };
 
     $scope.init();
@@ -434,4 +455,12 @@ angular.module('angula').controller('AdminController', function($scope) {
 
     $scope.add_talent = function() {}
 
-})
+});
+
+angular.module('angula').controller('LoadImageController', function($scope, $modalInstance, dimensions) {
+    $scope.dimensions = dimensions;
+
+    $scope.ok = function() {
+        $modalInstance.close(1);
+    };
+});
