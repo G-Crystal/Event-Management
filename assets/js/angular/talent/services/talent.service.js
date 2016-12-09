@@ -1,23 +1,23 @@
 angular.module('app.talent')
-  .factory('TalentService', function($http, $cookies) {
+    .factory('TalentService', function($http, $cookies) {
 
-    var Talent = {
+        var Talent = {
 
-      talent_profile: function(data) {
-        return $http.get('http://staging.ticketvow.com/api/getTalent/' + data.id).then(function (res) {
-          Talent = res.data;
-        })
-      },
+            talent_profile: function(data) {
+                return $http.get('http://staging.ticketvow.com/api/getTalent/' + data.id).then(function(res) {
+                    return Talent = res.data;
+                })
+            },
 
-      add_talent: function(data) {
-        return $http.post('http://staging.ticketvow.com/api/addTalent?token=' + $cookies.token, data);
-      },
+            add_talent: function(data) {
+                return $http.post('http://staging.ticketvow.com/api/addTalent?token=' + $cookies.token, data);
+            },
 
-      search_talent: function(data) {
-        return $http.post('http://staging.ticketvow.com/api/getSearchTalents', data);
-      },
+            search_talent: function(data) {
+                return $http.post('http://staging.ticketvow.com/api/getSearchTalents', data);
+            },
 
-    };
+        };
 
-    return Talent;
-  });
+        return Talent;
+    });

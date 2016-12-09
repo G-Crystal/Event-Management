@@ -1,0 +1,37 @@
+<div class="description-title-div ticket-block-div menubar-div">
+    <div class="row align-center row-height margin-top-10">
+        <div class="col-xs-12">
+            <alert ng-repeat="alert in alerts" type="{{alert.type}}" class="alert_message">{{alert.msg}}</alert>
+        </div>
+    </div>
+
+    <form accept-charset="UTF-8" role="form" name="crop_form" novalidate>
+        <div class="row">
+            <!--<input type="file" ng-model="image_src" accept="image/*" app-filereader />
+            <img ng-src="{{image.src}}" width="300" />{{image.src}}-->
+            <div class="col-sm-11" ng-class="{ 'has-error' : crop_form.ticket_name.$invalid && !crop_form.ticket_name.$pristine }">
+                <div class="col-xs-12">
+                    <canvas class="org-img-canvas" id="canvas" image-cropper image="cropper.sourceImage" cropped-image="cropper.croppedImage" crop-width="300" crop-height="200" keep-aspect="true" touch-radius="30" crop-area-bounds="bounds"></canvas>
+                    <!--<div mr-image mr-src="image_src" mr-max-width="image.maxWidth" mr-selector="selector" mr-drawer="drawer"></div>-->
+                </div>
+                <div class="col-xs-12">
+                    <span>Drag frame to adjust image</span>
+                </div>
+                <div class="col-xs-12">
+                    <input type="file" img-cropper-fileread image="cropper.sourceImage" class="form-control file-uploader" />
+                    <!--<input type="file" ng-model="image.src" class="form-control file-uploader" fileread="uploadme.src" />{{uploadme.src}}-->
+                </div>
+            </div>
+            <div class="col-sm-1 align-center">
+                <div class="col-xs-12">
+                    <!--<div ng-show="cropper.croppedImage!=null"><img ng-src="{{cropper.croppedImage}}" /></div>-->
+                    <img ng-src="{{cropResult}}">
+                </div>
+                <div class="col-xs-12">
+                    <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="save()" ng-disabled="crop_form.$invalid" style="right:15px;">Save</a>
+                    <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="cancel()" ng-disabled="crop_form.$invalid" style="right:15px;">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

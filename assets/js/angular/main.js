@@ -391,7 +391,7 @@ angular.module('angula').factory("DataService", function() {
     };
 });
 
-angular.module('angula').controller('LMenuController', function($scope, $location /*, $http */ ) {
+angular.module('angula').controller('LMenuController', function($scope, $location, $cookies) {
 
     $scope.getClass = function(path) {
         return ($location.path().substr(0, path.length) === path) ? 'active' : '';
@@ -418,12 +418,33 @@ angular.module('angula').controller('LMenuController', function($scope, $locatio
     };
 
     $scope.init = function() {
+        if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+            $scope.logout();
+            return false;
+        }
+
         var path = $location.$$path;
         $scope.toggle_events = (path.search('_events') < 0);
         $scope.toggle_order = (path.search('_order') < 0);
         $scope.toggle_talents = (path.search('_talents') < 0);
         $scope.toggle_report = (path.search('_report') < 0);
         $scope.toggle_settings = (path.search('_settings') < 0);
+
+        $scope.userinfo = [];
+        $scope.userinfo.username = $cookies.username;
+        $scope.userinfo.profile = $cookies.profile;
+    };
+
+    $scope.logout = function() {
+        $cookies.token = '';
+        $location.path('/log_in');
+    };
+
+    $scope.myaccount_click = function() {
+        if ($scope.is_login())
+            $location.path('/profile_settings');
+        else
+            $location.path('/log_in');
     };
 
     $scope.init();
@@ -434,4 +455,46 @@ angular.module('angula').controller('AdminController', function($scope) {
 
     $scope.add_talent = function() {}
 
-})
+});
+
+angular.module('angula').controller('LoadImageController', function($scope, $modalInstance, dimensions) {
+    $scope.dimensions = dimensions;
+
+    $scope.image = {
+        src: 'assets/images/store/product/1.jpg',
+        maxWidth: 938
+    };
+
+    $scope.selector = {};
+
+    // $scope.drawer = [
+    //     { x1: 625, y1: 154, x2: 777, y2: 906, color: '#337ab7', stroke: 1 },
+    //     { x1: 778, y1: 154, x2: 924, y2: 906, color: '#3c763d', stroke: 1 },
+    //     { x1: 172, y1: 566, x2: 624, y2: 801, color: '#a94442', stroke: 1 }
+    // ];
+
+    // $scope.addRect = function() {
+    //     $scope.drawer.push({
+    //         x1: $scope.selector.x1,
+    //         y1: $scope.selector.y1,
+    //         x2: $scope.selector.x2,
+    //         y2: $scope.selector.y2,
+    //         color: '#337ab7',
+    //         stroke: 1
+    //     });
+    //     $scope.selector.clear();
+    // };
+
+    $scope.cropRect = function() {
+        $scope.cropResult = $scope.selector.crop();
+    };
+
+    $scope.save = function() {
+        $scope.cropResult = $scope.selector.crop();
+        // $modalInstance.close(1);
+    };
+
+    $scope.cancel = function() {
+        $modalInstance.dismiss('cancel');
+    }
+});

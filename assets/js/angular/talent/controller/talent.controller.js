@@ -105,7 +105,7 @@ angular.module('app.talent')
         };
 
         TalentService.talent_profile(talentData).then(function(response) {
-            var data = response.data;
+            var data = response;
             console.log(data.message);
             if (data.status_code == 200) {
                 $scope.datas = data.data;

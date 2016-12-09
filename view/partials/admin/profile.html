@@ -61,12 +61,13 @@
                         <div class="col-md-2 col-sm-3 col-xs-12">
                             <label for="input4" class="label-name">Header</label>
                         </div>
-                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : profile_form.header_img.$invalid && !profile_form.header_img.$pristine }">
-                            <input type="file" ngf-select ng-model="formData.profile" name="header_img" id="header_img" accept="image/*" ngf-min-width="500" ngf-max-size="5MB" ngf-min-height="500" required ngf-model-invalid="errorFile1" class="form-control file-uploader">
-                            <span ng-show="profile_form.header_img.$error.maxSize">File too large {{errorFile1.size / 1000000|number:1}}MB: max 5M.</span>
-                            <span ng-show="profile_form.header_img.$error.minWidth">Width must be greater than 500.</span>
-                            <span ng-show="profile_form.header_img.$error.minHeight">Height must be greater than 500.</span>
-                            <img ng-show="profile_form.header_img.$valid" ngf-thumbnail="header_img" class="thumb_preview">
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : profile_form.profile.$invalid && !profile_form.profile.$pristine }">
+                            <input type="file" ngf-select ng-model="formData.profile" name="profile" id="profile" accept="image/*" ngf-min-width="500" ngf-max-size="'5MB'" ngf-min-height="500" required ngf-model-invalid="errorFile2" class="form-control file-uploader">
+                            <span ng-show="profile_form.profile.$error.maxSize">File too large {{errorFile2.size / 1000000|number:1}}MB: max 5M.</span>
+                            <span ng-show="profile_form.profile.$error.minWidth">Width must be greater than 500.</span>
+                            <span ng-show="profile_form.profile.$error.minHeight">Height must be greater than 500.</span>
+                            <img ng-show="profile_form.profile.$valid" ngf-thumbnail="formData.profile" class="thumb_preview">
+                            <!--<a class="btn btn-block trans-buy-button inline-buy-button" ng-click="browse()" ng-disabled="profile_form.$invalid">Choose File</a>-->
                         </div>
                     </div>
                     <div class="row align-center row-height">

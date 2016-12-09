@@ -415,7 +415,8 @@ p.personal-phrase i.fa-quote-left {
 
 .navbar-brand {
     font-weight: 700;
-    padding: 1px 0px;
+    padding: 0px 0px;
+    height: 45px;
 }
 
 .navbar-inverse {
@@ -4535,6 +4536,16 @@ h2.t-title-office {
     PAGE HOME COMMON                                                                                                 
 *********************************************************************************************/
 
+.org-img-canvas {
+    width: 100%;
+    height: auto;
+}
+
+
+/********************************************************************************************
+    PAGE HOME COMMON                                                                                                 
+*********************************************************************************************/
+
 .header-image-div {
     padding: 0;
 }
@@ -4769,9 +4780,10 @@ form.ng-valid {
 }
 
 .buy-header-div span {
-    padding-right: 20px;
+    padding: 0 10px;
     float: right;
     line-height: 45px;
+    top: 0px;
 }
 
 .menubar-div {
@@ -4781,6 +4793,8 @@ form.ng-valid {
 
 .img-header {
     margin-top: 5px;
+    width: 35px;
+    height: 35px;
 }
 
 div.content {
@@ -4862,7 +4876,7 @@ ul.sidenav li.sidenav-expand>a:after {
 
 img.thumb_preview {
     height: 200px;
-    width: auto;
+    width: 100%;
 }
 
 .alert_message {
@@ -4898,7 +4912,6 @@ img.thumb_preview {
 
 #menu-toggle {
     color: #FFFFFF;
-    margin-left: 15px;
 }
 
 .file-uploader {

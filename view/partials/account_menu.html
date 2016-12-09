@@ -1,8 +1,8 @@
 <div class="buy-header-div">
-  <a class="navbar-brand"  id="menu-toggle">
-    <span class="glyphicon glyphicon-list" aria-hidden="true" ng-click="toggleMenu()"></span>
-  </a>
-  <span class="glyphicon glyphicon-off"></span>
-  <span>John Doe</span>
-  <span><img src="assets/images/store/event/6.png" class="img-responsive img-circle img-header" alt="Cinque Terre" width="35" height="35"></span>
+    <a class="navbar-brand hover-div" id="menu-toggle">
+        <span class="glyphicon glyphicon-list" aria-hidden="true" ng-click="toggleMenu()"></span>
+    </a>
+    <span title="Logout" ng-click="logout()" class="glyphicon glyphicon-off hover-div"></span>
+    <span title="{{userinfo.username}}" ng-click="myaccount_click()" class="hover-div">{{userinfo.username}}</span>
+    <span title="{{userinfo.username}}" ng-click="myaccount_click()" class="hover-div"><img ng-src="{{userinfo.profile}}" class="img-responsive img-circle img-header" width="35" height="35"></span>
 </div>

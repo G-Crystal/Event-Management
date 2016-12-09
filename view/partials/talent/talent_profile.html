@@ -3,10 +3,15 @@
     <!--visible animated fadeInUp-->
     <div class="container-fluid header-image-div">
         <div class="home-img-div">
-            <div class="home8-back-img home-back-img-common"><span class="header-txt">{{datas.event_name}}</span></div>
+            <div class="home8-back-img home-back-img-common"><span class="header-txt">{{datas.name}}</span></div>
         </div>
     </div>
 
+    <div class="row align-center row-height margin-top-10">
+        <div class="col-xs-12">
+            <alert ng-repeat="alert in alerts" type="{{alert.type}}" class="alert_message">{{alert.msg}}</alert>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="home-banner">
@@ -16,8 +21,8 @@
 
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
-                            <a class="btn social-link facebook" href="#" target="_blank"></a>
-                            <a class="btn social-link twitter" href="#" target="_blank"></a>
+                            <a class="btn social-link facebook" href="{{datas.facebook_url}}" target="_blank"></a>
+                            <a class="btn social-link twitter" href="{{datas.twitter_url}}" target="_blank"></a>
                         </div>
                     </div>
                     <!-- /.row -->
@@ -32,7 +37,7 @@
             <div id="cbp-vm" class="col-md-12 col-sm-12 col-xs-12 shop-prod active">
                 <ul id="event" class="nav-pills nav-stacked rectangle-list">
                     <li class="col-xs-12" ng-repeat="event in datas.upcoming_events">
-                        <div class="shop-img home-box-black row" ng-click="event_details(event.id)">
+                        <div class="shop-img home-box-black row hover-div" ng-click="event_details(event.id)">
                             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 box-image-div">
                                 <img ng-src="{{event.event_image}}" alt="{{event.event_name}}" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 box-image img-responsive" />
                             </div>
@@ -46,7 +51,7 @@
                                     </div>
 
                                     <div class="buy-btn-div">
-                                        <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="loadBuyTicket(event.num)">BUY TICKETS</a>
+                                        <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="loadBuyTicket(event.id)">BUY TICKETS</a>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
