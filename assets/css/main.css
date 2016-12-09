@@ -4876,7 +4876,7 @@ ul.sidenav li.sidenav-expand>a:after {
 
 img.thumb_preview {
     height: 200px;
-    width: auto;
+    width: 100%;
 }
 
 .alert_message {
