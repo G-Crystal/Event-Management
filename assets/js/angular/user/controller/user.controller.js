@@ -24,6 +24,7 @@ angular.module('app.user')
                     $cookies.token = data.token;
                     $cookies.username = data.username;
                     $cookies.profile = data.profile;
+                    $cookies.user_type = data.user_type;
                     $location.path('/');
                 } else if (data.status_code == 101) {
                     $scope.logout();
