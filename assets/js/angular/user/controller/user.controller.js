@@ -165,7 +165,7 @@ angular.module('app.user')
             address: $scope.formData.address,
             city: $scope.formData.city,
             state: $scope.formData.state,
-            country: '', //$scope.formData.country,
+            country: $scope.formData.country,
             zipcode: $scope.formData.zipcode,
             profile: $scope.formData.profile,
             subscribe: 1

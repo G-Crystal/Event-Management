@@ -51,6 +51,16 @@
                     </div>
                     <div class="row">
                         <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input3" class="label-name required">Country</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : profile_form.country.$invalid && !profile_form.country.$pristine }">
+                            <input type="text" name="country" placeholder="Country" class="form-control" id="country" ng-model="formData.country" required>
+                            <span ng-show="profile_form.country.$invalid && !profile_form.country.$pristine">Country is required.</span>
+                        </div>
+                        <div class="clearfix visible-sm visible-xs"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
                             <label for="input3" class="label-name">Zipcode</label>
                         </div>
                         <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : profile_form.bil_zipcode.$invalid }">
