@@ -1,75 +1,98 @@
 <div ng-include="'view/partials/user/user_menu.html'"></div>
 
-<div id="demo" ng-controller="AdminController" class="home1">
+<div id="demo" class="home1">
 
-  <!--visible animated fadeInUp-->
-  <div class="container">
-    <div class="menubar-div row">
-      <div class="description-title-div col-lg-12">
-        <h4>PROFILE SETTING</h4>
-        <div class="row">
-          <div class="col-md-2 col-sm-3 col-xs-12">
-            <label for="input3" class="label-name">First Name</label>
-          </div>
-          <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-            <input type="text" name="first_name" placeholder="First Name" class="form-control" id="first_name">
-          </div>
-          <div class="clearfix visible-sm visible-xs"></div>
-          <div class="col-md-2 col-sm-3 col-xs-12">
-            <label for="input4" class="label-name">Last Name</label>
-          </div>
-          <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-            <input type="text" name="last_name" placeholder="Last Name" class="form-control" id="last_name">
-          </div>
+    <!--visible animated fadeInUp-->
+    <div class="container">
+        <div class="menubar-div row">
+            <form accept-charset="UTF-8" role="form" name="profile_form" method="post" enctype="multipart/form-data" novalidate>
+                <div class="description-title-div col-lg-12">
+                    <h4>PROFILE SETTING</h4>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input3" class="label-name required">First Name</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : (profile_form.first_name.$invalid && !profile_form.first_name.$pristine) }">
+                            <input type="text" name="first_name" placeholder="First Name" class="form-control" id="first_name" ng-model="formData.fname">
+                            <span ng-show="profile_form.first_name.$invalid && !profile_form.first_name.$pristine">First name is required.</span>
+                        </div>
+                        <div class="clearfix visible-sm visible-xs"></div>
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input4" class="label-name required">Last Name</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : (profile_form.last_name.$invalid && !profile_form.last_name.$pristine) }">
+                            <input type="text" name="last_name" placeholder="Last Name" class="form-control" id="last_name" ng-model="formData.lname">
+                            <span ng-show="profile_form.first_name.$invalid && !profile_form.first_name.$pristine">Last name is required.</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input1" class="label-name required">Address</label>
+                        </div>
+                        <div class="col-md-10 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : (profile_form.bil_address.$invalid && !profile_form.bil_address.$pristine) }">
+                            <input type="text" name="bil_address" placeholder="Street Address" class="form-control" id="bil_address" ng-model="formData.address">
+                            <span ng-show="profile_form.first_name.$invalid && !profile_form.bil_address.$pristine">Address is required.</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input3" class="label-name">City</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <input type="text" name="bil_city" placeholder="City" class="form-control" id="bil_city" ng-model="formData.city">
+                        </div>
+                        <div class="clearfix visible-sm visible-xs"></div>
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input4" class="label-name">State</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <input type="text" name="bil_state" placeholder="State" class="form-control" id="bil_state" ng-model="formData.state">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input3" class="label-name required">Country</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : profile_form.country.$invalid && !profile_form.country.$pristine }">
+                            <input type="text" name="country" placeholder="Country" class="form-control" id="country" ng-model="formData.country" required>
+                            <span ng-show="profile_form.country.$invalid && !profile_form.country.$pristine">Country is required.</span>
+                        </div>
+                        <div class="clearfix visible-sm visible-xs"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input3" class="label-name">Zipcode</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : profile_form.bil_zipcode.$invalid }">
+                            <input type="text" pattern="[0-9]*" name="bil_zipcode" placeholder="Enter Zipcode" class="form-control" id="bil_zipcode" ng-model="formData.zipcode">
+                            <span ng-show="profile_form.bil_zipcode.$invalid">Must be only number.</span>
+                        </div>
+                        <div class="clearfix visible-sm visible-xs"></div>
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input4" class="label-name">Header</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : profile_form.profile.$invalid && !profile_form.profile.$pristine }">
+                            <input type="file" ngf-select ng-model="formData.profile" name="profile" id="profile" accept="image/*" ngf-min-width="500" ngf-max-size="'5MB'" ngf-min-height="500" required ngf-model-invalid="errorFile2" class="form-control file-uploader">
+                            <span ng-show="profile_form.profile.$error.maxSize">File too large {{errorFile2.size / 1000000|number:1}}MB: max 5M.</span>
+                            <span ng-show="profile_form.profile.$error.minWidth">Width must be greater than 500.</span>
+                            <span ng-show="profile_form.profile.$error.minHeight">Height must be greater than 500.</span>
+                            <!--<a class="btn btn-block trans-buy-button inline-buy-button" ng-click="browse()" ng-disabled="profile_form.$invalid">Choose File</a>-->
+                        </div>
+                        <div class="col-md-6 col-md-offset-6 align-center" ng-class="{ 'has-error' : profile_form.profile.$invalid && !profile_form.profile.$pristine }">
+                            <img ng-show="profile_form.profile.$valid" ngf-thumbnail="formData.profile" class="thumb_preview">
+                        </div>
+                    </div>
+                    <div class="row align-center row-height">
+                        <div class="col-xs-12">
+                            <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="update()" ng-disabled="profile_form.$invalid">Update</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="row">
-          <div class="col-md-2 col-sm-3 col-xs-12">
-            <label for="input1" class="label-name required">Address</label>
-          </div>
-          <div class="col-md-10 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-            <input type="text" name="bil_address" placeholder="Street Address" class="form-control" id="bil_address">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2 col-sm-3 col-xs-12">
-            <label for="input3" class="label-name">City</label>
-          </div>
-          <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-            <input type="text" name="bil_city" placeholder="City" class="form-control" id="bil_city">
-          </div>
-          <div class="clearfix visible-sm visible-xs"></div>
-          <div class="col-md-2 col-sm-3 col-xs-12">
-            <label for="input4" class="label-name">State</label>
-          </div>
-          <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-            <input type="text" name="bil_state" placeholder="State" class="form-control" id="bil_state">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2 col-sm-3 col-xs-12">
-            <label for="input3" class="label-name">Zipcode</label>
-          </div>
-          <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-            <input type="text" pattern="[0-9]*" name="bil_zipcode" placeholder="Enter Zipcode" class="form-control" id="bil_zipcode">
-          </div>
-          <div class="clearfix visible-sm visible-xs"></div>
-          <div class="col-md-2 col-sm-3 col-xs-12">
-            <label for="input4" class="label-name">Header</label>
-          </div>
-          <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-            <input type="file" name="header_img" class="form-control file-uploader" id="header_img">
-          </div>
-        </div>
-        <div class="row align-center row-height">
-          <div class="col-xs-12">
-            <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="update()" ng-disabled="update_form.$invalid">Update</a>
-          </div>
-        </div>
-      </div>
+        <!-- /.row -->
     </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.container -->
+    <!-- /.container -->
 </div>
 
 <div ng-include="'view/templates/footer.html'"></div>

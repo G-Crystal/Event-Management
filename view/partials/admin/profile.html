@@ -66,8 +66,10 @@
                             <span ng-show="profile_form.profile.$error.maxSize">File too large {{errorFile2.size / 1000000|number:1}}MB: max 5M.</span>
                             <span ng-show="profile_form.profile.$error.minWidth">Width must be greater than 500.</span>
                             <span ng-show="profile_form.profile.$error.minHeight">Height must be greater than 500.</span>
-                            <img ng-show="profile_form.profile.$valid" ngf-thumbnail="formData.profile" class="thumb_preview">
                             <!--<a class="btn btn-block trans-buy-button inline-buy-button" ng-click="browse()" ng-disabled="profile_form.$invalid">Choose File</a>-->
+                        </div>
+                        <div class="col-md-6 col-md-offset-6 align-center" ng-class="{ 'has-error' : profile_form.profile.$invalid && !profile_form.profile.$pristine }">
+                            <img ng-show="profile_form.profile.$valid" ngf-thumbnail="formData.profile" class="thumb_preview">
                         </div>
                     </div>
                     <div class="row align-center row-height">

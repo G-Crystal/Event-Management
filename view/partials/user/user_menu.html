@@ -1,18 +1,18 @@
-<div id="demo" ng-controller="LMenuController" class="home1">
-  <div ng-include="'view/partials/account_menu.html'"></div>
+<div id="demo" class="home1">
+    <div ng-include="'view/partials/account_menu.html'"></div>
 
-  <ul ng-class="{'sidenav':toggle_menu_flag, 'sidenav sidenav-toggle':!toggle_menu_flag}">
-    <li ng-class="getClass('/user_dashboard')" ng-click="menu_click()"><a href="#user_dashboard">Buyer Dashboard</a></li>
-    <li ng-class="getClass('/user_messages')" ng-click="menu_click()"><a href="#user_messages">Messages</a></li>
-    <li ng-class="{'sidenav-collapse':toggle_settings, 'sidenav-expand':!toggle_settings}" ng-click="setToggle('toggle_settings')">
-      <a href="">Settings</a>
-      <ul class="sidenav-submenu">
-        <li ng-class="getClass('/user_profile_settings')" ng-click="menu_click()"><a href="#user_profile_settings">Profile</a></li>
-        <li ng-class="getClass('/user_password_settings')" ng-click="menu_click()"><a href="#user_password_settings">Password</a></li>
-        <li ng-class="getClass('/user_payments_settings')" ng-click="menu_click()"><a href="#user_payments_settings">Payments</a></li>
-      </ul>
-    </li>
-  </ul>
+    <ul ng-class="{'sidenav':toggle_menu_flag, 'sidenav sidenav-toggle':!toggle_menu_flag}">
+        <li ng-class="getClass('/user_dashboard')" ng-click="menu_click()"><a href="#user_dashboard">Buyer Dashboard</a></li>
+        <li ng-class="getClass('/user_messages')" ng-click="menu_click()"><a href="#user_messages">Messages</a></li>
+        <li ng-class="{'sidenav-collapse':toggle_settings, 'sidenav-expand':!toggle_settings}" ng-click="setToggle('toggle_settings')">
+            <a href="">Settings</a>
+            <ul class="sidenav-submenu">
+                <li ng-class="getClass('/user_profile_settings')" ng-click="menu_click()"><a href="#user_profile_settings">Profile</a></li>
+                <li ng-class="getClass('/user_password_settings')" ng-click="menu_click()"><a href="#user_password_settings">Password</a></li>
+                <li ng-class="getClass('/user_payments_settings')" ng-click="menu_click()"><a href="#user_payments_settings">Payments</a></li>
+            </ul>
+        </li>
+    </ul>
 </div>
 
 <div id="main-curtain" class="Curtain " ng-class="{'visible':toggle_menu_flag, '':!toggle_menu_flag}" ng-click="toggleMenu()"></div>

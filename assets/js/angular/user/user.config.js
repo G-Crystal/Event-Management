@@ -17,8 +17,12 @@ angular.module('app.user', [])
                 templateUrl: 'view/partials/user/forgot.html',
                 controller: 'ForgotController'
             })
-            .when('/profile_settings', {
-                templateUrl: 'view/partials/admin/profile.html',
+            .when('/user_profile_settings', {
+                templateUrl: 'view/partials/user/profile.html',
                 controller: 'ProfileController'
+            })
+            .when('/user_password_settings', {
+                templateUrl: 'view/partials/user/update_password.html',
+                controller: 'UpdatePasswordController'
             });
     }])
