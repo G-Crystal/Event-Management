@@ -38,6 +38,12 @@ angular.module('app.user')
                 })
             },
 
+            update_password: function(data) {
+                return $http.post('http://staging.ticketvow.com/api/updatePassword?token=' + $cookies.token).success(function(res) {
+                    User = res.data;
+                })
+            },
+
         };
 
         return User;

@@ -124,6 +124,50 @@ angular.module('app.user')
 
 })
 
+.controller('UpdatePasswordController', function($scope, $location, $cookies, UserService) {
+
+    $scope.init = function() {
+        if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+            $scope.logout();
+            return false;
+        }
+
+        $scope.email = $cookies.email;
+    };
+
+    $scope.logout = function() {
+        $cookies.token = '';
+        $location.path('/log_in');
+    }
+
+    $scope.update = function() {
+        var reqData = {
+            email: $scope.formData.email,
+            current_password: $scope.formData.current_password,
+            new_password: $scope.formData.new_password,
+            confirm_password: $scope.formData.confirm_password
+        };
+
+        UserService.update_password(reqData).then(function(response) {
+            var data = response.data;
+            if (data.status_code == 200) {
+                $scope.alerts = [
+                    { type: 'success', msg: data.message }
+                ];
+            } else if (data.status_code == 101) {
+                $scope.logout();
+            } else {
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+            }
+        }).catch(function(error) {
+            $scope.alerts = [{ type: 'danger', msg: error }];
+        });
+    };
+
+    $scope.init();
+
+})
+
 .controller('ProfileController', function($scope, $location, $cookies, $modal, UserService) {
 
     $scope.init = function() {

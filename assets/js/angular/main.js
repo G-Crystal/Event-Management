@@ -24,14 +24,14 @@ angular.module('angula').config(['$routeProvider', function($routeProvider) {
     // .when("/user_dashboard", { templateUrl: "view/partials/user/dashboard.html", controller: "HomeCtrl" })
     .when("/user_messages", { templateUrl: "view/partials/user/dashboard.html", controller: "HomeCtrl" })
         // .when("/user_profile_settings", { templateUrl: "view/partials/user/profile.html", controller: "HomeCtrl" })
-        .when("/user_password_settings", { templateUrl: "view/partials/user/update_password.html", controller: "HomeCtrl" })
+        // .when("/user_password_settings", { templateUrl: "view/partials/user/update_password.html", controller: "HomeCtrl" })
         .when("/user_payments_settings", { templateUrl: "view/partials/user/payments.html", controller: "HomeCtrl" })
 
     // Admin Menu
     // .when("/create_event", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
     .when("/messages", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
         // .when("/profile_settings", { templateUrl: "view/partials/admin/profile.html", controller: "HomeCtrl" })
-        .when("/password_settings", { templateUrl: "view/partials/admin/update_password.html", controller: "HomeCtrl" })
+        // .when("/password_settings", { templateUrl: "view/partials/admin/update_password.html", controller: "HomeCtrl" })
         .when("/payments_settings", { templateUrl: "view/partials/admin/payments.html", controller: "HomeCtrl" })
         .when("/event_order", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
         // .when("/upcoming_events", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
