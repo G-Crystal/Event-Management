@@ -1,233 +1,229 @@
 <div id="demo" class="home1">
 
-  <!--visible animated fadeInUp-->
-  <div class="container">
-    <div class="menubar-div row">
-      <form accept-charset="UTF-8" role="form" name="signup_form" novalidate>
-        <!--List Event-->
-        <div class="description-title-div col-lg-12">
-          <h4>Personal</h4>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input3" class="label-name required">First Name</label>
-            </div>
-            <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.first_name.$invalid && !signup_form.first_name.$pristine }">
-              <input type="text" name="first_name" placeholder="First Name" class="form-control" id="first_name" ng-model="first_name" required>
-              <span ng-show="signup_form.first_name.$invalid && !signup_form.first_name.$pristine">First name is required.</span>
-            </div>
-            <div class="clearfix visible-sm visible-xs"></div>
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input4" class="label-name required">Last Name</label>
-            </div>
-            <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.last_name.$invalid && !signup_form.last_name.$pristine }">
-              <input type="text" name="last_name" placeholder="Last Name" class="form-control" id="last_name" ng-model="last_name" required>
-              <span ng-show="signup_form.last_name.$invalid && !signup_form.last_name.$pristine">Last name is required.</span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input1" class="label-name required">Address</label>
-            </div>
-            <div class="col-md-10 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.per_address.$invalid && !signup_form.per_address.$pristine }">
-              <input type="text" name="per_address" placeholder="Street Address" class="form-control" id="per_address" ng-model="per_address" required>
-              <span ng-show="signup_form.per_address.$invalid && !signup_form.per_address.$pristine">Address is required.</span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input3" class="label-name required">City</label>
-            </div>
-            <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.per_city.$invalid && !signup_form.per_city.$pristine }">
-              <input type="text" name="per_city" placeholder="City" class="form-control" id="per_city" ng-model="per_city" required>
-              <span ng-show="signup_form.per_city.$invalid && !signup_form.per_city.$pristine">City is required.</span>
-            </div>
-            <div class="clearfix visible-sm visible-xs"></div>
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input4" class="label-name required">State</label>
-            </div>
-            <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.per_state.$invalid && !signup_form.per_state.$pristine }">
-              <input type="text" name="per_state" placeholder="State" class="form-control" id="per_state" ng-model="per_state" required>
-              <span ng-show="signup_form.per_state.$invalid && !signup_form.per_state.$pristine">State is required.</span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input3" class="label-name required">Country</label>
-            </div>
-            <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.per_country.$invalid && !signup_form.per_country.$pristine }">
-              <input type="text" name="per_country" placeholder="Country" class="form-control" id="per_country" ng-model="per_country" required>
-              <span ng-show="signup_form.per_country.$invalid && !signup_form.per_country.$pristine">Country is required.</span>
-            </div>
-            <div class="clearfix visible-sm visible-xs"></div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input3" class="label-name required">Zipcode</label>
-            </div>
-            <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.per_zipcode.$invalid && !signup_form.per_zipcode.$pristine }">
-              <input type="text" pattern="[0-9]*" name="per_zipcode" placeholder="Enter Zipcode" class="form-control" id="per_zipcode" ng-model="per_zipcode" required>
-              <span ng-show="signup_form.per_zipcode.$invalid && !signup_form.per_zipcode.$pristine">Invalid zipcode. Must be only number.</span>
-            </div>
-            <div class="clearfix visible-sm visible-xs"></div>
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input4" class="label-name required">Phone Number</label>
-            </div>
-            <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.per_phone_number.$invalid && !signup_form.per_phone_number.$pristine }">
-              <input type="text" name="per_phone_number" placeholder="Enter Phone Number" class="form-control" id="per_phone_number" ng-model="per_phone_number" required>
-              <span ng-show="signup_form.per_phone_number.$invalid && !signup_form.per_phone_number.$pristine">Phone number is required.</span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input3" class="label-name">Profile</label>
-            </div>
-            <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.profile.$invalid && !signup_form.profile.$pristine }">
-              <input type="file" ngf-select ng-model="profile" name="profile" id="profile"    
-                     accept="image/*" ngf-min-width="500" ngf-max-size="5MB" ngf-min-height="500"
-                     ngf-model-invalid="errorFile1" class="form-control file-uploader">
-              <span ng-show="signup_form.profile.$error.maxSize">File too large {{errorFile1.size / 1000000|number:1}}MB: max 5M.</span>
-              <span ng-show="signup_form.profile.$error.minWidth">Width must be greater than 500.</span>
-              <span ng-show="signup_form.profile.$error.minHeight">Height must be greater than 500.</span>
-              <img ng-show="signup_form.profile.$valid" ngf-thumbnail="profile" class="thumb_preview">
-            </div>
-          </div>
-        </div>
+    <!--visible animated fadeInUp-->
+    <div class="container">
+        <div class="menubar-div row">
+            <form accept-charset="UTF-8" role="form" name="signup_form" novalidate>
+                <!--List Event-->
+                <div class="description-title-div col-lg-12">
+                    <h4>Personal</h4>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input3" class="label-name required">First Name</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.first_name.$invalid && !signup_form.first_name.$pristine }">
+                            <input type="text" name="first_name" placeholder="First Name" class="form-control" id="first_name" ng-model="first_name" required>
+                            <span ng-show="signup_form.first_name.$invalid && !signup_form.first_name.$pristine">First name is required.</span>
+                        </div>
+                        <div class="clearfix visible-sm visible-xs"></div>
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input4" class="label-name required">Last Name</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.last_name.$invalid && !signup_form.last_name.$pristine }">
+                            <input type="text" name="last_name" placeholder="Last Name" class="form-control" id="last_name" ng-model="last_name" required>
+                            <span ng-show="signup_form.last_name.$invalid && !signup_form.last_name.$pristine">Last name is required.</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input1" class="label-name required">Address</label>
+                        </div>
+                        <div class="col-md-10 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.per_address.$invalid && !signup_form.per_address.$pristine }">
+                            <input type="text" name="per_address" placeholder="Street Address" class="form-control" id="per_address" ng-model="per_address" required>
+                            <span ng-show="signup_form.per_address.$invalid && !signup_form.per_address.$pristine">Address is required.</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input3" class="label-name required">City</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.per_city.$invalid && !signup_form.per_city.$pristine }">
+                            <input type="text" name="per_city" placeholder="City" class="form-control" id="per_city" ng-model="per_city" required>
+                            <span ng-show="signup_form.per_city.$invalid && !signup_form.per_city.$pristine">City is required.</span>
+                        </div>
+                        <div class="clearfix visible-sm visible-xs"></div>
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input4" class="label-name required">State</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.per_state.$invalid && !signup_form.per_state.$pristine }">
+                            <input type="text" name="per_state" placeholder="State" class="form-control" id="per_state" ng-model="per_state" required>
+                            <span ng-show="signup_form.per_state.$invalid && !signup_form.per_state.$pristine">State is required.</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input3" class="label-name required">Country</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.per_country.$invalid && !signup_form.per_country.$pristine }">
+                            <input type="text" name="per_country" placeholder="Country" class="form-control" id="per_country" ng-model="per_country" required>
+                            <span ng-show="signup_form.per_country.$invalid && !signup_form.per_country.$pristine">Country is required.</span>
+                        </div>
+                        <div class="clearfix visible-sm visible-xs"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input3" class="label-name required">Zipcode</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.per_zipcode.$invalid && !signup_form.per_zipcode.$pristine }">
+                            <input type="text" pattern="[0-9]*" name="per_zipcode" placeholder="Enter Zipcode" class="form-control" id="per_zipcode" ng-model="per_zipcode" required>
+                            <span ng-show="signup_form.per_zipcode.$invalid && !signup_form.per_zipcode.$pristine">Invalid zipcode. Must be only number.</span>
+                        </div>
+                        <div class="clearfix visible-sm visible-xs"></div>
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input4" class="label-name required">Phone Number</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.per_phone_number.$invalid && !signup_form.per_phone_number.$pristine }">
+                            <input type="text" name="per_phone_number" placeholder="Enter Phone Number" class="form-control" id="per_phone_number" ng-model="per_phone_number" required>
+                            <span ng-show="signup_form.per_phone_number.$invalid && !signup_form.per_phone_number.$pristine">Phone number is required.</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input3" class="label-name">Profile</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.profile.$invalid && !signup_form.profile.$pristine }">
+                            <input type="file" ngf-select ng-model="profile" name="profile" id="profile" accept="image/*" ngf-min-width="500" ngf-max-size="5MB" ngf-min-height="500" ngf-model-invalid="errorFile1" class="form-control file-uploader">
+                            <span ng-show="signup_form.profile.$error.maxSize">File too large {{errorFile1.size / 1000000|number:1}}MB: max 5M.</span>
+                            <span ng-show="signup_form.profile.$error.minWidth">Width must be greater than 500.</span>
+                            <span ng-show="signup_form.profile.$error.minHeight">Height must be greater than 500.</span>
+                            <img ng-show="signup_form.profile.$valid" ngf-thumbnail="profile" class="thumb_preview">
+                        </div>
+                    </div>
+                </div>
 
-        <div class="description-title-div col-lg-12">
-          <h4>Entity</h4>
-          <div class="row" ng-class="{ 'has-error' : signup_form.ent_name.$invalid && !signup_form.ent_name.$pristine }">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input11" class="label-name required">Entity Name</label>
-            </div>
-            <div class="col-md-10 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <input type="text" name="ent_name" placeholder="Enter Entity Name" class="form-control" id="ent_name" ng-model="ent_name" required>
-              <span ng-show="signup_form.ent_name.$invalid && !signup_form.ent_name.$pristine">Entity name is required.</span>
-            </div>
-          </div>
-          <div class="row" ng-class="{ 'has-error' : signup_form.ent_address.$invalid && !signup_form.ent_address.$pristine }">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input11" class="label-name required">Address</label>
-            </div>
-            <div class="col-md-10 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <input type="text" name="ent_address" placeholder="Street Address" class="form-control" id="ent_address" ng-model="ent_address" required>
-              <span ng-show="signup_form.ent_address.$invalid && !signup_form.ent_address.$pristine">Address is required.</span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input3" class="label-name required">City</label>
-            </div>
-            <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.ent_city.$invalid && !signup_form.ent_city.$pristine }">
-              <input type="text" name="ent_city" placeholder="City" class="form-control" id="ent_city" ng-model="ent_city" required>
-              <span ng-show="signup_form.ent_city.$invalid && !signup_form.ent_city.$pristine">City is required.</span>
-            </div>
-            <div class="clearfix visible-sm visible-xs"></div>
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input4" class="label-name required">State</label>
-            </div>
-            <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.ent_state.$invalid && !signup_form.ent_state.$pristine }">
-              <input type="text" name="ent_state" placeholder="State" class="form-control" id="ent_state" ng-model="ent_state" required>
-              <span ng-show="signup_form.ent_state.$invalid && !signup_form.ent_state.$pristine">State is required.</span>
-            </div>
-          </div>
-          <div class="row" ng-class="{ 'has-error' : signup_form.ent_country.$invalid && !signup_form.ent_country.$pristine }">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input3" class="label-name required">Country</label>
-            </div>
-            <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <input type="text" name="ent_country" placeholder="Country" class="form-control" id="ent_country" ng-model="ent_country" required>
-              <span ng-show="signup_form.ent_country.$invalid && !signup_form.ent_country.$pristine">Country is required.</span>
-            </div>
-            <div class="clearfix visible-sm visible-xs"></div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input3" class="label-name required">Zipcode</label>
-            </div>
-            <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.ent_zipcode.$invalid && !signup_form.ent_zipcode.$pristine }">
-              <input type="text" pattern="[0-9]*" name="ent_zipcode" placeholder="Enter Zipcode" class="form-control" id="ent_zipcode" ng-model="ent_zipcode" required>
-              <span ng-show="signup_form.ent_zipcode.$invalid && !signup_form.ent_zipcode.$pristine">Invalid zipcode. Must be only number.</span>
-            </div>
-            <div class="clearfix visible-sm visible-xs"></div>
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input4" class="label-name required">Phone Number</label>
-            </div>
-            <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.ent_phone_number.$invalid && !signup_form.ent_phone_number.$pristine }">
-              <input type="text" name="ent_phone_number" placeholder="Enter Phone Number" class="form-control" id="ent_phone_number" ng-model="ent_phone_number" required>
-              <span ng-show="signup_form.ent_phone_number.$invalid && !signup_form.ent_phone_number.$pristine">Phone Number is required.</span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input3" class="label-name">Header</label>
-            </div>
-            <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.ent_header.$invalid && !signup_form.ent_header.$pristine }">
-              <input type="file" ngf-select ng-model="ent_header" name="ent_header" id="ent_header"    
-                     accept="image/*" ngf-min-width="1500" ngf-max-size="5MB" ngf-min-height="500" required
-                     ngf-model-invalid="errorFile1" class="form-control file-uploader">
-              <span ng-show="signup_form.ent_header.$error.maxSize">File too large {{errorFile1.size / 1000000|number:1}}MB: max 5M.</span>
-              <span ng-show="signup_form.ent_header.$error.minWidth">Width must be greater than 1500.</span>
-              <span ng-show="signup_form.ent_header.$error.minHeight">Height must be greater than 500.</span>
-              <img ng-show="signup_form.ent_header.$valid" ngf-thumbnail="profile" class="thumb_preview">
-            </div>
-            <div class="clearfix visible-sm visible-xs"></div>
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input4" class="label-name required">Contact Email</label>
-            </div>
-            <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.ent_email.$invalid && !signup_form.ent_email.$pristine }">
-              <input type="email" name="ent_email" placeholder="Contact Email" class="form-control" id="ent_email" ng-model="ent_email" required>
-              <span ng-show="signup_form.ent_email.$invalid && !signup_form.ent_email.$pristine">Invalid contact email address.</span>
-            </div>
-          </div>
-        </div>
+                <div class="description-title-div col-lg-12">
+                    <h4>Entity</h4>
+                    <div class="row" ng-class="{ 'has-error' : signup_form.ent_name.$invalid && !signup_form.ent_name.$pristine }">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input11" class="label-name required">Entity Name</label>
+                        </div>
+                        <div class="col-md-10 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <input type="text" name="ent_name" placeholder="Enter Entity Name" class="form-control" id="ent_name" ng-model="ent_name" required>
+                            <span ng-show="signup_form.ent_name.$invalid && !signup_form.ent_name.$pristine">Entity name is required.</span>
+                        </div>
+                    </div>
+                    <div class="row" ng-class="{ 'has-error' : signup_form.ent_address.$invalid && !signup_form.ent_address.$pristine }">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input11" class="label-name required">Address</label>
+                        </div>
+                        <div class="col-md-10 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <input type="text" name="ent_address" placeholder="Street Address" class="form-control" id="ent_address" ng-model="ent_address" required>
+                            <span ng-show="signup_form.ent_address.$invalid && !signup_form.ent_address.$pristine">Address is required.</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input3" class="label-name required">City</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.ent_city.$invalid && !signup_form.ent_city.$pristine }">
+                            <input type="text" name="ent_city" placeholder="City" class="form-control" id="ent_city" ng-model="ent_city" required>
+                            <span ng-show="signup_form.ent_city.$invalid && !signup_form.ent_city.$pristine">City is required.</span>
+                        </div>
+                        <div class="clearfix visible-sm visible-xs"></div>
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input4" class="label-name required">State</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.ent_state.$invalid && !signup_form.ent_state.$pristine }">
+                            <input type="text" name="ent_state" placeholder="State" class="form-control" id="ent_state" ng-model="ent_state" required>
+                            <span ng-show="signup_form.ent_state.$invalid && !signup_form.ent_state.$pristine">State is required.</span>
+                        </div>
+                    </div>
+                    <div class="row" ng-class="{ 'has-error' : signup_form.ent_country.$invalid && !signup_form.ent_country.$pristine }">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input3" class="label-name required">Country</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <input type="text" name="ent_country" placeholder="Country" class="form-control" id="ent_country" ng-model="ent_country" required>
+                            <span ng-show="signup_form.ent_country.$invalid && !signup_form.ent_country.$pristine">Country is required.</span>
+                        </div>
+                        <div class="clearfix visible-sm visible-xs"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input3" class="label-name required">Zipcode</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.ent_zipcode.$invalid && !signup_form.ent_zipcode.$pristine }">
+                            <input type="text" pattern="[0-9]*" name="ent_zipcode" placeholder="Enter Zipcode" class="form-control" id="ent_zipcode" ng-model="ent_zipcode" required>
+                            <span ng-show="signup_form.ent_zipcode.$invalid && !signup_form.ent_zipcode.$pristine">Invalid zipcode. Must be only number.</span>
+                        </div>
+                        <div class="clearfix visible-sm visible-xs"></div>
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input4" class="label-name required">Phone Number</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.ent_phone_number.$invalid && !signup_form.ent_phone_number.$pristine }">
+                            <input type="text" name="ent_phone_number" placeholder="Enter Phone Number" class="form-control" id="ent_phone_number" ng-model="ent_phone_number" required>
+                            <span ng-show="signup_form.ent_phone_number.$invalid && !signup_form.ent_phone_number.$pristine">Phone Number is required.</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input3" class="label-name">Header</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.ent_header.$invalid && !signup_form.ent_header.$pristine }">
+                            <input type="file" ngf-select ng-model="ent_header" name="ent_header" id="ent_header" accept="image/*" ngf-min-width="1500" ngf-max-size="5MB" ngf-min-height="500" required ngf-model-invalid="errorFile1" class="form-control file-uploader">
+                            <span ng-show="signup_form.ent_header.$error.maxSize">File too large {{errorFile1.size / 1000000|number:1}}MB: max 5M.</span>
+                            <span ng-show="signup_form.ent_header.$error.minWidth">Width must be greater than 1500.</span>
+                            <span ng-show="signup_form.ent_header.$error.minHeight">Height must be greater than 500.</span>
+                            <img ng-show="signup_form.ent_header.$valid" ngf-thumbnail="ent_header" class="thumb_preview">
+                        </div>
+                        <div class="clearfix visible-sm visible-xs"></div>
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input4" class="label-name required">Contact Email</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : signup_form.ent_email.$invalid && !signup_form.ent_email.$pristine }">
+                            <input type="email" name="ent_email" placeholder="Contact Email" class="form-control" id="ent_email" ng-model="ent_email" required>
+                            <span ng-show="signup_form.ent_email.$invalid && !signup_form.ent_email.$pristine">Invalid contact email address.</span>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="description-title-div col-lg-12">
-          <h4>Account</h4>
-          <div class="row" ng-class="{ 'has-error' : signup_form.email.$invalid && !signup_form.email.$pristine }">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input3" class="label-name required">Email</label>
-            </div>
-            <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <input type="email" name="email" ng-model="email" required placeholder="Enter Email" class="form-control" id="email">
-              <span ng-show="signup_form.email.$invalid && !signup_form.email.$pristine">Invalid email address.</span>
-            </div>
-          </div>
-          <div class="row" ng-class="{ 'has-error' : signup_form.password.$error.minlength }">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input4" class="label-name required">Password</label>
-            </div>
-            <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <input type="password" name="password" placeholder="Password" class="form-control" id="password" ng-model="password" required ng-minlength="5">
-              <span ng-show="signup_form.password.$error.minlength">Password is too short.</span>
-            </div>
-          </div>
-          <div class="row" ng-class="{ 'has-error' : signup_form.cfm_password.$error.minlength }">
-            <div class="col-md-2 col-sm-3 col-xs-12">
-              <label for="input4" class="label-name required">Confirm Password</label>
-            </div>
-            <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-              <input type="password" name="cfm_password" placeholder="Confirm Password" class="form-control" id="cfm_password" ng-model="cfm_password" ng-minlength="5" pw-check="password" on-enter="signup()" required>
-              <span ng-show="signup_form.cfm_password.$error.minlength">Password is too short.</span>
-              <span ng-show="signup_form.cfm_password.$error.pwmatch">Passwords don't match.</span>
-            </div>
-          </div>
-        </div>
-        <div class="row align-center row-height">
-          <div class="col-xs-12">
-            <alert ng-repeat="alert in alerts" type="{{alert.type}}" class="alert_message">{{alert.msg}}</alert>
-          </div>
-        </div>
+                <div class="description-title-div col-lg-12">
+                    <h4>Account</h4>
+                    <div class="row" ng-class="{ 'has-error' : signup_form.email.$invalid && !signup_form.email.$pristine }">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input3" class="label-name required">Email</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <input type="email" name="email" ng-model="email" required placeholder="Enter Email" class="form-control" id="email">
+                            <span ng-show="signup_form.email.$invalid && !signup_form.email.$pristine">Invalid email address.</span>
+                        </div>
+                    </div>
+                    <div class="row" ng-class="{ 'has-error' : signup_form.password.$error.minlength }">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input4" class="label-name required">Password</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <input type="password" name="password" placeholder="Password" class="form-control" id="password" ng-model="password" required ng-minlength="5">
+                            <span ng-show="signup_form.password.$error.minlength">Password is too short.</span>
+                        </div>
+                    </div>
+                    <div class="row" ng-class="{ 'has-error' : signup_form.cfm_password.$error.minlength }">
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label for="input4" class="label-name required">Confirm Password</label>
+                        </div>
+                        <div class="col-md-4 col-sm-9 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                            <input type="password" name="cfm_password" placeholder="Confirm Password" class="form-control" id="cfm_password" ng-model="cfm_password" ng-minlength="5" pw-check="password" on-enter="signup()" required>
+                            <span ng-show="signup_form.cfm_password.$error.minlength">Password is too short.</span>
+                            <span ng-show="signup_form.cfm_password.$error.pwmatch">Passwords don't match.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-center row-height">
+                    <div class="col-xs-12">
+                        <alert ng-repeat="alert in alerts" type="{{alert.type}}" class="alert_message">{{alert.msg}}</alert>
+                    </div>
+                </div>
 
-        <div class="description-title-div col-lg-12">
-          <div class="row align-center">
-            <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="signup()" ng-disabled="signup_form.$invalid">Submit</a>
-          </div>
+                <div class="description-title-div col-lg-12">
+                    <div class="row align-center">
+                        <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="signup()" ng-disabled="signup_form.$invalid">Submit</a>
+                    </div>
+                </div>
+            </form>
         </div>
-      </form>
+        <!-- /.row -->
     </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.container -->
+    <!-- /.container -->
 </div>
 
 <div ng-include="'view/templates/footer.html'"></div>

@@ -185,10 +185,14 @@ angular.module('angula').controller('MainController', ['$scope', '$location', '$
             return false;
         }
 
-        $scope.toggle_init();
+        $scope.global_init();
     };
 
-    $scope.toggle_init = function() {
+    $scope.global_init = function() {
+        $scope.userinfo = [];
+        $scope.userinfo.username = $cookies.username;
+        $scope.userinfo.profile = $cookies.profile;
+
         var path = $location.$$path;
         $scope.toggle_events = (path.search('_events') < 0);
         $scope.toggle_order = (path.search('_order') < 0);
@@ -203,17 +207,13 @@ angular.module('angula').controller('MainController', ['$scope', '$location', '$
     };
 
     $scope.myaccount_click = function() {
-        $scope.userinfo = [];
-        $scope.userinfo.username = $cookies.username;
-        $scope.userinfo.profile = $cookies.profile;
-
         if ($scope.is_login()) {
             if ($cookies.user_type == 1)
                 $location.path('/user_profile_settings');
             else if ($cookies.user_type == 2)
                 $location.path('/profile_settings');
 
-            $scope.toggle_init();
+            $scope.global_init();
         } else
             $location.path('/log_in');
     };

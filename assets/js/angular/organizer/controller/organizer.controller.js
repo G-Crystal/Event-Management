@@ -100,7 +100,7 @@ angular.module('app.organizer')
             var data = response.data;
             console.log('Get organizer public profile: ' + data.message);
             if (data.status_code == 200) {
-
+                $scope.formData = data.data;
             } else if (data.status_code == 101) {
                 $scope.logout();
             } else {
