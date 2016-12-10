@@ -17,7 +17,7 @@ angular.module('app.user', [])
                 templateUrl: 'view/partials/user/forgot.html',
                 controller: 'ForgotController'
             })
-            .when('/profile_settings', {
+            .when('/user_profile_settings', {
                 templateUrl: 'view/partials/user/profile.html',
                 controller: 'ProfileController'
             });
