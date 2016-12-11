@@ -32,8 +32,8 @@ angular.module('app.user')
                 })
             },
 
-            update_profile: function() {
-                return $http.post('http://staging.ticketvow.com/api/updateProfile?token=' + $cookies.token).success(function(res) {
+            update_profile: function(data) {
+                return $http.post('http://staging.ticketvow.com/api/updateProfile?token=' + $cookies.token, data).success(function(res) {
                     User = res.data;
                 })
             },

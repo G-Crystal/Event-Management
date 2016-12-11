@@ -9,7 +9,7 @@ angular.module('app.organizer', [])
                 templateUrl: 'view/partials/organizer/organizer_signup.html',
                 controller: 'CreateOrganizerController'
             })
-            .when('/profile_settings', {
+            .when('/organizer_profile', {
                 templateUrl: 'view/partials/organizer/organizer_profile.html',
                 controller: 'OrganizerController'
             });

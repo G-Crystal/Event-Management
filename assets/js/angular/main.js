@@ -155,6 +155,78 @@ angular.module('angula').controller('MainController', ['$scope', '$location', '$
         return (typeof($cookies.token) == 'undefined' || $cookies.token == '') ? false : true;
     };
 
+    // $scope.getClass = function(path) {
+    //     return ($location.path().substr(0, path.length) === path) ? 'active' : '';
+    // };
+
+    // $scope.setToggle = function(status) {
+    //     switch (status) {
+    //         case 'toggle_events':
+    //             $scope.toggle_events = !$scope.toggle_events;
+    //             break;
+    //         case 'toggle_order':
+    //             $scope.toggle_order = !$scope.toggle_order;
+    //             break;
+    //         case 'toggle_talents':
+    //             $scope.toggle_talents = !$scope.toggle_talents;
+    //             break;
+    //         case 'toggle_report':
+    //             $scope.toggle_report = !$scope.toggle_report;
+    //             break;
+    //         case 'toggle_settings':
+    //             $scope.toggle_settings = !$scope.toggle_settings;
+    //             break;
+    //     }
+    // };
+
+    // $scope.init = function() {
+    //     if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+    //         $scope.logout();
+    //         return false;
+    //     }
+
+    //     $scope.global_init();
+    // };
+
+    $scope.global_init = function() {
+        $scope.userinfo = [];
+        $scope.userinfo.username = $cookies.username;
+        $scope.userinfo.profile = $cookies.profile;
+
+        var path = $location.$$path;
+        $scope.toggle_events = (path.search('_events') < 0);
+        $scope.toggle_order = (path.search('_order') < 0);
+        $scope.toggle_talents = (path.search('_talents') < 0);
+        $scope.toggle_report = (path.search('_report') < 0);
+        $scope.toggle_settings = (path.search('_settings') < 0);
+    };
+
+    // $scope.logout = function() {
+    //     $cookies.token = '';
+    //     $location.path('/log_in');
+    // };
+
+    $scope.myaccount_click = function() {
+        if ($scope.is_login()) {
+            if ($cookies.user_type == 1)
+                $location.path('/user_profile_settings');
+            else if ($cookies.user_type == 2)
+                $location.path('/profile_settings');
+
+            // $scope.global_init();
+        } else
+            $location.path('/log_in');
+    };
+
+    $scope.browse_click = function() {
+        $location.path('/');
+    };
+
+    // $scope.init();
+}]);
+
+
+angular.module('angula').controller('LMenuController', function($scope, $location, $cookies) {
     $scope.getClass = function(path) {
         return ($location.path().substr(0, path.length) === path) ? 'active' : '';
     };
@@ -185,20 +257,16 @@ angular.module('angula').controller('MainController', ['$scope', '$location', '$
             return false;
         }
 
-        $scope.global_init();
-    };
-
-    $scope.global_init = function() {
-        $scope.userinfo = [];
-        $scope.userinfo.username = $cookies.username;
-        $scope.userinfo.profile = $cookies.profile;
-
         var path = $location.$$path;
         $scope.toggle_events = (path.search('_events') < 0);
         $scope.toggle_order = (path.search('_order') < 0);
         $scope.toggle_talents = (path.search('_talents') < 0);
         $scope.toggle_report = (path.search('_report') < 0);
         $scope.toggle_settings = (path.search('_settings') < 0);
+
+        $scope.userinfo = [];
+        $scope.userinfo.username = $cookies.username;
+        $scope.userinfo.profile = $cookies.profile;
     };
 
     $scope.logout = function() {
@@ -207,23 +275,14 @@ angular.module('angula').controller('MainController', ['$scope', '$location', '$
     };
 
     $scope.myaccount_click = function() {
-        if ($scope.is_login()) {
-            if ($cookies.user_type == 1)
-                $location.path('/user_profile_settings');
-            else if ($cookies.user_type == 2)
-                $location.path('/profile_settings');
-
-            $scope.global_init();
-        } else
+        if ($scope.is_login())
+            $location.path('/profile_settings');
+        else
             $location.path('/log_in');
     };
 
-    $scope.browse_click = function() {
-        $location.path('/');
-    };
-
     $scope.init();
-}]);
+});
 
 /***Only for Preview ***/
 
