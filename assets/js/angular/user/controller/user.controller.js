@@ -22,6 +22,7 @@ angular.module('app.user')
             UserService.login(loginData).then(function(data) {
                 if (data.status_code == 200) {
                     $cookies.token = data.token;
+                    $cookies.email = data.email;
                     $cookies.username = data.username;
                     $cookies.profile = data.profile;
                     $cookies.user_type = data.user_type;
@@ -217,7 +218,24 @@ angular.module('app.user')
 
         UserService.update_profile(reqData).then(function(data) {
             if (data.status_code == 200) {
+                $scope.alerts = [{ type: 'success', msg: data.message }];
+            } else if (data.status_code == 101) {
+                $scope.logout();
+            } else {
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+            }
+        }).catch(function(error) {
+            $scope.alerts = [{ type: 'danger', msg: error }];
+        });
+    };
 
+    $scope.admin_update = function() {
+        var reqData = $scope.formData;
+
+        UserService.update_profile(reqData).then(function(response) {
+            var data = response.data;
+            if (data.status_code == 200) {
+                $scope.alerts = [{ type: 'success', msg: data.message }];
             } else if (data.status_code == 101) {
                 $scope.logout();
             } else {

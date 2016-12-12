@@ -274,12 +274,17 @@ angular.module('angula').controller('LMenuController', function($scope, $locatio
         $location.path('/log_in');
     };
 
-    $scope.myaccount_click = function() {
-        if ($scope.is_login())
-            $location.path('/profile_settings');
-        else
-            $location.path('/log_in');
-    };
+    // $scope.myaccount_click = function() {
+    //     if ($scope.is_login()) {
+    //         if ($cookies.user_type == 1)
+    //             $location.path('/user_profile_settings');
+    //         else if ($cookies.user_type == 2)
+    //             $location.path('/profile_settings');
+
+    //         // $scope.global_init();
+    //     } else
+    //         $location.path('/log_in');
+    // };
 
     $scope.init();
 });

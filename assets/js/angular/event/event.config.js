@@ -1,7 +1,7 @@
 angular.module('app.event', ['ngAnimate', 'ui.bootstrap', 'angularTrix'])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider
-            .when('/create_event', {
+            .when('/create_events', {
                 templateUrl: 'view/partials/event/create_event.html',
                 controller: 'CreateEventController'
             })
