@@ -216,7 +216,8 @@ angular.module('app.user')
             subscribe: 1
         };
 
-        UserService.update_profile(reqData).then(function(data) {
+        UserService.update_profile(reqData).then(function(response) {
+            var data = response.data;
             if (data.status_code == 200) {
                 $scope.alerts = [{ type: 'success', msg: data.message }];
             } else if (data.status_code == 101) {
