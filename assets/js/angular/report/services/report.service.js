@@ -9,7 +9,13 @@ angular.module('app.report')
             },
 
             get_ticket_report: function(data) {
-                return $http.get('http://staging.ticketvow.com/api/getOrderEventList?token=' + $cookies.token, data).success(function(res) {
+                return $http.get('http://staging.ticketvow.com/api/getOrderTickets/' + data.id + '?token=' + $cookies.token, data).success(function(res) {
+                    Report = res.data;
+                })
+            },
+
+            get_order_filter_event: function(data) {
+                return $http.get('http://staging.ticketvow.com/api/getOrderEventList?token=' + $cookies.token).success(function(res) {
                     Report = res.data;
                 })
             },
