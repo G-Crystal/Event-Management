@@ -25,6 +25,10 @@ angular.module('app.user', [])
                 templateUrl: 'view/partials/user/update_password.html',
                 controller: 'UpdatePasswordController'
             })
+            .when('/user_payments_settings', {
+                templateUrl: 'view/partials/user/payments.html',
+                controller: 'PaymentsController'
+            })
             .when('/profile_settings', {
                 templateUrl: 'view/partials/admin/profile.html',
                 controller: 'ProfileController'
@@ -32,5 +36,9 @@ angular.module('app.user', [])
             .when('/password_settings', {
                 templateUrl: 'view/partials/admin/update_password.html',
                 controller: 'UpdatePasswordController'
+            })
+            .when('/payments_settings', {
+                templateUrl: 'view/partials/admin/payments.html',
+                controller: 'PaymentsController'
             });
     }])

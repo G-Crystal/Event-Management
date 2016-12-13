@@ -271,4 +271,72 @@ angular.module('app.user')
 
     $scope.init();
 
+})
+
+.controller('PaymentsController', function($scope, $location, $cookies, $modal, UserService) {
+
+    $scope.init = function() {
+        if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+            $scope.logout();
+            return false;
+        }
+
+        $scope.get_payments();
+    };
+
+    $scope.logout = function() {
+        $cookies.token = '';
+        $location.path('/log_in');
+    };
+
+    $scope.get_payments = function() {
+        var UserData = {};
+
+        UserService.get_payments(UserData).then(function(response) {
+            var data = response.data;
+            if (data.status_code == 200) {
+                $scope.formData = data.data;
+            } else if (data.status_code == 101) {
+                $scope.logout();
+            } else {
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+            }
+        }).catch(function(error) {
+            console.log(error);
+        });
+    };
+
+    $scope.update = function() {
+        var reqData = {
+            card_number: $scope.formData.card_number,
+            Card_date: $scope.formData.card_date,
+            card_cvv: $scope.formData.card_cvv,
+            billing_address: $scope.formData.billing_address,
+            billing_city: $scope.formData.billing_city,
+            billing_state: $scope.formData.billing_state,
+            Billing_country: $scope.formData.billing_country,
+            Billing_zipcode: $scope.formData.billing_zipcode,
+            shipping_address: $scope.formData.shipping_address,
+            shipping_city: $scope.formData.shipping_city,
+            shipping_state: $scope.formData.shipping_state,
+            shipping_country: $scope.formData.shipping_country,
+            shipping_zipcode: $scope.formData.shipping_zipcode
+        };
+
+        UserService.update_payments(reqData).then(function(response) {
+            var data = response.data;
+            if (data.status_code == 200) {
+                $scope.alerts = [{ type: 'success', msg: data.message }];
+            } else if (data.status_code == 101) {
+                $scope.logout();
+            } else {
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+            }
+        }).catch(function(error) {
+            $scope.alerts = [{ type: 'danger', msg: error }];
+        });
+    };
+
+    $scope.init();
+
 });
