@@ -133,7 +133,8 @@ angular.module('app.user')
             return false;
         }
 
-        $scope.email = $cookies.email;
+        $scope.formData = [];
+        $scope.formData.email = $cookies.email;
     };
 
     $scope.logout = function() {
