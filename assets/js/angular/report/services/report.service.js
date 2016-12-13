@@ -20,6 +20,12 @@ angular.module('app.report')
                 })
             },
 
+            get_recent_order: function(data) {
+                return $http.get('http://staging.ticketvow.com/api/getRecentOrders?token=' + $cookies.token, data).success(function(res) {
+                    Report = res.data;
+                })
+            },
+
         };
 
         return Report;

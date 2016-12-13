@@ -8,5 +8,9 @@ angular.module('app.report', [])
             .when('/ticket_report', {
                 templateUrl: 'view/partials/report/ticket_report.html',
                 controller: 'TicketReportController'
+            })
+            .when('/event_order', {
+                templateUrl: 'view/partials/order/recent_order.html',
+                controller: 'RecentOrderController'
             });
     }])
