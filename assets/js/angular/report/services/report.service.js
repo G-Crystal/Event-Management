@@ -14,7 +14,7 @@ angular.module('app.report')
                 })
             },
 
-            get_order_filter_event: function(data) {
+            get_order_filter_event: function() {
                 return $http.get('http://staging.ticketvow.com/api/getOrderEventList?token=' + $cookies.token).success(function(res) {
                     Report = res.data;
                 })

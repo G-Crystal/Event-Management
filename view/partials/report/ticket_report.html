@@ -2,53 +2,53 @@
 
 <div id="demo" class="home1">
 
-  <!--visible animated fadeInUp-->
-  <div class="container">
-    <div class="menubar-div row">
-      <div class="description-title-div col-lg-12">
-        <h4>TICKET SALES</h4>
-        <div class="event-list-div">
-          <div class="dropdown">
-            <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-category event-select-list">
-              <span class="event-label">{{selectedEvent}}</span>
-            </a>
-            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-              <li ng-repeat="event in events" ng-click="changeEvent(event.title + ' | ' + event.date_time)">{{event.title}} | {{event.date_time}}</li>
-            </ul>
-          </div>
-        </div>
+    <!--visible animated fadeInUp-->
+    <div class="container">
+        <div class="menubar-div row">
+            <div class="description-title-div col-lg-12">
+                <h4>TICKET SALES</h4>
+                <div class="event-list-div">
+                    <div class="dropdown">
+                        <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-category event-select-list">
+                            <span class="event-label">{{selectedEvent}}</span>
+                        </a>
+                        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                            <li ng-repeat="event in events" ng-click="changeEvent(event.id + ' | ' + event.name)">{{event.id}} | {{event.name}}</li>
+                        </ul>
+                    </div>
+                </div>
 
-        <div class="table-container">
-          <table class="border-table">
-            <thead>
-              <tr>
-                <th>Ticket Type</th>
-                <th>Sold</th>
-                <th>Price</th>
-                <th>Value</th>
-                <th>Revenue</th>
-                <th>Net Revenue</th>
-                <th>Fees</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr ng-repeat="ticket in cart_tickets">
-                <td>{{ticket.ticket_type}}</td>
-                <td>{{ticket.sold}}</td>
-                <td>{{ticket.price}}</td>
-                <td>{{ticket.value}}</td>
-                <td>{{ticket.revenue}}</td>
-                <td>{{ticket.net_revenue}}</td>
-                <td>{{ticket.fees}}</td>
-              </tr>
-            </tbody>
-          </table>
+                <div class="table-container">
+                    <table class="border-table">
+                        <thead>
+                            <tr>
+                                <th>Ticket Type</th>
+                                <th>Sold</th>
+                                <th>Price</th>
+                                <th>Value</th>
+                                <th>Revenue</th>
+                                <th>Net Revenue</th>
+                                <th>Fees</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="ticket in cart_tickets">
+                                <td>{{ticket.ticket_type}}</td>
+                                <td>{{ticket.ticket_sold}}</td>
+                                <td>{{ticket.ticket_price}}</td>
+                                <td>{{ticket.ticket_value}}</td>
+                                <td>{{ticket.revenue}}</td>
+                                <td>{{ticket.net_revenue}}</td>
+                                <td>{{ticket.fees}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-      </div>
+        <!-- /.row -->
     </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.container -->
+    <!-- /.container -->
 </div>
 
 <div ng-include="'view/templates/footer.html'"></div>
