@@ -25,7 +25,7 @@ angular.module('angula').config(['$routeProvider', function($routeProvider) {
     .when("/user_messages", { templateUrl: "view/partials/user/dashboard.html", controller: "HomeCtrl" })
         // .when("/user_profile_settings", { templateUrl: "view/partials/user/profile.html", controller: "HomeCtrl" })
         // .when("/user_password_settings", { templateUrl: "view/partials/user/update_password.html", controller: "HomeCtrl" })
-        .when("/user_payments_settings", { templateUrl: "view/partials/user/payments.html", controller: "HomeCtrl" })
+        // .when("/user_payments_settings", { templateUrl: "view/partials/user/payments.html", controller: "HomeCtrl" })
 
     // Admin Menu
     // .when("/create_event", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
