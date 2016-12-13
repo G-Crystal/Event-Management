@@ -4,7 +4,7 @@
 angular.module('angula').config(['$routeProvider', function($routeProvider) {
     $routeProvider
     // Home
-        .when("/", { templateUrl: "view/partials/home.html", controller: "storeController_sound" })
+        .when("/", { templateUrl: "view/partials/shop/store.html", controller: "SearchEventController" })
         // .when("/event", { templateUrl: "view/partials/shop/event_details_page.html", controller: "PageCtrl" })
         // .when("/home2", { templateUrl: "view/partials/home2.html", controller: "HomeCtrl" })
         // .when("/home3", { templateUrl: "view/partials/home3.html", controller: "HomeCtrl" })
