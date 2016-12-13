@@ -142,6 +142,9 @@ angular.module('app.report')
         // $scope.events = myStore.events;
         // $scope.cart_tickets = myStore.cart_tickets;
 
+        $scope.selectedEvent = 'All Events';
+
+        $scope.get_order_filter_event();
         $scope.get_recent_order();
     };
 
@@ -152,7 +155,8 @@ angular.module('app.report')
 
     $scope.changeEvent = function(selectedEvent) {
         $scope.selectedEvent = selectedEvent;
-        $scope.get_ticket_report();
+        $scope.event_id = $scope.selectedEvent.split(' | ')[0];
+        $scope.get_recent_order();
     };
 
     $scope.get_order_filter_event = function() {
@@ -160,7 +164,7 @@ angular.module('app.report')
             var data = response.data;
             if (data.status_code == 200) {
                 $scope.events = data.data;
-                $scope.get_ticket_report();
+                $scope.get_recent_order();
             } else if (data.status_code == 101) {
                 $scope.logout();
             } else {
@@ -174,6 +178,7 @@ angular.module('app.report')
     $scope.get_recent_order = function() {
         var reqData = {};
         reqData.page = 1; //$scope.page;
+        reqData.event_id = ($scope.selectedEvent != 'All Events') ? $scope.event_id : '';
 
         ReportService.get_recent_order(reqData).then(function(response) {
             var data = response.data;
@@ -190,5 +195,4 @@ angular.module('app.report')
     };
 
     $scope.init();
-
 });

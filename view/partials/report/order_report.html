@@ -26,7 +26,6 @@
                                 <th>Last Name</th>
                                 <th>Qty</th>
                                 <th>Paid</th>
-                                <th>Place Holder</th>
                                 <th>Trnx ID</th>
                                 <th>Order ID</th>
                                 <th>Purchase Date</th>
@@ -34,14 +33,13 @@
                         </thead>
                         <tbody>
                             <tr ng-repeat="order in order_report">
-                                <td>{{order.fname}}</td>
-                                <td>{{order.lname}}</td>
-                                <td>{{order.qty}}</td>
+                                <td>{{order.user_fname}}</td>
+                                <td>{{order.user_lname}}</td>
+                                <td>{{order.number_of_ticket}}</td>
                                 <td>{{order.paid}}</td>
-                                <td>{{order.place_holder}}</td>
-                                <td>{{order.trnx_id}}</td>
-                                <td>{{order.order_id}}</td>
-                                <td>{{order.purchase_date}}</td>
+                                <td>{{order.transaction_id}}</td>
+                                <td>{{order.brain_transaction_id}}</td>
+                                <td>{{order.created_at}}</td>
                             </tr>
                         </tbody>
                     </table>

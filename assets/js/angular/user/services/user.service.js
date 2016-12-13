@@ -44,6 +44,12 @@ angular.module('app.user')
                 })
             },
 
+            update_payments: function(data) {
+                return $http.post('http://staging.ticketvow.com/api/updatePaymentInfo?token=' + $cookies.token, data).success(function(res) {
+                    User = res.data;
+                })
+            },
+
         };
 
         return User;

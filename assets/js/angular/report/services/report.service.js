@@ -3,7 +3,7 @@ angular.module('app.report')
 
         var Report = {
             get_order_report: function(data) {
-                return $http.get('http://staging.ticketvow.com/api/getReportOrders?token=' + $cookies.token, data).success(function(res) {
+                return $http.post('http://staging.ticketvow.com/api/getReportOrders?token=' + $cookies.token, data).success(function(res) {
                     Report = res.data;
                 })
             },
@@ -21,7 +21,7 @@ angular.module('app.report')
             },
 
             get_recent_order: function(data) {
-                return $http.get('http://staging.ticketvow.com/api/getRecentOrders?token=' + $cookies.token, data).success(function(res) {
+                return $http.post('http://staging.ticketvow.com/api/getRecentOrders?token=' + $cookies.token, data).success(function(res) {
                     Report = res.data;
                 })
             },
