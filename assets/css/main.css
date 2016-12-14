@@ -7563,13 +7563,6 @@ you can use the generic selector below, but it's slower:
     content: "\e063";
 }
 
-
-/*Pannel Preview*/
-
-.content-lateral-box {
-    display: none;
-}
-
 .box-lateral {
     width: 200px;
     height: 300px;
