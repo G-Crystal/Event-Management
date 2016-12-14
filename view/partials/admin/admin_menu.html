@@ -31,7 +31,13 @@
             </ul>
         </li>
         <li ng-class="getClass('/digital_market')" ng-click="menu_click()"><a href="#digital_market">Digital Market</a></li>
-        <li ng-class="getClass('/box_office')" ng-click="menu_click()"><a href="#box_office">Box Office</a></li>
+        <li ng-class="{'sidenav-collapse':toggle_box, 'sidenav-expand':!toggle_box}" ng-click="setToggle('toggle_box')">
+            <a href="">Box Office</a>
+            <ul class="sidenav-submenu">
+                <li ng-class="getClass('/sale_box')" ng-click="menu_click()"><a href="#sale_box">Sale</a></li>
+                <li ng-class="getClass('/comp_box')" ng-click="menu_click()"><a href="#comp_box">Comp</a></li>
+            </ul>
+        </li>
         <li ng-class="getClass('/service')" ng-click="menu_click()"><a href="#service">Service</a></li>
         <li ng-class="getClass('/allyhub')" ng-click="menu_click()"><a href="#allyhub">Allyhub</a></li>
         <li ng-class="getClass('/messages')" ng-click="menu_click()"><a href="#messages">Messages</a></li>

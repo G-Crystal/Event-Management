@@ -12,7 +12,6 @@ angular.module('angula').config(['$routeProvider', function($routeProvider) {
     // Admin Menu
     .when("/messages", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
         .when("/digital_market", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
-        .when("/box_office", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
         .when("/service", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
         .when("/allyhub", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
 

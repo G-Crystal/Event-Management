@@ -73,9 +73,6 @@ angular.module('app.report')
             return false;
         }
 
-        // $scope.events = myStore.events;
-        // $scope.cart_tickets = myStore.cart_tickets;
-
         $scope.get_order_filter_event();
     };
 
@@ -139,9 +136,6 @@ angular.module('app.report')
             return false;
         }
 
-        // $scope.events = myStore.events;
-        // $scope.cart_tickets = myStore.cart_tickets;
-
         $scope.selectedEvent = 'All Events';
 
         $scope.get_order_filter_event();
@@ -181,6 +175,134 @@ angular.module('app.report')
         reqData.event_id = ($scope.selectedEvent != 'All Events') ? $scope.event_id : '';
 
         ReportService.get_recent_order(reqData).then(function(response) {
+            var data = response.data;
+            if (data.status_code == 200) {
+                $scope.orders = data.data;
+            } else if (data.status_code == 101) {
+                $scope.logout();
+            } else {
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+            }
+        }).catch(function(error) {
+            $scope.alerts = [{ type: 'danger', msg: error }];
+        });
+    };
+
+    $scope.init();
+})
+
+.controller('SaleBoxController', function($scope, $location, $cookies, ReportService) {
+
+    var myStore = new store();
+
+    $scope.init = function() {
+        if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+            $scope.logout();
+            return false;
+        }
+
+        $scope.selectedEvent = 'All Events';
+
+        $scope.get_order_filter_event();
+        $scope.get_sale_box();
+    };
+
+    $scope.logout = function() {
+        $cookies.token = '';
+        $location.path('/log_in');
+    };
+
+    $scope.changeEvent = function(selectedEvent) {
+        $scope.selectedEvent = selectedEvent;
+        $scope.event_id = $scope.selectedEvent.split(' | ')[0];
+        $scope.get_sale_box();
+    };
+
+    $scope.get_order_filter_event = function() {
+        ReportService.get_order_filter_event().then(function(response) {
+            var data = response.data;
+            if (data.status_code == 200) {
+                $scope.events = data.data;
+                $scope.get_recent_order();
+            } else if (data.status_code == 101) {
+                $scope.logout();
+            } else {
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+            }
+        }).catch(function(error) {
+            $scope.alerts = [{ type: 'danger', msg: error }];
+        });
+    };
+
+    $scope.get_sale_box = function() {
+        var reqData = {};
+        reqData.event_id = ($scope.selectedEvent != 'All Events') ? $scope.event_id : '';
+
+        ReportService.get_sale_box(reqData).then(function(response) {
+            var data = response.data;
+            if (data.status_code == 200) {
+                $scope.orders = data.data;
+            } else if (data.status_code == 101) {
+                $scope.logout();
+            } else {
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+            }
+        }).catch(function(error) {
+            $scope.alerts = [{ type: 'danger', msg: error }];
+        });
+    };
+
+    $scope.init();
+})
+
+.controller('CompBoxController', function($scope, $location, $cookies, ReportService) {
+
+    var myStore = new store();
+
+    $scope.init = function() {
+        if (typeof($cookies.token) == 'undefined' || $cookies.token == '') {
+            $scope.logout();
+            return false;
+        }
+
+        $scope.selectedEvent = 'All Events';
+
+        $scope.get_order_filter_event();
+        $scope.get_comp_box();
+    };
+
+    $scope.logout = function() {
+        $cookies.token = '';
+        $location.path('/log_in');
+    };
+
+    $scope.changeEvent = function(selectedEvent) {
+        $scope.selectedEvent = selectedEvent;
+        $scope.event_id = $scope.selectedEvent.split(' | ')[0];
+        $scope.get_comp_box();
+    };
+
+    $scope.get_order_filter_event = function() {
+        ReportService.get_order_filter_event().then(function(response) {
+            var data = response.data;
+            if (data.status_code == 200) {
+                $scope.events = data.data;
+                $scope.get_recent_order();
+            } else if (data.status_code == 101) {
+                $scope.logout();
+            } else {
+                $scope.alerts = [{ type: 'danger', msg: (angular.isString(data.message) ? data.message : 'Input Error!') }];
+            }
+        }).catch(function(error) {
+            $scope.alerts = [{ type: 'danger', msg: error }];
+        });
+    };
+
+    $scope.get_comp_box = function() {
+        var reqData = {};
+        reqData.event_id = ($scope.selectedEvent != 'All Events') ? $scope.event_id : '';
+
+        ReportService.get_comp_box(reqData).then(function(response) {
             var data = response.data;
             if (data.status_code == 200) {
                 $scope.orders = data.data;

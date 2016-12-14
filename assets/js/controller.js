@@ -89,6 +89,7 @@ app.controller('MainController', ['$scope', '$location', '$cookies', function($s
         $scope.toggle_order = (path.search('_order') < 0);
         $scope.toggle_talents = (path.search('_talents') < 0);
         $scope.toggle_report = (path.search('_report') < 0);
+        $scope.toggle_box = (path.search('_box') < 0);
         $scope.toggle_settings = (path.search('_settings') < 0);
     };
 
@@ -168,6 +169,9 @@ app.controller('LMenuController', function($scope, $location, $cookies) {
             case 'toggle_report':
                 $scope.toggle_report = !$scope.toggle_report;
                 break;
+            case 'toggle_box':
+                $scope.toggle_box = !$scope.toggle_box;
+                break;
             case 'toggle_settings':
                 $scope.toggle_settings = !$scope.toggle_settings;
                 break;
@@ -185,6 +189,7 @@ app.controller('LMenuController', function($scope, $location, $cookies) {
         $scope.toggle_order = (path.search('_order') < 0);
         $scope.toggle_talents = (path.search('_talents') < 0);
         $scope.toggle_report = (path.search('_report') < 0);
+        $scope.toggle_box = (path.search('_box') < 0);
         $scope.toggle_settings = (path.search('_settings') < 0);
 
         $scope.userinfo = [];
