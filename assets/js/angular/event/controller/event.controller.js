@@ -464,7 +464,7 @@ angular.module('app.event')
         var modalInstance = $modal.open({
             animation: true,
             templateUrl: 'view/partials/ticket/addTicketPopup.html',
-            controller: 'TicketController',
+            controller: 'AddTicketController',
             size: 'lg'
         });
     };

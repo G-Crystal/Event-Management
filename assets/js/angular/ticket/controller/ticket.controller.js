@@ -88,7 +88,7 @@ angular.module('app.ticket')
         $scope.init();
     })
 
-.controller('TicketController', function($scope, $location, $cookies, TicketService) {
+.controller('AddTicketController', function($scope, $location, $cookies, TicketService) {
 
     var myStore = new store();
 
@@ -133,6 +133,8 @@ angular.module('app.ticket')
             console.log(error);
         });
     };
+
+    $scope.init();
 })
 
 .controller('EditTicketController', function($rootScope, $scope, $location, $cookies, $modalInstance, TicketService) {
