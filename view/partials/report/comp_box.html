@@ -20,28 +20,28 @@
                                 </div>
                             </div>
 
-                            <div class="box-container container-box-shadow">
-                                <div class="block-header col-xs-12">
-                                    <div class="col-xs-6">
+                            <div class="box-container margin-bottom container-box-shadow">
+                                <div class="block-header">
+                                    <div class="col-xs-8">
                                         <span>TICKET TYPE</span>
                                     </div>
-                                    <div class="col-xs-3">
+                                    <div class="col-xs-2">
                                         <span>PRICE</span>
                                     </div>
-                                    <div class="col-xs-3">
+                                    <div class="col-xs-2">
                                         <span>QTY</span>
                                     </div>
                                 </div>
                                 <div class="col-xs-12">
                                     <div class="ticket-container-div container-box-shadow row" ng-repeat="ticket in datas.tickets">
-                                        <div class="col-xs-6">
+                                        <div class="col-xs-8">
                                             <div class="ticket-name-div">{{ticket.name}}</div>
                                             <div class="ticket-qty-div">AVAILABLE. {{ticket.available_qty}}</div>
                                         </div>
-                                        <div class="ticket-div col-xs-3">
+                                        <div class="ticket-div col-xs-2">
                                             <span>{{ticket.price}}</span>
                                         </div>
-                                        <div class="ticket-div col-xs-3">
+                                        <div class="ticket-div col-xs-2">
                                             <input type="number" min="0" step="1" class="spin-input" ng-model="ticket.qty">
                                         </div>
                                     </div>
@@ -50,18 +50,18 @@
                         </div>
 
                         <div class="col-md-7 col-sm-12">
-                            <div class="box-container container-box-shadow">
-                                <div class="block-header col-xs-12">
+                            <div class="box-container margin-bottom container-box-shadow">
+                                <div class="block-header">
                                     <div class="col-xs-2">
                                         <span>QTY</span>
                                     </div>
-                                    <div class="col-xs-6">
+                                    <div class="col-xs-4">
                                         <span>TICKET TYPE</span>
                                     </div>
-                                    <div class="col-xs-1">
+                                    <div class="col-xs-2">
                                         <span>PRICE</span>
                                     </div>
-                                    <div class="col-xs-1">
+                                    <div class="col-xs-2">
                                         <span>FEES</span>
                                     </div>
                                     <div class="col-xs-2">
@@ -77,13 +77,13 @@
                                             <div class="col-xs-2">
                                                 <input type="number" min="0" step="1" class="spin-input" ng-model="sale_ticket.qty">
                                             </div>
-                                            <div class="col-xs-6">
+                                            <div class="col-xs-4">
                                                 <div class="ticket-name-div">{{sale_ticket.name}}</div>
                                             </div>
-                                            <div class="col-xs-1">
+                                            <div class="col-xs-2">
                                                 <span>{{sale_ticket.price}}</span>
                                             </div>
-                                            <div class="col-xs-1">
+                                            <div class="col-xs-2">
                                                 <span>{{sale_ticket.fees}}</span>
                                             </div>
                                             <div class="col-xs-2">
@@ -99,14 +99,14 @@
                     <div class="row">
                         <div class="col-md-5 col-sm-12">
                             <div class="box-sub-title">PAYMENT</div>
-                            <div class="box-container container-box-shadow">
+                            <div class="box-container margin-bottom container-box-shadow">
                                 <span>DISABLED</span>
                             </div>
                         </div>
 
                         <div class="col-md-7 col-sm-12">
                             <div class="box-sub-title">DELIVERY</div>
-                            <div class="box-container container-box-shadow">
+                            <div class="box-container margin-bottom container-box-shadow">
                                 <tabset>
                                     <tab heading="EMAIL">
                                         <div class="box-container container-box-shadow">
@@ -142,43 +142,21 @@
                                     </tab>
                                     <tab heading="PRINT">
                                         <div class="box-container container-box-shadow">
-                                            <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.fname.$invalid && !box_form.fname.$pristine }">
-                                                <input type="text" name="fname" placeholder="First Name" class="form-control float-control" id="pfname" ng-model="email.fname" required>
-                                                <label for="input1" class="label-name required"></label>
-                                                <span ng-show="box_form.fname.$invalid && !box_form.first_name.$pristine">First name is required.</span>
-                                            </div>
-                                            <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.lname.$invalid && !box_form.lname.$pristine }">
-                                                <input type="text" name="lname" placeholder="Last Name" class="form-control float-control" id="plname" ng-model="email.lname" required>
-                                                <label for="input1" class="label-name required"></label>
-                                                <span ng-show="box_form.lname.$invalid && !box_form.lname.$pristine">First name is required.</span>
-                                            </div>
-                                            <div class="col-xs-12" ng-class="{ 'has-error' : box_form.email.$invalid && !box_form.email.$pristine }">
-                                                <input type="email" name="email" ng-model="email.email" required placeholder="Enter Email" class="form-control" id="pemail" ng-readonly="true">
-                                                <span ng-show="box_form.email.$invalid && !box_form.email.$pristine">Invalid email address.</span>
+                                            <div class="col-xs-12">
+                                                <span>COMING SOON...</span>
                                             </div>
                                         </div>
                                     </tab>
                                     <tab heading="WILL CALL">
                                         <div class="box-container container-box-shadow">
-                                            <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.fname.$invalid && !box_form.fname.$pristine }">
-                                                <input type="text" name="fname" placeholder="First Name" class="form-control float-control" id="wfname" ng-model="email.fname" required>
-                                                <label for="input1" class="label-name required"></label>
-                                                <span ng-show="box_form.fname.$invalid && !box_form.fname.$pristine">First name is required.</span>
-                                            </div>
-                                            <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.lname.$invalid && !box_form.lname.$pristine }">
-                                                <input type="text" name="lname" placeholder="Last Name" class="form-control float-control" id="wlname" ng-model="email.lname" required>
-                                                <label for="input1" class="label-name required"></label>
-                                                <span ng-show="box_form.lname.$invalid && !box_form.lname.$pristine">First name is required.</span>
-                                            </div>
-                                            <div class="col-xs-12" ng-class="{ 'has-error' : box_form.email.$invalid && !box_form.email.$pristine }">
-                                                <input type="email" name="email" ng-model="email.email" required placeholder="Enter Email" class="form-control" id="wemail" ng-readonly="true">
-                                                <span ng-show="box_form.email.$invalid && !box_form.email.$pristine">Invalid email address.</span>
+                                            <div class="col-xs-12">
+                                                <span>COMING SOON...</span>
                                             </div>
                                         </div>
                                     </tab>
                                 </tabset>
                             </div>
-                            <div class="box-container container-box-shadow">
+                            <div class="box-container margin-bottom container-box-shadow">
                                 <div class="col-xs-8"><span>SUBTOTAL</span></div>
                                 <div class="col-xs-4"><span>$0.00</span></div>
                                 <div class="col-xs-8"><span>FACILITY FEES</span></div>

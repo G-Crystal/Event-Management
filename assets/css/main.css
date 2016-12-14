@@ -415,11 +415,14 @@ p.personal-phrase i.fa-quote-left {
 
 .box-container {
     width: 100%;
-    margin-bottom: 25px;
     padding: 10px;
     content: '';
     clear: both;
     display: table;
+}
+
+.margin-bottom {
+    margin-bottom: 25px;
 }
 
 .float-div {
@@ -5268,7 +5271,7 @@ span.caret {
 *********************************************************************************************/
 
 .spin-input {
-    width: 50px;
+    width: 100%;
 }
 
 .cart-info-div {
