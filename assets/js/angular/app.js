@@ -27,6 +27,78 @@ app.config(['$routeProvider', function($routeProvider) {
     });
 }]);
 
+// create a data service that provides a store and a shopping cart that
+// will be shared by all views (instead of creating fresh ones for each view).
+app.factory("DataService", function() {
+
+    // create store
+    var myStore = new store();
+    var storeDetails = new detailsprod();
+    // create shopping cart
+    var myCart = new shoppingCart("AngularStore");
+
+    // enable PayPal checkout
+    // note: the second parameter identifies the merchant; in order to use the 
+    // shopping cart with PayPal, you have to create a merchant account with 
+    // PayPal. You can do that here:
+    // https://www.paypal.com/webapps/mpp/merchant
+    myCart.addCheckoutParameters("PayPal", "corsaro22-facilitator@tiscali.it");
+
+    // return data object with store and cart
+    return {
+        store: myStore,
+        cart: myCart,
+        detailsprod: storeDetails
+    };
+});
+
+//Carousel general management
+app.directive('owlcarousel', function() {
+
+    var linker = function(scope, element, attr) {
+        link: (scope, element, attr)
+        $(element).owlCarousel({
+            autoPlay: true,
+            // "singleItem:true" is a shortcut for:
+            items: 3,
+            itemsCustom: false,
+            itemsDesktop: [1920, 4],
+            itemsDesktopSmall: [1280, 3],
+            itemsTablet: [768, 2],
+            itemsTabletSmall: false,
+            itemsMobile: [479, 1],
+        });
+
+    }
+
+    return {
+        restrict: "A",
+        link: linker
+    }
+
+});
+
+//Carousel store management
+app.directive('carouselprod', function() {
+
+    var linker = function(scope, element, attr) {
+        link: (scope, element, attr)
+        $(element).owlCarousel({
+            navigation: false,
+            slideSpeed: 300,
+            paginationSpeed: 400,
+            autoPlay: true,
+            items: 4
+        });
+
+    }
+
+    return {
+        restrict: "A",
+        link: linker
+    }
+});
+
 app.directive('trumbowygNg', function() {
     'use strict';
     return {

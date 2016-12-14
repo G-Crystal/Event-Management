@@ -23,8 +23,8 @@
     <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/> -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,700,600,300' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,800,700,900' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,700,600,300" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,800,700,900" rel="stylesheet" type="text/css">
 
     <!-- Our Website CSS Styles -->
     <link href="assets/css/animate.css" rel="stylesheet" type="text/css" />
@@ -56,18 +56,6 @@
 
 <body ng-app="angula">
     <div ng-controller="MainController">
-
-        <!-- Only for Preview -->
-        <div class="content-lateral-box">
-            <div class="box-lateral">
-                <h3>Change Footer</h3>
-                <select ng-model="template" ng-options="t.name for t in templates">
-    
-                </select>
-            </div>
-            <a id="btnlateral">Toggle</a>
-        </div>
-        <!-- End -->
 
         <!-- Our Website Content Goes Here -->
         <div ng-include="'view/templates/header.html'"></div>
