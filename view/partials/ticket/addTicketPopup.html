@@ -5,68 +5,68 @@
         </div>
     </div>
 
-  <form accept-charset="UTF-8" role="form" name="ticket_form" novalidate>
-    <div class="row" ng-class="{ 'has-error' : ticket_form.ticket_name.$invalid && !ticket_form.ticket_name.$pristine }">
-      <div class="col-md-2 col-sm-2 col-xs-12">
-        <label for="input1" class="label-name required">Ticket Name</label>
-      </div>
-      <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-        <input type="text" name="ticket_name" placeholder="Enter Ticket Type Name. Ex. General Admission" class="form-control" id="ticket_name" maxlength="100" ng-model="ticket_name" required="">
-        <span ng-show="ticket_form.ticket_name.$invalid && !ticket_form.ticket_name.$pristine">Ticket name is required.</span>
-      </div>
-      <div class="col-md-2 col-sm-2 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-        <label for="input1" class="label-comment">0 of 100</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-2 col-sm-2 col-xs-12">
-        <label for="input10" class="label-name">Ticket Description</label>
-      </div>
-      <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-        <div class="wysiwig-editor">
-          <trix-editor name="description" id="description" angular-trix ng-model="description" class="trix-content"></trix-editor>
+    <form accept-charset="UTF-8" role="form" name="ticket_form" novalidate>
+        <div class="row" ng-class="{ 'has-error' : ticket_form.ticket_name.$invalid && !ticket_form.ticket_name.$pristine }">
+            <div class="col-md-2 col-sm-2 col-xs-12">
+                <label for="input1" class="label-name required">Ticket Name</label>
+            </div>
+            <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                <input type="text" name="ticket_name" placeholder="Enter Ticket Type Name. Ex. General Admission" class="form-control" id="ticket_name" maxlength="100" ng-model="ticket_name" required="">
+                <span ng-show="ticket_form.ticket_name.$invalid && !ticket_form.ticket_name.$pristine">Ticket name is required.</span>
+            </div>
+            <div class="col-md-2 col-sm-2 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                <label for="input1" class="label-comment">0 of 100</label>
+            </div>
         </div>
-      </div>
-      <div class="col-md-2 col-sm-2 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-        <label for="input10" class="label-comment">0 of 500</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-2 col-sm-2 col-xs-12">
-        <label for="input5" class="label-name required">Ticket Type</label>
-      </div>
-      <div class="col-md-3 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-        <!-- <input type="text" name="ticket_type" placeholder="Select Type" class="form-control" id="ticket_type" ng-model="ticket_type"> -->
-        <select ng-model="ticket_type" ng-options="ticket.value as ticket.name for ticket in ticket_types" class="form-control" name="ticket_type" id="ticket_type"></select>
-      </div>
-      <div class="clearfix visible-sm visible-xs"></div>
-      <div class="col-md-2 col-sm-2 col-xs-12">
-        <label for="input5" class="label-name required">Delivery Type</label>
-      </div>
-      <div class="col-md-3 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
-        <!-- <input type="text" name="delivery_type" placeholder="Select Type" class="form-control" id="delivery_type" ng-model="delivery_type"> -->
-        <select ng-model="delivery_type" ng-options="delivery.value as delivery.name for delivery in delivery_types" class="form-control" name="delivery_type" id="delivery_type" required=""></select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-2 col-sm-2">
-        <label for="input6" class="label-name required">Price</label>
-      </div>
-      <div class="col-md-3 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : ticket_form.price.$invalid }">
-        <input type="number" name="price" placeholder="0.00" class="form-control" id="price" maxlength="6" ng-model="price">
-        <span ng-show="ticket_form.price.$invalid">Invalid Price.</span>
-      </div>
-      <div class="clearfix visible-sm visible-xs"></div>
-      <div class="col-md-2 col-sm-2 col-xs-12">
-        <label for="input5" class="label-name required">Quantity</label>
-      </div>
-      <div class="col-md-3 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : ticket_form.quantity.$invalid }">
-        <input type="text" pattern="[0-9]*" name="quantity" placeholder="Quantity Available" class="form-control" id="quantity" maxlength="9" ng-model="quantity">
-        <span ng-show="ticket_form.quantity.$invalid">Must be only integer.</span>
-      </div>
-    </div>
-    <div class="row store-down-bottom">
-      <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="add_ticket()" ng-disabled="ticket_form.$invalid" style="right:15px;">Add</a>
-    </div>
-  </form>
+        <div class="row">
+            <div class="col-md-2 col-sm-2 col-xs-12">
+                <label for="input10" class="label-name">Ticket Description</label>
+            </div>
+            <div class="col-md-8 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                <div class="wysiwig-editor">
+                    <trix-editor name="description" id="description" angular-trix ng-model="description" class="trix-content"></trix-editor>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                <label for="input10" class="label-comment">0 of 500</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-sm-2 col-xs-12">
+                <label for="input5" class="label-name required">Ticket Type</label>
+            </div>
+            <div class="col-md-3 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                <!-- <input type="text" name="ticket_type" placeholder="Select Type" class="form-control" id="ticket_type" ng-model="ticket_type"> -->
+                <select ng-model="ticket_type" ng-options="ticket.value as ticket.name for ticket in ticket_types" class="form-control" name="ticket_type" id="ticket_type"></select>
+            </div>
+            <div class="clearfix visible-sm visible-xs"></div>
+            <div class="col-md-2 col-sm-2 col-xs-12">
+                <label for="input5" class="label-name required">Delivery Type</label>
+            </div>
+            <div class="col-md-3 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1">
+                <!-- <input type="text" name="delivery_type" placeholder="Select Type" class="form-control" id="delivery_type" ng-model="delivery_type"> -->
+                <select ng-model="delivery_type" ng-options="delivery.value as delivery.name for delivery in delivery_types" class="form-control" name="delivery_type" id="delivery_type" required=""></select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-sm-2">
+                <label for="input6" class="label-name required">Price</label>
+            </div>
+            <div class="col-md-3 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : ticket_form.price.$invalid }">
+                <input type="number" name="price" placeholder="0.00" class="form-control" id="price" maxlength="6" ng-model="price">
+                <span ng-show="ticket_form.price.$invalid">Invalid Price.</span>
+            </div>
+            <div class="clearfix visible-sm visible-xs"></div>
+            <div class="col-md-2 col-sm-2 col-xs-12">
+                <label for="input5" class="label-name required">Quantity</label>
+            </div>
+            <div class="col-md-3 col-sm-8 col-sm-offset-0 col-xs-11 col-xs-offset-1" ng-class="{ 'has-error' : ticket_form.quantity.$invalid }">
+                <input type="text" pattern="[0-9]*" name="quantity" placeholder="Quantity Available" class="form-control" id="quantity" maxlength="9" ng-model="quantity">
+                <span ng-show="ticket_form.quantity.$invalid">Must be only integer.</span>
+            </div>
+        </div>
+        <div class="row store-down-bottom">
+            <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom" ng-click="add_ticket()" ng-disabled="ticket_form.$invalid" style="right:15px;">Add</a>
+        </div>
+    </form>
 </div>
