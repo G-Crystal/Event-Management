@@ -425,10 +425,6 @@ p.personal-phrase i.fa-quote-left {
     margin-bottom: 25px;
 }
 
-.float-div {
-    float: left;
-}
-
 .container-box-shadow {
     -webkit-box-shadow: 1px 1px 8px 1px rgba(64, 64, 64, 0.7);
     -moz-box-shadow: 1px 1px 8px 1px rgba(64, 64, 64, 0.7);
@@ -484,6 +480,10 @@ p.personal-phrase i.fa-quote-left {
 .float-control {
     width: calc(100% - 7px);
     float: left;
+}
+
+.red-comment {
+    color: #FF0000;
 }
 
 
@@ -5226,6 +5226,10 @@ span.caret {
 
 .align-left {
     text-align: left;
+}
+
+.align-right {
+    text-align: right;
 }
 
 
