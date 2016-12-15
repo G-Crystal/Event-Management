@@ -38,6 +38,12 @@ angular.module('app.user')
                 })
             },
 
+            update_organizer_profile: function(data) {
+                return $http.post('http://staging.ticketvow.com/api/updateOrganizerProfile?token=' + $cookies.token, data).success(function(res) {
+                    User = res.data;
+                })
+            },
+
             update_password: function(data) {
                 return $http.post('http://staging.ticketvow.com/api/updatePassword?token=' + $cookies.token, data).success(function(res) {
                     User = res.data;

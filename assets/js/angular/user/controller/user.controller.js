@@ -234,7 +234,7 @@ angular.module('app.user')
     $scope.admin_update = function() {
         var reqData = $scope.formData;
 
-        UserService.update_profile(reqData).then(function(response) {
+        UserService.update_organizer_profile(reqData).then(function(response) {
             var data = response.data;
             if (data.status_code == 200) {
                 $scope.alerts = [{ type: 'success', msg: data.message }];
