@@ -28,8 +28,8 @@
                     <div class="col-lg-3 col-lg-offset-0 col-md-5 col-sm-5 col-xs-10 col-xs-offset-1 margin-bottom-10">
                         <div class="dropdown">
                             <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-category select-list">
-                {{selectedCategory}} <span class="caret"></span>
-              </a>
+                                {{selectedCategory}} <span class="caret"></span>
+                            </a>
                             <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
                                 <li class="dropdown-submenu">
                                     Music
@@ -98,7 +98,7 @@
                             </div>
                             <div class="store-content-div">
                                 <p class="content">{{event.event_name}}</p>
-                                <p class="stadium">{{event.event_name}}</p>
+                                <p class="stadium">{{event.venue_name}}</p>
                                 <p class="location">{{event.venue_city}}, {{event.state}}</p>
                             </div>
                             <a class="btn btn-block trans-buy-button" ng-click="loadBuyTicket(event.id)">BUY NOW</a>

@@ -2552,9 +2552,9 @@ h2.t-title-office {
 
 .services-box-black .content {
     color: #4C4C4C;
-    height: 66px;
     margin-top: 10px;
     font-weight: 300;
+    font-size: 16px;
 }
 
 .services-box-black .stadium {
@@ -5844,7 +5844,6 @@ span.caret {
 
 .store-content-div {
     position: relative;
-    min-height: 170px;
     margin: 0 10px;
 }
 
