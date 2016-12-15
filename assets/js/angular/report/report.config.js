@@ -13,12 +13,8 @@ angular.module('app.report', [])
                 templateUrl: 'view/partials/order/recent_order.html',
                 controller: 'RecentOrderController'
             })
-            .when('/sale_box', {
-                templateUrl: 'view/partials/report/sale_box.html',
-                controller: 'SaleBoxController'
-            })
-            .when('/comp_box', {
-                templateUrl: 'view/partials/report/comp_box.html',
-                controller: 'CompBoxController'
+            .when('/box_office', {
+                templateUrl: 'view/partials/report/box_office.html',
+                controller: 'BoxOfficeController'
             });
     }])

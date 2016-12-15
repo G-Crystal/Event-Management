@@ -1,0 +1,537 @@
+<div ng-include="'view/partials/admin/admin_menu.html'"></div>
+
+<div id="demo" class="home1">
+
+    <!--visible animated fadeInUp-->
+    <div class="container">
+        <div class="menubar-div">
+            <form accept-charset="UTF-8" role="form" name="box_form" method="post" enctype="multipart/form-data" novalidate>
+                <div class="row align-right">
+                    <input type="checkbox" name="make_private" class="checkbox-ctrl" id="make_private" value="make_private">
+                    <label for="input1" class="red-comment">Check here to disable ticket fees</label>
+                </div>
+                
+                <tabset justified="true">
+                    <tab heading="SALE">
+                        <div class="description-title-div float-left">
+                            <div class="row">
+                                <div class="col-md-5 col-sm-12">
+                                    <div class="box-sub-title">EVENT</div>
+                                    <div class="box-event-list-div">
+                                        <div class="dropdown">
+                                            <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-category event-select-list container-box-shadow">
+                                                <span class="event-label">{{selectedEvent}}</span>
+                                            </a>
+                                            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                                <li ng-repeat="event in events" ng-click="changeEvent(event.id + ' | ' + event.name)">{{event.id}} | {{event.name}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="box-container margin-bottom container-box-shadow">
+                                        <div class="block-header">
+                                            <div class="col-xs-8">
+                                                <span>TICKET TYPE</span>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <span>PRICE</span>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <span>QTY</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <div class="ticket-container-div container-box-shadow row" ng-repeat="ticket in datas.tickets">
+                                                <div class="col-xs-8">
+                                                    <div class="ticket-name-div">{{ticket.name}}</div>
+                                                    <div class="ticket-qty-div">AVAILABLE. {{ticket.available_qty}}</div>
+                                                </div>
+                                                <div class="ticket-div col-xs-2">
+                                                    <span>{{ticket.price}}</span>
+                                                </div>
+                                                <div class="ticket-div col-xs-2">
+                                                    <input type="number" min="0" step="1" class="spin-input" ng-model="ticket.qty">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="box-sub-title">PAYMENT</div>
+                                    <div class="box-container margin-bottom container-box-shadow">
+                                        <tabset>
+                                            <tab heading="CARD">
+                                                <div class="box-container container-box-shadow">
+                                                    <div class="col-xs-12" ng-class="{ 'has-error' : box_form.credit_card.$invalid && !box_form.credit_card.$pristine }">
+                                                        <input type="text" pattern="[0-9]*" name="credit_card" placeholder="Enter Credit Card Number" class="form-control float-control" id="credit_card" ng-model="card.card_number" ng-minlength="16" ng-maxlength="16" required>
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.credit_card.$error.pattern">Invalid Credit Card. Must be only number.</span>
+                                                        <span ng-show="box_form.credit_card.$error.minlength">Password is too short.</span>
+                                                        <span ng-show="box_form.credit_card.$error.maxlength">Password is too long.</span>
+                                                    </div>
+                                                    <div class="col-xs-6" ng-class="{ 'has-error' : box_form.exp_date.$invalid && !box_form.exp_date.$pristine }">
+                                                        <input type="text" pattern="[0-9]{2}/[0-9]{2}" name="exp_date" placeholder="MM/YY" class="form-control float-control" id="exp_date" ng-model="card.card_date">
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.exp_date.$error.pattern">Invalid Date. Must be MM/YY.</span>
+                                                    </div>
+                                                    <div class="col-xs-6" ng-class="{ 'has-error' : box_form.czipcode.$invalid && !box_form.czipcode.$pristine }">
+                                                        <input type="text" pattern="[0-9]*" name="czipcode" placeholder="Enter Zipcode" class="form-control float-control" id="czipcode" ng-model="card.zipcode" required>
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.czipcode.$invalid && !box_form.czipcode.$pristine">Invalid zipcode. Must be only number.</span>
+                                                    </div>
+                                                </div>
+                                            </tab>
+                                            <tab heading="CASH">
+                                                <div class="col-xs-12" ng-class="{ 'has-error' : box_form.tendered.$invalid && !box_form.tendered.$pristine }">
+                                                    <div>
+                                                        <span>TENDERED</span>
+                                                        <input type="text" name="tendered" placeholder="TENDERED" class="form-control float-control" id="tendered" ng-model="cash.tendered">
+                                                        <label for="input1" class="label-name required"></label>
+                                                    </div>
+                                                    <div>
+                                                        <span ng-show="box_form.tendered.$invalid && !box_form.tendered.$pristine">Must input tendered.</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <div>
+                                                        <span>CHANCE</span>
+                                                    </div>
+                                                </div>
+                                            </tab>
+                                            <tab heading="COUPON">
+                                                <div class="col-xs-12" ng-class="{ 'has-error' : box_form.code.$invalid && !box_form.code.$pristine }">
+                                                    <div>
+                                                        <span>CODE</span>
+                                                        <input type="text" name="code" placeholder="CODE" class="form-control float-control" id="code" ng-model="coupon.code">
+                                                        <label for="input1" class="label-name required"></label>
+                                                    </div>
+                                                    <div>
+                                                        <span ng-show="box_form.code.$invalid && !box_form.code.$pristine">Must input tendered.</span>
+                                                    </div>
+                                                </div>
+                                            </tab>
+                                        </tabset>
+                                    </div>
+
+                                    <div class="box-sub-title">OTHERS</div>
+                                    <div class="box-container margin-bottom container-box-shadow">
+                                        <div class="col-xs-12" ng-class="{ 'has-error' : box_form.taxes.$invalid && !box_form.taxes.$pristine }">
+                                            <div>
+                                                <span>TAXES</span>
+                                                <input type="text" pattern="[0-9]+\.?[0-9]*" name="taxes" placeholder="0.00%" id="taxes" ng-model="others.taxes">
+                                                <span>%</span>
+                                            </div>
+                                            <div>
+                                                <span ng-show="box_form.taxes.$error.pattern">Invalid Taxes. Must be 0.00.</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12" ng-class="{ 'has-error' : box_form.fees.$invalid && !box_form.fees.$pristine }">
+                                            <div>
+                                                <span>FACILITY FEES</span>
+                                                <input type="text" pattern="[0-9]+" name="fees" placeholder="$1" id="fees" ng-model="others.fees">
+                                                <span>$</span>
+                                            </div>
+                                            <div>
+                                                <span ng-show="box_form.fees.$error.pattern">Invalid Fees. Must be 0.00.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-7 col-sm-12">
+                                    <div class="box-sub-title">CART</div>
+                                    <div class="box-container margin-bottom container-box-shadow">
+                                        <div class="block-header">
+                                            <div class="col-xs-2">
+                                                <span>QTY</span>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <span>TICKET TYPE</span>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <span>PRICE</span>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <span>FEES</span>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <span>SUBTOTAL</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <div class="ticket-container-div container-box-shadow row" ng-repeat="sale_ticket in datas.sale_tickets">
+                                                <div class="col-xs-12">
+                                                    <span>{{sale_ticket.event_name}} | {{sale_ticket.created_at}}</span>
+                                                </div>
+                                                <div class="ticket-div">
+                                                    <div class="col-xs-2">
+                                                        <input type="number" min="0" step="1" class="spin-input" ng-model="sale_ticket.qty">
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <div class="ticket-name-div">{{sale_ticket.name}}</div>
+                                                    </div>
+                                                    <div class="col-xs-2">
+                                                        <span>{{sale_ticket.price}}</span>
+                                                    </div>
+                                                    <div class="col-xs-2">
+                                                        <span>{{sale_ticket.fees}}</span>
+                                                    </div>
+                                                    <div class="col-xs-2">
+                                                        <span>{{sale_ticket.subtotal}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="box-sub-title">DELIVERY</div>
+                                    <div class="box-container margin-bottom container-box-shadow">
+                                        <tabset>
+                                            <tab heading="EMAIL">
+                                                <div class="box-container container-box-shadow">
+                                                    <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.fname.$invalid && !box_form.fname.$pristine }">
+                                                        <input type="text" name="fname" placeholder="First Name" class="form-control float-control" id="fname" ng-model="email.fname" required>
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.fname.$invalid && !box_form.fname.$pristine">First name is required.</span>
+                                                    </div>
+                                                    <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.lname.$invalid && !box_form.lname.$pristine }">
+                                                        <input type="text" name="lname" placeholder="Last Name" class="form-control float-control" id="lname" ng-model="email.lname" required>
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.lname.$invalid && !box_form.lname.$pristine">First name is required.</span>
+                                                    </div>
+                                                    <div class="col-xs-12" ng-class="{ 'has-error' : box_form.email.$invalid && !box_form.email.$pristine }">
+                                                        <input type="email" name="email" ng-model="email.email" placeholder="Enter Email" class="form-control float-control" id="email" required>
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.email.$invalid && !box_form.email.$pristine">Invalid email address.</span>
+                                                    </div>
+                                                    <div class="col-xs-12">
+                                                        <input type="text" name="address" placeholder="Address" class="form-control" id="address" ng-model="email.address">
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6">
+                                                        <input type="text" name="city" placeholder="City" class="form-control" id="city" ng-model="email.city">
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6">
+                                                        <input type="text" name="state" placeholder="State" class="form-control" id="state" ng-model="email.state">
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6" ng-class="{ 'has-error' : box_form.zipcode.$invalid && !box_form.zipcode.$pristine }">
+                                                        <input type="text" pattern="[0-9]*" name="zipcode" placeholder="Enter Zipcode" class="form-control" id="zipcode" ng-model="email.zipcode" required>
+                                                        <span ng-show="box_form.zipcode.$invalid && !box_form.zipcode.$pristine">Invalid zipcode. Must be only number.</span>
+                                                    </div>
+                                                </div>
+                                            </tab>
+                                            <tab heading="PRINT">
+                                                <div class="box-container container-box-shadow">
+                                                    <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.fname.$invalid && !box_form.fname.$pristine }">
+                                                        <input type="text" name="fname" placeholder="First Name" class="form-control float-control" id="fname" ng-model="email.fname" required>
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.fname.$invalid && !box_form.fname.$pristine">First name is required.</span>
+                                                    </div>
+                                                    <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.lname.$invalid && !box_form.lname.$pristine }">
+                                                        <input type="text" name="lname" placeholder="Last Name" class="form-control float-control" id="lname" ng-model="email.lname" required>
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.lname.$invalid && !box_form.lname.$pristine">First name is required.</span>
+                                                    </div>
+                                                    <div class="col-xs-12" ng-class="{ 'has-error' : box_form.email.$invalid && !box_form.email.$pristine }">
+                                                        <input type="email" name="email" ng-model="email.email" placeholder="Enter Email" class="form-control float-control" id="email" required>
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.email.$invalid && !box_form.email.$pristine">Invalid email address.</span>
+                                                    </div>
+                                                    <div class="col-xs-12">
+                                                        <input type="text" name="address" placeholder="Address" class="form-control" id="address" ng-model="email.address">
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6">
+                                                        <input type="text" name="city" placeholder="City" class="form-control" id="city" ng-model="email.city">
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6">
+                                                        <input type="text" name="state" placeholder="State" class="form-control" id="state" ng-model="email.state">
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6" ng-class="{ 'has-error' : box_form.zipcode.$invalid && !box_form.zipcode.$pristine }">
+                                                        <input type="text" pattern="[0-9]*" name="zipcode" placeholder="Enter Zipcode" class="form-control" id="zipcode" ng-model="email.zipcode" required>
+                                                        <span ng-show="box_form.zipcode.$invalid && !box_form.zipcode.$pristine">Invalid zipcode. Must be only number.</span>
+                                                    </div>
+                                                </div>
+                                            </tab>
+                                            <tab heading="WILL CALL">
+                                                <div class="box-container container-box-shadow">
+                                                    <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.fname.$invalid && !box_form.fname.$pristine }">
+                                                        <input type="text" name="fname" placeholder="First Name" class="form-control float-control" id="fname" ng-model="email.fname" required>
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.fname.$invalid && !box_form.fname.$pristine">First name is required.</span>
+                                                    </div>
+                                                    <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.lname.$invalid && !box_form.lname.$pristine }">
+                                                        <input type="text" name="lname" placeholder="Last Name" class="form-control float-control" id="lname" ng-model="email.lname" required>
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.lname.$invalid && !box_form.lname.$pristine">First name is required.</span>
+                                                    </div>
+                                                    <div class="col-xs-12" ng-class="{ 'has-error' : box_form.email.$invalid && !box_form.email.$pristine }">
+                                                        <input type="email" name="email" ng-model="email.email" placeholder="Enter Email" class="form-control float-control" id="email" required>
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.email.$invalid && !box_form.email.$pristine">Invalid email address.</span>
+                                                    </div>
+                                                    <div class="col-xs-12">
+                                                        <input type="text" name="address" placeholder="Address" class="form-control" id="address" ng-model="email.address">
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6">
+                                                        <input type="text" name="city" placeholder="City" class="form-control" id="city" ng-model="email.city">
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6">
+                                                        <input type="text" name="state" placeholder="State" class="form-control" id="state" ng-model="email.state">
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6" ng-class="{ 'has-error' : box_form.zipcode.$invalid && !box_form.zipcode.$pristine }">
+                                                        <input type="text" pattern="[0-9]*" name="zipcode" placeholder="Enter Zipcode" class="form-control" id="zipcode" ng-model="email.zipcode" required>
+                                                        <span ng-show="box_form.zipcode.$invalid && !box_form.zipcode.$pristine">Invalid zipcode. Must be only number.</span>
+                                                    </div>
+                                                </div>
+                                            </tab>
+                                        </tabset>
+                                    </div>
+
+                                    <div class="box-container margin-bottom container-box-shadow">
+                                        <div class="col-xs-8"><span>SUBTOTAL</span></div>
+                                        <div class="col-xs-4"><span>$0.00</span></div>
+                                        <div class="col-xs-8"><span>FACILITY FEES</span></div>
+                                        <div class="col-xs-4"><span>$0.00</span></div>
+                                        <div class="col-xs-8"><span>TAXES(0.00%)</span></div>
+                                        <div class="col-xs-4"><span>$0.00</span></div>
+                                        <div class="col-xs-8"><span>TOTAL</span></div>
+                                        <div class="col-xs-4"><span>$0.00</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </tab>
+                    <tab heading="COMP">
+                        <div class="description-title-div float-left">
+                            <div class="row">
+                                <div class="col-md-5 col-sm-12">
+                                    <div class="box-event-list-div">
+                                        <div class="dropdown">
+                                            <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-category event-select-list container-box-shadow">
+                                                <span class="event-label">{{selectedEvent}}</span>
+                                            </a>
+                                            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                                <li ng-repeat="event in events" ng-click="changeEvent(event.id + ' | ' + event.name)">{{event.id}} | {{event.name}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="box-container margin-bottom container-box-shadow">
+                                        <div class="block-header">
+                                            <div class="col-xs-8">
+                                                <span>TICKET TYPE</span>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <span>PRICE</span>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <span>QTY</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <div class="ticket-container-div container-box-shadow row" ng-repeat="ticket in datas.tickets">
+                                                <div class="col-xs-8">
+                                                    <div class="ticket-name-div">{{ticket.name}}</div>
+                                                    <div class="ticket-qty-div">AVAILABLE. {{ticket.available_qty}}</div>
+                                                </div>
+                                                <div class="ticket-div col-xs-2">
+                                                    <span>{{ticket.price}}</span>
+                                                </div>
+                                                <div class="ticket-div col-xs-2">
+                                                    <input type="number" min="0" step="1" class="spin-input" ng-model="ticket.qty">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="box-sub-title">PAYMENT</div>
+                                    <div class="box-container margin-bottom container-box-shadow">
+                                        <span>DISABLED</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-7 col-sm-12">
+                                    <div class="box-container margin-bottom container-box-shadow">
+                                        <div class="block-header">
+                                            <div class="col-xs-2">
+                                                <span>QTY</span>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <span>TICKET TYPE</span>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <span>PRICE</span>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <span>FEES</span>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <span>SUBTOTAL</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <div class="ticket-container-div container-box-shadow row" ng-repeat="sale_ticket in datas.sale_tickets">
+                                                <div class="col-xs-12">
+                                                    <span>{{sale_ticket.event_name}} | {{sale_ticket.created_at}}</span>
+                                                </div>
+                                                <div class="ticket-div">
+                                                    <div class="col-xs-2">
+                                                        <input type="number" min="0" step="1" class="spin-input" ng-model="sale_ticket.qty">
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <div class="ticket-name-div">{{sale_ticket.name}}</div>
+                                                    </div>
+                                                    <div class="col-xs-2">
+                                                        <span>{{sale_ticket.price}}</span>
+                                                    </div>
+                                                    <div class="col-xs-2">
+                                                        <span>{{sale_ticket.fees}}</span>
+                                                    </div>
+                                                    <div class="col-xs-2">
+                                                        <span>{{sale_ticket.subtotal}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="box-sub-title">DELIVERY</div>
+                                    <div class="box-container margin-bottom container-box-shadow">
+                                        <tabset>
+                                            <tab heading="EMAIL">
+                                                <div class="box-container container-box-shadow">
+                                                    <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.fname.$invalid && !box_form.fname.$pristine }">
+                                                        <input type="text" name="fname" placeholder="First Name" class="form-control float-control" id="fname" ng-model="email.fname" required>
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.fname.$invalid && !box_form.fname.$pristine">First name is required.</span>
+                                                    </div>
+                                                    <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.lname.$invalid && !box_form.lname.$pristine }">
+                                                        <input type="text" name="lname" placeholder="Last Name" class="form-control float-control" id="lname" ng-model="email.lname" required>
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.lname.$invalid && !box_form.lname.$pristine">First name is required.</span>
+                                                    </div>
+                                                    <div class="col-xs-12" ng-class="{ 'has-error' : box_form.email.$invalid && !box_form.email.$pristine }">
+                                                        <input type="email" name="email" ng-model="email.email" placeholder="Enter Email" class="form-control float-control" id="email" required>
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.email.$invalid && !box_form.email.$pristine">Invalid email address.</span>
+                                                    </div>
+                                                    <div class="col-xs-12">
+                                                        <input type="text" name="address" placeholder="Address" class="form-control" id="address" ng-model="email.address">
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6">
+                                                        <input type="text" name="city" placeholder="City" class="form-control" id="city" ng-model="email.city">
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6">
+                                                        <input type="text" name="state" placeholder="State" class="form-control" id="state" ng-model="email.state">
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6" ng-class="{ 'has-error' : box_form.zipcode.$invalid && !box_form.zipcode.$pristine }">
+                                                        <input type="text" pattern="[0-9]*" name="zipcode" placeholder="Enter Zipcode" class="form-control" id="zipcode" ng-model="email.zipcode" required>
+                                                        <span ng-show="box_form.zipcode.$invalid && !box_form.zipcode.$pristine">Invalid zipcode. Must be only number.</span>
+                                                    </div>
+                                                </div>
+                                            </tab>
+                                            <tab heading="PRINT">
+                                                <div class="box-container container-box-shadow">
+                                                    <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.fname.$invalid && !box_form.fname.$pristine }">
+                                                        <input type="text" name="fname" placeholder="First Name" class="form-control float-control" id="fname" ng-model="email.fname" required>
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.fname.$invalid && !box_form.fname.$pristine">First name is required.</span>
+                                                    </div>
+                                                    <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.lname.$invalid && !box_form.lname.$pristine }">
+                                                        <input type="text" name="lname" placeholder="Last Name" class="form-control float-control" id="lname" ng-model="email.lname" required>
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.lname.$invalid && !box_form.lname.$pristine">First name is required.</span>
+                                                    </div>
+                                                    <div class="col-xs-12" ng-class="{ 'has-error' : box_form.email.$invalid && !box_form.email.$pristine }">
+                                                        <input type="email" name="email" ng-model="email.email" placeholder="Enter Email" class="form-control float-control" id="email" required>
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.email.$invalid && !box_form.email.$pristine">Invalid email address.</span>
+                                                    </div>
+                                                    <div class="col-xs-12">
+                                                        <input type="text" name="address" placeholder="Address" class="form-control" id="address" ng-model="email.address">
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6">
+                                                        <input type="text" name="city" placeholder="City" class="form-control" id="city" ng-model="email.city">
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6">
+                                                        <input type="text" name="state" placeholder="State" class="form-control" id="state" ng-model="email.state">
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6" ng-class="{ 'has-error' : box_form.zipcode.$invalid && !box_form.zipcode.$pristine }">
+                                                        <input type="text" pattern="[0-9]*" name="zipcode" placeholder="Enter Zipcode" class="form-control" id="zipcode" ng-model="email.zipcode" required>
+                                                        <span ng-show="box_form.zipcode.$invalid && !box_form.zipcode.$pristine">Invalid zipcode. Must be only number.</span>
+                                                    </div>
+                                                </div>
+                                            </tab>
+                                            <tab heading="WILL CALL">
+                                                <div class="box-container container-box-shadow">
+                                                    <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.fname.$invalid && !box_form.fname.$pristine }">
+                                                        <input type="text" name="fname" placeholder="First Name" class="form-control float-control" id="fname" ng-model="email.fname" required>
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.fname.$invalid && !box_form.fname.$pristine">First name is required.</span>
+                                                    </div>
+                                                    <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.lname.$invalid && !box_form.lname.$pristine }">
+                                                        <input type="text" name="lname" placeholder="Last Name" class="form-control float-control" id="lname" ng-model="email.lname" required>
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.lname.$invalid && !box_form.lname.$pristine">First name is required.</span>
+                                                    </div>
+                                                    <div class="col-xs-12" ng-class="{ 'has-error' : box_form.email.$invalid && !box_form.email.$pristine }">
+                                                        <input type="email" name="email" ng-model="email.email" placeholder="Enter Email" class="form-control float-control" id="email" required>
+                                                        <label for="input1" class="label-name required"></label>
+                                                        <span ng-show="box_form.email.$invalid && !box_form.email.$pristine">Invalid email address.</span>
+                                                    </div>
+                                                    <div class="col-xs-12">
+                                                        <input type="text" name="address" placeholder="Address" class="form-control" id="address" ng-model="email.address">
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6">
+                                                        <input type="text" name="city" placeholder="City" class="form-control" id="city" ng-model="email.city">
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6">
+                                                        <input type="text" name="state" placeholder="State" class="form-control" id="state" ng-model="email.state">
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6" ng-class="{ 'has-error' : box_form.zipcode.$invalid && !box_form.zipcode.$pristine }">
+                                                        <input type="text" pattern="[0-9]*" name="zipcode" placeholder="Enter Zipcode" class="form-control" id="zipcode" ng-model="email.zipcode" required>
+                                                        <span ng-show="box_form.zipcode.$invalid && !box_form.zipcode.$pristine">Invalid zipcode. Must be only number.</span>
+                                                    </div>
+                                                </div>
+                                            </tab>
+                                        </tabset>
+                                    </div>
+
+                                    <div class="box-container margin-bottom container-box-shadow">
+                                        <div class="col-xs-8"><span>SUBTOTAL</span></div>
+                                        <div class="col-xs-4"><span>$0.00</span></div>
+                                        <div class="col-xs-8"><span>FACILITY FEES</span></div>
+                                        <div class="col-xs-4"><span>$0.00</span></div>
+                                        <div class="col-xs-8"><span>TAXES(0.00%)</span></div>
+                                        <div class="col-xs-4"><span>$0.00</span></div>
+                                        <div class="col-xs-8"><span>TOTAL</span></div>
+                                        <div class="col-xs-4"><span>$0.00</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </tab>
+                    <tab heading="ADVN">
+                        <div class="description-title-div float-left">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <span>COMING SOON...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </tab>
+                </tabset>
+                    
+
+                    <div class="row align-center row-height">
+                        <div class="col-xs-12">
+                            <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="return()">RETURN TO DASHBOARD</a>
+                            <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="submit()" ng-disabled="box_form.$invalid">SUBMIT</a>
+                        </div>
+                    </div>
+            </form>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</div>
+
+<div ng-include="'view/templates/footer.html'"></div>

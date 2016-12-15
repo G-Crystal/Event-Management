@@ -26,14 +26,8 @@ angular.module('app.report')
                 })
             },
 
-            get_sale_box: function(data) {
-                return $http.post('http://staging.ticketvow.com/api/getSaleBox?token=' + $cookies.token, data).success(function(res) {
-                    Report = res.data;
-                })
-            },
-
-            get_comp_box: function(data) {
-                return $http.post('http://staging.ticketvow.com/api/getCompBox?token=' + $cookies.token, data).success(function(res) {
+            get_box_office: function(data) {
+                return $http.post('http://staging.ticketvow.com/api/getBoxOffice?token=' + $cookies.token, data).success(function(res) {
                     Report = res.data;
                 })
             },
