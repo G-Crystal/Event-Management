@@ -4,47 +4,193 @@
 
     <!--visible animated fadeInUp-->
     <div class="container">
-        <div class="menubar-div row">
-            <div class="description-title-div col-lg-12">
-                <h4>ORDER REPORT</h4>
-                <div class="event-list-div">
-                    <div class="dropdown">
-                        <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-category event-select-list">
-                            <span class="event-label">{{selectedEvent}}</span>
-                        </a>
-                        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                            <li ng-repeat="event in events" ng-click="changeEvent(event.id + ' | ' + event.name)">{{event.id}} | {{event.name}}</li>
-                        </ul>
-                    </div>
-                </div>
+        <div class="menubar-div">
+            <form accept-charset="UTF-8" role="form" name="box_form" method="post" enctype="multipart/form-data" novalidate>
+                <div class="description-title-div align-left">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            <div class="box-event-list-div">
+                                <div class="dropdown">
+                                    <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-category event-select-list container-box-shadow">
+                                        <span class="event-label">{{selectedEvent}}</span>
+                                    </a>
+                                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                        <li ng-repeat="event in events" ng-click="changeEvent(event.id + ' | ' + event.name)">{{event.id}} | {{event.name}}</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                <div class="table-container">
-                    <table class="border-table">
-                        <thead>
-                            <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Qty</th>
-                                <th>Paid</th>
-                                <th>Trnx ID</th>
-                                <th>Order ID</th>
-                                <th>Purchase Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="order in order_report">
-                                <td>{{order.user_fname}}</td>
-                                <td>{{order.user_lname}}</td>
-                                <td>{{order.number_of_ticket}}</td>
-                                <td>{{order.paid}}</td>
-                                <td>{{order.transaction_id}}</td>
-                                <td>{{order.brain_transaction_id}}</td>
-                                <td>{{order.created_at}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                            <div class="box-container margin-bottom container-box-shadow">
+                                <div class="block-header">
+                                    <div class="col-xs-8">
+                                        <span>TICKET TYPE</span>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <span>PRICE</span>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <span>QTY</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="ticket-container-div container-box-shadow row" ng-repeat="ticket in datas.tickets">
+                                        <div class="col-xs-8">
+                                            <div class="ticket-name-div">{{ticket.name}}</div>
+                                            <div class="ticket-qty-div">AVAILABLE. {{ticket.available_qty}}</div>
+                                        </div>
+                                        <div class="ticket-div col-xs-2">
+                                            <span>{{ticket.price}}</span>
+                                        </div>
+                                        <div class="ticket-div col-xs-2">
+                                            <input type="number" min="0" step="1" class="spin-input" ng-model="ticket.qty">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-7 col-sm-12">
+                            <div class="box-container margin-bottom container-box-shadow">
+                                <div class="block-header">
+                                    <div class="col-xs-2">
+                                        <span>QTY</span>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <span>TICKET TYPE</span>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <span>PRICE</span>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <span>FEES</span>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <span>SUBTOTAL</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="ticket-container-div container-box-shadow row" ng-repeat="sale_ticket in datas.sale_tickets">
+                                        <div class="col-xs-12">
+                                            <span>{{sale_ticket.event_name}} | {{sale_ticket.created_at}}</span>
+                                        </div>
+                                        <div class="ticket-div">
+                                            <div class="col-xs-2">
+                                                <input type="number" min="0" step="1" class="spin-input" ng-model="sale_ticket.qty">
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <div class="ticket-name-div">{{sale_ticket.name}}</div>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <span>{{sale_ticket.price}}</span>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <span>{{sale_ticket.fees}}</span>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <span>{{sale_ticket.subtotal}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            <div class="box-sub-title">PAYMENT</div>
+                            <div class="box-container margin-bottom container-box-shadow">
+                                <span>DISABLED</span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-7 col-sm-12">
+                            <div class="box-sub-title">DELIVERY</div>
+                            <div class="box-container margin-bottom container-box-shadow">
+                                <tabset>
+                                    <tab heading="EMAIL">
+                                        <div class="box-container container-box-shadow">
+                                            <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.fname.$invalid && !box_form.fname.$pristine }">
+                                                <input type="text" name="fname" placeholder="First Name" class="form-control float-control" id="fname" ng-model="email.fname" required>
+                                                <label for="input1" class="label-name required"></label>
+                                                <span ng-show="box_form.fname.$invalid && !box_form.fname.$pristine">First name is required.</span>
+                                            </div>
+                                            <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.lname.$invalid && !box_form.lname.$pristine }">
+                                                <input type="text" name="lname" placeholder="Last Name" class="form-control float-control" id="lname" ng-model="email.lname" required>
+                                                <label for="input1" class="label-name required"></label>
+                                                <span ng-show="box_form.lname.$invalid && !box_form.lname.$pristine">First name is required.</span>
+                                            </div>
+                                            <div class="col-xs-12" ng-class="{ 'has-error' : box_form.email.$invalid && !box_form.email.$pristine }">
+                                                <input type="email" name="email" ng-model="email.email" placeholder="Enter Email" class="form-control float-control" id="email" required>
+                                                <label for="input1" class="label-name required"></label>
+                                                <span ng-show="box_form.email.$invalid && !box_form.email.$pristine">Invalid email address.</span>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <input type="text" name="address" placeholder="Address" class="form-control" id="address" ng-model="email.address">
+                                            </div>
+                                            <div class="col-sm-4 col-xs-6">
+                                                <input type="text" name="city" placeholder="City" class="form-control" id="city" ng-model="email.city">
+                                            </div>
+                                            <div class="col-sm-4 col-xs-6">
+                                                <input type="text" name="state" placeholder="State" class="form-control" id="state" ng-model="email.state">
+                                            </div>
+                                            <div class="col-sm-4 col-xs-6" ng-class="{ 'has-error' : box_form.zipcode.$invalid && !box_form.zipcode.$pristine }">
+                                                <input type="text" pattern="[0-9]*" name="zipcode" placeholder="Enter Zipcode" class="form-control" id="zipcode" ng-model="email.zipcode" required>
+                                                <span ng-show="box_form.zipcode.$invalid && !box_form.zipcode.$pristine">Invalid zipcode. Must be only number.</span>
+                                            </div>
+                                        </div>
+                                    </tab>
+                                    <tab heading="PRINT">
+                                        <div class="box-container container-box-shadow">
+                                            <div class="col-xs-12">
+                                                <span>COMING SOON...</span>
+                                            </div>
+                                        </div>
+                                    </tab>
+                                    <tab heading="WILL CALL">
+                                        <div class="box-container container-box-shadow">
+                                            <div class="col-xs-12">
+                                                <span>COMING SOON...</span>
+                                            </div>
+                                        </div>
+                                    </tab>
+                                </tabset>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                        </div>
+
+                        <div class="col-md-7 col-sm-12">
+                            <div class="box-container margin-bottom container-box-shadow">
+                                <div class="col-xs-8"><span>SUBTOTAL</span></div>
+                                <div class="col-xs-4"><span>$0.00</span></div>
+                                <div class="col-xs-8"><span>FACILITY FEES</span></div>
+                                <div class="col-xs-4"><span>$0.00</span></div>
+                                <div class="col-xs-8"><span>TAXES(0.00%)</span></div>
+                                <div class="col-xs-4"><span>$0.00</span></div>
+                                <div class="col-xs-8"><span>TOTAL</span></div>
+                                <div class="col-xs-4"><span>$0.00</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row align-center row-height">
+                        <div class="col-xs-12">
+                            <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="return()">RETURN TO DASHBOARD</a>
+                            <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="submit()" ng-disabled="box_form.$invalid">SUBMIT</a>
+                        </div>
+                    </div>
+
+                    <!--<div class="row align-center row-height">
+                        <div class="col-xs-12">
+                            <alert ng-repeat="alert in alerts" type="{{alert.type}}" class="alert_message">{{alert.msg}}</alert>
+                        </div>
+                    </div>-->
                 </div>
-            </div>
+            </form>
         </div>
         <!-- /.row -->
     </div>

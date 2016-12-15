@@ -205,6 +205,20 @@ angular.module('app.report')
 
         $scope.get_order_filter_event();
         $scope.get_sale_box();
+
+        $scope.datas = {
+            tickets: [
+                {name: "GENERAL ADMISSION", available_qty: 300, price: "$2.00", qty: 0},
+                {name: "GENERAL ADMISSION2", available_qty: 400, price: "$0.00", qty: 3},
+                {name: "GENERAL ADMISSION3", available_qty: 100, price: "$1.00", qty: 2}
+            ],
+            sale_tickets: [
+                {event_name: "LIFE OF PABLO TOUR", created_at:"10/29/16 9:00 PM EST", name: "GENERAL ADMISSION", qty: 1, price: "$0.00", fees: "$0.00", subtotal: "0.00"},
+                {event_name: "LIFE OF PABLO TOUR2", created_at:"10/29/16 9:00 PM EST", name: "GENERAL ADMISSION2", qty: 2, price: "$2.00", fees: "$0.00", subtotal: "0.00"},
+                {event_name: "LIFE OF PABLO TOUR3", created_at:"10/29/16 9:00 PM EST", name: "GENERAL ADMISSION3", qty: 4, price: "$0.00", fees: "$0.00", subtotal: "0.00"},
+                {event_name: "LIFE OF PABLO TOUR4", created_at:"10/29/16 9:00 PM EST", name: "GENERAL ADMISSION4", qty: 3, price: "$4.00", fees: "$0.00", subtotal: "0.00"}
+            ],
+        };
     };
 
     $scope.logout = function() {
@@ -223,7 +237,7 @@ angular.module('app.report')
             var data = response.data;
             if (data.status_code == 200) {
                 $scope.events = data.data;
-                $scope.get_recent_order();
+                $scope.get_sale_box();
             } else if (data.status_code == 101) {
                 $scope.logout();
             } else {
@@ -268,7 +282,18 @@ angular.module('app.report')
         $scope.selectedEvent = 'All Events';
 
         $scope.get_order_filter_event();
-        $scope.get_comp_box();
+        // $scope.get_comp_box();
+
+        $scope.datas = {
+            tickets: [
+                {name: "GENERAL ADMISSION", available_qty: 300, price: "$2.00", qty: 0},
+                {name: "GENERAL ADMISSION2", available_qty: 400, price: "$0.00", qty: 3}
+            ],
+            sale_tickets: [
+                {event_name: "LIFE OF PABLO TOUR", created_at:"10/29/16 9:00 PM EST", name: "GENERAL ADMISSION", qty: 1, price: "$0.00", fees: "$0.00", subtotal: "0.00"},
+                {event_name: "LIFE OF PABLO TOUR2", created_at:"10/29/16 9:00 PM EST", name: "GENERAL ADMISSION", qty: 1, price: "$0.00", fees: "$0.00", subtotal: "0.00"}
+            ],
+        };
     };
 
     $scope.logout = function() {
@@ -287,7 +312,7 @@ angular.module('app.report')
             var data = response.data;
             if (data.status_code == 200) {
                 $scope.events = data.data;
-                $scope.get_recent_order();
+                $scope.get_comp_box();
             } else if (data.status_code == 101) {
                 $scope.logout();
             } else {

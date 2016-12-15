@@ -411,6 +411,82 @@ p.personal-phrase i.fa-quote-left {
 }
 
 
+/************** Box Office **************/
+
+.box-container {
+    width: 100%;
+    padding: 10px;
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.margin-bottom {
+    margin-bottom: 25px;
+}
+
+.container-box-shadow {
+    -webkit-box-shadow: 1px 1px 8px 1px rgba(64, 64, 64, 0.7);
+    -moz-box-shadow: 1px 1px 8px 1px rgba(64, 64, 64, 0.7);
+    box-shadow: 1px 1px 8px 1px rgba(64, 64, 64, 0.7);
+}
+
+.container-box-shadow > div {
+    margin-bottom: 8px;
+}
+
+.block-header {
+    background: #4c4c4c;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.block-header:after,
+.ticket-div:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.ticket-container-div {
+    margin-top: 10px;
+}
+
+.ticket-name-div {
+    font-size: 12px;
+}
+
+.ticket-qty-div {
+    font-size: 10px;
+    color: #0000FF;
+    line-height: 10px;
+    padding-bottom: 8px;
+}
+
+.ticket-div {
+    line-height: 20px;
+    margin: 10px 0;
+}
+
+.box-event-list-div {
+    margin: 0 10px 20px;
+}
+
+.box-sub-title {
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.float-control {
+    width: calc(100% - 7px);
+    float: left;
+}
+
+.red-comment {
+    color: #FF0000;
+}
+
+
 /****************  MENU    ************/
 
 .navbar-brand {
@@ -5152,6 +5228,10 @@ span.caret {
     text-align: left;
 }
 
+.align-right {
+    text-align: right;
+}
+
 
 /********************************************************************************************
     PAGE LOG IN
@@ -5195,7 +5275,7 @@ span.caret {
 *********************************************************************************************/
 
 .spin-input {
-    width: 50px;
+    width: 100%;
 }
 
 .cart-info-div {
