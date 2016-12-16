@@ -2,45 +2,45 @@
     <div ng-include="'view/partials/account_menu.html'"></div>
 
     <ul ng-class="{'sidenav':toggle_menu_flag, 'sidenav sidenav-toggle':!toggle_menu_flag}">
-        <li ng-class="getClass('/organizer_dashboard')" ng-click="menu_click()"><a href="#organizer_dashboard">Dashboard</a></li>
+        <li ng-class="getClass('/organizer_dashboard')" ng-click="menu_click()"><a href="#/organizer_dashboard">Dashboard</a></li>
         <li ng-class="{'sidenav-collapse':toggle_events, 'sidenav-expand':!toggle_events}" ng-click="setToggle('toggle_events')">
             <a href="">Events</a>
             <ul class="sidenav-submenu">
-                <li ng-class="getClass('/create_events')" ng-click="menu_click()"><a href="#create_events">Create Event</a></li>
-                <li ng-class="getClass('/upcoming_events')" ng-click="menu_click()"><a href="#upcoming_events">Upcoming Events</a></li>
-                <li ng-class="getClass('/past_events')" ng-click="menu_click()"><a href="#past_events">Past Events</a></li>
+                <li ng-class="getClass('/create_events')" ng-click="menu_click()"><a href="#/create_events">Create Event</a></li>
+                <li ng-class="getClass('/upcoming_events')" ng-click="menu_click()"><a href="#/upcoming_events">Upcoming Events</a></li>
+                <li ng-class="getClass('/past_events')" ng-click="menu_click()"><a href="#/past_events">Past Events</a></li>
             </ul>
         </li>
         <li ng-class="{'sidenav-collapse':toggle_order, 'sidenav-expand':!toggle_order}" ng-click="setToggle('toggle_order')">
             <a href="">Orders</a>
             <ul class="sidenav-submenu">
-                <li ng-class="getClass('/event_order')" ng-click="menu_click()"><a href="#event_order">Recent Orders</a></li>
+                <li ng-class="getClass('/event_order')" ng-click="menu_click()"><a href="#/event_order">Recent Orders</a></li>
             </ul>
         </li>
         <li ng-class="{'sidenav-collapse':toggle_talents, 'sidenav-expand':!toggle_talents}" ng-click="setToggle('toggle_talents')">
             <a href="">Talents</a>
             <ul class="sidenav-submenu">
-                <li ng-class="getClass('/add_talents')" ng-click="menu_click()"><a href="#add_talents">Add Talent</a></li>
+                <li ng-class="getClass('/add_talents')" ng-click="menu_click()"><a href="#/add_talents">Add Talent</a></li>
             </ul>
         </li>
         <li ng-class="{'sidenav-collapse':toggle_report, 'sidenav-expand':!toggle_report}" ng-click="setToggle('toggle_report')">
             <a href="">Report</a>
             <ul class="sidenav-submenu">
-                <li ng-class="getClass('/order_report')" ng-click="menu_click()"><a href="#order_report">Order Report</a></li>
-                <li ng-class="getClass('/ticket_report')" ng-click="menu_click()"><a href="#ticket_report">Ticket Sales</a></li>
+                <li ng-class="getClass('/order_report')" ng-click="menu_click()"><a href="#/order_report">Order Report</a></li>
+                <li ng-class="getClass('/ticket_report')" ng-click="menu_click()"><a href="#/ticket_report">Ticket Sales</a></li>
             </ul>
         </li>
-        <li ng-class="getClass('/digital_market')" ng-click="menu_click()"><a href="#digital_market">Digital Market</a></li>
-        <li ng-class="getClass('/box_office')" ng-click="menu_click()"><a href="#box_office">Box Office</a></li>
-        <li ng-class="getClass('/service')" ng-click="menu_click()"><a href="#service">Service</a></li>
-        <li ng-class="getClass('/allyhub')" ng-click="menu_click()"><a href="#allyhub">Allyhub</a></li>
-        <li ng-class="getClass('/messages')" ng-click="menu_click()"><a href="#messages">Messages</a></li>
+        <li ng-class="getClass('/digital_market')" ng-click="menu_click()"><a href="#/digital_market">Digital Market</a></li>
+        <li ng-class="getClass('/box_office')" ng-click="menu_click()"><a href="#/box_office">Box Office</a></li>
+        <li ng-class="getClass('/service')" ng-click="menu_click()"><a href="#/service">Service</a></li>
+        <li ng-class="getClass('/allyhub')" ng-click="menu_click()"><a href="#/allyhub">Allyhub</a></li>
+        <li ng-class="getClass('/messages')" ng-click="menu_click()"><a href="#/messages">Messages</a></li>
         <li ng-class="{'sidenav-collapse':toggle_settings, 'sidenav-expand':!toggle_settings}" ng-click="setToggle('toggle_settings')">
             <a href="">Settings</a>
             <ul class="sidenav-submenu">
-                <li ng-class="getClass('/profile_settings')" ng-click="menu_click()"><a href="#profile_settings">Profile</a></li>
-                <li ng-class="getClass('/password_settings')" ng-click="menu_click()"><a href="#password_settings">Password</a></li>
-                <li ng-class="getClass('/payments_settings')" ng-click="menu_click()"><a href="#payments_settings">Payments</a></li>
+                <li ng-class="getClass('/profile_settings')" ng-click="menu_click()"><a href="#/profile_settings">Profile</a></li>
+                <li ng-class="getClass('/password_settings')" ng-click="menu_click()"><a href="#/password_settings">Password</a></li>
+                <li ng-class="getClass('/payments_settings')" ng-click="menu_click()"><a href="#/payments_settings">Payments</a></li>
             </ul>
         </li>
     </ul>

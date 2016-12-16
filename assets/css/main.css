@@ -5280,6 +5280,7 @@ span.caret {
 
 .spin-input {
     width: 100%;
+    max-width: 50px;
 }
 
 .cart-info-div {

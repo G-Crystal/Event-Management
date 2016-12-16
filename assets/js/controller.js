@@ -79,6 +79,12 @@ app.controller('MainController', ['$scope', '$location', '$cookies', function($s
         return (typeof($cookies.token) == 'undefined' || $cookies.token == '') ? false : true;
     };
 
+    // Log out
+    $scope.logout = function() {
+        $cookies.token = '';
+        $location.path('/log_in');
+    }
+
     $scope.global_init = function() {
         $scope.userinfo = [];
         $scope.userinfo.username = $cookies.username;
@@ -99,8 +105,10 @@ app.controller('MainController', ['$scope', '$location', '$cookies', function($s
                 $location.path('/user_profile_settings');
             else if ($cookies.user_type == 2)
                 $location.path('/profile_settings');
+            else
+                $scope.logout();
         } else
-            $location.path('/log_in');
+            $scope.logout();
     };
 
     $scope.browse_click = function() {
