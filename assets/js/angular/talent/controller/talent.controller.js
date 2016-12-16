@@ -25,7 +25,7 @@ angular.module('app.talent')
         };
 
         $scope.logout = function() {
-            $cookies.token = '';
+            $cookies = '';
             $location.path('/log_in');
         }
 
@@ -92,7 +92,7 @@ angular.module('app.talent')
     };
 
     $scope.logout = function() {
-        $cookies.token = '';
+        $cookies = '';
         $location.path('/log_in');
     }
 

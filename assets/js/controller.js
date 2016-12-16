@@ -81,7 +81,7 @@ app.controller('MainController', ['$scope', '$location', '$cookies', function($s
 
     // Log out
     $scope.logout = function() {
-        $cookies.token = '';
+        $cookies = '';
         $location.path('/log_in');
     }
 
@@ -206,7 +206,7 @@ app.controller('LMenuController', function($scope, $location, $cookies) {
     };
 
     $scope.logout = function() {
-        $cookies.token = '';
+        $cookies = '';
         $location.path('/log_in');
     };
 

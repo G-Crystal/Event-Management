@@ -9,7 +9,7 @@ angular.module('app.order')
         };
 
         $scope.logout = function() {
-            $cookies.token = '';
+            $cookies = '';
             $location.path('/log_in');
         }
 

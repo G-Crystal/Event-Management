@@ -16,7 +16,7 @@ angular.module('app.report')
         };
 
         $scope.logout = function() {
-            $cookies.token = '';
+            $cookies = '';
             $location.path('/log_in');
         };
 
@@ -77,7 +77,7 @@ angular.module('app.report')
     };
 
     $scope.logout = function() {
-        $cookies.token = '';
+        $cookies = '';
         $location.path('/log_in');
     };
 
@@ -143,7 +143,7 @@ angular.module('app.report')
     };
 
     $scope.logout = function() {
-        $cookies.token = '';
+        $cookies = '';
         $location.path('/log_in');
     };
 
@@ -222,7 +222,7 @@ angular.module('app.report')
     };
 
     $scope.logout = function() {
-        $cookies.token = '';
+        $cookies = '';
         $location.path('/log_in');
     };
 

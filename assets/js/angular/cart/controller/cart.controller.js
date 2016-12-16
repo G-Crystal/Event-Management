@@ -14,7 +14,7 @@ angular.module('app.cart')
     };
 
     $scope.logout = function() {
-      $cookies.token = '';
+      $cookies = '';
       $location.path('/log_in');
     }
 

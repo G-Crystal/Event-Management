@@ -16,7 +16,7 @@ angular.module('app.venue')
 
         // Log out
         $scope.logout = function() {
-            $cookies.token = '';
+            $cookies = '';
             $location.path('/log_in');
         }
 

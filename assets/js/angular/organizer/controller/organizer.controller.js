@@ -9,7 +9,7 @@ angular.module('app.organizer')
         };
 
         $scope.logout = function() {
-            $cookies.token = '';
+            $cookies = '';
             $location.path('/log_in');
         }
 
@@ -67,7 +67,7 @@ angular.module('app.organizer')
     };
 
     $scope.logout = function() {
-        $cookies.token = '';
+        $cookies = '';
         $location.path('/log_in');
     }
 

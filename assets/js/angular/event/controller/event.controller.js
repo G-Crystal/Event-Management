@@ -15,7 +15,7 @@ angular.module('app.event')
 
     // Log out
     $scope.logout = function() {
-        $cookies.token = '';
+        $cookies = '';
         $location.path('/log_in');
     }
 
@@ -89,7 +89,7 @@ angular.module('app.event')
 
     // Log out
     $scope.logout = function() {
-        $cookies.token = '';
+        $cookies = '';
         $location.path('/log_in');
     }
 
@@ -180,7 +180,7 @@ angular.module('app.event')
 
     // Log out
     $scope.logout = function() {
-        $cookies.token = '';
+        $cookies = '';
         $location.path('/log_in');
     }
 
@@ -243,7 +243,7 @@ angular.module('app.event')
 
     // Log out
     $scope.logout = function() {
-        $cookies.token = '';
+        $cookies = '';
         $location.path('/log_in');
     }
 
@@ -298,7 +298,7 @@ angular.module('app.event')
 
     // Log out
     $scope.logout = function() {
-        $cookies.token = '';
+        $cookies = '';
         $location.path('/log_in');
     }
 
@@ -536,7 +536,7 @@ angular.module('app.event')
 
     // Log out
     $scope.logout = function() {
-        $cookies.token = '';
+        $cookies = '';
         $location.path('/log_in');
     }
 

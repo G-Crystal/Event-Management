@@ -13,6 +13,7 @@ angular.module('app.ticket')
         };
 
         $scope.logout = function() {
+            $cookies = '';
             $location.path('/log_in');
         }
 
@@ -106,6 +107,7 @@ angular.module('app.ticket')
     };
 
     $scope.logout = function() {
+        $cookies = '';
         $location.path('/log_in');
     }
 
@@ -170,6 +172,7 @@ angular.module('app.ticket')
     }
 
     $scope.logout = function() {
+        $cookies = '';
         $location.path('/log_in');
     }
 
