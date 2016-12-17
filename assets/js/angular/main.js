@@ -16,11 +16,22 @@ angular.module('angula').config(['$routeProvider', function($routeProvider) {
     .when("/allyhub", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
 
     .when("/404", { templateUrl: "view/partials/404.html", controller: "MainController" })
+
+    // Information Menu
+    .when("/faq", { templateUrl: "view/partials/information/faq.html", controller: "AccordionCtrl" })
 }])
 
 .run(['$rootScope', '$location', '$cookies', function($rootScope, $location, $cookies) {
     $rootScope.$on('$routeChangeStart', function (event, current, previous) {
         if (typeof(current.$$route) == "undefined") return;
+        if (current.$$route.originalPath.search('info_') >= 0) return;
+
+        switch(current.$$route.originalPath) {  // information URL
+            case '/faq':
+                return;
+            default:                            // invalid URL
+                break;
+        }
 
         // for common credential
         if ($cookies.user_type == 1 || $cookies.user_type == 2) {
@@ -29,7 +40,6 @@ angular.module('angula').config(['$routeProvider', function($routeProvider) {
                 case '/sign_up':
                 case '/reset':
                 case '/forgot':
-                    $location.path('/404');
                     return;
                 case '/':
                 case '/pagination':

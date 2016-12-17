@@ -213,6 +213,29 @@ app.controller('LMenuController', function($scope, $location, $cookies) {
     $scope.init();
 });
 
+app.controller('AccordionCtrl', function ($scope) {
+    $scope.oneAtATime = true;
+
+    $scope.isopen = {
+        first: true,
+        second: true,
+        three: true,
+        four: true,
+        five: true,
+        six: true,
+        seven: true
+    }
+    $scope.icon = {
+        "false": 'fa fa-plus',
+        "true": 'fa fa-minus'
+    }
+
+    $scope.status = {
+        isFirstOpen: true,
+        isFirstDisabled: false
+    };
+});
+
 // monitor animation 
 app.controller('HomeCtrl', function($scope, $interval) {
 
