@@ -504,6 +504,10 @@ p.personal-phrase i.fa-quote-left {
     color: #FF0000;
 }
 
+.padding-top-40 {
+    padding-top: 40px;
+}
+
 
 /****************  MENU    ************/
 
@@ -2255,11 +2259,15 @@ h2.t-title-office {
     right: 0;
 }
 
+.overlay-div {
+    z-index: 9;
+    background-color: #f5f5f5;
+    position: relative;
+}
+
 .breadcrumb-color {
     background-color: #f5f5f5;
-    /*padding: 17px 0px;*/
     padding: 30px 0px 10px;
-    margin-bottom: 40px;
     border-bottom: 1px solid #e6eaea;
 }
 
