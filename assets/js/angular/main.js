@@ -4,38 +4,40 @@
 angular.module('angula').config(['$routeProvider', function($routeProvider) {
     $routeProvider
     // Home
-    .when("/", { templateUrl: "view/partials/home.html", controller: "SearchEventController" })
+        .when("/", { templateUrl: "view/partials/home.html", controller: "SearchEventController" })
 
     // User Menu
     .when("/user_messages", { templateUrl: "view/partials/user/dashboard.html", controller: "HomeCtrl" })
 
     // Admin Menu
     .when("/messages", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
-    .when("/digital_market", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
-    .when("/service", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
-    .when("/allyhub", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
+        .when("/digital_market", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
+        .when("/service", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
+        .when("/allyhub", { templateUrl: "view/partials/event/create_event.html", controller: "HomeCtrl" })
 
     .when("/404", { templateUrl: "view/partials/404.html", controller: "MainController" })
 
     // Information Menu
     .when("/faq", { templateUrl: "view/partials/information/faq.html", controller: "AccordionCtrl" })
+        .when("/promotor", { templateUrl: "view/partials/information/promotor.html", controller: "AccordionCtrl" })
 }])
 
 .run(['$rootScope', '$location', '$cookies', function($rootScope, $location, $cookies) {
-    $rootScope.$on('$routeChangeStart', function (event, current, previous) {
+    $rootScope.$on('$routeChangeSuccess', function(event, current, previous) {
         if (typeof(current.$$route) == "undefined") return;
         if (current.$$route.originalPath.search('info_') >= 0) return;
 
-        switch(current.$$route.originalPath) {  // information URL
+        switch (current.$$route.originalPath) { // information URL
             case '/faq':
+            case '/promotor':
                 return;
-            default:                            // invalid URL
+            default: // invalid URL
                 break;
         }
 
         // for common credential
         if ($cookies.user_type == 1 || $cookies.user_type == 2) {
-            switch(current.$$route.originalPath) {
+            switch (current.$$route.originalPath) {
                 case '/log_in':
                 case '/sign_up':
                 case '/reset':
@@ -53,27 +55,27 @@ angular.module('angula').config(['$routeProvider', function($routeProvider) {
                 case '/buy_ticket':
                 case '/404':
                     return;
-                default:                            // invalid URL
+                default: // invalid URL
                     break;
             }
         }
         // for user credential
         if ($cookies.user_type == 1) {
-            switch(current.$$route.originalPath) {
+            switch (current.$$route.originalPath) {
                 case '/user_dashboard':
                 case '/user_messages':
                 case '/user_profile_settings':
                 case '/user_password_settings':
-                case '/user_payments_settings':     // valid URL
+                case '/user_payments_settings': // valid URL
                     break;
-                default:                            // invalid URL
+                default: // invalid URL
                     $location.path('/user_dashboard');
                     break;
             }
         }
         // for organizer credential
         else if ($cookies.user_type == 2) {
-            switch(current.$$route.originalPath) {
+            switch (current.$$route.originalPath) {
                 case '/organizer_dashboard':
                 case '/create_events':
                 case '/upcoming_events':
@@ -89,9 +91,9 @@ angular.module('angula').config(['$routeProvider', function($routeProvider) {
                 case '/messages':
                 case '/profile_settings':
                 case '/password_settings':
-                case '/payments_settings':          // valid URL
+                case '/payments_settings': // valid URL
                     break;
-                default:                            // invalid URL
+                default: // invalid URL
                     $location.path('/profile_settings');
                     break;
             }

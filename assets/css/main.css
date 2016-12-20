@@ -410,6 +410,19 @@ p.personal-phrase i.fa-quote-left {
     border-radius: 0px;
 }
 
+.table-div {
+    display: table;
+}
+
+.left-cell-div {
+    display: table-cell;
+}
+
+.right-cell-div {
+    display: table-cell;
+    padding-left: 20px;
+}
+
 
 /************** Box Office **************/
 
@@ -431,7 +444,7 @@ p.personal-phrase i.fa-quote-left {
     box-shadow: 1px 1px 8px 1px rgba(64, 64, 64, 0.7);
 }
 
-.container-box-shadow > div {
+.container-box-shadow>div {
     margin-bottom: 8px;
 }
 
@@ -503,8 +516,6 @@ p.personal-phrase i.fa-quote-left {
     box-shadow: 0 1px 15px rgba(0, 0, 0, .2);
     float: left;
 }
-
-.navbarcart-content {}
 
 .navbar-inverse .navbar-nav>li>a {
     color: #212121;
@@ -4835,6 +4846,49 @@ form.ng-valid {
     line-height: 50px;
 }
 
+.header-label-div {
+    margin: 150px 10% 0;
+}
+
+.header-title {
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 30px;
+}
+
+.header-description {
+    color: #FFFFFF;
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+.header-link-button {
+    display: inline;
+    line-height: 25px;
+    font-weight: 200;
+    border: 1px solid;
+    cursor: pointer;
+    position: relative;
+    color: #FFFFFF;
+}
+
+.blue-button {
+    color: #FFFFFF;
+    background-color: #4285f4;
+}
+
+.white-button {
+    color: #0000FF;
+    background-color: transparent;
+}
+
+.header-button-div {
+    margin: 20px;
+}
+
 .home-back-img-common {
     background-repeat: no-repeat !important;
     background-position: center;
@@ -6890,7 +6944,7 @@ footer .top-footer-in {
 }
 
 footer .top-footer-info {
-    border-top: 1px solid #808080;
+    border-top: 1px solid #303030;
 }
 
 ul.footer-menu li {
@@ -6898,14 +6952,14 @@ ul.footer-menu li {
 }
 
 footer h4 {
-    color: #fff;
+    color: #777;
     text-transform: uppercase;
     font-size: 14px;
 }
 
 .info-footer {
     background: #282d33;
-    padding: 20px 0;
+    padding: 20px 20px;
     color: rgba(255, 255, 255, 0.5);
     font-weight: 300;
     font-size: 14px;
@@ -6926,7 +6980,7 @@ ul.footer-menu li {
 }
 
 ul.footer-menu li a {
-    color: #ccc;
+    color: #666;
     font-size: 13px;
     text-decoration: none;
 }

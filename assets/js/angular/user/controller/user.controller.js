@@ -11,7 +11,7 @@ angular.module('app.user')
         $scope.logout = function() {
             $cookies = '';
             $location.path('/log_in');
-        }
+        };
 
         $scope.login = function() {
             var loginData = {
@@ -36,7 +36,6 @@ angular.module('app.user')
                 $scope.alerts = [{ type: 'danger', msg: error }];
             });
         };
-
     })
 
 .controller('SignupController', function($scope, $location, $cookies, UserService) {
