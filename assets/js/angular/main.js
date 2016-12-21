@@ -21,6 +21,7 @@ angular.module('angula').config(['$routeProvider', function($routeProvider) {
     .when("/faq", { templateUrl: "view/partials/information/faq.html", controller: "AccordionCtrl" })
         .when("/promoter", { templateUrl: "view/partials/information/promoter.html", controller: "AccordionCtrl" })
         .when("/venue_ticket", { templateUrl: "view/partials/information/venues.html", controller: "AccordionCtrl" })
+        .when("/payment_plan", { templateUrl: "view/partials/information/payment.html", controller: "AccordionCtrl" })
 }])
 
 .run(['$rootScope', '$location', '$cookies', function($rootScope, $location, $cookies) {
@@ -32,6 +33,7 @@ angular.module('angula').config(['$routeProvider', function($routeProvider) {
             case '/faq':
             case '/promoter':
             case '/venue_ticket':
+            case '/payment_plan':
                 return;
             default: // invalid URL
                 break;
