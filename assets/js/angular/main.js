@@ -1,7 +1,7 @@
 /**
  * Configure the Routes
  */
-angular.module('angula').config(['$routeProvider', function($routeProvider) {
+angular.module('angula').config(['$routeProvider', function($routeProvider, $cookies) {
     $routeProvider
     // Home
         .when("/", { templateUrl: "view/partials/home.html", controller: "SearchEventController" })
@@ -23,6 +23,7 @@ angular.module('angula').config(['$routeProvider', function($routeProvider) {
         .when("/venue_ticket", { templateUrl: "view/partials/information/venues.html", controller: "AccordionCtrl" })
         .when("/payment_plan", { templateUrl: "view/partials/information/payment.html", controller: "AccordionCtrl" })
         .when("/ticket_sale", { templateUrl: "view/partials/information/ticket_sale.html", controller: "AccordionCtrl" })
+        .when("/printed_ticket", { templateUrl: "view/partials/information/printed_ticket.html", controller: "AccordionCtrl" })
 }])
 
 .run(['$rootScope', '$location', '$cookies', function($rootScope, $location, $cookies) {
@@ -31,11 +32,17 @@ angular.module('angula').config(['$routeProvider', function($routeProvider) {
         if (current.$$route.originalPath.search('info_') >= 0) return;
 
         switch (current.$$route.originalPath) { // information URL
+            case '/log_in':
+            case '/sign_up':
+            case '/reset':
+            case '/forgot':
+
             case '/faq':
             case '/promoter':
             case '/venue_ticket':
             case '/payment_plan':
             case '/ticket_sale':
+            case '/printed_ticket':
                 return;
             default: // invalid URL
                 break;
@@ -44,11 +51,6 @@ angular.module('angula').config(['$routeProvider', function($routeProvider) {
         // for common credential
         if ($cookies.user_type == 1 || $cookies.user_type == 2) {
             switch (current.$$route.originalPath) {
-                case '/log_in':
-                case '/sign_up':
-                case '/reset':
-                case '/forgot':
-                    return;
                 case '/':
                 case '/pagination':
                 case '/event_details':

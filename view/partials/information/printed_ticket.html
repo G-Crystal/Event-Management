@@ -1,0 +1,149 @@
+<div class="breadcrumb-color overlay-div">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="#/">Home</a>
+                    </li>
+                    <li class="active">Printed Ticket</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container padding-top-40 overlay-div">
+
+    <div class="row sub-title">
+        <div class="col-md-6">
+            <h2 class="t-title-office">Printed Tickets</h2>
+
+            <p>Ticketvow services thousands of events across Europe with thermal printed tickets. Our printed tickets feature numerous security features allowing your gate and entrance staff to quickly identify fraudulent tickets.</p>
+            <p>They also have the added bonus of being able to be verified with our iPhone and Android scanning app alongside any online ticket allocation sold with Ticketvow.</p>
+            <div class="table-div">
+                <div class="left-cell-div small-img-div"><img src="assets/images/services/venues11.png" alt="" /></div>
+                <div class="right-cell-div">
+                    <h3>Ticketvow Hologram Security</h3>
+                    <p>All Ticketvow tickets feature a discrete holographic Ticketvow logo in the upper right corner making it easy to spot fraudulent tickets.</p>
+                </div>
+            </div>
+
+            <div class="table-div">
+                <div class="left-cell-div small-img-div"><img src="assets/images/services/ticket14.png" alt="" /></div>
+                <div class="right-cell-div">
+                    <h3>Low Cost Per Ticket</h3>
+                    <p>Ticketvow offers one of Europe's lowest printed ticket rates, helping you keep your event within budget.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <form accept-charset="UTF-8" role="form" name="ticket_form" method="post" enctype="multipart/form-data" novalidate>
+                <h2 class="t-title-office">Free Printed Tickets Quotation</h2>
+                <p>Complete the form below for a free quote, we we will get back to you within the hour.</p>
+
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12 margin-top-10" ng-class="{ 'has-error' : ticket_form.colour.$invalid }">
+                        <label for="input11" class="label-name required">Colour</label>
+                        <select ng-model="formData.colour" class="form-control" name="colour" id="colour" required>
+                            <option value="yellow">Yellow</option>
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                        </select>
+                        <span ng-show="ticket_form.colour.$invalid">Colour is required.</span>
+                    </div>
+                    <div class="col-sm-6 col-xs-12 margin-top-10" ng-class="{ 'has-error' : ticket_form.quantity.$invalid && !ticket_form.quantity.$pristine }">
+                        <label for="input11" class="label-name required">Quantity</label>
+                        <input type="text" pattern="[0-9]*" name="quantity" placeholder="Quantity Available" class="form-control" id="quantity" maxlength="9" ng-model="formData.quantity" required>
+                        <span ng-show="ticket_form.quantity.$invalid">Must be only integer.</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12 margin-top-10" ng-class="{ 'has-error' : ticket_form.full_name.$invalid && !ticket_form.full_name.$pristine }">
+                        <label for="input11" class="label-name required">Full Name</label>
+                        <input type="text" name="full_name" placeholder="Full Name" class="form-control" id="full_name" ng-model="formData.full_name" required>
+                        <span ng-show="ticket_form.full_name.$invalid && !ticket_form.full_name.$pristine">Full name is required.</span>
+                    </div>
+                    <div class="col-sm-6 col-xs-12 margin-top-10" ng-class="{ 'has-error' : ticket_form.company.$invalid && !ticket_form.company.$pristine }">
+                        <label for="input11" class="label-name required">Company(If Applicable)</label>
+                        <input type="text" name="company" placeholder="Company" class="form-control" id="company" ng-model="formData.company" required>
+                        <span ng-show="ticket_form.company.$invalid && !ticket_form.company.$pristine">Company is required.</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12 margin-top-10" ng-class="{ 'has-error' : ticket_form.contact_number.$invalid && !ticket_form.contact_number.$pristine }">
+                        <label for="input11" class="label-name required">Contact Number</label>
+                        <input type="text" pattern="[0-9]*" name="contact_number" placeholder="Contact Number" class="form-control" id="contact_number" ng-model="formData.contact_number" required>
+                        <span ng-show="ticket_form.contact_number.$invalid">Must be only integer.</span>
+                    </div>
+                    <div class="col-sm-6 col-xs-12 margin-top-10" ng-class="{ 'has-error' : ticket_form.contact_email.$invalid && !ticket_form.contact_email.$pristine }">
+                        <label for="input11" class="label-name required">Contact Email</label>
+                        <input type="email" name="contact_email" ng-model="formData.contact_email" placeholder="Enter Email" class="form-control" id="contact_email" required>
+                        <span ng-show="ticket_form.contact_email.$invalid && !ticket_form.contact_email.$pristine">Invalid email address.</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 margin-top-10">
+                        <label for="input11" class="label-name">Additional Comments or Notes</label>
+                        <textarea class="form-control" ng-model="formData.comments"></textarea>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-xs-12 align-center margin-top-10">
+                        <a class="btn btn-block trans-buy-button inline-buy-button store-down-bottom " ng-click="submit() " ng-disabled="ticket_form.$invalid ">SUBMIT</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row sub-title ">
+        <div class="col-md-6 ">
+            <img src="assets/images/services/printed1.png" alt=" " />
+        </div>
+        <div class="col-md-6 ">
+            <h2 class="t-title-office ">Printed tickets make selling out event easier.</h2>
+
+            <p>Ticketvow prints over 100,000 hard tickets a year for event organisers across Europe, our attention to detail and custom designs make them a real asset to your event branding and give your fans a fantastic reminder of your event.</p>
+        </div>
+    </div>
+
+    <div class="row sub-title ">
+        <div class="col-md-6 ">
+            <h2 class="t-title-office ">Keep track of printed ticket inventories</h2>
+
+            <p>Ticketvow’s printed tickets are integrated with our online sales platform, allowing you to keep accurate counts of printed tickets issued for your events.</p>
+            <p>Easily accessible via the dashboard your event overview screen will show a complete breakdown of hard tickets that have been exported and printed for your event, ensuring you’ve never left with an oversold event.</p>
+        </div>
+        <div class="col-md-6 ">
+            <img src="assets/images/services/printed2.png" alt=" " />
+        </div>
+    </div>
+
+    <div class="row sub-title ">
+        <div class="col-md-6 ">
+            <img src="assets/images/services/printed3.png" alt=" " />
+        </div>
+        <div class="col-md-6 ">
+            <h2 class="t-title-office ">Bring your own Boca printer.</h2>
+
+            <p>Currently using Ticketvow box office? We can have your ticket template uploaded to your account so that you can print your own tickets directly from the box office system.</p>
+            <p>Perfect for large venues or events that need to print tickets on the fly.</p>
+        </div>
+    </div>
+
+    <div class="row sub-title ">
+        <div class="col-md-6 ">
+            <h2 class="t-title-office ">Choose from various ticket designs.</h2>
+
+            <p>Ticketvow makes adding your event logos, sponsors and other information on printed tickets a simple exercise.</p>
+        </div>
+        <div class="col-md-6 ">
+            <img src="assets/images/services/printed4.png" alt=" " />
+        </div>
+    </div>
+
+</div>
+<!-- /.container -->
+
+<div ng-include=" 'view/templates/footer.html' "></div>
