@@ -496,7 +496,7 @@ p.personal-phrase i.fa-quote-left {
 }
 
 .float-control {
-    width: calc(100% - 7px);
+    width: calc(100% - 10px);
     float: left;
 }
 

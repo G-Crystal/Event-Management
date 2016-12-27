@@ -10,7 +10,7 @@
                     <input type="checkbox" name="make_private" class="checkbox-ctrl" id="make_private" value="make_private">
                     <label for="input1" class="red-comment">Check here to disable ticket fees</label>
                 </div>
-                
+
                 <tabset justified="true">
                     <tab heading="SALE">
                         <div class="description-title-div float-left">
@@ -63,19 +63,19 @@
                                                 <div class="box-container container-box-shadow">
                                                     <div class="col-xs-12" ng-class="{ 'has-error' : box_form.credit_card.$invalid && !box_form.credit_card.$pristine }">
                                                         <input type="text" pattern="[0-9]*" name="credit_card" placeholder="Enter Credit Card Number" class="form-control float-control" id="credit_card" ng-model="card.card_number" ng-minlength="16" ng-maxlength="16" required>
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.credit_card.$error.pattern">Invalid Credit Card. Must be only number.</span>
                                                         <span ng-show="box_form.credit_card.$error.minlength">Password is too short.</span>
                                                         <span ng-show="box_form.credit_card.$error.maxlength">Password is too long.</span>
                                                     </div>
                                                     <div class="col-xs-6" ng-class="{ 'has-error' : box_form.exp_date.$invalid && !box_form.exp_date.$pristine }">
                                                         <input type="text" pattern="[0-9]{2}/[0-9]{2}" name="exp_date" placeholder="MM/YY" class="form-control float-control" id="exp_date" ng-model="card.card_date">
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.exp_date.$error.pattern">Invalid Date. Must be MM/YY.</span>
                                                     </div>
                                                     <div class="col-xs-6" ng-class="{ 'has-error' : box_form.czipcode.$invalid && !box_form.czipcode.$pristine }">
                                                         <input type="text" pattern="[0-9]*" name="czipcode" placeholder="Enter Zipcode" class="form-control float-control" id="czipcode" ng-model="card.zipcode" required>
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.czipcode.$invalid && !box_form.czipcode.$pristine">Invalid zipcode. Must be only number.</span>
                                                     </div>
                                                 </div>
@@ -85,7 +85,7 @@
                                                     <div>
                                                         <span>TENDERED</span>
                                                         <input type="text" name="tendered" placeholder="TENDERED" class="form-control float-control" id="tendered" ng-model="cash.tendered">
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                     </div>
                                                     <div>
                                                         <span ng-show="box_form.tendered.$invalid && !box_form.tendered.$pristine">Must input tendered.</span>
@@ -102,7 +102,7 @@
                                                     <div>
                                                         <span>CODE</span>
                                                         <input type="text" name="code" placeholder="CODE" class="form-control float-control" id="code" ng-model="coupon.code">
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                     </div>
                                                     <div>
                                                         <span ng-show="box_form.code.$invalid && !box_form.code.$pristine">Must input tendered.</span>
@@ -190,17 +190,17 @@
                                                 <div class="box-container container-box-shadow">
                                                     <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.fname.$invalid && !box_form.fname.$pristine }">
                                                         <input type="text" name="fname" placeholder="First Name" class="form-control float-control" id="fname" ng-model="email.fname" required>
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.fname.$invalid && !box_form.fname.$pristine">First name is required.</span>
                                                     </div>
                                                     <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.lname.$invalid && !box_form.lname.$pristine }">
                                                         <input type="text" name="lname" placeholder="Last Name" class="form-control float-control" id="lname" ng-model="email.lname" required>
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.lname.$invalid && !box_form.lname.$pristine">First name is required.</span>
                                                     </div>
                                                     <div class="col-xs-12" ng-class="{ 'has-error' : box_form.email.$invalid && !box_form.email.$pristine }">
                                                         <input type="email" name="email" ng-model="email.email" placeholder="Enter Email" class="form-control float-control" id="email" required>
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.email.$invalid && !box_form.email.$pristine">Invalid email address.</span>
                                                     </div>
                                                     <div class="col-xs-12">
@@ -222,17 +222,17 @@
                                                 <div class="box-container container-box-shadow">
                                                     <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.fname.$invalid && !box_form.fname.$pristine }">
                                                         <input type="text" name="fname" placeholder="First Name" class="form-control float-control" id="fname" ng-model="email.fname" required>
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.fname.$invalid && !box_form.fname.$pristine">First name is required.</span>
                                                     </div>
                                                     <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.lname.$invalid && !box_form.lname.$pristine }">
                                                         <input type="text" name="lname" placeholder="Last Name" class="form-control float-control" id="lname" ng-model="email.lname" required>
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.lname.$invalid && !box_form.lname.$pristine">First name is required.</span>
                                                     </div>
                                                     <div class="col-xs-12" ng-class="{ 'has-error' : box_form.email.$invalid && !box_form.email.$pristine }">
                                                         <input type="email" name="email" ng-model="email.email" placeholder="Enter Email" class="form-control float-control" id="email" required>
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.email.$invalid && !box_form.email.$pristine">Invalid email address.</span>
                                                     </div>
                                                     <div class="col-xs-12">
@@ -254,17 +254,17 @@
                                                 <div class="box-container container-box-shadow">
                                                     <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.fname.$invalid && !box_form.fname.$pristine }">
                                                         <input type="text" name="fname" placeholder="First Name" class="form-control float-control" id="fname" ng-model="email.fname" required>
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.fname.$invalid && !box_form.fname.$pristine">First name is required.</span>
                                                     </div>
                                                     <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.lname.$invalid && !box_form.lname.$pristine }">
                                                         <input type="text" name="lname" placeholder="Last Name" class="form-control float-control" id="lname" ng-model="email.lname" required>
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.lname.$invalid && !box_form.lname.$pristine">First name is required.</span>
                                                     </div>
                                                     <div class="col-xs-12" ng-class="{ 'has-error' : box_form.email.$invalid && !box_form.email.$pristine }">
                                                         <input type="email" name="email" ng-model="email.email" placeholder="Enter Email" class="form-control float-control" id="email" required>
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.email.$invalid && !box_form.email.$pristine">Invalid email address.</span>
                                                     </div>
                                                     <div class="col-xs-12">
@@ -392,7 +392,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="box-sub-title">DELIVERY</div>
                                     <div class="box-container margin-bottom container-box-shadow">
                                         <tabset>
@@ -400,17 +400,17 @@
                                                 <div class="box-container container-box-shadow">
                                                     <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.fname.$invalid && !box_form.fname.$pristine }">
                                                         <input type="text" name="fname" placeholder="First Name" class="form-control float-control" id="fname" ng-model="email.fname" required>
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.fname.$invalid && !box_form.fname.$pristine">First name is required.</span>
                                                     </div>
                                                     <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.lname.$invalid && !box_form.lname.$pristine }">
                                                         <input type="text" name="lname" placeholder="Last Name" class="form-control float-control" id="lname" ng-model="email.lname" required>
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.lname.$invalid && !box_form.lname.$pristine">First name is required.</span>
                                                     </div>
                                                     <div class="col-xs-12" ng-class="{ 'has-error' : box_form.email.$invalid && !box_form.email.$pristine }">
                                                         <input type="email" name="email" ng-model="email.email" placeholder="Enter Email" class="form-control float-control" id="email" required>
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.email.$invalid && !box_form.email.$pristine">Invalid email address.</span>
                                                     </div>
                                                     <div class="col-xs-12">
@@ -432,17 +432,17 @@
                                                 <div class="box-container container-box-shadow">
                                                     <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.fname.$invalid && !box_form.fname.$pristine }">
                                                         <input type="text" name="fname" placeholder="First Name" class="form-control float-control" id="fname" ng-model="email.fname" required>
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.fname.$invalid && !box_form.fname.$pristine">First name is required.</span>
                                                     </div>
                                                     <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.lname.$invalid && !box_form.lname.$pristine }">
                                                         <input type="text" name="lname" placeholder="Last Name" class="form-control float-control" id="lname" ng-model="email.lname" required>
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.lname.$invalid && !box_form.lname.$pristine">First name is required.</span>
                                                     </div>
                                                     <div class="col-xs-12" ng-class="{ 'has-error' : box_form.email.$invalid && !box_form.email.$pristine }">
                                                         <input type="email" name="email" ng-model="email.email" placeholder="Enter Email" class="form-control float-control" id="email" required>
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.email.$invalid && !box_form.email.$pristine">Invalid email address.</span>
                                                     </div>
                                                     <div class="col-xs-12">
@@ -464,17 +464,17 @@
                                                 <div class="box-container container-box-shadow">
                                                     <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.fname.$invalid && !box_form.fname.$pristine }">
                                                         <input type="text" name="fname" placeholder="First Name" class="form-control float-control" id="fname" ng-model="email.fname" required>
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.fname.$invalid && !box_form.fname.$pristine">First name is required.</span>
                                                     </div>
                                                     <div class="col-sm-6 col-xs-12" ng-class="{ 'has-error' : box_form.lname.$invalid && !box_form.lname.$pristine }">
                                                         <input type="text" name="lname" placeholder="Last Name" class="form-control float-control" id="lname" ng-model="email.lname" required>
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.lname.$invalid && !box_form.lname.$pristine">First name is required.</span>
                                                     </div>
                                                     <div class="col-xs-12" ng-class="{ 'has-error' : box_form.email.$invalid && !box_form.email.$pristine }">
                                                         <input type="email" name="email" ng-model="email.email" placeholder="Enter Email" class="form-control float-control" id="email" required>
-                                                        <label for="input1" class="label-name required"></label>
+                                                        <label for="input1" class="label-name required">&nbsp;</label>
                                                         <span ng-show="box_form.email.$invalid && !box_form.email.$pristine">Invalid email address.</span>
                                                     </div>
                                                     <div class="col-xs-12">
@@ -519,14 +519,14 @@
                         </div>
                     </tab>
                 </tabset>
-                    
 
-                    <div class="row align-center row-height">
-                        <div class="col-xs-12">
-                            <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="return()">RETURN TO DASHBOARD</a>
-                            <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="submit()" ng-disabled="box_form.$invalid">SUBMIT</a>
-                        </div>
+
+                <div class="row align-center row-height">
+                    <div class="col-xs-12">
+                        <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="return()">RETURN TO DASHBOARD</a>
+                        <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="submit()" ng-disabled="box_form.$invalid">SUBMIT</a>
                     </div>
+                </div>
             </form>
         </div>
         <!-- /.row -->
