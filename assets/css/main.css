@@ -423,6 +423,10 @@ p.personal-phrase i.fa-quote-left {
     padding-left: 20px;
 }
 
+.right-cell-div h3 {
+    font-weight: 300;
+}
+
 .small-img-div {
     width: 55px;
     margin: auto;
@@ -5189,6 +5193,15 @@ span.caret {
 
 .home8-back-img {
     background-image: url(../images/partial/home8.jpg);
+}
+
+
+/********************************************************************************************
+    INFORMATION PAGE                                                                                                  
+*********************************************************************************************/
+
+.information-home-div {
+    background-color: #8033cc;
 }
 
 
