@@ -24,7 +24,7 @@ angular.module('angula').config(['$routeProvider', function($routeProvider, $coo
         .when("/payment_plan", { templateUrl: "view/partials/information/payment.html", controller: "AccordionCtrl" })
         .when("/ticket_sale", { templateUrl: "view/partials/information/ticket_sale.html", controller: "AccordionCtrl" })
         .when("/printed_ticket", { templateUrl: "view/partials/information/printed_ticket.html", controller: "AccordionCtrl" })
-        .when("/box_office", { templateUrl: "view/partials/information/box_office.html", controller: "AccordionCtrl" })
+        .when("/box", { templateUrl: "view/partials/information/box_office.html", controller: "AccordionCtrl" })
         .when("/ticket_scanning", { templateUrl: "view/partials/information/ticket_scanning.html", controller: "AccordionCtrl" })
         .when("/event_marketing", { templateUrl: "view/partials/information/event_marketing.html", controller: "AccordionCtrl" })
         .when("/collect_payment", { templateUrl: "view/partials/information/collect_payment.html", controller: "AccordionCtrl" })
@@ -48,7 +48,7 @@ angular.module('angula').config(['$routeProvider', function($routeProvider, $coo
             case '/payment_plan':
             case '/ticket_sale':
             case '/printed_ticket':
-            case '/box_office':
+            case '/box':
             case '/ticket_scanning':
             case '/event_marketing':
             case '/collect_payment':
