@@ -1,7 +1,7 @@
 <div ng-include="'view/partials/user/user_menu.html'"></div>
 
 <div id="demo" class="home1">
-    <div class="row align-center row-height">
+    <div class="row text-center row-height">
         <div class="col-xs-12">
             <alert ng-repeat="alert in alerts" type="{{alert.type}}" class="alert_message">{{alert.msg}}</alert>
         </div>
@@ -83,11 +83,11 @@
                             <span ng-show="profile_form.profile.$error.minHeight">Height must be greater than 500.</span>
                             <!--<a class="btn btn-block trans-buy-button inline-buy-button" ng-click="browse()" ng-disabled="profile_form.$invalid">Choose File</a>-->
                         </div>
-                        <div class="col-md-6 col-md-offset-6 align-center" ng-class="{ 'has-error' : profile_form.profile.$invalid && !profile_form.profile.$pristine }">
+                        <div class="col-md-6 col-md-offset-6 text-center" ng-class="{ 'has-error' : profile_form.profile.$invalid && !profile_form.profile.$pristine }">
                             <img ng-show="profile_form.profile.$valid" ngf-thumbnail="formData.profile" class="thumb_preview">
                         </div>
                     </div>
-                    <div class="row align-center row-height">
+                    <div class="row text-center row-height">
                         <div class="col-xs-12">
                             <a class="btn btn-block trans-buy-button inline-buy-button" ng-click="update()" ng-disabled="profile_form.$invalid">Update</a>
                         </div>

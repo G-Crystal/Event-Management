@@ -213,6 +213,11 @@ h4 {
     font-weight: 700;
 }
 
+h5,
+h6 {
+    font-weight: 200;
+}
+
 select option {
     font-weight: 200;
 }
@@ -5300,18 +5305,6 @@ span.caret {
 /********************************************************************************************
     PAGE EVENT INFORMATION
 *********************************************************************************************/
-
-.align-center {
-    text-align: center;
-}
-
-.align-left {
-    text-align: left;
-}
-
-.align-right {
-    text-align: right;
-}
 
 .float-left {
     float: left;
