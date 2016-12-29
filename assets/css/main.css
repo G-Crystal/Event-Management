@@ -5310,6 +5310,12 @@ span.caret {
     float: left;
 }
 
+.gray-border {
+    border: 1px solid #E0E0E0;
+    padding: 10px;
+    margin: 10px 0;
+}
+
 
 /********************************************************************************************
     PAGE LOG IN

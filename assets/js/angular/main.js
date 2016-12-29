@@ -27,6 +27,7 @@ angular.module('angula').config(['$routeProvider', function($routeProvider, $coo
         .when("/box_office", { templateUrl: "view/partials/information/box_office.html", controller: "AccordionCtrl" })
         .when("/ticket_scanning", { templateUrl: "view/partials/information/ticket_scanning.html", controller: "AccordionCtrl" })
         .when("/event_marketing", { templateUrl: "view/partials/information/event_marketing.html", controller: "AccordionCtrl" })
+        .when("/collect_payment", { templateUrl: "view/partials/information/collect_payment.html", controller: "AccordionCtrl" })
 }])
 
 .run(['$rootScope', '$location', '$cookies', function($rootScope, $location, $cookies) {
@@ -49,13 +50,26 @@ angular.module('angula').config(['$routeProvider', function($routeProvider, $coo
             case '/box_office':
             case '/ticket_scanning':
             case '/event_marketing':
+            case '/collect_payment':
                 return;
             default: // invalid URL
                 break;
         }
 
+        if (typeof($cookies.user_type) == "undefined") {
+            if (document.cookie != "") {
+                var cookieArray = document.cookie.split("; ");
+                var userArray = cookieArray[4].split("=");
+                var user_type = userArray[1];
+            } else {
+                var user_type = 0;
+            }
+        } else {
+            var user_type = $cookies.user_type;
+        }
+
         // for common credential
-        if ($cookies.user_type == 1 || $cookies.user_type == 2) {
+        if (user_type == 1 || user_type == 2) {
             switch (current.$$route.originalPath) {
                 case '/':
                 case '/pagination':
@@ -74,7 +88,7 @@ angular.module('angula').config(['$routeProvider', function($routeProvider, $coo
             }
         }
         // for user credential
-        if ($cookies.user_type == 1) {
+        if (user_type == 1) {
             switch (current.$$route.originalPath) {
                 case '/user_dashboard':
                 case '/user_messages':
@@ -88,7 +102,7 @@ angular.module('angula').config(['$routeProvider', function($routeProvider, $coo
             }
         }
         // for organizer credential
-        else if ($cookies.user_type == 2) {
+        else if (user_type == 2) {
             switch (current.$$route.originalPath) {
                 case '/organizer_dashboard':
                 case '/create_events':
