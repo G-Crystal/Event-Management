@@ -417,6 +417,7 @@ p.personal-phrase i.fa-quote-left {
 
 .table-div {
     display: table;
+    width: 100%
 }
 
 .left-cell-div {
@@ -5480,6 +5481,56 @@ span.caret {
 
 .order-info-table tr td {
     padding-right: 15px;
+}
+
+.callout-header {
+    height: 15px;
+    border-radius: 5px 5px 0px 0px;
+    transition: all 0.2s ease-in;
+}
+
+.bgcolor-blue {
+    background-color: #28ace2;
+}
+
+.bgcolor-purple {
+    background-color: #8033cc;
+}
+
+.bgcolor-lime {
+    background-color: #95bf15;
+}
+
+.bgcolor-green {
+    background-color: #24b524;
+}
+
+.bgcolor-orange {
+    background-color: #de8b16;
+}
+
+.bgcolor-pink {
+    background-color: #ff00ff;
+}
+
+.color-gray {
+    color: #616161;
+}
+
+.specification-div {
+    line-height: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.specification-div:last-child {
+    border: 0px;
+}
+
+i.fa-check {
+    font-size: 20px;
+    margin-top: 10px;
 }
 
 
